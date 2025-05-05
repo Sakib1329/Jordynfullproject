@@ -13,6 +13,7 @@ void main() {
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
 
+
 theme: ThemeData(
   scaffoldBackgroundColor: AppColor.backgroundColor,
   appBarTheme: AppBarTheme(
@@ -22,6 +23,9 @@ theme: ThemeData(
       scrolledUnderElevation: 0
   )
 ),
+
+  
+
     ),
   );
 }

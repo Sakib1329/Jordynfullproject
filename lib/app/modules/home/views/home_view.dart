@@ -23,7 +23,7 @@ class HomeView extends StatelessWidget {
                 Text(
                   'Hi, Audrey',
                   style: TextStyle(
-                    color: AppColor.TextTitleColor,
+                    color: AppColor.textTitleColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),
@@ -31,7 +31,7 @@ class HomeView extends StatelessWidget {
                 Text(
                   'Welcome back to Inspirit!',
                   style: TextStyle(
-                    color: AppColor.TextGreyColor,
+                    color: AppColor.textGreyColor,
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                     fontStyle: FontStyle.italic,
@@ -131,7 +131,7 @@ class HomeView extends StatelessWidget {
             title: Text(
               'Dummy Name',
               style: TextStyle(
-                color: AppColor.TextBlackColor,
+                color: AppColor.textBlackColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),
