@@ -2,7 +2,7 @@ class ImageAssets {
 
   //Icons
 
-  static const String splashScreen = 'assets/svg/splash.svg';
+  static const String floting = 'assets/icons/floting.svg';
 
 
    // home*
