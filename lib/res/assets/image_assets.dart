@@ -2,6 +2,9 @@ class ImageAssets {
 
   //Icons
 
+
+  static const String notfication = 'assets/icons/home/notification.svg';
+
   static const String floting = 'assets/icons/floting.svg';
   static const String notification = 'assets/icons/notification.svg';
   static const String calender = 'assets/icons/calender.svg';
@@ -15,6 +18,7 @@ class ImageAssets {
   static const String send = 'assets/icons/send.svg';
   static const String share = 'assets/icons/share.svg';
   // static const String  = 'assets/icons/.svg';
+//bead9aafaa6c78e759e5e3a98ed9b768065247eb
 
 
    // home*
@@ -27,6 +31,15 @@ class ImageAssets {
 
 
   //PNG
+//<<<<<<< HEAD
+  static const String scanner = 'assets/images/home/scanner.png';
+  static const String home = 'assets/images/home/home.png';
+  static const String schedule = 'assets/images/home/schedule.png';
+  static const String chat = 'assets/images/chat/chat.png';
+  static const String explore = 'assets/images/explore/explore.png';
+  static const String memory = 'assets/images/memory/memory.png';
+//=======
   static const String splash = 'assets/images/splash.png';
+//>>>>>>> bead9aafaa6c78e759e5e3a98ed9b768065247eb
 
 }
