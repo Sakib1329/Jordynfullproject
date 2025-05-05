@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:get/get.dart';
-
-import '../controllers/chat_controller.dart';
-
-
-
-class Chat extends GetView<ChatController> {
+class Chat extends StatelessWidget {
   const Chat ({super.key});
   @override
   Widget build(BuildContext context) {

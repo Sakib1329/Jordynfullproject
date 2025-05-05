@@ -19,5 +19,9 @@ class AppColor {
   static const Color background1Color = Color(0xFFEAEAEA);
   static const Color backColor = Color(0xFFECF0FF);
   static const Color borderColor = Color(0xFFE7E9EE);
+  static const Color black25=Color(0x40000000);
+  static const Color greyBC = Color(0xFFBCBCC0);
+  static const Color darkGrey = Color(0xFF343537);
+  static const Color greyTone = Color(0xFF676360); // Solid #676360
 
 }

@@ -8,7 +8,7 @@ import '../../onboarding/controllers/onboarding_controller.dart';
 
 
 
-class Memory extends GetView<ProfileController> {
+class Memory extends StatelessWidget {
   const Memory({super.key});
   @override
   Widget build(BuildContext context) {

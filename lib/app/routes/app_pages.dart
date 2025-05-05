@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:jordyn/app/modules/home/views/navbar.dart';
 import 'package:jordyn/app/modules/onboarding/views/splash_view.dart';
 
 import '../modules/home/bindings/home_binding.dart';
@@ -16,7 +17,10 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => const SplashView(),transition: Transition.rightToLeft,
+      page: () =>  Navigation(
+
+
+      ),transition: Transition.rightToLeft,
       binding: HomeBinding(),
     ),
     GetPage(

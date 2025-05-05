@@ -7,7 +7,7 @@ import '../../onboarding/controllers/onboarding_controller.dart';
 
 
 
-class Explore extends GetView<ExploreController> {
+class Explore extends StatelessWidget{
   const Explore({super.key});
   @override
   Widget build(BuildContext context) {
