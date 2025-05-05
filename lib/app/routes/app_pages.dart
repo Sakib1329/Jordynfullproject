@@ -15,12 +15,12 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => const HomeView(),
+      page: () => const HomeView(),transition: Transition.rightToLeft,
       binding: HomeBinding(),
     ),
     GetPage(
       name: _Paths.ONBOARDING,
-      page: () => const OnboardingView(),
+      page: () => const OnboardingView(),transition: Transition.rightToLeft,
       binding: OnboardingBinding(),
     ),
   ];
