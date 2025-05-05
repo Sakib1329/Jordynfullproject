@@ -1,0 +1,178 @@
+
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:jordyn/res/assets/image_assets.dart';
+import 'package:jordyn/res/colors/app_color.dart';
+
+class InputTextWidget extends StatefulWidget {
+  const InputTextWidget({
+    super.key,
+    this.hintText = '',
+    required this.onChanged,
+    this.onTap,
+    this.validator,
+    this.obscureText = false,
+    this.readOnly = false,
+    this.leading = false,
+    this.backIcon = false,
+    this.leadingIcon = '',
+    this.imageIcon = '',
+    this.contentPadding = true,
+    this.clock = false,
+    this.scan = false,
+    this.passwordIcon = ImageAssets.obsecure,
+    this.borderRadius = 10.0,
+    this.borderColor = AppColor.buttonColor,
+    this.hintTextColor = AppColor.hintTextColor,
+    this.textColor = AppColor.whiteTextColor,
+    this.height = 50.0,
+    this.imageHeight = 24.0,
+    this.imageWeight = 24.0,
+    this.obscureWidth = 24.0,
+    this.obscureHeigth = 24.0,
+    this.width = double.infinity,
+    this.hintfontFamily = 'Poppins',
+    this.hintfontSize = 14.0,
+    this.hintfontWeight = FontWeight.w400,
+    this.fontSize = 18.0,
+    this.fontWeight = FontWeight.w500,
+    this.fontFamily = 'Urbanist',
+    this.vertical = 10.0,
+    this.horizontal = 15.0,
+    this.leadingright = 10.0,
+    this.leadingtop = 0.0,
+    this.leadingleft = 0.0,
+    this.backgroundColor = AppColor.backgroundColor,
+    this.maxLines = 1,
+  });
+
+  final String hintText, hintfontFamily, fontFamily;
+  final double borderRadius,
+      fontSize,
+      hintfontSize,
+      imageHeight,
+      imageWeight,
+      leadingright,
+      leadingtop,
+      leadingleft,
+      obscureHeigth,
+      obscureWidth;
+  final Color borderColor, textColor, hintTextColor, backgroundColor;
+  final double height, width, horizontal, vertical;
+  final bool obscureText, readOnly, contentPadding, leading, clock, scan,backIcon;
+  final String passwordIcon, leadingIcon,imageIcon;
+  final ValueChanged<String> onChanged;
+  final VoidCallback? onTap;
+  final String? Function(String?)? validator;
+  final FontWeight fontWeight, hintfontWeight;
+  final int maxLines;
+
+  @override
+  _InputTextWidgetState createState() => _InputTextWidgetState();
+}
+
+class _InputTextWidgetState extends State<InputTextWidget> {
+  late bool _isObscured;
+
+  @override
+  void initState() {
+    super.initState();
+    _isObscured = widget.obscureText;
+  }
+
+  void _toggleObscure() {
+    setState(() {
+      _isObscured = !_isObscured;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: widget.height,
+      width: widget.width,
+      decoration: BoxDecoration(
+        color: widget.backgroundColor,
+        border: Border.all(color: widget.borderColor),
+        borderRadius: BorderRadius.circular(widget.borderRadius),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            if (widget.leading)
+              Padding(
+                padding: EdgeInsets.only(
+                  right: widget.leadingright,
+                  top: widget.leadingtop,
+                  left: widget.leadingleft,
+                ),
+                child: SvgPicture.asset(
+                  widget.leadingIcon,
+                  width: widget.imageWeight,
+                  height: widget.imageHeight,
+                ),
+              ),
+            Expanded(
+              child: TextField(
+                onChanged: widget.onChanged,
+                onTap: widget.onTap,
+                readOnly: widget.readOnly,
+                maxLines: widget.maxLines,
+                obscureText: _isObscured,
+                decoration: InputDecoration(
+                  hintText: widget.hintText,
+                  hintStyle: TextStyle(
+                    color: widget.hintTextColor,
+                    fontSize: widget.hintfontSize,
+                    fontWeight: widget.hintfontWeight,
+                    fontFamily: widget.hintfontFamily,
+                  ),
+                  border: InputBorder.none,
+                  contentPadding:
+                      widget.contentPadding
+                          ? EdgeInsets.symmetric(
+                            horizontal: widget.horizontal,
+                            vertical: widget.vertical,
+                          )
+                          : null,
+                ),
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  fontSize: widget.fontSize,
+                  fontWeight: widget.fontWeight,
+                  fontFamily: widget.fontFamily,
+                  color: widget.textColor,
+                ),
+              ),
+            ),
+            if (widget.obscureText)
+              Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: GestureDetector(
+                  onTap: _toggleObscure,
+                  child: SvgPicture.asset(
+                    widget.passwordIcon,
+                    width: widget.obscureWidth,
+                    height: widget.obscureHeigth,
+                  ),
+                ),
+              ),
+            if (widget.backIcon)
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: GestureDetector(
+                  onTap: _toggleObscure,
+                  child: SvgPicture.asset(
+                    widget.imageIcon,
+                    width: 24,
+                    height: 24,
+                  ),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}

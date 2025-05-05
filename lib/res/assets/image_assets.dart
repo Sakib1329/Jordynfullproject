@@ -39,7 +39,18 @@ class ImageAssets {
   static const String explore = 'assets/images/explore/explore.png';
   static const String memory = 'assets/images/memory/memory.png';
 //=======
-  static const String splash = 'assets/images/splash.png';
+
 //>>>>>>> bead9aafaa6c78e759e5e3a98ed9b768065247eb
+
+
+  // Splash & Onboarding Screen
+  static const String splash = 'assets/images/splash.png';
+  static const String onboarding = 'assets/images/onboarding.png';
+  static const String onboard_logo = 'assets/images/onboard_logo.png';
+// Create Profile
+  static const String obsecure = 'assets/images/auth/obsecure.png';
+  static const String auth_logo = 'assets/images/auth/aut_logo.png';
+
+
 
 }
