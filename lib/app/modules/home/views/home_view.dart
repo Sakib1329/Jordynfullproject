@@ -31,7 +31,7 @@ class HomeView extends StatelessWidget {
                 Text(
                   'Welcome back to Inspirit!',
                   style: TextStyle(
-                    color: AppColor.textGreyColor,
+                    color: AppColor.greyTone,
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                     fontStyle: FontStyle.italic,

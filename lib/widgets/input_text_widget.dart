@@ -15,7 +15,7 @@ class InputTextWidget extends StatefulWidget {
     this.readOnly = false,
     this.leading = false,
     this.backIcon = false,
-    this.leadingIcon = '',
+    this.leadingIcon = ImageAssets.email,
     this.imageIcon = '',
     this.contentPadding = true,
     this.clock = false,
@@ -31,18 +31,18 @@ class InputTextWidget extends StatefulWidget {
     this.obscureWidth = 24.0,
     this.obscureHeigth = 24.0,
     this.width = double.infinity,
-    this.hintfontFamily = 'Poppins',
-    this.hintfontSize = 14.0,
-    this.hintfontWeight = FontWeight.w400,
+    this.hintfontFamily = 'Montserrat',
+    this.hintfontSize = 16.0,
+    this.hintfontWeight = FontWeight.w300,
     this.fontSize = 18.0,
     this.fontWeight = FontWeight.w500,
     this.fontFamily = 'Urbanist',
     this.vertical = 10.0,
     this.horizontal = 15.0,
-    this.leadingright = 10.0,
+    this.leadingright = 0.0,
     this.leadingtop = 0.0,
     this.leadingleft = 0.0,
-    this.backgroundColor = AppColor.backgroundColor,
+    this.backgroundColor = AppColor.textAreaColor,
     this.maxLines = 1,
   });
 
@@ -108,7 +108,7 @@ class _InputTextWidgetState extends State<InputTextWidget> {
                   top: widget.leadingtop,
                   left: widget.leadingleft,
                 ),
-                child: SvgPicture.asset(
+                child: Image.asset(
                   widget.leadingIcon,
                   width: widget.imageWeight,
                   height: widget.imageHeight,
@@ -151,7 +151,7 @@ class _InputTextWidgetState extends State<InputTextWidget> {
                 padding: const EdgeInsets.only(right: 10),
                 child: GestureDetector(
                   onTap: _toggleObscure,
-                  child: SvgPicture.asset(
+                  child: Image.asset(
                     widget.passwordIcon,
                     width: widget.obscureWidth,
                     height: widget.obscureHeigth,
@@ -161,13 +161,8 @@ class _InputTextWidgetState extends State<InputTextWidget> {
             if (widget.backIcon)
               Padding(
                 padding: const EdgeInsets.only(left: 10.0),
-                child: GestureDetector(
-                  onTap: _toggleObscure,
-                  child: SvgPicture.asset(
-                    widget.imageIcon,
-                    width: 24,
-                    height: 24,
-                  ),
+                child: SvgPicture.asset(
+                  widget.imageIcon,
                 ),
               ),
           ],

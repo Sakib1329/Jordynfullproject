@@ -12,7 +12,10 @@ class AppColor {
   static const Color textGreenColor = Color(0xFFA1B17E);
   static const Color buttonBackgroundColor = Color(0xFFF1EADB);
   static const Color buttonDisableColor = Color(0xFF8D8D8D);
-  static const Color textGreyColor = Color(0xFF636A70);
+  static const Color greyTone = Color(0xFF636A70);
+  static const Color textGreyColor2 = Color(0xFF676360);
+  static const Color textGreyColor3 = Color(0xFFAEAEB2);
+  static const Color textSendColor = Color(0xFF806E6A);
   static const Color whiteTextColor = Color(0xFFEEEEEE);
   static const Color hintTextColor = Color(0xFFB6B7BB);
   static const Color textareaColor = Color(0xFFFDFDFE);
@@ -22,6 +25,5 @@ class AppColor {
   static const Color black25=Color(0x40000000);
   static const Color greyBC = Color(0xFFBCBCC0);
   static const Color darkGrey = Color(0xFF343537);
-  static const Color greyTone = Color(0xFF676360); // Solid #676360
-
+  static const Color textAreaColor = Color(0xFFE6DBC9);
 }
