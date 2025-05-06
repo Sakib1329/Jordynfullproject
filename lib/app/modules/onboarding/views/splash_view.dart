@@ -12,7 +12,11 @@ class SplashView extends GetView {
   Widget build(BuildContext context) {
     Future.delayed(const Duration(seconds: 3), () {
       try {
+<<<<<<< HEAD
         Get.offAll(() => const OnboardingView(),transition: Transition.noTransition);
+=======
+        Get.offAll(() => const OnboardingView(),transition: Transition.rightToLeft);
+>>>>>>> e075cd0be43f5d7005099e4a3226a8937669d250
       } catch (e) {
         Get.snackbar(
           'Navigation Error',

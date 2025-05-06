@@ -43,7 +43,11 @@ class ImageAssets {
   static const String chat = 'assets/images/chat/chat.png';
   static const String explore = 'assets/images/explore/explore.png';
   static const String memory = 'assets/images/memory/memory.png';
+  static const String post_report2 = 'assets/images/post_report.png';
   static const String person = 'assets/images/home/person.png';
+  static const String memorial = 'assets/images/home/memorial.png';
+  static const String camera = 'assets/images/home/camera.png';
+  static const String photo_videos = 'assets/images/home/photo_videos.png';
 //=======
 
 //>>>>>>> bead9aafaa6c78e759e5e3a98ed9b768065247eb
