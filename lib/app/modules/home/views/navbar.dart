@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jordyn/app/modules/chat/views/chat.dart';
@@ -10,34 +8,25 @@ import 'package:jordyn/app/modules/profile/views/profile.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 
-
 import '../controllers/home_controller.dart';
 
-
-
 class Navigation extends StatelessWidget {
-
   final HomeController controller = Get.put(HomeController());
 
   Navigation({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
-      body: Obx(() {
-        return [
+      body: Obx(() => [
         HomeView(),
-          Explore(),
-          Memory(),
-          Chat(),
-          Profile(),
+        Explore(),
+        Memory(),
+        Chat(),
+        Profile()
+      ][controller.currentIndex.value]),
 
-        ][controller.currentIndex.value];
-      }),
       bottomNavigationBar: Obx(() => Container(
-
         height: 110,
         decoration: BoxDecoration(
           color: AppColor.backgroundColor,
@@ -51,48 +40,47 @@ class Navigation extends StatelessWidget {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: List.generate(5, (index) {
             final isSelected = controller.currentIndex.value == index;
             return GestureDetector(
-              onTap: () => controller.currentIndex.value = index,
+              onTap: () {
+                controller.currentIndex.value = index;
+                controller.isFabMenuOpen.value = false;
+              },
               child: Container(
                 width: 65,
                 height: 62,
-
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
                       [
-                       ImageAssets.home,
+                        ImageAssets.home,
                         ImageAssets.explore,
                         ImageAssets.memory,
                         ImageAssets.chat,
-                        ImageAssets.chat
+                        ImageAssets.chat,
                       ][index],
-
                       width: 33,
                       height: 33,
-                      color: isSelected ? AppColor.darkGrey : AppColor.greyBC,
+                      color: isSelected
+                          ? AppColor.darkGrey
+                          : AppColor.greyBC,
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      [
-                        'Home',
-                        'Explore',
-                        'Memory',
-                        'Chat',
-                        'Profile'
-                      ][index],
+                      ['Home', 'Explore', 'Memory', 'Chat', 'Profile']
+                      [index],
                       style: TextStyle(
                         fontSize: 14,
-                        color: isSelected ? AppColor.darkGrey : AppColor.greyBC,
-                        fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                        color: isSelected
+                            ? AppColor.darkGrey
+                            : AppColor.greyBC,
+                        fontWeight: isSelected
+                            ? FontWeight.bold
+                            : FontWeight.normal,
                       ),
                     ),
-
-
                   ],
                 ),
               ),
@@ -102,4 +90,7 @@ class Navigation extends StatelessWidget {
       )),
     );
   }
+
+
 }
+
