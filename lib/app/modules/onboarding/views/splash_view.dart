@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-import 'package:jordyn/app/modules/onboarding/views/onboarding_view.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
+
+import 'onboarding_view.dart';
 
 class SplashView extends GetView {
   const SplashView({super.key});
@@ -12,11 +12,7 @@ class SplashView extends GetView {
   Widget build(BuildContext context) {
     Future.delayed(const Duration(seconds: 3), () {
       try {
-<<<<<<< HEAD
-        Get.offAll(() => const OnboardingView(),transition: Transition.noTransition);
-=======
-        Get.offAll(() => const OnboardingView(),transition: Transition.rightToLeft);
->>>>>>> e075cd0be43f5d7005099e4a3226a8937669d250
+        Get.off(() => const OnboardingView(),transition: Transition.fadeIn);
       } catch (e) {
         Get.snackbar(
           'Navigation Error',

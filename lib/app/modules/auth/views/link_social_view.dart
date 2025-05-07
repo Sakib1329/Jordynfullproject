@@ -80,7 +80,7 @@ class LinkSocialView extends GetView<ProfileController> {
                               center: false,
                               icon: true,
                               buttonColor: AppColor.textAreaColor,
-                              textColor: AppColor.greyTone,
+                              textColor: AppColor.greyTone1,
                             ),
                             SizedBox(height: 20.h),
                             CustomButton(
@@ -98,7 +98,7 @@ class LinkSocialView extends GetView<ProfileController> {
                               icon: true,
                               image: ImageAssets.insta,
                               buttonColor: AppColor.textAreaColor,
-                              textColor: AppColor.greyTone,
+                              textColor: AppColor.greyTone1,
                             ),
                             SizedBox(height: 20.h),
                             CustomButton(
@@ -116,7 +116,7 @@ class LinkSocialView extends GetView<ProfileController> {
                               icon: true,
                               image: ImageAssets.x,
                               buttonColor: AppColor.textAreaColor,
-                              textColor: AppColor.greyTone,
+                              textColor: AppColor.greyTone1,
                             ),
                             SizedBox(height: 20.h),
                             CustomButton(
@@ -134,7 +134,7 @@ class LinkSocialView extends GetView<ProfileController> {
                               icon: true,
                               image: ImageAssets.thread,
                               buttonColor: AppColor.textAreaColor,
-                              textColor: AppColor.greyTone,
+                              textColor: AppColor.greyTone1,
                             ),
                             SizedBox(height: 20.h),
                           ],

@@ -1,2 +1,0 @@
-export 'package:jordyn/infrastructure/navigation/bindings/controllers/pin_code_field.controller.binding.dart'; 
-export 'package:jordyn/infrastructure/navigation/bindings/controllers/widget.controller.binding.dart'; 

@@ -67,7 +67,7 @@ class Profile extends GetView<ProfileController> {
                                   bottom: 5.h,
                                   right: 140.w,
                                   child: Center(
-                                    child: Image.asset(ImageAssets.camera),
+                                    child: Image.asset(ImageAssets.camera1),
                                   ),
                                 ),
                               ],

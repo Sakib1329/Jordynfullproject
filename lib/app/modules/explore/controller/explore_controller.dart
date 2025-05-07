@@ -1,23 +1,17 @@
+import 'dart:io';
+
 import 'package:get/get.dart';
 
 class ExploreController extends GetxController {
 
+  var currentIndex = 0.obs;
+  var isFabMenuOpen = false.obs;
+  RxBool isselected=false.obs;
+  var selectedreportype="".obs;
+  Rxn<File> pickedImage = Rxn<File>();
+  RxBool hasText = false.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void onTextChanged(String value) {
+    hasText.value = value.trim().isNotEmpty;
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

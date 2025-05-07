@@ -68,7 +68,7 @@ class ImageAssets {
 // Create Profile
 
   static const String avater = 'assets/images/profile/avater.png';
-  static const String camera = 'assets/images/profile/camera.png';
+  static const String camera1 = 'assets/images/profile/camera.png';
   static const String fb = 'assets/images/profile/fb.png';
   static const String insta = 'assets/images/profile/insta.png';
   static const String thread = 'assets/images/profile/thread.png';

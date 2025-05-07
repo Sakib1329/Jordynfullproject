@@ -38,12 +38,9 @@ dependencies:
   get: 4.7.2
   flutter_svg: 2.1.0
   flutter_screenutil: 5.9.3
-<<<<<<< HEAD
   pin_code_fields: 8.0.1
-  flutter_otp_text_field: ^1.5.1+1
-=======
-  image_picker: ^1.1.2
->>>>>>> e075cd0be43f5d7005099e4a3226a8937669d250
+  flutter_otp_text_field: 1.5.1+1
+  image_picker: 1.1.2
 
 dev_dependencies:
   flutter_test:
