@@ -26,6 +26,7 @@ class AppColor {
   static const Color black25=Color(0x40000000);
   static const Color greyBC = Color(0xFFBCBCC0);
   static const Color darkGrey = Color(0xFF343537);
+  static const Color subTitleGrey = Color(0xFF8E8E93);
 
 
   static const Color textAreaColor = Color(0xFFE6DBC9);

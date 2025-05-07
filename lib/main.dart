@@ -5,12 +5,14 @@ import 'package:get/get.dart';
 import 'package:jordyn/app/modules/auth/controllers/auth_controller.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 
+import 'app/modules/explore/controller/explore_controller.dart';
 import 'app/modules/profile/controllers/profile_controller.dart';
 import 'app/routes/app_pages.dart';
 
 void main() {
   Get.put(AuthController());
   Get.put(ProfileController());
+  Get.put(ExploreController());
   runApp(
     ScreenUtilInit(
       designSize: Size(430, 932),
