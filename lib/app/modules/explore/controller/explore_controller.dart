@@ -15,6 +15,11 @@ class ExploreController extends GetxController {
   void setSelectedTab(String tab) {
     selectedTab.value = tab;
   }
+  final RxString accountSelectedTab = 'Post'.obs; // Default tab
+
+  void setAccountSelectedTab(String tab) {
+    accountSelectedTab.value = tab;
+  }
   void onTextChanged(String value) {
     hasText.value = value.trim().isNotEmpty;
   }

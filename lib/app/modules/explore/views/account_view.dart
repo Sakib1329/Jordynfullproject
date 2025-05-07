@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:jordyn/app/modules/explore/views/event_list_view.dart';
+import 'package:jordyn/app/modules/explore/views/memorial_view.dart';
+import 'package:jordyn/app/modules/explore/views/memory_list_view.dart';
+import 'package:jordyn/app/modules/explore/views/post_view.dart';
+import 'package:jordyn/app/modules/explore/views/user_list_view.dart';
 import 'package:jordyn/widgets/custom_button.dart';
 import '../../../../res/assets/image_assets.dart';
 import '../../../../res/colors/app_color.dart';
@@ -91,20 +96,182 @@ class AccountView extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      SizedBox(height: 10.w),
+                      SizedBox(height: 20.w),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                        CustomButton(onPress: ()async{}, title: 'Message',width: 160.w,height: 42.h,radius: 120.r,borderColor: AppColor.greyTone,buttonColor: AppColor.backgroundColor,textColor: AppColor.greyTone,),
-                        CustomButton(onPress: ()async{}, title: 'Add Friend',width: 160.w,height: 42.h,radius: 120.r,),
-                      ],)
+                          CustomButton(
+                            onPress: () async {},
+                            title: 'Message',
+                            width: 160.w,
+                            height: 42.h,
+                            radius: 120.r,
+                            borderColor: AppColor.greyTone,
+                            buttonColor: AppColor.backgroundColor,
+                            textColor: AppColor.greyTone,
+                          ),
+                          CustomButton(
+                            onPress: () async {},
+                            title: 'Add Friend',
+                            width: 160.w,
+                            height: 42.h,
+                            radius: 120.r,
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 20.w),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Obx(
+                            () => GestureDetector(
+                              onTap: () {
+                                controller.setAccountSelectedTab('Memorial');
+                              },
+                              child: Column(
+                                children: [
+                                  Text(
+                                    'Memorial',
+                                    style: TextStyle(
+                                      color:
+                                          controller.accountSelectedTab.value ==
+                                                  'Memorial'
+                                              ? AppColor.buttonColor
+                                              : AppColor.textGreyColor3,
+                                      fontSize: 16,
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w400,
+                                      height: 2,
+                                      letterSpacing: 0.50,
+                                    ),
+                                  ),
+                                  SizedBox(height: 5.h),
+                                  SizedBox(
+                                    height: 2.h,
+                                    width: 130.w,
+                                    child: Divider(
+                                      height: 5.h,
+                                      thickness: 2.h,
+                                      color:
+                                          controller.accountSelectedTab.value ==
+                                                  'Memorial'
+                                              ? AppColor.buttonColor
+                                              : AppColor.textAreaColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Obx(
+                            () => GestureDetector(
+                              onTap: () {
+                                controller.setAccountSelectedTab('Post');
+                              },
+                              child: Column(
+                                children: [
+                                  Text(
+                                    'Post',
+                                    style: TextStyle(
+                                      color:
+                                          controller.accountSelectedTab.value == 'Post'
+                                              ? AppColor.buttonColor
+                                              : AppColor.textGreyColor3,
+                                      fontSize: 16,
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w400,
+                                      height: 2,
+                                      letterSpacing: 0.50,
+                                    ),
+                                  ),
+                                  SizedBox(height: 5.h),
+                                  Container(
+                                    height: 2.h,
+                                    width: 130.w,
+                                    child: Divider(
+                                      height: 5.h,
+                                      thickness: 2.h,
+                                      color:
+                                          controller.accountSelectedTab.value == 'Post'
+                                              ? AppColor.buttonColor
+                                              : AppColor.textAreaColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Obx(
+                            () => GestureDetector(
+                              onTap: () {
+                                controller.setAccountSelectedTab('Event');
+                              },
+                              child: Column(
+                                children: [
+                                  Text(
+                                    'Event',
+                                    style: TextStyle(
+                                      color:
+                                          controller.accountSelectedTab.value ==
+                                                  'Event'
+                                              ? AppColor.buttonColor
+                                              : AppColor.textGreyColor3,
+                                      fontSize: 16,
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.w400,
+                                      height: 2,
+                                      letterSpacing: 0.50,
+                                    ),
+                                  ),
+                                  SizedBox(height: 5.h),
+                                  Container(
+                                    height: 2.h,
+                                    width: 130.w,
+                                    child: Divider(
+                                      height: 5.h,
+                                      thickness: 2.h,
+                                      color:
+                                          controller.accountSelectedTab.value ==
+                                                  'Event'
+                                              ? AppColor.buttonColor
+                                              : AppColor.textAreaColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
               ),
               SliverList(
                 delegate: SliverChildBuilderDelegate((context, index) {
-                  return buildPost();
+                  return  Container(
+                    width: double.infinity,
+                    decoration: ShapeDecoration(
+                      color: AppColor.backgroundColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                    ),
+                    child: Obx(
+                          () => IndexedStack(
+                        index: [
+                          'Memorial',
+                          'Post',
+                          'Event',
+                        ].indexOf(controller.accountSelectedTab.value),
+                        children: [
+                          MemorialView(),
+                          PostView(),
+                          EventListView(),
+                        ],
+                      ),
+                    ),
+                  );
                 }, childCount: 20),
               ),
             ],
@@ -115,143 +282,3 @@ class AccountView extends StatelessWidget {
   }
 }
 
-Widget buildPost() {
-  return Container(
-    height: 545.h,
-    color: AppColor.backgroundColor,
-    child: Column(
-      children: [
-        ListTile(
-          leading: CircleAvatar(
-            radius: 25.r,
-            backgroundColor: Colors.grey[300],
-            child: ClipOval(
-              child: Image.asset(
-                ImageAssets.person,
-                fit: BoxFit.cover,
-                width: double.infinity,
-                height: double.infinity,
-              ),
-            ),
-          ),
-          title: Text(
-            'Dummy Name',
-            style: TextStyle(
-              color: AppColor.textBlackColor,
-              fontWeight: FontWeight.bold,
-              fontSize: 18.sp,
-            ),
-          ),
-          subtitle: Row(
-            children: [
-              Text('abc_xyz', style: TextStyle(color: AppColor.greyTone)),
-              SizedBox(width: 10.w),
-              Text('3s', style: TextStyle(color: AppColor.greyTone)),
-            ],
-          ),
-          trailing: Icon(Icons.more_vert),
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: 20.w),
-          child: Text(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet venenatis metus',
-            style: TextStyle(color: AppColor.greyTone, fontSize: 16.sp),
-          ),
-        ),
-        SizedBox(height: 10.h),
-        Image.asset(ImageAssets.person),
-        SizedBox(height: 10.h),
-        Row(
-          children: [
-            SizedBox(width: 20.w),
-            SvgPicture.asset(ImageAssets.love, width: 30.w, height: 30.h),
-            SizedBox(width: 5.w),
-            Text('121', style: TextStyle(color: AppColor.greyTone)),
-            SizedBox(width: 20.w),
-            GestureDetector(
-              // onTap: () {
-              //   Get.to(Comment(), transition: Transition.rightToLeft);
-              // },
-              child: SvgPicture.asset(
-                ImageAssets.achieve,
-                width: 30.w,
-                height: 30.h,
-              ),
-            ),
-            SizedBox(width: 5.w),
-            Text('34', style: TextStyle(color: AppColor.greyTone)),
-            SizedBox(width: 20.w),
-            SvgPicture.asset(ImageAssets.share, width: 35.w, height: 35.h),
-            SizedBox(width: 5.w),
-            Text('Share', style: TextStyle(color: AppColor.greyTone)),
-          ],
-        ),
-        SizedBox(height: 15.h),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CircleAvatar(
-                radius: 20.r,
-                backgroundColor: Colors.grey[300],
-                child: ClipOval(
-                  child: Image.asset(
-                    ImageAssets.person,
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                    height: double.infinity,
-                  ),
-                ),
-              ),
-              SizedBox(width: 10.w),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          'Maryam',
-                          style: TextStyle(
-                            color: AppColor.darkGrey,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16.sp,
-                          ),
-                        ),
-                        SizedBox(width: 10.w),
-                        Text(
-                          '3s',
-                          style: TextStyle(
-                            color: AppColor.greyTone,
-                            fontSize: 16.sp,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                      style: TextStyle(
-                        color: AppColor.greyTone,
-                        fontSize: 14.sp,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 25.h),
-                child: Column(
-                  children: [
-                    Image.asset(ImageAssets.heart, width: 20.w, height: 20.h),
-                    Text('2', style: TextStyle(color: AppColor.greyTone)),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    ),
-  );
-}
