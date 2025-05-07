@@ -7,6 +7,7 @@ class HomeController extends GetxController {
   var isFabMenuOpen = false.obs;
   RxBool isselected=false.obs;
   var selectedreportype="".obs;
+  RxBool ismemorialselected=false.obs;
   Rxn<File> pickedImage = Rxn<File>();
   RxBool hasText = false.obs;
 
