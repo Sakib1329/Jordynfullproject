@@ -73,7 +73,7 @@ class Report extends StatelessWidget {
                       child: CenteredDialogWidget(
                         title: 'Post Reported',
                         subtitle: 'Sed dignissim nisl a vehicula fringilla. Nulla faucibus dui tellus, ut dignissim',
-                        imageasset: ImageAssets.post_report2,  // Use your own SVG
+                        imageasset: ImageAssets.post_report,  // Use your own SVG
                         backgroundColor: AppColor.backgroundColor,           // Custom background
                         iconBackgroundColor: Colors.transparent,
                         iconColor: AppColor.buttonColor,// Custom icon background

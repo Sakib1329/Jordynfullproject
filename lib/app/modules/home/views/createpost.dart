@@ -78,6 +78,7 @@ class Createpost extends StatelessWidget {
               ),
               InputTextWidget(
                 onChanged: (String value) {},
+                backgroundColor: Colors.transparent,
                 borderColor: Colors.transparent,
                 hintText: 'What’s in your mind',
                 hintfontSize: 20.sp,

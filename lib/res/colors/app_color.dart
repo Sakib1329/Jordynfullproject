@@ -38,7 +38,7 @@ class AppColor {
   static const Color beigeBrown = Color(0xFFC4AD8E);
   static const Color lightBeige = Color(0xFFF1E9DB);
   static const Color softBeige = Color(0xFFE6DBC9);
-
+  static const Color deepred =Color(0xFFCA0000);
 
 
 }

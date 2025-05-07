@@ -12,12 +12,16 @@ class CenteredDialogWidget extends StatelessWidget {
   final Color iconColor;
   final double borderRadius;
   final VoidCallback? onClose;
+  final double horizontalpadding;
+  final double verticalpadding;
 
   const CenteredDialogWidget({
     Key? key,
     required this.title,
     required this.subtitle,
     required this.imageasset,
+    this.horizontalpadding=24.0,
+    this.verticalpadding=16.0,
     this.backgroundColor = const Color(0xFFF8F3E8), // Light beige background
     this.iconBackgroundColor = const Color(0xFFA9BE8B), // Sage green circle
     this.iconColor = Colors.white,
@@ -28,7 +32,7 @@ class CenteredDialogWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+      margin: EdgeInsets.symmetric(horizontal: horizontalpadding, vertical: verticalpadding),
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(borderRadius),
@@ -54,7 +58,7 @@ class CenteredDialogWidget extends StatelessWidget {
                 shape: BoxShape.circle,
               ),
               child: Center(
-                child: Image.asset(
+                child: SvgPicture.asset(
                   imageasset,
 
                   color: iconColor,

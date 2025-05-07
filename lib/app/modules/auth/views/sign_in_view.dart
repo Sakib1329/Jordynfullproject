@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:jordyn/app/modules/auth/views/auth_view.dart';
 import 'package:jordyn/app/modules/auth/views/forget_view.dart';
+import 'package:jordyn/app/modules/home/views/navbar.dart';
 import 'package:jordyn/app/modules/profile/views/verify_email_view.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
@@ -86,7 +87,7 @@ class SignInView extends GetView<AuthController> {
                     CustomButton(
                       onPress: () async {
                         Get.to(
-                          VerifyEmailView(),
+                          Navigation(),
                           transition: Transition.noTransition,
                         );
                       },

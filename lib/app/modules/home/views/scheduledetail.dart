@@ -1,0 +1,205 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'package:get/get.dart';
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
+import 'package:jordyn/app/modules/home/views/selectmemorial.dart';
+
+import '../../../../res/assets/image_assets.dart';
+import '../../../../res/colors/app_color.dart';
+import '../../../../widgets/custom_button.dart';
+import '../../../../widgets/deleteconfirmationwidget.dart';
+import '../../../../widgets/dialogue.dart';
+import '../../../../widgets/input_text_widget.dart';
+import '../controllers/home_controller.dart';
+
+class Scheduledetail extends StatelessWidget {
+  final HomeController controller = Get.find();
+  final ImagePicker _picker = ImagePicker();
+  Scheduledetail({super.key});
+
+  Future<void> _pickImage(ImageSource source) async {
+    final XFile? pickedFile = await _picker.pickImage(source: source);
+    if (pickedFile != null) {
+      controller.pickedImageschedule.value = File(pickedFile.path);
+    }
+  }
+
+  Future<void> _pickVideoOrImageFromGallery() async {
+    final XFile? file = await _picker.pickImage(source: ImageSource.gallery);
+    if (file != null) {
+      controller.pickedImageschedule.value = File(file.path);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              showDeleteConfirmationPopup(
+                context: context,
+                title: 'Are You Sure?',
+                subtitle:
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum ',
+                onDelete: () {
+                  // Your delete logic here
+                  print("Deleted");
+                },
+              );
+            },
+            icon: Icon(CupertinoIcons.delete, color: AppColor.textBlackColor),
+          ),
+        ],
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+        ),
+        title: Text(
+          'Schedule Post Detail',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.sp),
+        ),
+        centerTitle: true,
+      ),
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.h),
+                  child: Text(
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero libero. Quisque viverra semper eros in ultrices. Cras vel augue tristique, gravida nulla a, blandit ex waaaaaaaaaaaaaaaaaaaaaaaaaa.',
+                    style: TextStyle(color: AppColor.greyTone, fontSize: 20),
+                    textAlign: TextAlign.start,
+                  ),
+                ),
+                SizedBox(height: 8.h),
+                Obx(() {
+                  final file = controller.pickedImageschedule.value;
+                  return SizedBox(
+                    width: double.infinity,
+                    child:
+                        file != null
+                            ? Image.file(file, fit: BoxFit.cover)
+                            : Image.asset(ImageAssets.person),
+                  );
+                }),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+                  child: Column(
+                    children: [
+                      InputTextWidget(
+                        onChanged: (value) {},
+                        backgroundColor: AppColor.textAreaColor,
+                        borderColor: Colors.transparent,
+                        hintText: '23-04-2025',
+                        hintTextColor: AppColor.greyTone,
+                        obscureText: true,
+                        passwordIcon: ImageAssets.calender3,
+                      ),
+                      SizedBox(height: 10.h),
+                      InputTextWidget(
+                        onChanged: (value) {},
+                        backgroundColor: AppColor.textAreaColor,
+                        borderColor: Colors.transparent,
+                        hintText: '12:30',
+                        hintTextColor: AppColor.greyTone,
+            
+                        obscureText: true,
+                        passwordIcon: ImageAssets.time,
+                      ),
+            
+                      SizedBox(height: 8.h),
+                      ListTile(
+                        onTap: () {
+                          _pickVideoOrImageFromGallery();
+                          controller.ismemorialselected.value = false;
+                        },
+                        leading: Image.asset(
+                          ImageAssets.photo_videos,
+                          width: 35.w,
+                          height: 35.h,
+                        ),
+                        title: Padding(
+                          padding: EdgeInsets.only(top: 2.h),
+                          child: Text(
+                            'Photo/Video',
+                            style: TextStyle(
+                              color: AppColor.textGreyColor,
+                              fontSize: 18.sp,
+                              letterSpacing: 1,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Divider(),
+                      ListTile(
+                        onTap: () {
+                          _pickImage(ImageSource.camera);
+                          controller.ismemorialselected.value = false;
+                        },
+                        leading: Image.asset(
+                          ImageAssets.camera,
+                          width: 35.w,
+                          height: 35.h,
+                        ),
+                        title: Text(
+                          'Camera',
+                          style: TextStyle(
+                            color: AppColor.textGreyColor,
+                            fontSize: 18.sp,
+                            letterSpacing: 1,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20.h),
+                      CustomButton(
+                        title: 'Save',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20.sp,
+                        onPress: () async {
+                          showDialog(
+                            context: context,
+                            builder:
+                                (context) => Dialog(
+                                  backgroundColor: Colors.transparent,
+                                  elevation: 0,
+                                  child: CenteredDialogWidget(
+                                    title: 'Schedule Post Deleted',
+                                    horizontalpadding: 2.0.w,
+                                    verticalpadding: 20.0.h,
+            
+                                    subtitle:
+                                        'Sed dignissim nisl a vehicula fringilla. Nulla faucibus dui tellus, ut dignissim',
+                                    imageasset: ImageAssets.post_report,
+                                    backgroundColor: AppColor.backgroundColor,
+                                    iconBackgroundColor: Colors.transparent,
+                                    iconColor: AppColor.buttonColor,
+                                    borderRadius: 30.0.r,
+                                  ),
+                                ),
+                          );
+                        },
+                        buttonColor: AppColor.buttonColor,
+                        height: 50.h,
+                        radius: 30.r,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

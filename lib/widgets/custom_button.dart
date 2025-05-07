@@ -67,6 +67,9 @@ class CustomButton extends StatelessWidget {
               color: buttonColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(radius),
+                side: BorderSide(
+                  color: borderColor,
+                )
               ),
               // shadows: [
               //   BoxShadow(

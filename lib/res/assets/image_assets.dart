@@ -45,6 +45,8 @@ class ImageAssets {
   static const String memory = 'assets/images/memory/memory.png';
   static const String post_report2 = 'assets/images/post_report.png';
   static const String person = 'assets/images/home/person.png';
+  static const String person2 = 'assets/images/home/person2.png';
+  static const String flower = 'assets/images/home/flower.png';
   static const String memorial = 'assets/images/home/memorial.png';
   static const String camera = 'assets/images/home/camera.png';
   static const String photo_videos = 'assets/images/home/photo_videos.png';
@@ -69,6 +71,9 @@ class ImageAssets {
 
   static const String avater = 'assets/images/profile/avater.png';
   static const String camera1 = 'assets/images/profile/camera.png';
+  static const String calender2 = 'assets/images/home/calender.png';
+  static const String calender3 = 'assets/images/home/calender3.png';
+  static const String time = 'assets/images/home/time.png';
   static const String fb = 'assets/images/profile/fb.png';
   static const String insta = 'assets/images/profile/insta.png';
   static const String thread = 'assets/images/profile/thread.png';

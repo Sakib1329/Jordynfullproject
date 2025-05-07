@@ -9,6 +9,7 @@ class HomeController extends GetxController {
   var selectedreportype="".obs;
   RxBool ismemorialselected=false.obs;
   Rxn<File> pickedImage = Rxn<File>();
+  Rxn<File> pickedImageschedule = Rxn<File>();
   RxBool hasText = false.obs;
 
   void onTextChanged(String value) {

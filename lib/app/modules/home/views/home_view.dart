@@ -4,9 +4,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:jordyn/app/modules/home/views/comment.dart';
 import 'package:jordyn/app/modules/home/views/createpost.dart';
+import 'package:jordyn/app/modules/home/views/schedule.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 import '../../../../res/assets/image_assets.dart';
 import '../controllers/home_controller.dart';
+import '../widget/scanner.dart';
 
 class HomeView extends StatelessWidget {
   final HomeController controller = Get.put(HomeController());
@@ -22,6 +24,7 @@ class HomeView extends StatelessWidget {
           CustomScrollView(
             slivers: [
               SliverAppBar(
+                automaticallyImplyLeading: false,
                 floating: true,
                 snap: true,
                 backgroundColor: AppColor.backgroundColor,
@@ -40,7 +43,7 @@ class HomeView extends StatelessWidget {
                       'Welcome back to Inspirit!',
                       style: TextStyle(
                         color: AppColor.textGreyColor,
-                        fontSize: 16.sp,
+                        fontSize: 15.sp,
                         letterSpacing: 1,
                       ),
                     ),
@@ -49,13 +52,32 @@ class HomeView extends StatelessWidget {
                 actions: [
                   Row(
                     children: [
-                      Image.asset(ImageAssets.scanner, width: 32.w),
+                      GestureDetector(
+                          onTap: (){
+
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => QRScannerWidget(
+                                  onDetect: (code) {
+                                    // handle scanned code
+                                    print('QR Code: $code');
+                                    Navigator.pop(context); // Optional: close scanner after scan
+                                  },
+                                ),
+                              ),
+                            );
+                          },
+                          child: Image.asset(ImageAssets.scanner, width: 25.w)),
                       SizedBox(width: 15.w),
-                      Image.asset(ImageAssets.schedule, width: 32.w),
+                      GestureDetector(onTap:(){
+                        Get.to(Schedule(),transition: Transition.rightToLeft);
+
+                      },child: Image.asset(ImageAssets.schedule, width: 25.w)),
                       SizedBox(width: 15.w),
                       Container(
-                        height: 45.h,
-                        width: 45.w,
+                        height: 40.h,
+                        width: 40.w,
                         decoration: BoxDecoration(
                           color: Color(0xFFEAE0D0),
                           borderRadius: BorderRadius.circular(12.r),
@@ -162,7 +184,7 @@ class HomeView extends StatelessWidget {
 
   Widget buildPost() {
     return Container(
-      height: 545.h,
+      width: double.infinity,
       color: AppColor.backgroundColor,
       child: Column(
         children: [
@@ -203,9 +225,12 @@ class HomeView extends StatelessWidget {
               style: TextStyle(color: AppColor.greyTone, fontSize: 16.sp),
             ),
           ),
-          SizedBox(height: 10.h),
-          Image.asset(ImageAssets.person),
-          SizedBox(height: 10.h),
+          SizedBox(height: 5.h),
+          Container(
+              height: 300.h,
+              width: double.infinity,
+              child: Image.asset(ImageAssets.person)),
+          SizedBox(height: 2.h),
           Row(
             children: [
               SizedBox(width: 20.w),
@@ -228,7 +253,7 @@ class HomeView extends StatelessWidget {
               Text('Share', style: TextStyle(color: AppColor.greyTone)),
             ],
           ),
-          SizedBox(height: 15.h),
+          SizedBox(height: 10.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: Row(
