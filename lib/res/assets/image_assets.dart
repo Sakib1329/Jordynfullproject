@@ -13,8 +13,6 @@ class ImageAssets {
 
 
   static const String apple = 'assets/icons/apple.svg';
-  static const String back_arrow = 'assets/icons/back_arrow.svg';
-  static const String email = 'assets/icons/email.svg';
   static const String facebook = 'assets/icons/facebook.svg';
   static const String google = 'assets/icons/google.svg';
   static const String love = 'assets/icons/home/love.svg';
@@ -59,9 +57,25 @@ class ImageAssets {
   static const String splash = 'assets/images/splash.png';
   static const String onboarding = 'assets/images/onboarding.png';
   static const String onboard_logo = 'assets/images/onboard_logo.png';
-// Create Profile
+// Create Account
   static const String obsecure = 'assets/images/auth/obsecure.png';
-  static const String auth_logo = 'assets/images/auth/aut_logo.png';
+  static const String auth_logo = 'assets/images/auth/auth_logo.png';
+  static const String email = 'assets/images/auth/email.png';
+  static const String pass = 'assets/images/auth/pass.png';
+  static const String back_arrow = 'assets/images/back_arrow.png';
+
+
+// Create Profile
+
+  static const String avater = 'assets/images/profile/avater.png';
+  static const String camera1 = 'assets/images/profile/camera.png';
+  static const String fb = 'assets/images/profile/fb.png';
+  static const String insta = 'assets/images/profile/insta.png';
+  static const String thread = 'assets/images/profile/thread.png';
+  static const String x = 'assets/images/profile/x.png';
+
+
+
 
 
 

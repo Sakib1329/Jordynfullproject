@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:jordyn/app/modules/auth/views/sign_in_view.dart';
+import 'package:jordyn/app/modules/auth/views/auth_view.dart';
+import 'package:jordyn/app/modules/auth/views/forget_view.dart';
 import 'package:jordyn/app/modules/profile/views/verify_email_view.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
@@ -10,8 +11,8 @@ import 'package:jordyn/widgets/custom_button.dart';
 import 'package:jordyn/widgets/input_text_widget.dart';
 import '../controllers/auth_controller.dart';
 
-class AuthView extends GetView<AuthController> {
-  AuthView({super.key});
+class SignInView extends GetView<AuthController> {
+  SignInView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ class AuthView extends GetView<AuthController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Create New Account',
+                          'Sign In',
                           style: TextStyle(
                             color: AppColor.buttonColor,
                             fontSize: 24.sp,
@@ -73,7 +74,7 @@ class AuthView extends GetView<AuthController> {
                     InputTextWidget(
                       onChanged: (e) {},
                       borderColor: AppColor.backgroundColor,
-                      hintText: 'Create your password',
+                      hintText: 'Enter your password',
                       leadingIcon: ImageAssets.pass,
                       leading: true,
                       obscureText: true,
@@ -81,38 +82,48 @@ class AuthView extends GetView<AuthController> {
                       height: 48.h,
                       width: 390.w,
                     ),
-                    SizedBox(height: 15.h),
-                    InputTextWidget(
-                      onChanged: (e) {},
-                      borderColor: AppColor.backgroundColor,
-                      hintText: 'Confirm your password',
-                      leadingIcon: ImageAssets.pass,
-                      leading: true,
-                      obscureText: true,
-                      textColor: AppColor.textGreyColor2,
-                      height: 48.h,
-                      width: 390.w,
-                    ),
-                    SizedBox(height: 25.h),
+                    SizedBox(height: 65.h),
                     CustomButton(
                       onPress: () async {
                         Get.to(
-                              () => VerifyEmailView(),
-                          arguments: {'origin': 'AuthView'},
+                          VerifyEmailView(),
                           transition: Transition.noTransition,
                         );
                       },
-                      title: 'SIGN UP',
+                      title: 'Sign In',
                       height: 48.h,
                       width: 390.w,
                       radius: 100,
+                    ),
+                    SizedBox(height: 10.h),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            Get.to(
+                              ForgetView(),
+                              transition: Transition.noTransition,
+                            );
+                          },
+                          child: Text(
+                            'Forgot Password?',
+                            style: TextStyle(
+                              color: AppColor.greyTone,
+                              fontSize: 14.sp,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(height: 20.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Already have an account?',
+                          'Don’t have an account?',
                           style: TextStyle(
                             color: AppColor.textGreyColor3,
                             fontSize: 16.sp,
@@ -123,12 +134,12 @@ class AuthView extends GetView<AuthController> {
                         InkWell(
                           onTap: () {
                             Get.to(
-                              SignInView(),
+                              AuthView(),
                               transition: Transition.noTransition,
                             );
                           },
                           child: Text(
-                            ' Sign In',
+                            ' Sign Up',
                             style: TextStyle(
                               color: AppColor.buttonColor,
                               fontSize: 16.sp,

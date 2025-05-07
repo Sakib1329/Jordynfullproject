@@ -20,7 +20,7 @@ class CustomButton extends StatelessWidget {
     this.loading = false,
     this.center = true,
     this.icon = false,
-    this.image = ImageAssets.share,
+    this.image = ImageAssets.fb,
     required this.title,
     this.fontSize = 18,
     this.fontWeight = FontWeight.w500,
@@ -68,14 +68,14 @@ class CustomButton extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(radius),
               ),
-              shadows: [
-                BoxShadow(
-                  color: borderShadowColor,
-                  blurRadius: 4,
-                  offset: Offset(0, 0),
-                  spreadRadius: 0,
-                ),
-              ],
+              // shadows: [
+              //   BoxShadow(
+              //     color: borderShadowColor,
+              //     blurRadius: 4,
+              //     offset: Offset(0, 0),
+              //     spreadRadius: 0,
+              //   ),
+              // ],
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -127,11 +127,10 @@ class CustomButton extends StatelessWidget {
                           if (icon)
                             Padding(
                               padding: const EdgeInsets.only(left: 8.0),
-                              child: SvgPicture.asset(
+                              child: Image.asset(
                                 image,
                                 width: imageWeight,
                                 height: imageHeight,
-                                color: textColor,
                               ),
                             ),
                           const SizedBox(width: 20),
