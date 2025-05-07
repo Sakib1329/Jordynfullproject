@@ -10,6 +10,7 @@ import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 import 'package:jordyn/widgets/custom_button.dart';
 import 'package:jordyn/widgets/input_text_widget.dart';
+import '../../home/views/navbar.dart';
 import '../controllers/auth_controller.dart';
 
 class SignInView extends GetView<AuthController> {
@@ -88,7 +89,10 @@ class SignInView extends GetView<AuthController> {
                       onPress: () async {
                         Get.to(
                           Navigation(),
-                          transition: Transition.noTransition,
+
+                          transition: Transition.rightToLeft
+                          ,
+
                         );
                       },
                       title: 'Sign In',

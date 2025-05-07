@@ -10,7 +10,16 @@ class ExploreController extends GetxController {
   var selectedreportype="".obs;
   Rxn<File> pickedImage = Rxn<File>();
   RxBool hasText = false.obs;
+  final RxString selectedTab = 'User'.obs; // Default tab
 
+  void setSelectedTab(String tab) {
+    selectedTab.value = tab;
+  }
+  final RxString accountSelectedTab = 'Post'.obs; // Default tab
+
+  void setAccountSelectedTab(String tab) {
+    accountSelectedTab.value = tab;
+  }
   void onTextChanged(String value) {
     hasText.value = value.trim().isNotEmpty;
   }

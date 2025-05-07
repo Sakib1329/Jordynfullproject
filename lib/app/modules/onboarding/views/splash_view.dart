@@ -12,9 +12,7 @@ class SplashView extends GetView {
   Widget build(BuildContext context) {
     Future.delayed(const Duration(seconds: 3), () {
       try {
-
-        Get.offAll(() => const OnboardingView(),transition: Transition.fadeIn);
-
+        Get.off(() => const OnboardingView(),transition: Transition.fadeIn);
       } catch (e) {
         Get.snackbar(
           'Navigation Error',

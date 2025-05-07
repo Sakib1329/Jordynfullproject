@@ -23,8 +23,10 @@ class ImageAssets {
 
 
 
+  // explore
 
-
+  static const String cross = 'assets/icons/explore/cross.svg';
+  static const String memory1 = 'assets/icons/explore/memory.svg';
 
 
    // home*
@@ -79,8 +81,23 @@ class ImageAssets {
   static const String thread = 'assets/images/profile/thread.png';
   static const String x = 'assets/images/profile/x.png';
 
+// Explore
 
-
+  static const String avater1 = 'assets/images/explore/avater1.png';
+  static const String avater2 = 'assets/images/explore/avater2.png';
+  static const String background = 'assets/images/explore/background.png';
+  static const String explorecalender = 'assets/images/explore/explorecalender.png';
+  static const String calender1 = 'assets/images/explore/calender1.png';
+  static const String clock = 'assets/images/explore/clock.png';
+  static const String delete = 'assets/images/explore/delete.png';
+  static const String edit = 'assets/images/explore/edit.png';
+  static const String image = 'assets/images/explore/image.png';
+  static const String location = 'assets/images/explore/location.png';
+  static const String report = 'assets/images/explore/report.png';
+  static const String search = 'assets/images/explore/search.png';
+  static const String share1 = 'assets/images/explore/share1.png';
+  static const String theme = 'assets/images/explore/theme.png';
+  static const String uplosd = 'assets/images/explore/uplosd.png';
 
 
 

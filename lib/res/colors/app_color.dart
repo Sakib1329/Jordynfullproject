@@ -26,19 +26,17 @@ class AppColor {
   static const Color black25=Color(0x40000000);
   static const Color greyBC = Color(0xFFBCBCC0);
   static const Color darkGrey = Color(0xFF343537);
+  static const Color subTitleGrey = Color(0xFF8E8E93);
 
 
   static const Color textAreaColor = Color(0xFFE6DBC9);
-
-
-
-  static const Color textAreaColor2 = Color(0xFFE6DBC9);
-
   static const Color greyTone = Color(0xFF676360); // Solid #676360
   static const Color beigeBrown = Color(0xFFC4AD8E);
   static const Color lightBeige = Color(0xFFF1E9DB);
   static const Color softBeige = Color(0xFFE6DBC9);
+
   static const Color deepred =Color(0xFFCA0000);
+
 
 
 }
