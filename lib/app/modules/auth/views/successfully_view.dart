@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:jordyn/app/modules/home/views/home_view.dart';
+import 'package:jordyn/app/modules/home/views/navbar.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 
 class SuccessfullyView extends GetView {
@@ -10,7 +10,7 @@ class SuccessfullyView extends GetView {
   Widget build(BuildContext context) {
     Future.delayed(const Duration(seconds: 3), () {
       try {
-        Get.offAll(() => HomeView(),transition: Transition.noTransition);
+        Get.offAll(() => Navigation(),transition: Transition.noTransition);
       } catch (e) {
         Get.snackbar(
           'Navigation Error',

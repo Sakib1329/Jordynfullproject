@@ -9,9 +9,6 @@ import 'package:jordyn/widgets/custom_button.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../auth/controllers/auth_controller.dart';
 
-// Assuming SignInView is defined in your project
-import 'package:jordyn/app/modules/auth/views/sign_in_view.dart'; // Adjust path as needed
-
 class VerifyEmailView extends GetView<AuthController> {
   VerifyEmailView({super.key});
 
@@ -71,7 +68,7 @@ class VerifyEmailView extends GetView<AuthController> {
                       ],
                     ),
                     SizedBox(height: 20.h),
-                    Container(
+                    SizedBox(
                       height: 48.h,
                       width: 390.w,
                       child: PinCodeTextField(

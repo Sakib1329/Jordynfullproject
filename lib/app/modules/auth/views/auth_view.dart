@@ -11,7 +11,7 @@ import 'package:jordyn/widgets/input_text_widget.dart';
 import '../controllers/auth_controller.dart';
 
 class AuthView extends GetView<AuthController> {
-  AuthView({super.key});
+   AuthView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -143,7 +143,7 @@ class AuthView extends GetView<AuthController> {
                     Text(
                       'or',
                       style: TextStyle(
-                        color: AppColor.greyTone,
+                        color: AppColor.greyTone1,
                         fontSize: 20.sp,
                         fontFamily: 'Nunito',
                         fontWeight: FontWeight.w500,
@@ -153,7 +153,7 @@ class AuthView extends GetView<AuthController> {
                     Text(
                       'Continue with',
                       style: TextStyle(
-                        color: AppColor.greyTone,
+                        color: AppColor.greyTone1,
                         fontSize: 16.sp,
                         fontFamily: 'Nunito',
                         fontWeight: FontWeight.w400,

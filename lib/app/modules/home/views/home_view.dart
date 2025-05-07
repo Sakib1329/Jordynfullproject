@@ -16,6 +16,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
+
       body: Stack(
         children: [
           CustomScrollView(

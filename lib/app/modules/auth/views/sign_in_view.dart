@@ -109,7 +109,7 @@ class SignInView extends GetView<AuthController> {
                           child: Text(
                             'Forgot Password?',
                             style: TextStyle(
-                              color: AppColor.greyTone,
+                              color: AppColor.greyTone1,
                               fontSize: 14.sp,
                               fontFamily: 'Poppins',
                               fontWeight: FontWeight.w300,
@@ -154,7 +154,7 @@ class SignInView extends GetView<AuthController> {
                     Text(
                       'or',
                       style: TextStyle(
-                        color: AppColor.greyTone,
+                        color: AppColor.greyTone1,
                         fontSize: 20.sp,
                         fontFamily: 'Nunito',
                         fontWeight: FontWeight.w500,
@@ -164,7 +164,7 @@ class SignInView extends GetView<AuthController> {
                     Text(
                       'Continue with',
                       style: TextStyle(
-                        color: AppColor.greyTone,
+                        color: AppColor.greyTone1,
                         fontSize: 16.sp,
                         fontFamily: 'Nunito',
                         fontWeight: FontWeight.w400,
