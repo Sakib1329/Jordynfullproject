@@ -14,7 +14,8 @@ class Memory extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('OnboardingView'),
+        automaticallyImplyLeading: false,
+        title: const Text('My Memory'),
         centerTitle: true,
       ),
       body: const Center(
