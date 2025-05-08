@@ -13,6 +13,7 @@ class ImageAssets {
 
 
   static const String apple = 'assets/icons/apple.svg';
+  static const String cross3 = 'assets/icons/cross.svg';
   static const String facebook = 'assets/icons/facebook.svg';
   static const String google = 'assets/icons/google.svg';
   static const String love = 'assets/icons/home/love.svg';
@@ -51,6 +52,11 @@ class ImageAssets {
   static const String flower = 'assets/images/home/flower.png';
   static const String memorial = 'assets/images/home/memorial.png';
   static const String camera = 'assets/images/home/camera.png';
+  static const String msgnumber = 'assets/images/chat/msgnumber.png';
+  static const String cross1 = 'assets/images/chat/cross1.png';
+  static const String microphone = 'assets/images/chat/microphone.png';
+  static const String gallery = 'assets/images/chat/gallery.png';
+  static const String text = 'assets/images/chat/text.png';
   static const String photo_videos = 'assets/images/home/photo_videos.png';
 //=======
 

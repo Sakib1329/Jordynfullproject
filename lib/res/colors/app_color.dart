@@ -36,7 +36,7 @@ class AppColor {
   static const Color softBeige = Color(0xFFE6DBC9);
 
   static const Color deepred =Color(0xFFCA0000);
-
+  static const Color vividBlue = Color(0xFF1D85FF);
 
 
 }

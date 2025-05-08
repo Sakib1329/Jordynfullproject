@@ -1,23 +1,56 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class ChatController extends GetxController {
 
+RxBool isrequestsent=false.obs;
+RxString searchQuery = ''.obs;
+var message = ''.obs;
+RxBool isuserblocked=false.obs;
+RxBool istapped=false.obs;
+Rxn<File> pickedImage = Rxn<File>();
+RxSet<String> selectedUsers = <String>{}.obs;
+final textController = TextEditingController();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+void toggleSelection(String name) {
+  if (selectedUsers.contains(name)) {
+    selectedUsers.remove(name);
+  } else {
+    selectedUsers.add(name);
   }
+}
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
+// Check if a user is selected
+bool isSelected(String name) {
+  return selectedUsers.contains(name);
+}
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
+@override
+void onClose() {
+  textController.dispose();
+  super.onClose();
+}
 
-  void increment() => count.value++;
+final List<String> names = [
+  'Livia Workman',
+  'Ethan Rivers',
+  'Mila Greene',
+  'Noah Carter',
+  'Ava Brooks',
+  'Lucas Hale',
+  'Emma Stone',
+  'Liam Woods',
+  'Olivia West',
+  'Mason Hayes',
+  'Isla Knight',
+  'Elijah Ford',
+  'Chloe Ray',
+  'Logan King',
+  'Sofia Lane',
+  'James Cole',
+  'Amelia Blake',
+];
+
 }
