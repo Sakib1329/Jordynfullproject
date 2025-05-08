@@ -20,7 +20,7 @@ class OnboardingView extends GetView<OnboardingController> {
         return Scaffold(
           body: Stack(
             children: [
-              Container(
+              SizedBox(
                 height: double.infinity,
                 width: double.infinity,
                 child: Image.asset(ImageAssets.onboarding, fit: BoxFit.fill),

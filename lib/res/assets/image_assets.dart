@@ -7,7 +7,6 @@ class ImageAssets {
 
   static const String floting = 'assets/icons/floting.svg';
   static const String notification = 'assets/icons/notification.svg';
-  static const String calender = 'assets/icons/calender.svg';
 
   static const String achieve = 'assets/icons/home/achieve.svg';
 
@@ -88,6 +87,7 @@ class ImageAssets {
   static const String background = 'assets/images/explore/background.png';
   static const String explorecalender = 'assets/images/explore/explorecalender.png';
   static const String calender1 = 'assets/images/explore/calender1.png';
+  static const String calender = 'assets/images/explore/calender.png';
   static const String clock = 'assets/images/explore/clock.png';
   static const String delete = 'assets/images/explore/delete.png';
   static const String edit = 'assets/images/explore/edit.png';
@@ -98,6 +98,18 @@ class ImageAssets {
   static const String share1 = 'assets/images/explore/share1.png';
   static const String theme = 'assets/images/explore/theme.png';
   static const String uplosd = 'assets/images/explore/uplosd.png';
+
+
+
+  //Memory
+
+
+  static const String memoryBackground = 'assets/images/memory/memoryBackground.png';
+  static const String flower1 = 'assets/images/memory/flower.png';
+  static const String menu = 'assets/images/memory/menu.png';
+  static const String candle = 'assets/images/memory/candle.png';
+  static const String image1 = 'assets/images/memory/image.png';
+  static const String border = 'assets/images/memory/border.png';
 
 
 

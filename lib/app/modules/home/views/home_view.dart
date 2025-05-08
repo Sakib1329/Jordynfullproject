@@ -267,7 +267,7 @@ class HomeView extends StatelessWidget {
             ),
           ),
           SizedBox(height: 5.h),
-          Container(
+          SizedBox(
               height: 300.h,
               width: double.infinity,
               child: Image.asset(ImageAssets.person)),

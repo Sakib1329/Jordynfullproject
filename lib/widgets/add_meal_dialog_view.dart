@@ -8,10 +8,10 @@ class AddMealDialogView extends StatelessWidget {
   final String title;
 
   const AddMealDialogView({
-    Key? key,
+    super.key,
     required this.onConfirm,
     this.title = 'Enter meal name',
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

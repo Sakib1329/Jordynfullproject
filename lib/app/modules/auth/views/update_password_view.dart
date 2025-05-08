@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:jordyn/app/modules/auth/views/auth_view.dart';
-import 'package:jordyn/app/modules/auth/views/forget_view.dart';
-import 'package:jordyn/app/modules/profile/views/verify_email_view.dart';
+import 'package:jordyn/app/modules/auth/views/verify_email_view.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 import 'package:jordyn/widgets/custom_button.dart';
@@ -12,7 +9,7 @@ import 'package:jordyn/widgets/input_text_widget.dart';
 import '../controllers/auth_controller.dart';
 
 class UpdatePasswordView extends GetView<AuthController> {
-  UpdatePasswordView({super.key});
+  const UpdatePasswordView({super.key});
 
   @override
   Widget build(BuildContext context) {

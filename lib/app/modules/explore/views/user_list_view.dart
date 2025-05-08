@@ -3,12 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:jordyn/app/modules/explore/views/account_view.dart';
-import 'package:jordyn/app/modules/home/widget/bottomsheet.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 
 class UserListView extends GetView {
-   UserListView({super.key});
+   const UserListView({super.key});
   @override
   Widget build(BuildContext context) {
     return Padding(

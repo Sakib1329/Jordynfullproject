@@ -5,16 +5,14 @@ import 'package:get/get.dart';
 import 'package:jordyn/app/modules/auth/views/auth_view.dart';
 import 'package:jordyn/app/modules/auth/views/forget_view.dart';
 import 'package:jordyn/app/modules/home/views/navbar.dart';
-import 'package:jordyn/app/modules/profile/views/verify_email_view.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 import 'package:jordyn/widgets/custom_button.dart';
 import 'package:jordyn/widgets/input_text_widget.dart';
-import '../../home/views/navbar.dart';
 import '../controllers/auth_controller.dart';
 
 class SignInView extends GetView<AuthController> {
-  SignInView({super.key});
+  const SignInView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -90,9 +88,7 @@ class SignInView extends GetView<AuthController> {
                         Get.to(
                           Navigation(),
 
-                          transition: Transition.rightToLeft
-                          ,
-
+                          transition: Transition.rightToLeft,
                         );
                       },
                       title: 'Sign In',

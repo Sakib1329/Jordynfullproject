@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:jordyn/app/modules/auth/views/sign_in_view.dart';
-import 'package:jordyn/app/modules/profile/views/verify_email_view.dart';
+import 'package:jordyn/app/modules/auth/views/verify_email_view.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 import 'package:jordyn/widgets/custom_button.dart';
@@ -11,7 +11,7 @@ import 'package:jordyn/widgets/input_text_widget.dart';
 import '../controllers/auth_controller.dart';
 
 class AuthView extends GetView<AuthController> {
-   AuthView({super.key});
+   const AuthView({super.key});
 
   @override
   Widget build(BuildContext context) {

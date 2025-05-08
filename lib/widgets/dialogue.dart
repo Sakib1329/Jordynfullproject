@@ -16,7 +16,7 @@ class CenteredDialogWidget extends StatelessWidget {
   final double verticalpadding;
 
   const CenteredDialogWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
     required this.imageasset,
@@ -27,7 +27,7 @@ class CenteredDialogWidget extends StatelessWidget {
     this.iconColor = Colors.white,
     this.borderRadius = 32.0,
     this.onClose,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

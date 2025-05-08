@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:jordyn/app/modules/explore/views/event_list_view.dart';
-import 'package:jordyn/app/modules/explore/views/memorial_view.dart';
-import 'package:jordyn/app/modules/explore/views/memory_list_view.dart';
+import 'package:jordyn/app/modules/memory/views/memorial_view.dart';
 import 'package:jordyn/app/modules/explore/views/post_view.dart';
-import 'package:jordyn/app/modules/explore/views/user_list_view.dart';
 import 'package:jordyn/widgets/custom_button.dart';
 import '../../../../res/assets/image_assets.dart';
 import '../../../../res/colors/app_color.dart';
@@ -174,7 +171,8 @@ class AccountView extends StatelessWidget {
                                     'Post',
                                     style: TextStyle(
                                       color:
-                                          controller.accountSelectedTab.value == 'Post'
+                                          controller.accountSelectedTab.value ==
+                                                  'Post'
                                               ? AppColor.buttonColor
                                               : AppColor.textGreyColor3,
                                       fontSize: 16,
@@ -185,14 +183,15 @@ class AccountView extends StatelessWidget {
                                     ),
                                   ),
                                   SizedBox(height: 5.h),
-                                  Container(
+                                  SizedBox(
                                     height: 2.h,
                                     width: 130.w,
                                     child: Divider(
                                       height: 5.h,
                                       thickness: 2.h,
                                       color:
-                                          controller.accountSelectedTab.value == 'Post'
+                                          controller.accountSelectedTab.value ==
+                                                  'Post'
                                               ? AppColor.buttonColor
                                               : AppColor.textAreaColor,
                                     ),
@@ -224,7 +223,7 @@ class AccountView extends StatelessWidget {
                                     ),
                                   ),
                                   SizedBox(height: 5.h),
-                                  Container(
+                                  SizedBox(
                                     height: 2.h,
                                     width: 130.w,
                                     child: Divider(
@@ -249,7 +248,7 @@ class AccountView extends StatelessWidget {
               ),
               SliverList(
                 delegate: SliverChildBuilderDelegate((context, index) {
-                  return  Container(
+                  return Container(
                     width: double.infinity,
                     decoration: ShapeDecoration(
                       color: AppColor.backgroundColor,
@@ -258,17 +257,13 @@ class AccountView extends StatelessWidget {
                       ),
                     ),
                     child: Obx(
-                          () => IndexedStack(
+                      () => IndexedStack(
                         index: [
                           'Memorial',
                           'Post',
                           'Event',
                         ].indexOf(controller.accountSelectedTab.value),
-                        children: [
-                          MemorialView(),
-                          PostView(),
-                          EventListView(),
-                        ],
+                        children: [MemorialView(), PostView(), EventListView()],
                       ),
                     ),
                   );
@@ -281,4 +276,3 @@ class AccountView extends StatelessWidget {
     );
   }
 }
-

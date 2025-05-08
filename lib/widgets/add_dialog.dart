@@ -18,10 +18,10 @@ class AddDialog extends StatelessWidget {
   final String title;
 
   const AddDialog({
-    Key? key,
+    super.key,
     required this.onConfirm,
     this.title = 'Enter serving or portion',
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:jordyn/app/modules/auth/controllers/auth_controller.dart';
 import 'package:jordyn/app/modules/auth/views/plan_view.dart';
-import 'package:jordyn/app/modules/profile/views/verify_email_view.dart';
-import 'package:jordyn/app/modules/profile/controllers/profile_controller.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 import 'package:jordyn/widgets/custom_button.dart';
-import 'package:jordyn/widgets/input_text_widget.dart';
 
-class LinkSocialView extends GetView<ProfileController> {
-  LinkSocialView({super.key});
+class LinkSocialView extends GetView<AuthController> {
+  const LinkSocialView({super.key});
 
   @override
   Widget build(BuildContext context) {

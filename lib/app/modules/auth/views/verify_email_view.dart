@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:jordyn/app/modules/auth/views/create_profile_view.dart';
 import 'package:jordyn/app/modules/auth/views/update_password_view.dart';
-import 'package:jordyn/app/modules/profile/views/profile.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 import 'package:jordyn/widgets/custom_button.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import '../../auth/controllers/auth_controller.dart';
+import '../controllers/auth_controller.dart';
 
 class VerifyEmailView extends GetView<AuthController> {
   VerifyEmailView({super.key});
@@ -150,7 +150,7 @@ class VerifyEmailView extends GetView<AuthController> {
                             final origin = Get.arguments?['origin'] as String?;
                             if (origin == 'AuthView') {
                               Get.to(
-                                    () => Profile(),
+                                    () => CreateProfileView(),
                                 transition: Transition.noTransition,
                               );
                             } else if (origin == 'ForgetView') {
@@ -161,7 +161,7 @@ class VerifyEmailView extends GetView<AuthController> {
                             } else {
                               // Fallback route
                               Get.to(
-                                    () => Profile(),
+                                    () => CreateProfileView(),
                                 transition: Transition.noTransition,
                               );
                             }

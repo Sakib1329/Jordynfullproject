@@ -10,7 +10,7 @@ class SuccessfullyView extends GetView {
   Widget build(BuildContext context) {
     Future.delayed(const Duration(seconds: 3), () {
       try {
-        Get.offAll(() => Navigation(),transition: Transition.noTransition);
+        Get.offAll(() => Navigation(), transition: Transition.noTransition);
       } catch (e) {
         Get.snackbar(
           'Navigation Error',
@@ -20,7 +20,7 @@ class SuccessfullyView extends GetView {
       }
     });
     return Scaffold(
-      body:  Padding(
+      body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -43,7 +43,6 @@ class SuccessfullyView extends GetView {
                 fontSize: 16.sp,
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w400,
-
               ),
               textAlign: TextAlign.center,
             ),

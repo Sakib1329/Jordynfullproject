@@ -10,6 +10,13 @@ class AuthController extends GetxController {
   var isOtpVerified = false.obs;
   Timer? _timer;
 
+
+  Rx<String?> selectedPlan = Rx<String?>(null);
+
+  void selectPlan(String plan) {
+    selectedPlan.value = plan;
+  }
+  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();

@@ -1,12 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
-import 'package:jordyn/app/modules/home/views/selectmemorial.dart';
 
 import '../../../../res/assets/image_assets.dart';
 import '../../../../res/colors/app_color.dart';
@@ -14,7 +12,6 @@ import '../../../../widgets/custom_button.dart';
 import '../../../../widgets/dialogue.dart';
 import '../../../../widgets/input_text_widget.dart';
 import '../controllers/home_controller.dart';
-
 import '../widget/custombutton.dart';
 
 class Createpost extends StatelessWidget {
@@ -91,76 +88,13 @@ class Createpost extends StatelessWidget {
               ),
               Obx(() {
                 final file = controller.pickedImage.value;
-                return controller.ismemorialselected==true
-                    ?file==null
-                    ?Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 20,),
-                  child: Container(
-                    height: 110,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(
-                          color: AppColor.softBeige,
-                        )
-                    ),
-                    child: Row(
-                      children: [
-                        Padding(
-                            padding: const EdgeInsets.only(left: 10.0),
-                            child: Container(
-                              height: 80,
-                              width: 80,
-                              decoration: BoxDecoration(
-                                color: Colors.black,
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              clipBehavior: Clip.antiAlias, // Enables clipping
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(12),
-                                child: Image.asset(
-                                  ImageAssets.person,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            )
-                        ),
-                        SizedBox(width: 10,),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Sophia Anderson',
-                              style: TextStyle(color: AppColor.greyTone, fontSize: 22,fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              'December 12th, 1992',
-                              style: TextStyle(color: AppColor.greyTone, fontSize: 20,fontWeight: FontWeight.w300),
-                            ),
-                            Text(
-                              'June 1st, 2024',
-                              style: TextStyle(color: AppColor.greyTone, fontSize: 20,fontWeight: FontWeight.w300),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                )
-                    :Container(
-                height: 300.h,
-                width: double.infinity,
-                child: file != null
-                ? Image.file(file, fit: BoxFit.cover)
-                    : null,
-                )
-                    :Container(
+                return Container(
                   height: 300.h,
                   width: double.infinity,
                   child: file != null
                       ? Image.file(file, fit: BoxFit.cover)
-                      : null,
-                ) ;
+                      : Image.asset(ImageAssets.person, fit: BoxFit.cover),
+                );
               }),
             ],
           ),
@@ -170,13 +104,9 @@ class Createpost extends StatelessWidget {
             bottom: 10.h,
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
-              color: AppColor.backgroundColor,
               child: Column(
                 children: [
                   ListTile(
-                    onTap: (){Get.to(Selectmemorial(),transition: Transition.rightToLeft);
-                    controller.pickedImage.value=null;
-                    },
                     leading: Image.asset(ImageAssets.memorial, width: 40.w, height: 40.h),
                     title: Padding(
                       padding: EdgeInsets.only(top: 8.h),
@@ -192,10 +122,7 @@ class Createpost extends StatelessWidget {
                   ),
                   Divider(),
                   ListTile(
-                    onTap:(){ _pickVideoOrImageFromGallery();
-                    controller.ismemorialselected.value=false;
-                    },
-
+                    onTap: _pickVideoOrImageFromGallery,
                     leading: Image.asset(ImageAssets.photo_videos, width: 35.w, height: 35.h),
                     title: Padding(
                       padding: EdgeInsets.only(top: 2.h),
@@ -211,11 +138,7 @@ class Createpost extends StatelessWidget {
                   ),
                   Divider(),
                   ListTile(
-                    onTap: () { _pickImage(ImageSource.camera);
-                    controller.ismemorialselected.value=false;
-
-                    },
-
+                    onTap: () => _pickImage(ImageSource.camera),
                     leading: Image.asset(ImageAssets.camera, width: 35.w, height: 35.h),
                     title: Text(
                       'Camera',

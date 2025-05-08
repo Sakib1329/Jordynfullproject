@@ -170,7 +170,7 @@ class Comment extends StatelessWidget {
                               onTap: () {
                                 Navigator.pop(context);
                                 // Add your action here
-                                print('Report tapped');
+                                // print('Report tapped');
                               },
                             ),
                             secondOption: ReportOption(
@@ -179,7 +179,7 @@ class Comment extends StatelessWidget {
                               onTap: () {
                                 Navigator.pop(context);
                                 // Add your action here
-                                print('Block tapped');
+                                // print('Block tapped');
                               },
                             ),
                           );

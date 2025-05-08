@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jordyn/app/modules/auth/views/create_profile_view.dart';
 import 'package:jordyn/app/modules/chat/views/chat.dart';
 import 'package:jordyn/app/modules/explore/views/explore.dart';
 import 'package:jordyn/app/modules/home/views/home_view.dart';
@@ -47,7 +48,7 @@ class Navigation extends StatelessWidget {
                 controller.currentIndex.value = index;
                 controller.isFabMenuOpen.value = false;
               },
-              child: Container(
+              child: SizedBox(
                 width: 65,
                 height: 62,
                 child: Column(

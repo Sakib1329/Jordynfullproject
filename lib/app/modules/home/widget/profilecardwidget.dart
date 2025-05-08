@@ -10,15 +10,15 @@ class ProfileCardWidget extends StatelessWidget {
   final String subtitle2;
   final String subtitle2IconPath;
 
-  const ProfileCardWidget({
-    Key? key,
+   const ProfileCardWidget({
+    super.key,
     required this.imagePath,
     required this.title,
     this.showSubtitle1 = false,
     this.subtitle1,
     required this.subtitle2,
     required this.subtitle2IconPath,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

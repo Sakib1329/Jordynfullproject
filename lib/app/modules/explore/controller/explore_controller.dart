@@ -23,4 +23,7 @@ class ExploreController extends GetxController {
   void onTextChanged(String value) {
     hasText.value = value.trim().isNotEmpty;
   }
+
+
+
 }
