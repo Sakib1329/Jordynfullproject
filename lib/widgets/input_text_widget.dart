@@ -8,6 +8,8 @@ class InputTextWidget extends StatefulWidget {
   const InputTextWidget({
     super.key,
     this.hintText = '',
+    this.backicontap2,
+    this.backicontap,
     required this.onChanged,
     this.onTap,
     this.validator,
@@ -15,6 +17,7 @@ class InputTextWidget extends StatefulWidget {
     this.readOnly = false,
     this.leading = false,
     this.backIcon = false,
+    this.backIcon2 = false,
     this.leadingIcon = ImageAssets.email,
     this.imageIcon = '',
     this.contentPadding = true,
@@ -59,10 +62,10 @@ class InputTextWidget extends StatefulWidget {
       obscureWidth;
   final Color borderColor, textColor, hintTextColor, backgroundColor;
   final double height, width, horizontal, vertical;
-  final bool obscureText, readOnly, contentPadding, leading, clock, scan,backIcon;
+  final bool obscureText, readOnly, contentPadding, leading, clock, scan,backIcon,backIcon2;
   final String passwordIcon, leadingIcon,imageIcon;
   final ValueChanged<String> onChanged;
-  final VoidCallback? onTap;
+  final VoidCallback? onTap,backicontap,backicontap2;
   final String? Function(String?)? validator;
   final FontWeight fontWeight, hintfontWeight;
   final int maxLines;
@@ -161,8 +164,21 @@ class _InputTextWidgetState extends State<InputTextWidget> {
             if (widget.backIcon)
               Padding(
                 padding: const EdgeInsets.only(left: 10.0),
-                child: SvgPicture.asset(
-                  widget.imageIcon,
+                child: GestureDetector(
+                  onTap: widget.backicontap,
+                  child: SvgPicture.asset(
+                    widget.imageIcon,
+                  ),
+                ),
+              ),
+            if (widget.backIcon2)
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: GestureDetector(
+                  onTap: widget.backicontap2,
+                  child: SvgPicture.asset(
+                    widget.imageIcon,
+                  ),
                 ),
               ),
           ],
