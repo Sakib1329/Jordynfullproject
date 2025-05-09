@@ -7,6 +7,11 @@ class ProfileController extends GetxController {
   void selectPlan(String plan) {
     selectedPlan.value = plan;
   }
+  var isSwitched = false.obs;
+
+  void toggleSwitch(bool value) {
+    isSwitched.value = value;
+  }
   final count = 0.obs;
   @override
   void onInit() {

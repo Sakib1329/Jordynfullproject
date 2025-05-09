@@ -57,6 +57,24 @@ class ImageAssets {
   static const String microphone = 'assets/images/chat/microphone.png';
   static const String gallery = 'assets/images/chat/gallery.png';
   static const String text = 'assets/images/chat/text.png';
+  static const String group = 'assets/images/chat/group.png';
+  static const String reject = 'assets/images/chat/reject.png';
+  static const String accept = 'assets/images/chat/accept.png';
+  static const String blocklist = 'assets/images/chat/blocklist.png';
+  static const String familytree = 'assets/images/chat/familytree.png';
+  static const String socialmedia = 'assets/images/chat/socialmedia.png';
+  static const String subscription = 'assets/images/chat/subscription.png';
+  static const String notification1 = 'assets/images/chat/notification.png';
+  static const String changepass = 'assets/images/chat/changepass.png';
+  static const String feedback = 'assets/images/chat/feedback.png';
+  static const String aboutapp = 'assets/images/chat/aboutapp.png';
+  static const String privacy = 'assets/images/chat/privacy.png';
+  static const String termsofuse = 'assets/images/chat/termsofuse.png';
+  static const String logout = 'assets/images/chat/logout.png';
+  static const String deleteaccount = 'assets/images/chat/deleteaccount.png';
+
+
+
   static const String photo_videos = 'assets/images/home/photo_videos.png';
 //=======
 
@@ -86,6 +104,12 @@ class ImageAssets {
   static const String insta = 'assets/images/profile/insta.png';
   static const String thread = 'assets/images/profile/thread.png';
   static const String x = 'assets/images/profile/x.png';
+  static const String privacydetails = 'assets/images/profile/privacydetails.png';
+  static const String termsdetails = 'assets/images/profile/termsdetails.png';
+  static const String appdetails = 'assets/images/profile/appdetails.png';
+  static const String deletedetails1 = 'assets/images/profile/deletedetails1.png';
+  static const String deletedetails2 = 'assets/images/profile/deletedetails2.png';
+  static const String img = 'assets/images/profile/img.png';
 
 // Explore
 

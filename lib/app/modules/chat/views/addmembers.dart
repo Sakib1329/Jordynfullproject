@@ -13,13 +13,14 @@ import '../../../../widgets/dialogue.dart';
 import '../../../../widgets/input_text_widget.dart';
 import '../controllers/chat_controller.dart';
 
-class Creategroup extends StatelessWidget {
+class Addmembers extends StatelessWidget {
   final ChatController controller = Get.find();
-  Creategroup({super.key});
+  Addmembers({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         leading: IconButton(
           onPressed: () => Get.back(),
@@ -27,7 +28,7 @@ class Creategroup extends StatelessWidget {
 
         ),
         title: Text(
-          'Create Group',
+          'Add user',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
         ),
         centerTitle: true,
@@ -79,7 +80,7 @@ class Creategroup extends StatelessWidget {
               SizedBox(
                 height: 0.7.sh,
                 child: ListView.builder(
-                  
+
                   itemCount: filteredNames.length,
                   itemBuilder: (context, index) {
                     return Column(
@@ -96,7 +97,7 @@ class Creategroup extends StatelessWidget {
               fontWeight: FontWeight.bold,
               fontSize: 20.sp,
               onPress: () async {
-Get.to(Creategoup1(),transition: Transition.rightToLeft);
+                Get.to(Creategoup1(),transition: Transition.rightToLeft);
               },
               buttonColor: AppColor.buttonColor,
               height: 50.h,
@@ -112,13 +113,12 @@ Get.to(Creategoup1(),transition: Transition.rightToLeft);
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 5.h),
       child: ListTile(
-
         leading: CircleAvatar(
           radius: 28.r,
           backgroundColor: Colors.grey[300],
           child: ClipOval(
             child: Image.asset(
-              ImageAssets.person2,
+              ImageAssets.person,
               fit: BoxFit.cover,
               width: double.infinity,
               height: double.infinity,

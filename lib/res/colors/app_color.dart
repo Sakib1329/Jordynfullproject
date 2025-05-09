@@ -37,6 +37,6 @@ class AppColor {
 
   static const Color deepred =Color(0xFFCA0000);
   static const Color vividBlue = Color(0xFF1D85FF);
-
+  static const Color mutedBlueGrey = Color(0xFF767D95);
 
 }

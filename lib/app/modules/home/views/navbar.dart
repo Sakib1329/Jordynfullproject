@@ -5,6 +5,7 @@ import 'package:jordyn/app/modules/explore/views/explore.dart';
 import 'package:jordyn/app/modules/home/views/home_view.dart';
 import 'package:jordyn/app/modules/memory/views/memory.dart';
 import 'package:jordyn/app/modules/profile/views/profile.dart';
+import 'package:jordyn/app/modules/profile/views/settings.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 
@@ -23,7 +24,7 @@ class Navigation extends StatelessWidget {
         Explore(),
         Memory(),
         Chat(),
-        Profile()
+        Settings()
       ][controller.currentIndex.value]),
 
       bottomNavigationBar: Obx(() => Container(

@@ -48,8 +48,23 @@ class Scheduledetail extends StatelessWidget {
                 subtitle:
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum ',
                 onDelete: () {
-                  // Your delete logic here
-                  print("Deleted");
+                  showDialog(
+                    context: context,
+                    builder: (context) => Dialog(
+                      backgroundColor: Colors.transparent,
+                      elevation: 0,
+                      child: CenteredDialogWidget(
+                        title: 'Schedule Post Deleted',
+                        subtitle: 'Sed dignissim nisl a vehicula fringilla. Nulla faucibus dui tellus, ut dignissim',
+                        imageasset: ImageAssets.post_report,  // Use your own SVG
+                        backgroundColor: AppColor.backgroundColor,           // Custom background
+                        iconBackgroundColor: Colors.transparent,
+                        iconColor: AppColor.buttonColor,// Custom icon background
+                        borderRadius: 30.0,
+                        horizontalpadding: 2.w,// Custom corner radius
+                      ),
+                    ),
+                  );
                 },
               );
             },

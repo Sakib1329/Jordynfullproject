@@ -43,7 +43,9 @@ void showDeleteConfirmationPopup({
               Row(
                 children: [
                   Expanded(
-                    child: CustomButton(onPress: ()async{}, title: 'Cancel',
+                    child: CustomButton(onPress: ()async{
+                      Navigator.of(context).pop();
+                    }, title: 'Cancel',
                       borderColor: AppColor.greyTone,
                       radius: 12,
                       height: 40,
@@ -55,7 +57,10 @@ void showDeleteConfirmationPopup({
                   ),
                   SizedBox(width: 12.w),
                   Expanded(
-                    child: CustomButton(onPress: ()async{}, title: 'Delete',
+                    child: CustomButton(onPress: ()async{
+                      Navigator.of(context).pop(); // Close the dialog first
+                      onDelete();
+                    }, title: 'Delete',
       borderColor: AppColor.deepred,
                       radius: 12,
 

@@ -13,7 +13,7 @@ RxBool istapped=false.obs;
 Rxn<File> pickedImage = Rxn<File>();
 RxSet<String> selectedUsers = <String>{}.obs;
 final textController = TextEditingController();
-
+var selectedGroupType = 'Public'.obs;
 void toggleSelection(String name) {
   if (selectedUsers.contains(name)) {
     selectedUsers.remove(name);

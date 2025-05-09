@@ -1,0 +1,136 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../../../../res/assets/image_assets.dart';
+import '../../../../res/colors/app_color.dart';
+import '../../chat/controllers/chat_controller.dart';
+
+class Blocklistpage extends StatelessWidget {
+  final ChatController controller = Get.find();
+   Blocklistpage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+        ),
+        title: Text(
+          'Block List',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+        ),
+        centerTitle: true,
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding:  EdgeInsets.symmetric(horizontal: 20.w),
+          child: Column(
+            children: [
+              Text(
+                'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
+                style: TextStyle(
+                  color: AppColor.textGreyColor,
+                  fontSize: 20.sp,
+                  fontFamily: 'Schuyler',
+                ),
+                textAlign: TextAlign.start,
+              ),
+              SizedBox(height: 20.h,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Blocked Users',
+                    style: TextStyle(
+                      color: AppColor.textBlackColor,
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+
+                  ),
+                  SizedBox(width: 5.w,),
+                  Text(
+                    '(12)',
+                    style: TextStyle(
+                      color: AppColor.textGreyColor,
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w300,
+                    ),
+
+                  ),
+
+                ],
+              ),
+              SizedBox(height: 10.h,),
+              ListView.builder(
+                padding: EdgeInsets.zero,
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: 6,
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      _buildUserTile(controller.names[index]),
+                    ],
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+  Widget _buildUserTile(String name) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 5.h),
+
+      child: ListTile(
+        contentPadding: EdgeInsets.zero,
+        leading: CircleAvatar(
+          radius: 28.r,
+          backgroundColor: Colors.grey[300],
+          child: ClipOval(
+            child: Image.asset(
+              ImageAssets.person2,
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: double.infinity,
+            ),
+          ),
+        ),
+        title: Text(
+          name,
+          style: TextStyle(
+            color: AppColor.darkGrey,
+            fontWeight: FontWeight.w600,
+            fontSize: 17.sp,
+          ),
+        ),
+        subtitle: Text(
+          '_${name}',
+          style: TextStyle(
+            color: AppColor.greyTone,
+            fontSize: 15.sp,
+
+          ),
+        ),
+        trailing:Text(
+          'Unblock',
+          style: TextStyle(
+              color: AppColor.greyTone,
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w400
+          ),
+        ),
+      ),
+    );
+  }
+}
