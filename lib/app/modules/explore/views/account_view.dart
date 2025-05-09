@@ -10,9 +10,9 @@ import '../../../../res/colors/app_color.dart';
 import '../controller/explore_controller.dart';
 
 class AccountView extends StatelessWidget {
-  final String? arguments;
+  final List<String?> arguments;
   final ExploreController controller = Get.find();
-  AccountView({super.key, this.arguments});
+  AccountView({super.key,required this.arguments});
   @override
   Widget build(BuildContext context) {
     Get.lazyPut(() => ExploreController());
@@ -85,38 +85,43 @@ class AccountView extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 10.w),
-                      Text(
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet venenatis metus',
-                        style: TextStyle(
-                          color: AppColor.greyTone,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      SizedBox(height: 20.w),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      if(arguments[0]=='othersprofile')
+                      Column(
                         children: [
-                          CustomButton(
-                            onPress: () async {},
-                            title: 'Message',
-                            width: 160.w,
-                            height: 42.h,
-                            radius: 120.r,
-                            borderColor: AppColor.greyTone,
-                            buttonColor: AppColor.backgroundColor,
-                            textColor: AppColor.greyTone,
+                          SizedBox(height: 10.w),Text(
+                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet venenatis metus',
+                            style: TextStyle(
+                              color: AppColor.greyTone,
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
-                          CustomButton(
-                            onPress: () async {},
-                            title: 'Add Friend',
-                            width: 160.w,
-                            height: 42.h,
-                            radius: 120.r,
+                          SizedBox(height: 20.w),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              CustomButton(
+                                onPress: () async {},
+                                title: 'Message',
+                                width: 160.w,
+                                height: 42.h,
+                                radius: 120.r,
+                                borderColor: AppColor.greyTone,
+                                buttonColor: AppColor.backgroundColor,
+                                textColor: AppColor.greyTone,
+                              ),
+                              CustomButton(
+                                onPress: () async {},
+                                title: 'Add Friend',
+                                width: 160.w,
+                                height: 42.h,
+                                radius: 120.r,
+                              ),
+                            ],
                           ),
                         ],
                       ),
+
                       SizedBox(height: 20.w),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -267,7 +272,7 @@ class AccountView extends StatelessWidget {
                         children: [
                           MemorialView(),
                           PostView(),
-                          EventListView(arguments: arguments),
+                          EventListView(arguments: arguments[0]),
                         ],
                       ),
                     ),

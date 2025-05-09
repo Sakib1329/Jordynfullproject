@@ -6,7 +6,6 @@ import 'package:jordyn/app/modules/memory/views/memory_history_view.dart';
 import '../../../../res/assets/image_assets.dart';
 import '../../../../res/colors/app_color.dart';
 import '../../../../widgets/custom_button.dart';
-import '../../../../widgets/dialogue.dart';
 import '../../../../widgets/input_text_widget.dart';
 
 class CreateCondolencesView extends StatelessWidget {

@@ -11,6 +11,7 @@ class UserListView extends GetView {
   const UserListView({super.key, this.arguments});
   @override
   Widget build(BuildContext context) {
+    final String myprofile = 'othersprofile';
     return Padding(
       padding: EdgeInsets.only(bottom: 0.09.sh),
       child: SingleChildScrollView(
@@ -20,7 +21,7 @@ class UserListView extends GetView {
             GestureDetector(
               onTap: () {
                 Get.to(
-                  AccountView(arguments: arguments),
+                  AccountView(arguments: [arguments,myprofile]),
                   transition: Transition.rightToLeft,
                 );
               },
