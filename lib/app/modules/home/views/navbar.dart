@@ -19,9 +19,13 @@ class Navigation extends StatelessWidget {
     return Scaffold(
       body: Obx(
         () =>
-            [HomeView(), Explore(), Memory(), Chat(), Profile()][controller
-                .currentIndex
-                .value],
+            [
+              HomeView(),
+              Explore(arguments: 'ExporleView'),
+              Memory(arguments: 'EventView'),
+              Chat(),
+              Profile(arguments: 'EventView'),
+            ][controller.currentIndex.value],
       ),
 
       bottomNavigationBar: Obx(

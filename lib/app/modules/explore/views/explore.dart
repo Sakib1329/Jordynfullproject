@@ -10,8 +10,9 @@ import '../../../../res/colors/app_color.dart';
 import '../controller/explore_controller.dart';
 
 class Explore extends StatelessWidget {
+  final String? arguments;
   final ExploreController controller = Get.find();
-  Explore({super.key});
+  Explore({super.key, this.arguments});
   @override
   Widget build(BuildContext context) {
     Get.lazyPut(() => ExploreController());
@@ -67,7 +68,7 @@ class Explore extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Obx(
-                                () => GestureDetector(
+                            () => GestureDetector(
                               onTap: () {
                                 controller.setSelectedTab('User');
                               },
@@ -77,9 +78,9 @@ class Explore extends StatelessWidget {
                                     'User',
                                     style: TextStyle(
                                       color:
-                                      controller.selectedTab.value == 'User'
-                                          ? AppColor.buttonColor
-                                          : AppColor.textGreyColor3,
+                                          controller.selectedTab.value == 'User'
+                                              ? AppColor.buttonColor
+                                              : AppColor.textGreyColor3,
                                       fontSize: 16,
                                       fontFamily: 'Montserrat',
                                       fontWeight: FontWeight.w400,
@@ -95,9 +96,9 @@ class Explore extends StatelessWidget {
                                       height: 5.h,
                                       thickness: 2.h,
                                       color:
-                                      controller.selectedTab.value == 'User'
-                                          ? AppColor.buttonColor
-                                          : AppColor.textAreaColor,
+                                          controller.selectedTab.value == 'User'
+                                              ? AppColor.buttonColor
+                                              : AppColor.textAreaColor,
                                     ),
                                   ),
                                 ],
@@ -105,7 +106,7 @@ class Explore extends StatelessWidget {
                             ),
                           ),
                           Obx(
-                                () => GestureDetector(
+                            () => GestureDetector(
                               onTap: () {
                                 controller.setSelectedTab('Memory');
                               },
@@ -115,9 +116,10 @@ class Explore extends StatelessWidget {
                                     'Memory',
                                     style: TextStyle(
                                       color:
-                                      controller.selectedTab.value == 'Memory'
-                                          ? AppColor.buttonColor
-                                          : AppColor.textGreyColor3,
+                                          controller.selectedTab.value ==
+                                                  'Memory'
+                                              ? AppColor.buttonColor
+                                              : AppColor.textGreyColor3,
                                       fontSize: 16,
                                       fontFamily: 'Montserrat',
                                       fontWeight: FontWeight.w400,
@@ -133,9 +135,10 @@ class Explore extends StatelessWidget {
                                       height: 5.h,
                                       thickness: 2.h,
                                       color:
-                                      controller.selectedTab.value == 'Memory'
-                                          ? AppColor.buttonColor
-                                          : AppColor.textAreaColor,
+                                          controller.selectedTab.value ==
+                                                  'Memory'
+                                              ? AppColor.buttonColor
+                                              : AppColor.textAreaColor,
                                     ),
                                   ),
                                 ],
@@ -143,7 +146,7 @@ class Explore extends StatelessWidget {
                             ),
                           ),
                           Obx(
-                                () => GestureDetector(
+                            () => GestureDetector(
                               onTap: () {
                                 controller.setSelectedTab('Event');
                               },
@@ -153,9 +156,10 @@ class Explore extends StatelessWidget {
                                     'Event',
                                     style: TextStyle(
                                       color:
-                                      controller.selectedTab.value == 'Event'
-                                          ? AppColor.buttonColor
-                                          : AppColor.textGreyColor3,
+                                          controller.selectedTab.value ==
+                                                  'Event'
+                                              ? AppColor.buttonColor
+                                              : AppColor.textGreyColor3,
                                       fontSize: 16,
                                       fontFamily: 'Montserrat',
                                       fontWeight: FontWeight.w400,
@@ -171,9 +175,10 @@ class Explore extends StatelessWidget {
                                       height: 5.h,
                                       thickness: 2.h,
                                       color:
-                                      controller.selectedTab.value == 'Event'
-                                          ? AppColor.buttonColor
-                                          : AppColor.textAreaColor,
+                                          controller.selectedTab.value ==
+                                                  'Event'
+                                              ? AppColor.buttonColor
+                                              : AppColor.textAreaColor,
                                     ),
                                   ),
                                 ],
@@ -195,16 +200,16 @@ class Explore extends StatelessWidget {
                           ),
                         ),
                         child: Obx(
-                              () => IndexedStack(
+                          () => IndexedStack(
                             index: [
                               'User',
                               'Memory',
                               'Event',
                             ].indexOf(controller.selectedTab.value),
                             children: [
-                              UserListView(),
+                              UserListView(arguments: arguments),
                               MemorialView(),
-                              EventListView(),
+                              EventListView(arguments: arguments),
                             ],
                           ),
                         ),

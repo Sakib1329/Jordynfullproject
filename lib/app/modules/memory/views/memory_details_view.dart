@@ -2,13 +2,114 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:jordyn/app/modules/memory/controllers/memory_controller.dart';
+import 'package:jordyn/app/modules/memory/views/edit_info_memory_view.dart';
 import 'package:jordyn/app/modules/memory/views/memory_history_view.dart';
+import 'package:jordyn/app/modules/memory/views/qr_code_view.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 import 'package:jordyn/widgets/custom_button.dart';
+import 'package:jordyn/widgets/deleteconfirmationwidget.dart';
 
 class MemoryDetailsView extends GetView<MemoryController> {
   const MemoryDetailsView({super.key});
+
+  void _showPopupMenu(BuildContext context, Offset position) {
+    final RenderBox overlay =
+        Overlay.of(context).context.findRenderObject()! as RenderBox;
+    showMenu(
+      context: context,
+      position: RelativeRect.fromLTRB(
+        position.dx,
+        position.dy + 20,
+        overlay.size.width - position.dx,
+        overlay.size.height - position.dy,
+      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+      color: AppColor.backgroundColor,
+      constraints: const BoxConstraints(maxWidth: 144, minWidth: 144),
+      items: [
+        PopupMenuItem(
+          height: 60,
+          padding: EdgeInsets.zero,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 144, minWidth: 144),
+            child: ClipRect(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  InkWell(
+                    child: Text(
+                      'QR Code',
+                      style: TextStyle(
+                        color: AppColor.textGreyColor,
+                        fontSize: 14.sp,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.pop(context);
+                      Get.to(QrCodeView(), transition: Transition.noTransition);
+                    },
+                  ),
+                  const SizedBox(height: 15),
+                  InkWell(
+                    child: Text(
+                      'Edit Info',
+                      style: TextStyle(
+                        color: AppColor.textGreyColor,
+                        fontSize: 14.sp,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.pop(context);
+                      Get.to(
+                        EditInfoMemoryView(),
+                        transition: Transition.noTransition,
+                      );
+                      // Get.dialog(
+                      //   RenameDialog(
+                      //     title: 'Rename the note?',
+                      //     onConfirm: () {},
+                      //   ),
+                      // );
+                    },
+                  ),
+                  const SizedBox(height: 15),
+                  InkWell(
+                    child: Text(
+                      'Delete Person',
+                      style: TextStyle(
+                        color: AppColor.textGreyColor,
+                        fontSize: 14.sp,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.pop(context);
+                      showDeleteConfirmationPopup(
+                        context: context,
+                        title: 'Are You Sure?',
+                        subtitle:
+                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum ',
+                        onDelete: () {
+                          // Your delete logic here
+                          // print("Deleted");
+                        }, arguments: 'MemoryView'
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +146,12 @@ class MemoryDetailsView extends GetView<MemoryController> {
               Positioned(
                 top: 75.h,
                 right: 20.w,
-                child: Image.asset(ImageAssets.menu),
+                child: GestureDetector(
+                  onTapDown: (details) {
+                    _showPopupMenu(context, details.globalPosition);
+                  },
+                  child: Image.asset(ImageAssets.menu),
+                ),
               ),
               Positioned(
                 top: 200.h,
@@ -93,17 +199,30 @@ class MemoryDetailsView extends GetView<MemoryController> {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    Row(children: [
-
-                      Image.asset(ImageAssets.candle,width: 185.w,height: 200.h,),
-                      Image.asset(ImageAssets.flower1,width: 185.w,height: 200.h,),
-                    ],),
+                    Row(
+                      children: [
+                        Image.asset(
+                          ImageAssets.candle,
+                          width: 185.w,
+                          height: 200.h,
+                        ),
+                        Image.asset(
+                          ImageAssets.flower1,
+                          width: 185.w,
+                          height: 200.h,
+                        ),
+                      ],
+                    ),
                     SizedBox(height: 50.h),
                     CustomButton(
                       onPress: () async {
-                        Get.to(MemoryHistoryView(), transition: Transition.noTransition);
+                        Get.to(
+                          MemoryHistoryView(),
+                          transition: Transition.noTransition,
+                        );
                       },
-                      title: 'View Obituary',fontSize: 16.w,
+                      title: 'View Obituary',
+                      fontSize: 16.w,
                       fontWeight: FontWeight.w600,
                       fontFamily: 'Poppins',
                       textColor: AppColor.buttonColor,

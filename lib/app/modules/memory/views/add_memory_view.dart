@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'dart:io';
-import 'package:image_picker/image_picker.dart';
 import 'package:jordyn/app/modules/memory/controllers/memory_controller.dart';
 import 'package:jordyn/app/modules/memory/views/memory_history_view.dart';
 import '../../../../res/assets/image_assets.dart';
@@ -13,15 +11,9 @@ import '../../../../widgets/input_text_widget.dart';
 
 class AddMemoryView extends StatelessWidget {
   final MemoryController controller = Get.find();
-  final ImagePicker _picker = ImagePicker();
   AddMemoryView({super.key});
 
-  Future<void> _pickVideoOrImageFromGallery() async {
-    final XFile? file = await _picker.pickImage(source: ImageSource.gallery);
-    if (file != null) {
-      controller.pickedImageschedule.value = File(file.path);
-    }
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -40,104 +32,165 @@ class AddMemoryView extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Stack(
+      body:  Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.h),
+        child:Column(
         children: [
-          SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.h),
+          Expanded(
+            child: SingleChildScrollView(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
-                    style: TextStyle(
-                      color: AppColor.greyTone,
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'Montserrat',
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
+                      style: TextStyle(
+                        color: AppColor.greyTone,
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'Montserrat',
+                      ),
+                      textAlign: TextAlign.start,
                     ),
-                    textAlign: TextAlign.start,
-                  ),
-                  SizedBox(height: 15.h),
-                  InputTextWidget(
-                    onChanged: (value) {},
-                    backgroundColor: AppColor.textAreaColor,
-                    borderColor: Colors.transparent,
-                    hintText: 'Title for this memory',
-                    hintTextColor: AppColor.greyTone,
-                    passwordIcon: ImageAssets.calender3,
-                  ),
-                  SizedBox(height: 10.h),
-                  InputTextWidget(
-                    onChanged: (value) {},
-                    backgroundColor: AppColor.textAreaColor,
-                    borderColor: Colors.transparent,
-                    hintText: 'Date of memory',
-                    hintTextColor: AppColor.greyTone,
-                    passwordIcon: ImageAssets.time,
-                  ),
-                  SizedBox(height: 10.h),
-                  InputTextWidget(
-                    onChanged: (value) {},
-                    backgroundColor: AppColor.textAreaColor,
-                    borderColor: Colors.transparent,
-                    hintText: 'Description',
-                    hintTextColor: AppColor.greyTone,
-                    passwordIcon: ImageAssets.time,
-                    height: 148.h,
-                    maxLines: 10,
-                  ),
-                  SizedBox(height: 15.h),
-                  Text(
-                    'Upload Media',
-                    style: TextStyle(
-                      color: AppColor.darkGrey,
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: 'Montserrat',
+                    SizedBox(height: 15.h),
+                    InputTextWidget(
+                      onChanged: (value) {},
+                      backgroundColor: AppColor.textAreaColor,
+                      borderColor: Colors.transparent,
+                      hintText: 'Title for this memory',
+                      hintTextColor: AppColor.greyTone,
+                      backimageadd: true,
+                      backimage: ImageAssets.calender3,
                     ),
-                  ),
-                  SizedBox(height: 8.h),
-                  ListTile(
-                    onTap: () {
-                      _pickVideoOrImageFromGallery();
-                      controller.ismemorialselected.value = false;
-                    },
-                    leading: Image.asset(
-                      ImageAssets.photo_videos,
-                      width: 35.w,
-                      height: 35.h,
+                    SizedBox(height: 10.h),
+                    InputTextWidget(
+                      onChanged: (value) {},
+                      backgroundColor: AppColor.textAreaColor,
+                      borderColor: Colors.transparent,
+                      hintText: 'Date of memory',
+                      hintTextColor: AppColor.greyTone,
+                      backimageadd: true,
+                      backimage: ImageAssets.time,
                     ),
-                    title: Padding(
-                      padding: EdgeInsets.only(top: 2.h),
-                      child: Text(
-                        'Photo/Video',
-                        style: TextStyle(
-                          color: AppColor.textGreyColor,
-                          fontSize: 18.sp,
-                          letterSpacing: 1,
-                        ),
+                    SizedBox(height: 10.h),
+                    InputTextWidget(
+                      onChanged: (value) {},
+                      backgroundColor: AppColor.textAreaColor,
+                      borderColor: Colors.transparent,
+                      hintText: 'Description',
+                      hintTextColor: AppColor.greyTone,
+                      height: 148.h,
+                      maxLines: 10,
+                    ),
+                    SizedBox(height: 15.h),
+                    Padding(
+                      padding: EdgeInsets.symmetric( vertical: 20.h),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Upload Media',
+                            style: TextStyle(
+                              color: AppColor.textBlackColor,
+                              fontSize: 18.sp,
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(height: 10.h),
+                          Obx(() => SizedBox(
+                            height: 127.h, // Fixed height for the grid
+                            child: GridView.builder(
+                              scrollDirection: Axis.horizontal, // Horizontal scrolling
+                              physics: const ClampingScrollPhysics(), // Smooth horizontal scrolling
+                              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 1, // 1 row
+                                crossAxisSpacing: 5, // Adjusted to raw values for consistency
+                                mainAxisSpacing: 10,
+                                childAspectRatio: 1, // Square items
+                              ),
+                              itemCount: controller.imagePaths.length + 1, // +1 for the upload button
+                              itemBuilder: (context, index) {
+                                if (index == 0) {
+                                  // First item is the upload button
+                                  return InkWell(
+                                    onTap: () {
+                                      controller.pickVideoOrImageFromGallery();
+                                    },
+                                    child: Image.asset(
+                                      ImageAssets.upload,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  );
+                                } else {
+                                  // Display uploaded images with remove icon
+                                  final imageIndex = index - 1; // Adjust for the upload button
+                                  final imagePath = controller.imagePaths[imageIndex];
+                                  return Stack(
+                                    children: [
+                                      Image.file(
+                                        File(imagePath),
+                                        fit: BoxFit.cover,
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                        errorBuilder: (context, error, stackTrace) {
+                                          return Image.asset(
+                                            ImageAssets.upload, // Fallback if image fails to load
+                                            fit: BoxFit.cover,
+                                          );
+                                        },
+                                      ),
+                                      Positioned(
+                                        top: 5.h,
+                                        right: 5.w,
+                                        child: InkWell(
+                                          onTap: () {
+                                            controller.removeImage(imageIndex);
+                                          },
+                                          child: Image.asset(
+                                            ImageAssets.removeImage,
+                                            width: 24.w,
+                                            height: 24.h,
+                                            fit: BoxFit.contain,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                                }
+                              },
+                            ),
+                          )),
+                        ],
                       ),
                     ),
-                  ),
-                  SizedBox(height: 20.h),
-                  CustomButton(
-                    title: 'Save',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20.sp,
-                    onPress: () async {Get.to(MemoryHistoryView(),transition: Transition.noTransition);
-                    },
-                    buttonColor: AppColor.buttonColor,
-                    height: 48.h,
-                    width: double.infinity,
-                    radius: 30.r,
-                  ),
-                ],
-              ),
+                    SizedBox(height: 20.h),
+                  ],
+                ),
+
             ),
           ),
+          Column(
+            children: [
+              CustomButton(
+                title: 'Save',
+                fontWeight: FontWeight.bold,
+                fontSize: 16.sp,
+                onPress: () async {
+                  Get.to(
+                    MemoryHistoryView(),
+                    transition: Transition.noTransition,
+                  );
+                },
+                buttonColor: AppColor.buttonColor,
+                height: 48,
+                width: double.infinity,
+                radius: 30.r,
+              ),
+            ],
+          ),
+          SizedBox(height: 30.h,),
         ],
-      ),
+        ),),
     );
   }
 }

@@ -1,19 +1,19 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:jordyn/app/modules/explore/views/event_list_view.dart';
-import 'package:jordyn/app/modules/home/views/createpost.dart';
 import 'package:jordyn/app/modules/memory/controllers/memory_controller.dart';
+import 'package:jordyn/app/modules/memory/views/add_person_view.dart';
+import 'package:jordyn/app/modules/memory/views/create_event_view.dart';
 import 'package:jordyn/app/modules/memory/views/memorial_view.dart';
 import '../../../../res/colors/app_color.dart';
 
 class Memory extends StatelessWidget {
+  final String? arguments;
   final MemoryController controller = Get.find();
-  Memory({super.key});
+  Memory({super.key, this.arguments});
   @override
   Widget build(BuildContext context) {
-    Get.lazyPut(() => MemoryController());
     return ScreenUtilInit(
       designSize: const Size(430, 932),
       minTextAdapt: true,
@@ -41,13 +41,12 @@ class Memory extends StatelessWidget {
                       ),
                       SliverToBoxAdapter(
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 10,
-                          ),
+                          padding: const EdgeInsets.symmetric(vertical: 10),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Obx(() => GestureDetector(
+                              Obx(
+                                () => GestureDetector(
                                   onTap: () {
                                     controller.setSelectedTab('Memorial');
                                   },
@@ -57,9 +56,10 @@ class Memory extends StatelessWidget {
                                         'Memorial',
                                         style: TextStyle(
                                           color:
-                                          controller.selectedTab.value == 'Memorial'
-                                              ? AppColor.buttonColor
-                                              : AppColor.textGreyColor3,
+                                              controller.selectedTab.value ==
+                                                      'Memorial'
+                                                  ? AppColor.buttonColor
+                                                  : AppColor.textGreyColor3,
                                           fontSize: 16,
                                           fontFamily: 'Montserrat',
                                           fontWeight: FontWeight.w400,
@@ -75,9 +75,10 @@ class Memory extends StatelessWidget {
                                           height: 5.h,
                                           thickness: 2.h,
                                           color:
-                                          controller.selectedTab.value == 'Memorial'
-                                              ? AppColor.buttonColor
-                                              : AppColor.textAreaColor,
+                                              controller.selectedTab.value ==
+                                                      'Memorial'
+                                                  ? AppColor.buttonColor
+                                                  : AppColor.textAreaColor,
                                         ),
                                       ),
                                     ],
@@ -85,7 +86,7 @@ class Memory extends StatelessWidget {
                                 ),
                               ),
                               Obx(
-                                    () => GestureDetector(
+                                () => GestureDetector(
                                   onTap: () {
                                     controller.setSelectedTab('Event');
                                   },
@@ -95,9 +96,10 @@ class Memory extends StatelessWidget {
                                         'Event',
                                         style: TextStyle(
                                           color:
-                                          controller.selectedTab.value == 'Event'
-                                              ? AppColor.buttonColor
-                                              : AppColor.textGreyColor3,
+                                              controller.selectedTab.value ==
+                                                      'Event'
+                                                  ? AppColor.buttonColor
+                                                  : AppColor.textGreyColor3,
                                           fontSize: 16,
                                           fontFamily: 'Montserrat',
                                           fontWeight: FontWeight.w400,
@@ -113,9 +115,10 @@ class Memory extends StatelessWidget {
                                           height: 5.h,
                                           thickness: 2.h,
                                           color:
-                                          controller.selectedTab.value == 'Event'
-                                              ? AppColor.buttonColor
-                                              : AppColor.textAreaColor,
+                                              controller.selectedTab.value ==
+                                                      'Event'
+                                                  ? AppColor.buttonColor
+                                                  : AppColor.textAreaColor,
                                         ),
                                       ),
                                     ],
@@ -137,14 +140,14 @@ class Memory extends StatelessWidget {
                               ),
                             ),
                             child: Obx(
-                                  () => IndexedStack(
+                              () => IndexedStack(
                                 index: [
                                   'Memorial',
                                   'Event',
                                 ].indexOf(controller.selectedTab.value),
                                 children: [
                                   MemorialView(),
-                                  EventListView(),
+                                  EventListView(arguments: arguments),
                                 ],
                               ),
                             ),
@@ -153,82 +156,36 @@ class Memory extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Obx(() => controller.isFabMenuOpen.value
-                      ? GestureDetector(
-                    onTap: () => controller.isFabMenuOpen.value = false,
-                    child: Container(color: Colors.black54),
-                  )
-                      : SizedBox()),
-                  Obx(() => controller.isFabMenuOpen.value
-                      ? Positioned(
-                    bottom: 80.h,
-                    right: 70.w,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        _fabOption(label: 'Create Event',ontap: (){}),
-                        SizedBox(height: 12.h),
-                        _fabOption(label: 'Create Post',ontap: (){Get.to(Createpost(),transition: Transition.rightToLeft);}),
-                        SizedBox(height: 12.h),
-                        _fabOption(label: 'Create Memory',ontap: (){}),
-                      ],
-                    ),
-                  )
-                      : SizedBox()),
                 ],
               ),
             ),
           ),
-          floatingActionButton: Obx(() => Padding(
-            padding: EdgeInsets.only(right: 8.w, bottom: 8.h),
-            child: Transform.rotate(
-              angle: controller.isFabMenuOpen.value
-                  ? 45 * 3.1416 / 180
-                  : 90 * 3.1416 / 180,
-              child: FloatingActionButton(
-                onPressed: () => controller.isFabMenuOpen.toggle(),
-                backgroundColor: AppColor.beigeBrown,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.r),
-                ),
-                child: Icon(
-                  Icons.add,
-                  size: 40.sp,
-                  color: AppColor.whiteTextColor,
-                ),
-              ),
+          floatingActionButton: FloatingActionButton(
+            onPressed:
+                () => {
+                  if (controller.selectedTab.value == 'Memorial')
+                    {
+                      Get.to(
+                        AddPersonView(),
+                        transition: Transition.noTransition,
+                      ),
+                    },
+                  if (controller.selectedTab.value == 'Event')
+                    {
+                      Get.to(
+                        CreateEventView(),
+                        transition: Transition.noTransition,
+                      ),
+                    },
+                },
+            backgroundColor: AppColor.beigeBrown,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15.r),
             ),
-          )),
+            child: Icon(Icons.add, size: 40.sp, color: AppColor.whiteTextColor),
+          ),
         );
       },
-    );
-  }
-
-  Widget _fabOption({required String label,required VoidCallback? ontap}) {
-    return GestureDetector(
-      onTap: ontap,
-      child: Container(
-        width: 200.w,
-        padding: EdgeInsets.all(12.w),
-        decoration: BoxDecoration(
-          color: AppColor.backgroundColor,
-          borderRadius: BorderRadius.circular(30.r),
-          boxShadow: [
-            BoxShadow(color: Colors.black26, blurRadius: 6.r),
-          ],
-        ),
-        child: Center(
-          child: Text(
-            label,
-            style: TextStyle(
-              color: AppColor.textGreyColor,
-              letterSpacing: 1,
-              fontWeight: FontWeight.w600,
-              fontSize: 16.sp,
-            ),
-          ),
-        ),
-      ),
     );
   }
 }

@@ -20,6 +20,9 @@ class InputTextWidget extends StatefulWidget {
     this.backIcon2 = false,
     this.leadingIcon = ImageAssets.email,
     this.imageIcon = '',
+    this.backimage = '',
+    this.backimagetap,
+    this.backimageadd=false,
     this.contentPadding = true,
     this.clock = false,
     this.scan = false,
@@ -45,6 +48,8 @@ class InputTextWidget extends StatefulWidget {
     this.leadingright = 0.0,
     this.leadingtop = 0.0,
     this.leadingleft = 0.0,
+    this.backimagewidht = 24.0,
+    this.backimageheight = 24.0,
     this.backgroundColor = AppColor.textAreaColor,
     this.maxLines = 1,
   });
@@ -61,11 +66,11 @@ class InputTextWidget extends StatefulWidget {
       obscureHeigth,
       obscureWidth;
   final Color borderColor, textColor, hintTextColor, backgroundColor;
-  final double height, width, horizontal, vertical;
-  final bool obscureText, readOnly, contentPadding, leading, clock, scan,backIcon,backIcon2;
-  final String passwordIcon, leadingIcon,imageIcon;
+  final double height, width, horizontal, vertical,backimagewidht,backimageheight;
+  final bool obscureText, readOnly, contentPadding, leading, clock, scan,backIcon,backIcon2,backimageadd;
+  final String passwordIcon, leadingIcon,imageIcon,backimage;
   final ValueChanged<String> onChanged;
-  final VoidCallback? onTap,backicontap,backicontap2;
+  final VoidCallback? onTap,backicontap,backicontap2,backimagetap;
   final String? Function(String?)? validator;
   final FontWeight fontWeight, hintfontWeight;
   final int maxLines;
@@ -178,6 +183,18 @@ class _InputTextWidgetState extends State<InputTextWidget> {
                   onTap: widget.backicontap2,
                   child: SvgPicture.asset(
                     widget.imageIcon,
+                  ),
+                ),
+              ),
+            if (widget.backimageadd)
+              Padding(
+                padding: const EdgeInsets.only(right: 10.0),
+                child: GestureDetector(
+                  onTap: widget.backimagetap,
+                  child: Image.asset(
+                    widget.backimage,
+                    height: widget.backimageheight,
+                    width:  widget.backimagewidht,
                   ),
                 ),
               ),

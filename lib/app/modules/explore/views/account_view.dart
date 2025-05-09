@@ -10,8 +10,9 @@ import '../../../../res/colors/app_color.dart';
 import '../controller/explore_controller.dart';
 
 class AccountView extends StatelessWidget {
+  final String? arguments;
   final ExploreController controller = Get.find();
-  AccountView({super.key});
+  AccountView({super.key, this.arguments});
   @override
   Widget build(BuildContext context) {
     Get.lazyPut(() => ExploreController());
@@ -263,7 +264,11 @@ class AccountView extends StatelessWidget {
                           'Post',
                           'Event',
                         ].indexOf(controller.accountSelectedTab.value),
-                        children: [MemorialView(), PostView(), EventListView()],
+                        children: [
+                          MemorialView(),
+                          PostView(),
+                          EventListView(arguments: arguments),
+                        ],
                       ),
                     ),
                   );

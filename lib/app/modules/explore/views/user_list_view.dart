@@ -7,7 +7,8 @@ import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 
 class UserListView extends GetView {
-   const UserListView({super.key});
+  final String? arguments;
+  const UserListView({super.key, this.arguments});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,7 +19,10 @@ class UserListView extends GetView {
           children: [
             GestureDetector(
               onTap: () {
-                Get.to(AccountView(),transition: Transition.rightToLeft);
+                Get.to(
+                  AccountView(arguments: arguments),
+                  transition: Transition.rightToLeft,
+                );
               },
               child: ListView.builder(
                 itemCount: 50,

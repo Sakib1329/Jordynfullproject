@@ -103,7 +103,7 @@ class ImageAssets {
   static const String search = 'assets/images/explore/search.png';
   static const String share1 = 'assets/images/explore/share1.png';
   static const String theme = 'assets/images/explore/theme.png';
-  static const String uplosd = 'assets/images/explore/uplosd.png';
+  static const String upload = 'assets/images/explore/upload.png';
 
 
 
@@ -116,6 +116,11 @@ class ImageAssets {
   static const String candle = 'assets/images/memory/candle.png';
   static const String image1 = 'assets/images/memory/image.png';
   static const String border = 'assets/images/memory/border.png';
+  static const String qrCode = 'assets/images/memory/qrCode.png';
+  static const String qrshare = 'assets/images/memory/share.png';
+  static const String qrdownload = 'assets/images/memory/download.png';
+  static const String removeImage = 'assets/images/memory/removeImage.png';
+  static const String location1 = 'assets/images/memory/location.png';
 
 
 

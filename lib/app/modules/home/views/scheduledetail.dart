@@ -47,8 +47,10 @@ class Scheduledetail extends StatelessWidget {
                 onDelete: () {
                   // Your delete logic here
                   // print("Deleted");
-                },
+
+                },arguments: 'HomeView'
               );
+
             },
             icon: Icon(CupertinoIcons.delete, color: AppColor.textBlackColor),
           ),
