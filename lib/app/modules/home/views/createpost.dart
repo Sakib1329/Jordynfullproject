@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
@@ -12,7 +11,6 @@ import '../../../../widgets/custom_button.dart';
 import '../../../../widgets/dialogue.dart';
 import '../../../../widgets/input_text_widget.dart';
 import '../controllers/home_controller.dart';
-import '../widget/custombutton.dart';
 
 class Createpost extends StatelessWidget {
   final HomeController controller = Get.find();
@@ -88,7 +86,7 @@ class Createpost extends StatelessWidget {
               ),
               Obx(() {
                 final file = controller.pickedImage.value;
-                return Container(
+                return SizedBox(
                   height: 300.h,
                   width: double.infinity,
                   child: file != null

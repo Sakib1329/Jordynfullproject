@@ -1,35 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'dart:io';
-import 'package:image_picker/image_picker.dart';
 import 'package:jordyn/app/modules/memory/controllers/memory_controller.dart';
+import 'package:jordyn/app/modules/memory/views/memory_history_view.dart';
 import '../../../../res/assets/image_assets.dart';
 import '../../../../res/colors/app_color.dart';
 import '../../../../widgets/custom_button.dart';
-import '../../../../widgets/deleteconfirmationwidget.dart';
 import '../../../../widgets/dialogue.dart';
 import '../../../../widgets/input_text_widget.dart';
 
 class CreateCondolencesView extends StatelessWidget {
   final MemoryController controller = Get.find();
-  final ImagePicker _picker = ImagePicker();
   CreateCondolencesView({super.key});
-
-  Future<void> _pickImage(ImageSource source) async {
-    final XFile? pickedFile = await _picker.pickImage(source: source);
-    if (pickedFile != null) {
-      controller.pickedImageschedule.value = File(pickedFile.path);
-    }
-  }
-
-  Future<void> _pickVideoOrImageFromGallery() async {
-    final XFile? file = await _picker.pickImage(source: ImageSource.gallery);
-    if (file != null) {
-      controller.pickedImageschedule.value = File(file.path);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -91,27 +73,7 @@ class CreateCondolencesView extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         fontSize: 20.sp,
                         onPress: () async {
-                          showDialog(
-                            context: context,
-                            builder:
-                                (context) => Dialog(
-                                  backgroundColor: Colors.transparent,
-                                  elevation: 0,
-                                  child: CenteredDialogWidget(
-                                    title: 'Schedule Post Deleted',
-                                    horizontalpadding: 2.0.w,
-                                    verticalpadding: 20.0.h,
-
-                                    subtitle:
-                                        'Sed dignissim nisl a vehicula fringilla. Nulla faucibus dui tellus, ut dignissim',
-                                    imageasset: ImageAssets.post_report,
-                                    backgroundColor: AppColor.backgroundColor,
-                                    iconBackgroundColor: Colors.transparent,
-                                    iconColor: AppColor.buttonColor,
-                                    borderRadius: 30.0.r,
-                                  ),
-                                ),
-                          );
+                          Get.to(MemoryHistoryView(),transition: Transition.noTransition);
                         },
                         buttonColor: AppColor.buttonColor,
                         height: 50.h,

@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:jordyn/app/modules/chat/views/blockuser.dart';
 import 'package:jordyn/app/modules/home/views/report.dart';
-import 'package:jordyn/widgets/input_text_widget.dart';
 
 import '../../../../res/assets/image_assets.dart';
 import '../../../../res/colors/app_color.dart';
