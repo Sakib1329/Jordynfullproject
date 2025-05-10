@@ -15,44 +15,47 @@ class EventListView extends GetView {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(bottom: 0.09.sh),
-      child: ListView.builder(
+      child: SingleChildScrollView(
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-        itemCount: 50,
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.zero,
-        itemBuilder: (context, index) {
-          return InkWell(
-            onTap: () {
-              final String? origin =
-                  arguments ?? Get.arguments?['origin'] as String?;
-              if (origin == 'ExporleView') {
-                Get.to(
-                  () => EventView(),
-                  transition: Transition.noTransition,
-                  arguments: {'origin': 'ExporleView'},
-                );
-              } else {
-                Get.to(
-                  () => EventView(),
-                  transition: Transition.noTransition,
-                  arguments: {'origin': 'EventView'},
-                );
-              }
-            },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: ProfileCardWidget(
-                imagePath: ImageAssets.flower,
-                title: 'Sophia Anderson',
-                showSubtitle1: true,
-                subtitle1: 'Category Name',
-                subtitle2: 'June 1st, 2024 12PM',
-                subtitle2IconPath: ImageAssets.calender2,
+        child: ListView.builder(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          itemCount: 50,
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          padding: EdgeInsets.zero,
+          itemBuilder: (context, index) {
+            return InkWell(
+              onTap: () {
+                final String? origin =
+                    arguments ?? Get.arguments?['origin'] as String?;
+                if (origin == 'ExporleView') {
+                  Get.to(
+                    () => EventView(),
+                    transition: Transition.noTransition,
+                    arguments: {'origin': 'ExporleView'},
+                  );
+                } else {
+                  Get.to(
+                    () => EventView(),
+                    transition: Transition.noTransition,
+                    arguments: {'origin': 'EventView'},
+                  );
+                }
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: ProfileCardWidget(
+                  imagePath: ImageAssets.flower,
+                  title: 'Sophia Anderson',
+                  showSubtitle1: true,
+                  subtitle1: 'Category Name',
+                  subtitle2: 'June 1st, 2024 12PM',
+                  subtitle2IconPath: ImageAssets.calender2,
+                ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }

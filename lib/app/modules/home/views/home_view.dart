@@ -18,48 +18,6 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      // body: CustomScrollView(
-      //   slivers: [
-      //     SliverAppBar(
-      //       floating: true,
-      //       snap: true,
-      //       backgroundColor: AppColor.backgroundColor,
-      //       title: Column(
-      //         crossAxisAlignment: CrossAxisAlignment.start,
-      //         children: [
-      //           Text(
-      //             'Hi, Audrey',
-      //             style: TextStyle(
-      //               color: AppColor.textTitleColor,
-      //               fontWeight: FontWeight.bold,
-      //               fontSize: 18,
-      //             ),
-      //           ),
-      //           Text(
-      //             'Welcome back to Inspirit!',
-      //             style: TextStyle(
-      //               color: AppColor.greyTone,
-      //               fontSize: 16,
-      //               fontWeight: FontWeight.w500,
-      //               fontStyle: FontStyle.italic,
-      //             ),
-      //           ),
-      //         ],
-      //       ),
-      //       actions: [
-      //         Row(
-      //           children: [
-      //             Image.asset(ImageAssets.scanner, width: 32),
-      //             SizedBox(width: 15),
-      //             Image.asset(ImageAssets.schedule, width: 32),
-      //             SizedBox(width: 15),
-      //             Container(
-      //               height: 45,
-      //               width: 45,
-      //               decoration: BoxDecoration(
-      //                 color: Color(0xFFEAE0D0),
-      //                 borderRadius: BorderRadius.circular(12),
-
       body: Stack(
         children: [
           CustomScrollView(

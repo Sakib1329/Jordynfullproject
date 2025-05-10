@@ -2,14 +2,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:jordyn/app/modules/profile/controllers/profile_controller.dart';
 import '../../../../res/assets/image_assets.dart';
 import '../../../../res/colors/app_color.dart';
 import '../../../../widgets/input_text_widget.dart';
-import '../controllers/chat_controller.dart';
 
-class Search extends StatelessWidget {
-  final ChatController controller = Get.find();
-  Search({super.key});
+class SearchFriendListView extends StatelessWidget {
+  final ProfileController controller = Get.find();
+  SearchFriendListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,7 @@ class Search extends StatelessWidget {
                   height: 0.8.sh,
                   child: Center(
                     child: Text(
-                      'No chat found',
+                      'No friend found',
                       style: TextStyle(
                         color: AppColor.greyTone,
                         fontSize: 18.sp,
@@ -79,7 +79,7 @@ class Search extends StatelessWidget {
     );
   }
 
-  Widget _buildGroupTile(ChatController controller) {
+  Widget _buildGroupTile(ProfileController controller) {
     return ListTile(
       leading: CircleAvatar(
         radius: 28.r,
@@ -169,26 +169,23 @@ class Search extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             SizedBox(height: 5.h),
-            Text(
-              '8:25 PM',
-              style: TextStyle(
-                color: AppColor.greyTone,
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
             Container(
-              width: 25.w,
-              height: 25.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.r),
-                color: AppColor.vividBlue,
+              width: 94.w,
+              height: 36,
+              decoration: ShapeDecoration(
+                color: AppColor.backgroundColor,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6),
+                    side: BorderSide(
+                      color: AppColor.textSendColor,
+                    )
+                ),
               ),
               child: Center(
                 child: Text(
-                  '3',
+                  'remove',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: AppColor.textSendColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 14,
                   ),

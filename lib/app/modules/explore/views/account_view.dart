@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:jordyn/app/modules/explore/views/event_list_view.dart';
 import 'package:jordyn/app/modules/memory/views/memorial_view.dart';
 import 'package:jordyn/app/modules/explore/views/post_view.dart';
+import 'package:jordyn/app/modules/profile/views/edit_profile_view.dart';
+import 'package:jordyn/app/modules/profile/views/friend_list_view.dart';
 import 'package:jordyn/widgets/custom_button.dart';
 import '../../../../res/assets/image_assets.dart';
 import '../../../../res/colors/app_color.dart';
@@ -12,7 +14,7 @@ import '../controller/explore_controller.dart';
 class AccountView extends StatelessWidget {
   final List<String?> arguments;
   final ExploreController controller = Get.find();
-  AccountView({super.key,required this.arguments});
+  AccountView({super.key, required this.arguments});
   @override
   Widget build(BuildContext context) {
     Get.lazyPut(() => ExploreController());
@@ -30,13 +32,41 @@ class AccountView extends StatelessWidget {
                 floating: true,
                 snap: true,
                 backgroundColor: AppColor.backgroundColor,
-                leading: InkWell(
-                  onTap: () {
-                    Get.back();
-                  },
-                  child: Image.asset(ImageAssets.back_arrow),
-                ),
-                actions: [],
+                automaticallyImplyLeading: false,
+                actions: [
+                  if (arguments[1] == 'myprofile')
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            // Get.to(page);
+                          },
+                          child: Image.asset(ImageAssets.settings),
+                        ),
+                      ],
+                    ),
+                  ),
+                  if (arguments[1] == 'othersprofile')
+                  Padding(
+                    padding: const EdgeInsets.only(right: 410.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                           Get.back();
+                          },
+                          child:  Icon(Icons.arrow_back_ios_new, color: Colors.black),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               SliverToBoxAdapter(
                 child: Padding(
@@ -71,56 +101,118 @@ class AccountView extends StatelessWidget {
                                     fontSize: 20.sp,
                                   ),
                                 ),
-                                SizedBox(height: 10.w),
-                                Text(
-                                  '@abc_xyz',
-                                  style: TextStyle(
-                                    color: AppColor.subTitleGrey,
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w400,
-                                  ),
+                                SizedBox(height: 10.h),
+                                Row(
+                                  children: [
+                                    Text(
+                                      '@abc_xyz',
+                                      style: TextStyle(
+                                        color: AppColor.subTitleGrey,
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    SizedBox(width: 10.w),
+                                    if (arguments[1] == 'myprofile')
+                                      Column(
+                                        children: [
+                                          InkWell(
+                                            onTap: () {
+                                              Get.to(
+                                                FriendListView(),
+                                                transition:
+                                                    Transition.rightToLeft,
+                                              );
+                                            },
+                                            child: Text(
+                                              '200 Friends',
+                                              style: TextStyle(
+                                                color: AppColor.subTitleGrey,
+                                                fontSize: 16.sp,
+                                                fontWeight: FontWeight.w400,
+                                                fontFamily: 'Montaga',
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                  ],
                                 ),
                               ],
                             ),
                           ),
                         ],
                       ),
-                      if(arguments[0]=='othersprofile')
-                      Column(
-                        children: [
-                          SizedBox(height: 10.w),Text(
-                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet venenatis metus',
-                            style: TextStyle(
-                              color: AppColor.greyTone,
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          SizedBox(height: 20.w),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              CustomButton(
-                                onPress: () async {},
-                                title: 'Message',
-                                width: 160.w,
-                                height: 42.h,
-                                radius: 120.r,
-                                borderColor: AppColor.greyTone,
-                                buttonColor: AppColor.backgroundColor,
-                                textColor: AppColor.greyTone,
-                              ),
-                              CustomButton(
-                                onPress: () async {},
-                                title: 'Add Friend',
-                                width: 160.w,
-                                height: 42.h,
-                                radius: 120.r,
-                              ),
-                            ],
-                          ),
-                        ],
+                      SizedBox(height: 10.w),
+                      Text(
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet venenatis metus',
+                        style: TextStyle(
+                          color: AppColor.greyTone,
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
+                      if (arguments[1] == 'othersprofile')
+                        Column(
+                          children: [
+                            SizedBox(height: 20.w),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                CustomButton(
+                                  onPress: () async {},
+                                  title: 'Message',
+                                  width: 160.w,
+                                  height: 42.h,
+                                  radius: 120.r,
+                                  borderColor: AppColor.greyTone,
+                                  buttonColor: AppColor.backgroundColor,
+                                  textColor: AppColor.greyTone,
+                                ),
+                                CustomButton(
+                                  onPress: () async {},
+                                  title: 'Add Friend',
+                                  width: 160.w,
+                                  height: 42.h,
+                                  radius: 120.r,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      if (arguments[1] == 'myprofile')
+                        Column(
+                          children: [
+                            SizedBox(height: 20.w),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                CustomButton(
+                                  onPress: () async {
+                                    Get.to(
+                                      EditProfileView(),
+                                      transition: Transition.noTransition,
+                                    );
+                                  },
+                                  title: 'Edit Profile',
+                                  width: 160.w,
+                                  height: 42.h,
+                                  radius: 120.r,
+                                  borderColor: AppColor.greyTone,
+                                  buttonColor: AppColor.backgroundColor,
+                                  textColor: AppColor.greyTone,
+                                ),
+                                CustomButton(
+                                  onPress: () async {},
+                                  title: 'Share Profile',
+                                  width: 160.w,
+                                  height: 42.h,
+                                  radius: 120.r,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
 
                       SizedBox(height: 20.w),
                       Row(

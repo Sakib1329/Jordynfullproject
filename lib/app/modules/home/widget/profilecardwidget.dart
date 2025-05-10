@@ -25,7 +25,7 @@ class ProfileCardWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: Container(
-        height: 110.h,
+        height: 110,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.r),
           border: Border.all(
@@ -37,8 +37,8 @@ class ProfileCardWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 10.0),
               child: Container(
-                height: 80.h,
-                width: 80.w,
+                height: 80,
+                width: 80,
                 decoration: BoxDecoration(
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(12.r),
@@ -62,7 +62,7 @@ class ProfileCardWidget extends StatelessWidget {
                   title,
                   style: TextStyle(
                     color: AppColor.greyTone,
-                    fontSize: 22.sp,
+                    fontSize: 22,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -71,7 +71,7 @@ class ProfileCardWidget extends StatelessWidget {
                     subtitle1!,
                     style: TextStyle(
                       color: AppColor.greyTone,
-                      fontSize: 20.sp,
+                      fontSize: 20,
                       fontWeight: FontWeight.w300,
                     ),
                   ),
@@ -79,15 +79,15 @@ class ProfileCardWidget extends StatelessWidget {
                   children: [
                     Image.asset(
                       subtitle2IconPath,
-                      width: 18.w,
-                      height: 18.h,
+                      width: 18,
+                      height: 18,
                     ),
                     SizedBox(width: 5.w),
                     Text(
                       subtitle2,
                       style: TextStyle(
                         color: AppColor.greyTone,
-                        fontSize: 20.sp,
+                        fontSize: 20,
                         fontWeight: FontWeight.w300,
                       ),
                     ),
