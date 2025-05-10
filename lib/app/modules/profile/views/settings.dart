@@ -15,6 +15,7 @@ import '../../auth/views/link_social_view.dart';
 import '../../auth/views/plan_view.dart';
 import '../../auth/views/update_password_view.dart';
 import 'blocklistpage.dart';
+import 'familytree.dart';
 import 'feedback.dart';
 import 'notification.dart';
 
@@ -78,7 +79,7 @@ class Settings extends StatelessWidget {
                   Get.to(Blocklistpage(), transition: Transition.rightToLeft);
                   break;
                 case 'Family Tree':
-
+                  Get.to(() => FamilyTreePage());
                   break;
                 case 'Link your Social Media':
 Get.to(LinkSocialView());
