@@ -8,6 +8,11 @@ class HomeController extends GetxController {
   RxBool isselected=false.obs;
   var selectedreportype="".obs;
   RxBool ismemorialselected=false.obs;
+  var showAll = true.obs;
+
+  void toggleView(bool value) {
+    showAll.value = value;
+  }
   Rxn<File> pickedImage = Rxn<File>();
   Rxn<File> pickedImageschedule = Rxn<File>();
   RxBool hasText = false.obs;

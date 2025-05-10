@@ -41,6 +41,10 @@ class ImageAssets {
 
   static const String scanner = 'assets/images/home/scanner.png';
   static const String heart = 'assets/images/home/love.png';
+  static const String type1 = 'assets/images/home/type1.png';
+  static const String type2 = 'assets/images/home/type2.png';
+  static const String type3 = 'assets/images/home/type3.png';
+  static const String type4 = 'assets/images/home/type4.png';
   static const String home = 'assets/images/home/home.png';
   static const String schedule = 'assets/images/home/schedule.png';
   static const String chat = 'assets/images/chat/chat.png';
