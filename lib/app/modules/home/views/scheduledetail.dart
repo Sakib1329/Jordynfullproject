@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:get/get.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
+
+
 import '../../../../res/assets/image_assets.dart';
 import '../../../../res/colors/app_color.dart';
 import '../../../../widgets/custom_button.dart';
@@ -45,12 +48,25 @@ class Scheduledetail extends StatelessWidget {
                 subtitle:
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum ',
                 onDelete: () {
-                  // Your delete logic here
-                  // print("Deleted");
-
-                },arguments: 'HomeView'
+                  showDialog(
+                    context: context,
+                    builder: (context) => Dialog(
+                      backgroundColor: Colors.transparent,
+                      elevation: 0,
+                      child: CenteredDialogWidget(
+                        title: 'Schedule Post Deleted',
+                        subtitle: 'Sed dignissim nisl a vehicula fringilla. Nulla faucibus dui tellus, ut dignissim',
+                        imageasset: ImageAssets.post_report,  // Use your own SVG
+                        backgroundColor: AppColor.backgroundColor,           // Custom background
+                        iconBackgroundColor: Colors.transparent,
+                        iconColor: AppColor.buttonColor,// Custom icon background
+                        borderRadius: 30.0,
+                        horizontalpadding: 2.w,// Custom corner radius
+                      ),
+                    ),
+                  );
+                },
               );
-
             },
             icon: Icon(CupertinoIcons.delete, color: AppColor.textBlackColor),
           ),

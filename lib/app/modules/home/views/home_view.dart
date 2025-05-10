@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:jordyn/app/modules/home/views/comment.dart';
 import 'package:jordyn/app/modules/home/views/createpost.dart';
+import 'package:jordyn/app/modules/home/views/notification.dart';
 import 'package:jordyn/app/modules/home/views/schedule.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 import '../../../../res/assets/image_assets.dart';
@@ -84,11 +85,17 @@ class HomeView extends StatelessWidget {
                         child: Stack(
                           clipBehavior: Clip.none,
                           children: [
-                            Center(
-                              child: Icon(
-                                Icons.notifications_none_sharp,
-                                size: 30.sp,
-                                color: Colors.black87,
+                            GestureDetector(
+                              onTap: (){
+                                Get.to(HomeNotification(),transition: Transition.rightToLeft);
+
+                              },
+                              child: Center(
+                                child: Icon(
+                                  Icons.notifications_none_sharp,
+                                  size: 30.sp,
+                                  color: Colors.black87,
+                                ),
                               ),
                             ),
                             Positioned(

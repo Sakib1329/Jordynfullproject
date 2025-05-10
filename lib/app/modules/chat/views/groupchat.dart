@@ -6,6 +6,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:jordyn/app/modules/chat/views/blockuser.dart';
+import 'package:jordyn/app/modules/chat/views/creategoup1.dart';
+import 'package:jordyn/app/modules/chat/views/groupinfopage.dart';
 import 'package:jordyn/app/modules/home/views/report.dart';
 import 'package:jordyn/widgets/input_text_widget.dart';
 
@@ -14,11 +16,11 @@ import '../../../../res/colors/app_color.dart';
 import '../controllers/chat_controller.dart';
 import '../widget/optionmenu.dart';
 
-class Personalchat extends StatelessWidget {
+class Groupchat extends StatelessWidget {
   final String name;
   final ImagePicker _picker = ImagePicker();
   final ChatController controller = Get.put(ChatController());
-  Personalchat({super.key, required this.name});
+  Groupchat({super.key, required this.name});
 
   Future<void> _pickImage(ImageSource source) async {
     final XFile? pickedFile = await _picker.pickImage(source: source);
@@ -71,22 +73,22 @@ class Personalchat extends StatelessWidget {
             ),
           ],
         ),
-          actions: [ Obx(() => CustomAppBarMenu(
-            options: controller.isuserblocked.value
-                ? ['Clear Chat','Unblock User']
-                : ['Mute', 'Clear Chat', 'Report User', 'Block User'],
-            onSelected: (value) {
-              if (value == 'Report User') {
-                Get.to(Report(), transition: Transition.rightToLeft);
-              } else if (value == 'Block User') {
-                controller.isuserblocked.value = true;
-                Get.to(Blockuser(),transition: Transition.rightToLeft);
-              } else if (value == 'Unblock User') {
-                controller.isuserblocked.value = false;
-              }
-              // Add more logic as needed
-            },
-          )),],
+        actions: [ Obx(() => CustomAppBarMenu(
+          options: controller.isuserblocked.value
+              ? ['Clear Chat','Unblock User']
+              : ['View Info', 'Edit ', 'Mute', 'Clear Chat'],
+          onSelected: (value) {
+            if (value == 'View Info') {
+              Get.to(Groupinfopage(), transition: Transition.rightToLeft);
+            } else if (value == 'Edit') {
+              controller.isuserblocked.value = true;
+              Get.to(Creategoup1(),transition: Transition.rightToLeft);
+            } else if (value == 'Unblock User') {
+              controller.isuserblocked.value = false;
+            }
+            // Add more logic as needed
+          },
+        )),],
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 10.0.h),
@@ -120,38 +122,59 @@ class Personalchat extends StatelessWidget {
                   children: [
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: Container(
-                        padding: EdgeInsets.all(12.w),
-                        margin: EdgeInsets.only(bottom: 12.h, right: 80.w),
-                        decoration: BoxDecoration(
-                          color: AppColor.softBeige,
-                          borderRadius: BorderRadius.circular(12.r),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Flexible(
-                              child: Text(
-                                'Good morning',
-                                style: TextStyle(fontSize: 16.sp),
-                                overflow: TextOverflow.visible,
-                                softWrap: true,
-                              ),
-                            ),
-                            SizedBox(width: 8.w),
-                            Padding(
-                              padding: EdgeInsets.only(bottom: 3.h),
-                              child: Text(
-                                '11:23 AM',
-                                style: TextStyle(
-                                  fontSize: 12.sp,
-                                  color: AppColor.textBlackColor,
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding:  EdgeInsets.only(right: 8.0.w,bottom: 10.h),
+                            child: CircleAvatar(
+                              radius: 20.r,
+                              backgroundColor: Colors.grey[300],
+                              child: ClipOval(
+                                child: Image.asset(
+                                  ImageAssets.person,
+                                  fit: BoxFit.cover,
+                                  width: double.infinity,
+                                  height: double.infinity,
                                 ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(12.w),
+                            margin: EdgeInsets.only(bottom: 12.h, right: 80.w),
+                            decoration: BoxDecoration(
+                              color: AppColor.softBeige,
+                              borderRadius: BorderRadius.circular(12.r),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+
+
+                                Flexible(
+                                  child: Text(
+                                    'Good morning',
+                                    style: TextStyle(fontSize: 16.sp),
+                                    overflow: TextOverflow.visible,
+                                    softWrap: true,
+                                  ),
+                                ),
+                                SizedBox(width: 8.w),
+                                Padding(
+                                  padding: EdgeInsets.only(bottom: 3.h),
+                                  child: Text(
+                                    '11:23 AM',
+                                    style: TextStyle(
+                                      fontSize: 12.sp,
+                                      color: AppColor.textBlackColor,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(height: 15.h),

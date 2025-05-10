@@ -11,6 +11,11 @@ class ProfileController extends GetxController {
   void setSelectedTab(String tab) {
     SelectedTab.value = tab;
   }
+  var isSwitched = false.obs;
+
+  void toggleSwitch(bool value) {
+    isSwitched.value = value;
+  }
   final count = 0.obs;
 
   RxBool isrequestsent=false.obs;
