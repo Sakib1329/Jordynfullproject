@@ -10,7 +10,7 @@ import '../controllers/chat_controller.dart';
 
 class Request extends StatelessWidget {
   final ChatController controller = Get.find();
-   Request({super.key});
+  Request({super.key});
 
   @override
   Widget build(BuildContext context) {

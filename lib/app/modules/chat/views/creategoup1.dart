@@ -18,7 +18,7 @@ import '../controllers/chat_controller.dart';
 class Creategoup1 extends StatelessWidget {
   final BottomSheetController bs=Get.put(BottomSheetController());
   final ChatController controller = Get.find();
-   Creategoup1({super.key});
+  Creategoup1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -131,13 +131,13 @@ class Creategoup1 extends StatelessWidget {
               hintText: 'Group bio',
               hintTextColor: AppColor.textGreyColor2,
               textColor: AppColor.textGreyColor2,
-maxLines: 10,
+              maxLines: 10,
               height: 150.h,
             ),
             SizedBox(height: 20.h,),
             Text('Group Type',style: TextStyle(
-              color: AppColor.textBlackColor,
-              fontSize: 18.sp
+                color: AppColor.textBlackColor,
+                fontSize: 18.sp
             ),),
             SizedBox(height: 10.h,),
             Obx(() => Column(
@@ -192,8 +192,8 @@ maxLines: 10,
                   width: 12.w,
                   height: 12.w,
                   decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color:AppColor.textTitleColor
+                      shape: BoxShape.circle,
+                      color:AppColor.textTitleColor
                   ),
                 ),
               )
@@ -214,4 +214,3 @@ maxLines: 10,
     );
   }
 }
-

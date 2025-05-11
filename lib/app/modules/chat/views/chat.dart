@@ -12,7 +12,7 @@ import '../controllers/chat_controller.dart';
 
 class Chat extends StatelessWidget {
   final ChatController controller = Get.put(ChatController());
-   Chat({super.key});
+  Chat({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +61,7 @@ class Chat extends StatelessWidget {
               height: 48.h,
             ),
           ),
-SizedBox(height: 10.h,),
+          SizedBox(height: 10.h,),
           Expanded(
             child: ListView.builder(
               itemCount: controller.names.length,
@@ -74,6 +74,7 @@ SizedBox(height: 10.h,),
 
                     },
                     child: ListTile(
+
                       leading: CircleAvatar(
                         radius: 28.r,
                         backgroundColor: Colors.grey[300],

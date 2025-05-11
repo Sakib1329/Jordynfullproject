@@ -4,16 +4,20 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:jordyn/app/modules/home/views/comment.dart';
 import 'package:jordyn/app/modules/home/views/createpost.dart';
-import 'package:jordyn/app/modules/home/views/notification.dart';
 import 'package:jordyn/app/modules/home/views/schedule.dart';
+import 'package:jordyn/app/modules/memory/views/add_memory_view.dart';
+import 'package:jordyn/app/modules/memory/views/create_event_view.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 import '../../../../res/assets/image_assets.dart';
 import '../controllers/home_controller.dart';
 import '../widget/scanner.dart';
+import 'notification.dart';
 
 class HomeView extends StatelessWidget {
+
+  final String? arguments;
   final HomeController controller = Get.put(HomeController());
-  HomeView({super.key});
+  HomeView({super.key, this.arguments});
 
   @override
   Widget build(BuildContext context) {
@@ -68,12 +72,12 @@ class HomeView extends StatelessWidget {
                               ),
                             );
                           },
-                          child: Image.asset(ImageAssets.scanner, width: 25.w)),
+                          child: Image.asset(ImageAssets.scanner, width: 30.w)),
                       SizedBox(width: 15.w),
                       GestureDetector(onTap:(){
-                        Get.to(Schedule(),transition: Transition.rightToLeft);
+                        Get.to(Schedule(arguments: arguments),transition: Transition.rightToLeft);
 
-                      },child: Image.asset(ImageAssets.schedule, width: 25.w)),
+                      },child: Image.asset(ImageAssets.schedule, width: 30.w)),
                       SizedBox(width: 15.w),
                       Container(
                         height: 40.h,
@@ -82,48 +86,47 @@ class HomeView extends StatelessWidget {
                           color: Color(0xFFEAE0D0),
                           borderRadius: BorderRadius.circular(12.r),
                         ),
-                        child: Stack(
-                          clipBehavior: Clip.none,
-                          children: [
-                            GestureDetector(
-                              onTap: (){
-                                Get.to(HomeNotification(),transition: Transition.rightToLeft);
-
-                              },
-                              child: Center(
+                        child: GestureDetector(
+                          onTap: (){
+                            Get.to(HomeNotification(),transition: Transition.rightToLeft);
+                          },
+                          child: Stack(
+                            clipBehavior: Clip.none,
+                            children: [
+                              Center(
                                 child: Icon(
                                   Icons.notifications_none_sharp,
-                                  size: 30.sp,
+                                  size: 35.sp,
                                   color: Colors.black87,
                                 ),
                               ),
-                            ),
-                            Positioned(
-                              top: 0,
-                              right: 1,
-                              child: Container(
-                                padding: EdgeInsets.all(4.w),
-                                decoration: BoxDecoration(
-                                  color: Colors.red,
-                                  shape: BoxShape.circle,
-                                ),
-                                constraints: BoxConstraints(
-                                  minWidth: 20.w,
-                                  minHeight: 20.h,
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    '2',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.bold,
+                              Positioned(
+                                top: 0,
+                                right: 1,
+                                child: Container(
+                                  padding: EdgeInsets.all(4.w),
+                                  decoration: BoxDecoration(
+                                    color: Colors.red,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  constraints: BoxConstraints(
+                                    minWidth: 20.w,
+                                    minHeight: 20.h,
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      '2',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(width: 10.w),
@@ -154,11 +157,11 @@ class HomeView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                _fabOption(label: 'Create Event',ontap: (){}),
+                _fabOption(label: 'Create Event',ontap: (){Get.to(CreateEventView(),transition: Transition.rightToLeft);}),
                 SizedBox(height: 12.h),
                 _fabOption(label: 'Create Post',ontap: (){Get.to(Createpost(),transition: Transition.rightToLeft);}),
                 SizedBox(height: 12.h),
-                _fabOption(label: 'Create Memory',ontap: (){}),
+                _fabOption(label: 'Create Memory',ontap: (){Get.to(AddMemoryView(),transition: Transition.rightToLeft);}),
               ],
             ),
           )

@@ -5,6 +5,7 @@ import 'package:jordyn/app/modules/memory/controllers/memory_controller.dart';
 import 'package:jordyn/app/modules/memory/views/add_memory_view.dart';
 import 'package:jordyn/app/modules/memory/views/condolences_history_list_view.dart';
 import 'package:jordyn/app/modules/memory/views/create_condolences_view.dart';
+import 'package:jordyn/app/modules/memory/views/memory_details_view.dart';
 import 'package:jordyn/app/modules/memory/views/memory_history_list_view.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/widgets/custom_button.dart';
@@ -44,7 +45,7 @@ class MemoryHistoryView extends StatelessWidget {
                             children: [
                               InkWell(
                                 onTap: () {
-                                  Get.back();
+                                  Get.to(MemoryDetailsView(),transition: Transition.leftToRight);
                                 },
                                 child: Image.asset(
                                   ImageAssets.back_arrow,
@@ -190,35 +191,38 @@ class MemoryHistoryView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        CustomButton(
-                          onPress: () async {Get.to(CreateCondolencesView(),transition: Transition.noTransition);},
-                          title: 'Condolences',
-                          height: 48.h,
-                          width: 185.w,
-                          radius: 10.r,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16.sp,
-                          buttonColor: AppColor.backgroundColor,
-                          textColor: AppColor.buttonColor,
-                          borderColor: AppColor.buttonColor,
-                        ),
-                        CustomButton(
-                          onPress: () async {Get.to(AddMemoryView(),transition: Transition.noTransition);},
-                          title: 'Add Memory',
-                          height: 48.h,
-                          width: 185.w,
-                          radius: 10.r,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16.sp,
-                        ),
-                      ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20.0),
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          CustomButton(
+                            onPress: () async {Get.to(CreateCondolencesView(),transition: Transition.noTransition);},
+                            title: 'Condolences',
+                            height: 48.h,
+                            width: 185.w,
+                            radius: 10.r,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16.sp,
+                            buttonColor: AppColor.backgroundColor,
+                            textColor: AppColor.buttonColor,
+                            borderColor: AppColor.buttonColor,
+                          ),
+                          CustomButton(
+                            onPress: () async {Get.to(AddMemoryView(),transition: Transition.noTransition);},
+                            title: 'Add Memory',
+                            height: 48.h,
+                            width: 185.w,
+                            radius: 10.r,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16.sp,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(height: 10,)

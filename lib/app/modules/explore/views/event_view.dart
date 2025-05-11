@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:jordyn/app/modules/home/views/navbar.dart';
 import 'package:jordyn/app/modules/memory/views/add_event_view.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 import 'package:jordyn/widgets/deleteconfirmationwidget.dart';
+import '../controller/explore_controller.dart';
 
-class EventView extends GetView {
-  const EventView({super.key});
+class EventView extends GetView<ExploreController> {
+
+  final String? arguments;
+  const EventView({super.key,  this.arguments});
 
   void _showPopupMenu(BuildContext context, Offset position) {
-    final RenderBox overlay =
-    Overlay.of(context).context.findRenderObject()! as RenderBox;
+    final RenderBox overlay = Overlay.of(context).context.findRenderObject()! as RenderBox;
     showMenu(
       context: context,
       position: RelativeRect.fromLTRB(
         position.dx,
-        position.dy+20,
+        position.dy + 20,
         overlay.size.width - position.dx,
         overlay.size.height - position.dy,
       ),
@@ -45,13 +48,10 @@ class EventView extends GetView {
                     ),
                     onTap: () {
                       Navigator.pop(context);
-                      Get.to(AddEventView(),transition: Transition.noTransition,arguments: {'origin': 'EventView'});
-                      // Get.dialog(
-                      //   RenameDialog(
-                      //     title: 'Rename the note?',
-                      //     onConfirm: () {},
-                      //   ),
-                      // );
+                      Get.to(AddEventView(),
+                        transition: Transition.noTransition,
+                        arguments: {'origin': 'EventView'},
+                      );
                     },
                   ),
                   const SizedBox(height: 15),
@@ -70,12 +70,11 @@ class EventView extends GetView {
                       showDeleteConfirmationPopup(
                         context: context,
                         title: 'Are You Sure?',
-                        subtitle:
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum ',
+                        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum ',
                         onDelete: () {
                           // Your delete logic here
-                          // print("Deleted");
-                        },arguments: 'EventView'
+                        },
+                        arguments: 'EventView',
                       );
                     },
                   ),
@@ -90,7 +89,10 @@ class EventView extends GetView {
 
   @override
   Widget build(BuildContext context) {
-    final String origin = Get.arguments?['origin'] as String? ?? 'EventView';
+    // Ensure the controller is initialized
+    Get.put(ExploreController());
+
+    final String origin = Get.arguments?['origin'] as String? ?? 'ExploreView';
 
     return Scaffold(
       body: Column(
@@ -103,7 +105,7 @@ class EventView extends GetView {
                 left: 20.w,
                 child: InkWell(
                   onTap: () {
-                    Get.back();
+                    Get.to(Navigation(),transition: Transition.leftToRight);
                   },
                   child: Container(
                     height: 35.h,
@@ -120,42 +122,41 @@ class EventView extends GetView {
                 ),
               ),
               if (origin == 'ExporleView')
-              Positioned(
-                top: 75.h,
-                right: 20.w,
-                child: Container(
-                  height: 35.h,
-                  width: 35.w,
-                  decoration: ShapeDecoration(
-                    color: AppColor.backgroundColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
-                      side: BorderSide(color: AppColor.backgroundColor),
+                Positioned(
+                  top: 75.h,
+                  right: 20.w,
+                  child: Container(
+                    height: 35.h,
+                    width: 35.w,
+                    decoration: ShapeDecoration(
+                      color: AppColor.backgroundColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                        side: BorderSide(color: AppColor.backgroundColor),
+                      ),
                     ),
+                    padding: EdgeInsets.all(6.sp),
+                    child: Image.asset(ImageAssets.share1),
                   ),
-                  padding: EdgeInsets.all(6.sp),
-                  child: Image.asset(ImageAssets.share1),
                 ),
-              ),
               if (origin == 'EventView')
-              Positioned(
-                top: 75.h,
-                right: 60.w,
-                child: Container(
-                  height: 35.h,
-                  width: 35.w,
-                  decoration: ShapeDecoration(
-                    color: AppColor.backgroundColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
-                      side: BorderSide(color: AppColor.backgroundColor),
+                Positioned(
+                  top: 75.h,
+                  right: 60.w,
+                  child: Container(
+                    height: 35.h,
+                    width: 35.w,
+                    decoration: ShapeDecoration(
+                      color: AppColor.backgroundColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                        side: BorderSide(color: AppColor.backgroundColor),
+                      ),
                     ),
+                    padding: EdgeInsets.all(6.sp),
+                    child: Image.asset(ImageAssets.share1),
                   ),
-                  padding: EdgeInsets.all(6.sp),
-                  child: Image.asset(ImageAssets.share1),
                 ),
-              ),
-              // Conditionally show menu button only if origin is "EventView"
               if (origin == 'EventView')
                 Positioned(
                   top: 75.h,
@@ -314,6 +315,29 @@ class EventView extends GetView {
                       ),
                     ),
                   ],
+                ),
+                Container(
+                  width: 390, // Width: 390px
+                  height: 188, // Height: 188px
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10), // Radius: 10px
+                    border: Border.all(color: Colors.grey.shade300),
+                  ),
+                  child: Image.asset(ImageAssets.map)
+
+                  // ClipRRect(
+                  //   borderRadius: BorderRadius.circular(10),
+                  //   child: GoogleMap(
+                  //     onMapCreated: controller.onMapCreated,
+                  //     initialCameraPosition: const CameraPosition(
+                  //       target: ExploreController.initialLocation,
+                  //       zoom: 15,
+                  //     ),
+                  //     markers: controller.markers,
+                  //     myLocationEnabled: true,
+                  //     myLocationButtonEnabled: true,
+                  //   ),
+                  // ),
                 ),
               ],
             ),

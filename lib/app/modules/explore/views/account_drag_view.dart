@@ -4,9 +4,6 @@ import 'package:get/get.dart';
 import 'package:jordyn/app/modules/explore/views/event_list_view.dart';
 import 'package:jordyn/app/modules/memory/views/memorial_view.dart';
 import 'package:jordyn/app/modules/explore/views/post_view.dart';
-import 'package:jordyn/app/modules/profile/views/edit_profile_view.dart';
-import 'package:jordyn/app/modules/profile/views/friend_list_view.dart';
-import 'package:jordyn/widgets/custom_button.dart';
 import '../../../../res/assets/image_assets.dart';
 import '../../../../res/colors/app_color.dart';
 import '../controller/explore_controller.dart';
@@ -109,123 +106,129 @@ class AccountDragView extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Obx(
-                                () => GestureDetector(
-                              onTap: () {
-                                controller.setAccountSelectedTab('Memorial');
-                              },
-                              child: Column(
-                                children: [
-                                  Text(
-                                    'Memorial',
-                                    style: TextStyle(
-                                      color:
-                                      controller.accountSelectedTab.value ==
-                                          'Memorial'
-                                          ? AppColor.buttonColor
-                                          : AppColor.textGreyColor3,
-                                      fontSize: 16,
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.w400,
-                                      height: 2,
-                                      letterSpacing: 0.50,
+                          Flexible(
+                            child: Obx(
+                                  () => GestureDetector(
+                                onTap: () {
+                                  controller.setAccountSelectedTab('Memorial');
+                                },
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Memorial',
+                                      style: TextStyle(
+                                        color:
+                                        controller.accountSelectedTab.value ==
+                                            'Memorial'
+                                            ? AppColor.buttonColor
+                                            : AppColor.textGreyColor3,
+                                        fontSize: 16,
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w400,
+                                        height: 2,
+                                        letterSpacing: 0.50,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(height: 5.h),
-                                  SizedBox(
-                                    height: 2.h,
-                                    width: 130.w,
-                                    child: Divider(
-                                      height: 5.h,
-                                      thickness: 2.h,
-                                      color:
-                                      controller.accountSelectedTab.value ==
-                                          'Memorial'
-                                          ? AppColor.buttonColor
-                                          : AppColor.textAreaColor,
+                                    SizedBox(height: 5.h),
+                                    SizedBox(
+                                      height: 2.h,
+                                      width: 130.w,
+                                      child: Divider(
+                                        height: 5.h,
+                                        thickness: 2.h,
+                                        color:
+                                        controller.accountSelectedTab.value ==
+                                            'Memorial'
+                                            ? AppColor.buttonColor
+                                            : AppColor.textAreaColor,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          Obx(
-                                () => GestureDetector(
-                              onTap: () {
-                                controller.setAccountSelectedTab('Post');
-                              },
-                              child: Column(
-                                children: [
-                                  Text(
-                                    'Post',
-                                    style: TextStyle(
-                                      color:
-                                      controller.accountSelectedTab.value ==
-                                          'Post'
-                                          ? AppColor.buttonColor
-                                          : AppColor.textGreyColor3,
-                                      fontSize: 16,
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.w400,
-                                      height: 2,
-                                      letterSpacing: 0.50,
+                          Flexible(
+                            child: Obx(
+                                  () => GestureDetector(
+                                onTap: () {
+                                  controller.setAccountSelectedTab('Post');
+                                },
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Post',
+                                      style: TextStyle(
+                                        color:
+                                        controller.accountSelectedTab.value ==
+                                            'Post'
+                                            ? AppColor.buttonColor
+                                            : AppColor.textGreyColor3,
+                                        fontSize: 16,
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w400,
+                                        height: 2,
+                                        letterSpacing: 0.50,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(height: 5.h),
-                                  SizedBox(
-                                    height: 2.h,
-                                    width: 130.w,
-                                    child: Divider(
-                                      height: 5.h,
-                                      thickness: 2.h,
-                                      color:
-                                      controller.accountSelectedTab.value ==
-                                          'Post'
-                                          ? AppColor.buttonColor
-                                          : AppColor.textAreaColor,
+                                    SizedBox(height: 5.h),
+                                    SizedBox(
+                                      height: 2.h,
+                                      width: 130.w,
+                                      child: Divider(
+                                        height: 5.h,
+                                        thickness: 2.h,
+                                        color:
+                                        controller.accountSelectedTab.value ==
+                                            'Post'
+                                            ? AppColor.buttonColor
+                                            : AppColor.textAreaColor,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          Obx(
-                                () => GestureDetector(
-                              onTap: () {
-                                controller.setAccountSelectedTab('Event');
-                              },
-                              child: Column(
-                                children: [
-                                  Text(
-                                    'Event',
-                                    style: TextStyle(
-                                      color:
-                                      controller.accountSelectedTab.value ==
-                                          'Event'
-                                          ? AppColor.buttonColor
-                                          : AppColor.textGreyColor3,
-                                      fontSize: 16,
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.w400,
-                                      height: 2,
-                                      letterSpacing: 0.50,
+                          Flexible(
+                            child: Obx(
+                                  () => GestureDetector(
+                                onTap: () {
+                                  controller.setAccountSelectedTab('Event');
+                                },
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Event',
+                                      style: TextStyle(
+                                        color:
+                                        controller.accountSelectedTab.value ==
+                                            'Event'
+                                            ? AppColor.buttonColor
+                                            : AppColor.textGreyColor3,
+                                        fontSize: 16,
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w400,
+                                        height: 2,
+                                        letterSpacing: 0.50,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(height: 5.h),
-                                  SizedBox(
-                                    height: 2.h,
-                                    width: 130.w,
-                                    child: Divider(
-                                      height: 5.h,
-                                      thickness: 2.h,
-                                      color:
-                                      controller.accountSelectedTab.value ==
-                                          'Event'
-                                          ? AppColor.buttonColor
-                                          : AppColor.textAreaColor,
+                                    SizedBox(height: 5.h),
+                                    SizedBox(
+                                      height: 2.h,
+                                      width: 130.w,
+                                      child: Divider(
+                                        height: 5.h,
+                                        thickness: 2.h,
+                                        color:
+                                        controller.accountSelectedTab.value ==
+                                            'Event'
+                                            ? AppColor.buttonColor
+                                            : AppColor.textAreaColor,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),

@@ -19,7 +19,7 @@ class PostView extends GetView {
         padding: EdgeInsets.zero,
         itemBuilder: (context, index) {
           return Container(
-            height: 560,
+            height: 585,
             color: AppColor.backgroundColor,
             child: Column(
               children: [

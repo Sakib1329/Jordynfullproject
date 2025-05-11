@@ -67,121 +67,127 @@ class Explore extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Obx(
-                            () => GestureDetector(
-                              onTap: () {
-                                controller.setSelectedTab('User');
-                              },
-                              child: Column(
-                                children: [
-                                  Text(
-                                    'User',
-                                    style: TextStyle(
-                                      color:
-                                          controller.selectedTab.value == 'User'
-                                              ? AppColor.buttonColor
-                                              : AppColor.textGreyColor3,
-                                      fontSize: 16,
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.w400,
-                                      height: 2,
-                                      letterSpacing: 0.50,
+                          Flexible(
+                            child: Obx(
+                              () => GestureDetector(
+                                onTap: () {
+                                  controller.setSelectedTab('User');
+                                },
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'User',
+                                      style: TextStyle(
+                                        color:
+                                            controller.selectedTab.value == 'User'
+                                                ? AppColor.buttonColor
+                                                : AppColor.textGreyColor3,
+                                        fontSize: 16,
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w400,
+                                        height: 2,
+                                        letterSpacing: 0.50,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(height: 5.h),
-                                  SizedBox(
-                                    height: 2.h,
-                                    width: 130.w,
-                                    child: Divider(
-                                      height: 5.h,
-                                      thickness: 2.h,
-                                      color:
-                                          controller.selectedTab.value == 'User'
-                                              ? AppColor.buttonColor
-                                              : AppColor.textAreaColor,
+                                    SizedBox(height: 5.h),
+                                    SizedBox(
+                                      height: 2.h,
+                                      width: 130.w,
+                                      child: Divider(
+                                        height: 5.h,
+                                        thickness: 2.h,
+                                        color:
+                                            controller.selectedTab.value == 'User'
+                                                ? AppColor.buttonColor
+                                                : AppColor.textAreaColor,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          Obx(
-                            () => GestureDetector(
-                              onTap: () {
-                                controller.setSelectedTab('Memory');
-                              },
-                              child: Column(
-                                children: [
-                                  Text(
-                                    'Memory',
-                                    style: TextStyle(
-                                      color:
-                                          controller.selectedTab.value ==
-                                                  'Memory'
-                                              ? AppColor.buttonColor
-                                              : AppColor.textGreyColor3,
-                                      fontSize: 16,
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.w400,
-                                      height: 2,
-                                      letterSpacing: 0.50,
+                          Flexible(
+                            child: Obx(
+                              () => GestureDetector(
+                                onTap: () {
+                                  controller.setSelectedTab('Memory');
+                                },
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Memory',
+                                      style: TextStyle(
+                                        color:
+                                            controller.selectedTab.value ==
+                                                    'Memory'
+                                                ? AppColor.buttonColor
+                                                : AppColor.textGreyColor3,
+                                        fontSize: 16,
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w400,
+                                        height: 2,
+                                        letterSpacing: 0.50,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(height: 5.h),
-                                  SizedBox(
-                                    height: 2.h,
-                                    width: 130.w,
-                                    child: Divider(
-                                      height: 5.h,
-                                      thickness: 2.h,
-                                      color:
-                                          controller.selectedTab.value ==
-                                                  'Memory'
-                                              ? AppColor.buttonColor
-                                              : AppColor.textAreaColor,
+                                    SizedBox(height: 5.h),
+                                    SizedBox(
+                                      height: 2.h,
+                                      width: 130.w,
+                                      child: Divider(
+                                        height: 5.h,
+                                        thickness: 2.h,
+                                        color:
+                                            controller.selectedTab.value ==
+                                                    'Memory'
+                                                ? AppColor.buttonColor
+                                                : AppColor.textAreaColor,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          Obx(
-                            () => GestureDetector(
-                              onTap: () {
-                                controller.setSelectedTab('Event');
-                              },
-                              child: Column(
-                                children: [
-                                  Text(
-                                    'Event',
-                                    style: TextStyle(
-                                      color:
-                                          controller.selectedTab.value ==
-                                                  'Event'
-                                              ? AppColor.buttonColor
-                                              : AppColor.textGreyColor3,
-                                      fontSize: 16,
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.w400,
-                                      height: 2,
-                                      letterSpacing: 0.50,
+                          Flexible(
+                            child: Obx(
+                              () => GestureDetector(
+                                onTap: () {
+                                  controller.setSelectedTab('Event');
+                                },
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Event',
+                                      style: TextStyle(
+                                        color:
+                                            controller.selectedTab.value ==
+                                                    'Event'
+                                                ? AppColor.buttonColor
+                                                : AppColor.textGreyColor3,
+                                        fontSize: 16,
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w400,
+                                        height: 2,
+                                        letterSpacing: 0.50,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(height: 5.h),
-                                  SizedBox(
-                                    height: 2.h,
-                                    width: 130.w,
-                                    child: Divider(
-                                      height: 5.h,
-                                      thickness: 2.h,
-                                      color:
-                                          controller.selectedTab.value ==
-                                                  'Event'
-                                              ? AppColor.buttonColor
-                                              : AppColor.textAreaColor,
+                                    SizedBox(height: 5.h),
+                                    SizedBox(
+                                      height: 2.h,
+                                      width: 130.w,
+                                      child: Divider(
+                                        height: 5.h,
+                                        thickness: 2.h,
+                                        color:
+                                            controller.selectedTab.value ==
+                                                    'Event'
+                                                ? AppColor.buttonColor
+                                                : AppColor.textAreaColor,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),

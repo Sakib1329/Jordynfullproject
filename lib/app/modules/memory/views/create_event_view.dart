@@ -206,21 +206,24 @@ class CreateEventView extends StatelessWidget {
               ),
             ),
           ),
-          Column(
-            children: [
-              CustomButton(
-                title: 'Save',
-                fontWeight: FontWeight.bold,
-                fontSize: 16.sp,
-                onPress: () async {
-                  Get.to(AddEventView(),transition: Transition.noTransition,arguments: {'origin': 'HomeView'});
-                },
-                buttonColor: AppColor.buttonColor,
-                height: 50,
-                radius: 30.r,
-              ),
-              SizedBox(height: 30.h,)
-            ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Column(
+              children: [
+                CustomButton(
+                  title: 'Save',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16.sp,
+                  onPress: () async {
+                    Get.to(AddEventView(),transition: Transition.noTransition,arguments: {'origin': 'HomeView'});
+                  },
+                  buttonColor: AppColor.buttonColor,
+                  height: 50,
+                  radius: 30.r,
+                ),
+                SizedBox(height: 30.h,)
+              ],
+            ),
           ),
         ],
       ),

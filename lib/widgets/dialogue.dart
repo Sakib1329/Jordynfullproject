@@ -60,8 +60,6 @@ class CenteredDialogWidget extends StatelessWidget {
               child: Center(
                 child: SvgPicture.asset(
                   imageasset,
-
-                  color: iconColor,
                 ),
               ),
             ),

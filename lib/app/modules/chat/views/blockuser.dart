@@ -12,7 +12,7 @@ import '../../../../widgets/dialogue.dart';
 
 class Blockuser extends StatelessWidget {
   final ChatController controller=Get.find();
-   Blockuser({super.key});
+  Blockuser({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +77,6 @@ class Blockuser extends StatelessWidget {
               buttonColor: AppColor.buttonColor,
               height: 50.h,
               radius: 30.r,
-            )
             ),
           ],
         ),

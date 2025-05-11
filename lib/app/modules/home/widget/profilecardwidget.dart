@@ -28,6 +28,7 @@ class ProfileCardWidget extends StatelessWidget {
         height: 110,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.r),
+
           border: Border.all(
             color: AppColor.softBeige,
           ),
@@ -62,7 +63,7 @@ class ProfileCardWidget extends StatelessWidget {
                   title,
                   style: TextStyle(
                     color: AppColor.greyTone,
-                    fontSize: 22,
+                    fontSize: 18.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -71,7 +72,7 @@ class ProfileCardWidget extends StatelessWidget {
                     subtitle1!,
                     style: TextStyle(
                       color: AppColor.greyTone,
-                      fontSize: 20,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w300,
                     ),
                   ),
@@ -87,7 +88,7 @@ class ProfileCardWidget extends StatelessWidget {
                       subtitle2,
                       style: TextStyle(
                         color: AppColor.greyTone,
-                        fontSize: 20,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w300,
                       ),
                     ),

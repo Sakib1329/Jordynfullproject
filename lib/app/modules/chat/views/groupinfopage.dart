@@ -48,7 +48,7 @@ class Groupinfopage extends StatelessWidget {
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum ',
                 onDelete: () {
                   Get.to(Navigation(),transition: Transition.rightToLeft);
-                },
+                }, arguments: '',
               );
             }
             // Add more logic as needed
@@ -72,19 +72,19 @@ class Groupinfopage extends StatelessWidget {
                     return ClipRRect(
                       borderRadius: BorderRadius.circular(60.r),
                       child:
-                          file != null
-                              ? Image.file(
-                                file,
-                                width: 100.w,
-                                height: 100.w,
-                                fit: BoxFit.cover,
-                              )
-                              : Container(
-                                width: 100.w,
-                                height: 100.w,
-                                color: AppColor.mutedBlueGrey,
-                                child: Image.asset(ImageAssets.group),
-                              ),
+                      file != null
+                          ? Image.file(
+                        file,
+                        width: 100.w,
+                        height: 100.w,
+                        fit: BoxFit.cover,
+                      )
+                          : Container(
+                        width: 100.w,
+                        height: 100.w,
+                        color: AppColor.mutedBlueGrey,
+                        child: Image.asset(ImageAssets.group),
+                      ),
                     );
                   }),
                 ),
@@ -169,67 +169,67 @@ class Groupinfopage extends StatelessWidget {
 
               //Req portion*************************************************************************
               if(reqincoming==false)
-              Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            'Requests',
-                            style: TextStyle(
-                              color: AppColor.textBlackColor,
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.bold,
-                            ),
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              'Requests',
+                              style: TextStyle(
+                                color: AppColor.textBlackColor,
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.bold,
+                              ),
 
-                          ),
-                          SizedBox(width: 5.w,),
-                          Text(
-                            '(6)',
+                            ),
+                            SizedBox(width: 5.w,),
+                            Text(
+                              '(6)',
+                              style: TextStyle(
+                                color: AppColor.textGreyColor,
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.w300,
+                              ),
+
+                            ),
+                          ],
+                        ),
+                        GestureDetector(
+                          onTap: (){
+                            Get.to(Request(),transition: Transition.rightToLeft);
+                          },
+                          child: Text(
+                            'View All',
                             style: TextStyle(
                               color: AppColor.textGreyColor,
-                              fontSize: 18.sp,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w300,
                             ),
 
                           ),
-                        ],
-                      ),
-                      GestureDetector(
-                        onTap: (){
-                          Get.to(Request(),transition: Transition.rightToLeft);
-                        },
-                        child: Text(
-                          'View All',
-                          style: TextStyle(
-                            color: AppColor.textGreyColor,
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w300,
-                          ),
-
                         ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 10.h,),
-                  ListView.builder(
-                    padding: EdgeInsets.all(0),
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemCount: 2,
-                    itemBuilder: (context, index) {
-                      return Column(
-                        children: [
-                          _buildURequestTile(controller.names[index]),
-                        ],
-                      );
-                    },
-                  ),
-                  SizedBox(height: 10.h,),
-                ],
-              ),
+                      ],
+                    ),
+                    SizedBox(height: 10.h,),
+                    ListView.builder(
+                      padding: EdgeInsets.all(0),
+                      physics: NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: 2,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          children: [
+                            _buildURequestTile(controller.names[index]),
+                          ],
+                        );
+                      },
+                    ),
+                    SizedBox(height: 10.h,),
+                  ],
+                ),
 //Members********************
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -259,7 +259,7 @@ class Groupinfopage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: (){
-Get.to(Addmembers(),transition: Transition.rightToLeft);
+                      Get.to(Addmembers(),transition: Transition.rightToLeft);
                     },
                     child: Text(
                       'Add  Members',
@@ -276,7 +276,7 @@ Get.to(Addmembers(),transition: Transition.rightToLeft);
               SizedBox(height: 10.h,),
               ListView.builder(
                 padding: EdgeInsets.all(0),
-              physics: NeverScrollableScrollPhysics(),
+                physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: controller.names.length,
                 itemBuilder: (context, index) {
@@ -346,9 +346,9 @@ Get.to(Addmembers(),transition: Transition.rightToLeft);
         trailing:Text(
           'Remove',
           style: TextStyle(
-            color: AppColor.greyTone,
-            fontSize: 15.sp,
-            fontWeight: FontWeight.w400
+              color: AppColor.greyTone,
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w400
           ),
         ),
       ),
@@ -356,7 +356,7 @@ Get.to(Addmembers(),transition: Transition.rightToLeft);
   }
   Widget _buildURequestTile(String name) {
     return Container(
-padding: EdgeInsets.symmetric(vertical: 8.h),
+      padding: EdgeInsets.symmetric(vertical: 8.h),
 
       child: Row(
         children: [

@@ -9,8 +9,9 @@ import '../controllers/home_controller.dart';
 import '../widget/profilecardwidget.dart';
 
 class Schedule extends StatelessWidget {
+  final String? arguments;
   final HomeController controller = Get.find();
-  Schedule({super.key});
+  Schedule({super.key, this.arguments});
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +31,16 @@ class Schedule extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 20.h),
               Text(
                 'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
-                style: TextStyle(color: AppColor.greyTone, fontSize: 20),
+                style: TextStyle(color: AppColor.greyTone, fontSize: 18.sp),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 20.h),
               GestureDetector(
                 onTap: () {
                   Get.to(Scheduledetail(), transition: Transition.rightToLeft);
@@ -47,32 +50,39 @@ class Schedule extends StatelessWidget {
                   title: 'Person Name',
                   showSubtitle1: true,
                   subtitle2: 'June 1st, 2024 12PM',
-                  subtitle2IconPath:
-                      ImageAssets.calender2, // Add your icon path here
+                  subtitle2IconPath: ImageAssets.calender2,
                 ),
               ),
+              SizedBox(height: 2.h),
               ListView.builder(
                 itemCount: 50,
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 padding: EdgeInsets.zero,
                 itemBuilder: (context, index) {
-                  return InkWell(
-                    onTap: () {
-                      Get.to(EventView(), transition: Transition.noTransition);
-                    },
-                    child: ProfileCardWidget(
-                      imagePath: ImageAssets.flower,
-                      title: 'Sophia Anderson',
-                      showSubtitle1: true,
-                      subtitle1: 'Category Name',
-                      subtitle2: 'June 1st, 2024 12PM',
-                      subtitle2IconPath:
-                          ImageAssets.calender2, // Add your icon path here
+                  return Padding(
+                    padding: EdgeInsets.only(bottom: 2.h),
+                    child: InkWell(
+                      onTap: () {
+                        Get.to(
+                          EventView(),
+                          transition: Transition.noTransition,
+                          arguments: {'origin': 'ExporleView'},
+                        );
+                      },
+                      child: ProfileCardWidget(
+                        imagePath: ImageAssets.flower,
+                        title: 'Sophia Anderson',
+                        showSubtitle1: true,
+                        subtitle1: 'Category Name',
+                        subtitle2: 'June 1st, 2024 12PM',
+                        subtitle2IconPath: ImageAssets.calender2,
+                      ),
                     ),
                   );
                 },
               ),
+              SizedBox(height: 20.h),
             ],
           ),
         ),

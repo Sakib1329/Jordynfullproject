@@ -35,7 +35,7 @@ class Comment extends StatelessWidget {
                 children: [
                   // Post section
                   Container(
-                    height: 0.5.sh,
+                    height: 0.52.sh,
                     color: AppColor.backgroundColor,
                     child: Column(
                       children: [
@@ -111,8 +111,10 @@ class Comment extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 10.h),
-                        Image.asset(ImageAssets.person),
-                        SizedBox(height: 10.h),
+                        SizedBox(
+                            height: 0.35.sh,
+                            child: Image.asset(ImageAssets.person)),
+
                         Row(
                           children: [
                             SizedBox(width: 20.w),
@@ -170,7 +172,7 @@ class Comment extends StatelessWidget {
                               onTap: () {
                                 Navigator.pop(context);
                                 // Add your action here
-                                // print('Report tapped');
+                                print('Report tapped');
                               },
                             ),
                             secondOption: ReportOption(
@@ -179,7 +181,7 @@ class Comment extends StatelessWidget {
                               onTap: () {
                                 Navigator.pop(context);
                                 // Add your action here
-                                // print('Block tapped');
+                                print('Block tapped');
                               },
                             ),
                           );
@@ -285,7 +287,7 @@ class Comment extends StatelessWidget {
               color: AppColor.softBeige,
               padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
               child: Obx(
-                () => TextField(
+                    () => TextField(
                   onChanged: controller.onTextChanged,
                   keyboardType: TextInputType.text,
                   cursorColor: AppColor.textColor,
@@ -311,16 +313,16 @@ class Comment extends StatelessWidget {
                       ),
                     ),
                     suffixIcon:
-                        controller.hasText.value
-                            ? Padding(
-                              padding: EdgeInsets.all(12.w),
-                              child: SvgPicture.asset(
-                                ImageAssets.send,
-                                width: 20.w,
-                                height: 20.h,
-                              ),
-                            )
-                            : null,
+                    controller.hasText.value
+                        ? Padding(
+                      padding: EdgeInsets.all(12.w),
+                      child: SvgPicture.asset(
+                        ImageAssets.send,
+                        width: 20.w,
+                        height: 20.h,
+                      ),
+                    )
+                        : null,
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30.r),
                       borderSide: BorderSide(color: Colors.transparent),

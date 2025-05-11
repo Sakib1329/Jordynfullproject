@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:jordyn/app/modules/home/views/navbar.dart';
 import 'package:jordyn/app/modules/memory/controllers/memory_controller.dart';
 import 'package:jordyn/app/modules/memory/views/edit_info_memory_view.dart';
 import 'package:jordyn/app/modules/memory/views/memory_history_view.dart';
@@ -134,7 +135,7 @@ class MemoryDetailsView extends GetView<MemoryController> {
                 left: 15.w,
                 child: InkWell(
                   onTap: () {
-                    Get.back();
+                    Get.to(Navigation(),transition: Transition.leftToRight);
                   },
                   child: Image.asset(
                     ImageAssets.back_arrow,

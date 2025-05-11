@@ -6,6 +6,7 @@ import 'package:jordyn/app/modules/memory/views/memorial_view.dart';
 import 'package:jordyn/app/modules/explore/views/post_view.dart';
 import 'package:jordyn/app/modules/profile/views/edit_profile_view.dart';
 import 'package:jordyn/app/modules/profile/views/friend_list_view.dart';
+import 'package:jordyn/app/modules/profile/views/settings.dart';
 import 'package:jordyn/widgets/custom_button.dart';
 import '../../../../res/assets/image_assets.dart';
 import '../../../../res/colors/app_color.dart';
@@ -43,7 +44,7 @@ class AccountView extends StatelessWidget {
                       children: [
                         InkWell(
                           onTap: () {
-                            // Get.to(page);
+                            Get.to(Settings(),transition: Transition.rightToLeft);
                           },
                           child: Image.asset(ImageAssets.settings),
                         ),
@@ -52,7 +53,7 @@ class AccountView extends StatelessWidget {
                   ),
                   if (arguments[1] == 'othersprofile')
                   Padding(
-                    padding: const EdgeInsets.only(right: 410.0),
+                    padding: const EdgeInsets.only(right: 368.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -165,6 +166,7 @@ class AccountView extends StatelessWidget {
                                   width: 160.w,
                                   height: 42.h,
                                   radius: 120.r,
+                                  fontSize: 18.sp,
                                   borderColor: AppColor.greyTone,
                                   buttonColor: AppColor.backgroundColor,
                                   textColor: AppColor.greyTone,
@@ -172,6 +174,7 @@ class AccountView extends StatelessWidget {
                                 CustomButton(
                                   onPress: () async {},
                                   title: 'Add Friend',
+                                  fontSize: 18.sp,
                                   width: 160.w,
                                   height: 42.h,
                                   radius: 120.r,
@@ -198,6 +201,7 @@ class AccountView extends StatelessWidget {
                                   width: 160.w,
                                   height: 42.h,
                                   radius: 120.r,
+                                  fontSize: 18.sp,
                                   borderColor: AppColor.greyTone,
                                   buttonColor: AppColor.backgroundColor,
                                   textColor: AppColor.greyTone,
@@ -205,6 +209,7 @@ class AccountView extends StatelessWidget {
                                 CustomButton(
                                   onPress: () async {},
                                   title: 'Share Profile',
+                                  fontSize: 18.sp,
                                   width: 160.w,
                                   height: 42.h,
                                   radius: 120.r,
@@ -218,123 +223,129 @@ class AccountView extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Obx(
-                            () => GestureDetector(
-                              onTap: () {
-                                controller.setAccountSelectedTab('Memorial');
-                              },
-                              child: Column(
-                                children: [
-                                  Text(
-                                    'Memorial',
-                                    style: TextStyle(
-                                      color:
-                                          controller.accountSelectedTab.value ==
-                                                  'Memorial'
-                                              ? AppColor.buttonColor
-                                              : AppColor.textGreyColor3,
-                                      fontSize: 16,
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.w400,
-                                      height: 2,
-                                      letterSpacing: 0.50,
+                          Flexible(
+                            child: Obx(
+                              () => GestureDetector(
+                                onTap: () {
+                                  controller.setAccountSelectedTab('Memorial');
+                                },
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Memorial',
+                                      style: TextStyle(
+                                        color:
+                                            controller.accountSelectedTab.value ==
+                                                    'Memorial'
+                                                ? AppColor.buttonColor
+                                                : AppColor.textGreyColor3,
+                                        fontSize: 16,
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w400,
+                                        height: 2,
+                                        letterSpacing: 0.50,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(height: 5.h),
-                                  SizedBox(
-                                    height: 2.h,
-                                    width: 130.w,
-                                    child: Divider(
-                                      height: 5.h,
-                                      thickness: 2.h,
-                                      color:
-                                          controller.accountSelectedTab.value ==
-                                                  'Memorial'
-                                              ? AppColor.buttonColor
-                                              : AppColor.textAreaColor,
+                                    SizedBox(height: 5.h),
+                                    SizedBox(
+                                      height: 2.h,
+                                      width: 130.w,
+                                      child: Divider(
+                                        height: 5.h,
+                                        thickness: 2.h,
+                                        color:
+                                            controller.accountSelectedTab.value ==
+                                                    'Memorial'
+                                                ? AppColor.buttonColor
+                                                : AppColor.textAreaColor,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          Obx(
-                            () => GestureDetector(
-                              onTap: () {
-                                controller.setAccountSelectedTab('Post');
-                              },
-                              child: Column(
-                                children: [
-                                  Text(
-                                    'Post',
-                                    style: TextStyle(
-                                      color:
-                                          controller.accountSelectedTab.value ==
-                                                  'Post'
-                                              ? AppColor.buttonColor
-                                              : AppColor.textGreyColor3,
-                                      fontSize: 16,
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.w400,
-                                      height: 2,
-                                      letterSpacing: 0.50,
+                          Flexible(
+                            child: Obx(
+                              () => GestureDetector(
+                                onTap: () {
+                                  controller.setAccountSelectedTab('Post');
+                                },
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Post',
+                                      style: TextStyle(
+                                        color:
+                                            controller.accountSelectedTab.value ==
+                                                    'Post'
+                                                ? AppColor.buttonColor
+                                                : AppColor.textGreyColor3,
+                                        fontSize: 16,
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w400,
+                                        height: 2,
+                                        letterSpacing: 0.50,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(height: 5.h),
-                                  SizedBox(
-                                    height: 2.h,
-                                    width: 130.w,
-                                    child: Divider(
-                                      height: 5.h,
-                                      thickness: 2.h,
-                                      color:
-                                          controller.accountSelectedTab.value ==
-                                                  'Post'
-                                              ? AppColor.buttonColor
-                                              : AppColor.textAreaColor,
+                                    SizedBox(height: 5.h),
+                                    SizedBox(
+                                      height: 2.h,
+                                      width: 130.w,
+                                      child: Divider(
+                                        height: 5.h,
+                                        thickness: 2.h,
+                                        color:
+                                            controller.accountSelectedTab.value ==
+                                                    'Post'
+                                                ? AppColor.buttonColor
+                                                : AppColor.textAreaColor,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          Obx(
-                            () => GestureDetector(
-                              onTap: () {
-                                controller.setAccountSelectedTab('Event');
-                              },
-                              child: Column(
-                                children: [
-                                  Text(
-                                    'Event',
-                                    style: TextStyle(
-                                      color:
-                                          controller.accountSelectedTab.value ==
-                                                  'Event'
-                                              ? AppColor.buttonColor
-                                              : AppColor.textGreyColor3,
-                                      fontSize: 16,
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.w400,
-                                      height: 2,
-                                      letterSpacing: 0.50,
+                          Flexible(
+                            child: Obx(
+                              () => GestureDetector(
+                                onTap: () {
+                                  controller.setAccountSelectedTab('Event');
+                                },
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Event',
+                                      style: TextStyle(
+                                        color:
+                                            controller.accountSelectedTab.value ==
+                                                    'Event'
+                                                ? AppColor.buttonColor
+                                                : AppColor.textGreyColor3,
+                                        fontSize: 16,
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w400,
+                                        height: 2,
+                                        letterSpacing: 0.50,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(height: 5.h),
-                                  SizedBox(
-                                    height: 2.h,
-                                    width: 130.w,
-                                    child: Divider(
-                                      height: 5.h,
-                                      thickness: 2.h,
-                                      color:
-                                          controller.accountSelectedTab.value ==
-                                                  'Event'
-                                              ? AppColor.buttonColor
-                                              : AppColor.textAreaColor,
+                                    SizedBox(height: 5.h),
+                                    SizedBox(
+                                      height: 2.h,
+                                      width: 130.w,
+                                      child: Divider(
+                                        height: 5.h,
+                                        thickness: 2.h,
+                                        color:
+                                            controller.accountSelectedTab.value ==
+                                                    'Event'
+                                                ? AppColor.buttonColor
+                                                : AppColor.textAreaColor,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),

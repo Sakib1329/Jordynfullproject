@@ -78,7 +78,7 @@ class Addmembers extends StatelessWidget {
               )
             else
               SizedBox(
-                height: 0.7.sh,
+                height: 0.72.sh,
                 child: ListView.builder(
 
                   itemCount: filteredNames.length,
@@ -91,17 +91,20 @@ class Addmembers extends StatelessWidget {
                   },
                 ),
               ),
-            SizedBox(height: 10.h,),
-            CustomButton(
-              title: 'Next',
-              fontWeight: FontWeight.bold,
-              fontSize: 20.sp,
-              onPress: () async {
-                Get.to(Creategoup1(),transition: Transition.rightToLeft);
-              },
-              buttonColor: AppColor.buttonColor,
-              height: 50.h,
-              radius: 30.r,
+            SizedBox(height: 0.03.sh,),
+            Padding(
+              padding:  EdgeInsets.symmetric(horizontal: 20.w),
+              child: CustomButton(
+                title: 'Add',
+                fontWeight: FontWeight.bold,
+                fontSize: 20.sp,
+                onPress: () async {
+                  Get.to(Creategoup1(),transition: Transition.rightToLeft);
+                },
+                buttonColor: AppColor.buttonColor,
+                height: 50.h,
+                radius: 30.r,
+              ),
             ),
           ],
         );
