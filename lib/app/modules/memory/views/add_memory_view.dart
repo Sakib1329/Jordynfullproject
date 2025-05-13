@@ -24,11 +24,11 @@ class AddMemoryView extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Text(
           'Add Memory ',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
       ),
@@ -45,7 +45,7 @@ class AddMemoryView extends StatelessWidget {
                       'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                       style: TextStyle(
                         color: AppColor.greyTone,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'Montserrat',
                       ),
@@ -78,7 +78,7 @@ class AddMemoryView extends StatelessWidget {
                       borderColor: Colors.transparent,
                       hintText: 'Description',
                       hintTextColor: AppColor.greyTone,
-                      height: 148.h,
+                      height: 148,
                       maxLines: 10,
                     ),
                     SizedBox(height: 15.h),
@@ -91,14 +91,14 @@ class AddMemoryView extends StatelessWidget {
                             'Upload Media',
                             style: TextStyle(
                               color: AppColor.textBlackColor,
-                              fontSize: 18.sp,
+                              fontSize: 18,
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.w500,
                             ),
                           ),
                           SizedBox(height: 10.h),
                           Obx(() => SizedBox(
-                            height: 127.h, // Fixed height for the grid
+                            height: 127, // Fixed height for the grid
                             child: GridView.builder(
                               scrollDirection: Axis.horizontal, // Horizontal scrolling
                               physics: const ClampingScrollPhysics(), // Smooth horizontal scrolling
@@ -148,9 +148,9 @@ class AddMemoryView extends StatelessWidget {
                                           },
                                           child: Image.asset(
                                             ImageAssets.removeImage,
-                                            width: 24.w,
-                                            height: 24.h,
-                                            fit: BoxFit.contain,
+                                            width: 24,
+                                            height: 24,
+                                            fit: BoxFit.cover,
                                           ),
                                         ),
                                       ),
@@ -174,7 +174,7 @@ class AddMemoryView extends StatelessWidget {
               CustomButton(
                 title: 'Save',
                 fontWeight: FontWeight.bold,
-                fontSize: 16.sp,
+                fontSize: 16,
                 onPress: () async {
                   Get.to(
                     MemoryHistoryView(),

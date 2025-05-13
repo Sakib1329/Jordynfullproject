@@ -38,30 +38,31 @@ class MemoryHistoryView extends StatelessWidget {
                         floating: true,
                         snap: true,
                         backgroundColor: AppColor.backgroundColor,
-                        centerTitle: true,
                         automaticallyImplyLeading: false,
-                        actions: [
-                          Row(
-                            children: [
-                              InkWell(
-                                onTap: () {
-                                  Get.to(MemoryDetailsView(),transition: Transition.leftToRight);
-                                },
-                                child: Image.asset(
-                                  ImageAssets.back_arrow,
-                                  height: 28,
-                                  width: 28,
+                        expandedHeight: 30.h, // or adjust as needed
+                        flexibleSpace: SafeArea(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                InkWell(
+                                  onTap: () {
+                                    Get.to(MemoryDetailsView(), transition: Transition.leftToRight);
+                                  },
+                                  child: Icon(
+                                    Icons.arrow_back_ios_new,
+                                    size: 22,
+                                    color: AppColor.greyTone,
+                                  ),
                                 ),
-                              ),
-                            ],
+
+                              ],
+                            ),
                           ),
-                          SizedBox(width: 330),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
-                            child: Image.asset(ImageAssets.menu),
-                          ),
-                        ],
+                        ),
                       ),
+
                       SliverToBoxAdapter(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 10),

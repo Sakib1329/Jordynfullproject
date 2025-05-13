@@ -59,7 +59,7 @@ class Memory extends StatelessWidget {
                                               controller.selectedTab.value ==
                                                       'Memorial'
                                                   ? AppColor.buttonColor
-                                                  : AppColor.textGreyColor3,asdfd0
+                                                  : AppColor.textGreyColor3,
                                           fontSize: 16,
                                           fontFamily: 'Montserrat',
                                           fontWeight: FontWeight.w400,

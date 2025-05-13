@@ -29,36 +29,50 @@ class Explore extends StatelessWidget {
               SliverAppBar(
                 floating: true,
                 snap: true,
+                automaticallyImplyLeading: false,
                 backgroundColor: AppColor.backgroundColor,
-                leading: InkWell(
-                  onTap: () {
-                    if(controller.selectedTab.value=='Memory')
-                    controller.selectedTab.value='User';
-                    else if(controller.selectedTab.value=='Event')
-                      controller.selectedTab.value='Memory';
-                    else if(controller.selectedTab.value=='User')
-                     homeController.currentIndex.value=0;
-
-                  } ,
-                  child: Image.asset(ImageAssets.back_arrow),
-                ),
-                actions: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: InputTextWidget(
-                      onChanged: (e) {},
-                      borderColor: AppColor.backgroundColor,
-                      hintText: 'Search',
-                      hintTextColor: AppColor.textGreyColor2,
-                      leadingIcon: ImageAssets.search,
-                      textColor: AppColor.textGreyColor2,
-                      leading: true,
-                      height: 48.h,
-                      width: 360.w,
+                expandedHeight: 70.h,
+                flexibleSpace: SafeArea(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+                    child: Row(
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            if (controller.selectedTab.value == 'Memory') {
+                              controller.selectedTab.value = 'User';
+                            } else if (controller.selectedTab.value == 'Event') {
+                              controller.selectedTab.value = 'Memory';
+                            } else if (controller.selectedTab.value == 'User') {
+                              homeController.currentIndex.value = 0;
+                            }
+                          },
+                          child: Icon(
+                            Icons.arrow_back_ios_new,
+                            color: AppColor.greyTone,
+                            size: 25,
+                          ),
+                        ),
+                        SizedBox(width: 10.w),
+                        Expanded(
+                          child: InputTextWidget(
+                            onChanged: (e) {},
+                            borderColor: AppColor.backgroundColor,
+                            hintText: 'Search',
+                            hintTextColor: AppColor.textGreyColor2,
+                            leadingIcon: ImageAssets.search,
+                            textColor: AppColor.textGreyColor2,
+                            leading: true,
+                            height: 48,
+                            width: double.infinity,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
+                ),
               ),
+
 
               // Tab Selector
               SliverToBoxAdapter(
