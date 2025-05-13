@@ -11,8 +11,11 @@ import 'package:jordyn/widgets/custom_button.dart';
 import 'package:jordyn/widgets/dialogue.dart';
 import 'package:jordyn/widgets/input_text_widget.dart';
 
+import '../../chat/controllers/bottomsheetcontroller.dart';
+
 class EditProfileView extends GetView<ProfileController> {
-  const EditProfileView({super.key});
+  final BottomSheetController bs=Get.put(BottomSheetController());
+   EditProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -68,12 +71,48 @@ class EditProfileView extends GetView<ProfileController> {
                             SizedBox(height: 20.h),
                             Stack(
                               children: [
-                                Center(child: Image.asset(ImageAssets.image1,height: 124.h,width: 124.w,)),
+                                Obx(() {
+                                  final file = bs.pickedImage.value;
+
+                                  return ClipRRect(
+                                    borderRadius: BorderRadius.circular(60.r),
+                                    child: file != null
+                                        ? Image.file(
+                                      file,
+                                      width: 100.w,
+                                      height: 100.w,
+                                      fit: BoxFit.cover,
+                                    )
+                                        : Container(
+                                      width: 100.w,
+                                      height: 100.w,
+                                      color: AppColor.mutedBlueGrey,
+                                      child: Image.asset(ImageAssets.person2,fit: BoxFit.cover,),
+                                    ),
+                                  );
+                                }),
                                 Positioned(
-                                  bottom: 5.h,
-                                  right: 140.w,
-                                  child: Center(
-                                    child: Image.asset(ImageAssets.camera1),
+                                  bottom: 0.h,
+                                  right: 0.w,
+                                  child: Container(
+                                    width: 30.w,
+                                    height: 30.w,
+                                    decoration: BoxDecoration(
+                                      color: AppColor.buttonColor,
+                                      borderRadius: BorderRadius.circular(100.r),
+                                    ),
+                                    child: Center(
+                                      child: IconButton(
+                                        icon: Icon(
+                                          Icons.camera_alt,
+                                          size: 18.sp,
+                                          color: AppColor.whiteTextColor,
+                                        ),
+                                        onPressed: bs.getBottomSheet,
+                                        padding: EdgeInsets.all(4.w),
+                                        constraints: BoxConstraints(),
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ],

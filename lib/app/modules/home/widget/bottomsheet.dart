@@ -28,37 +28,38 @@ class ReportBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 0.21.sh,
-      width: 1.sw,
-      padding: EdgeInsets.symmetric(vertical: 20.h),
-      decoration: BoxDecoration(
-        color: AppColor.backgroundColor,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
-      ),
-      child: Column(
-        children: [
-          // Drag indicator
-          Container(
-            width: 80.w,
-            height: 4.h,
-            decoration: BoxDecoration(
-              color: Colors.grey.shade400,
-              borderRadius: BorderRadius.circular(10.r),
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      builder: (_, __) => Container(
+        height: 0.21.sh,
+        padding: EdgeInsets.symmetric(vertical: 20),
+        decoration: BoxDecoration(
+          color: AppColor.backgroundColor,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
+        ),
+        child: Column(
+          children: [
+            // Drag indicator
+            Container(
+              width: 80,
+              height: 4,
+              decoration: BoxDecoration(
+                color: Colors.grey.shade400,
+                borderRadius: BorderRadius.circular(10.r),
+              ),
             ),
-          ),
-          SizedBox(height: 30.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _buildOption(firstOption),
-              if (showTwoOptions && secondOption != null)
-                SizedBox(width: 40.w),
-              if (showTwoOptions && secondOption != null)
-                _buildOption(secondOption!),
-            ],
-          ),
-        ],
+            SizedBox(height: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _buildOption(firstOption),
+                if (showTwoOptions && secondOption != null) SizedBox(width: 40),
+                if (showTwoOptions && secondOption != null) _buildOption(secondOption!),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -70,23 +71,23 @@ class ReportBottomSheet extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.all(20.r),
-            decoration: BoxDecoration(
-              color: const Color(0xFFE8DBC4),
+            decoration: const BoxDecoration(
+              color: Color(0xFFE8DBC4),
               shape: BoxShape.circle,
             ),
             child: Icon(
               option.icon,
-              size: 30.w,
-              color: AppColor.greyTone, // You can change the color here if needed
+              size: 30,
+              color: AppColor.greyTone,
             ),
           ),
-          SizedBox(height: 10.h),
+          SizedBox(height: 10),
           Text(
             option.label,
             style: TextStyle(
-              fontSize: 16.sp,
+              fontSize: 16,
               color: Colors.grey.shade700,
-              fontWeight: FontWeight.bold
+              fontWeight: FontWeight.bold,
             ),
           ),
         ],

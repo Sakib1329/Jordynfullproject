@@ -17,22 +17,21 @@ class SignInView extends GetView<AuthController> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(430, 932),
+      designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
         return GestureDetector(
-          onTap: () {
-            FocusScope.of(context).unfocus();
-          },
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
+            resizeToAvoidBottomInset: true,
             body: SafeArea(
-              child: Padding(
+              child: SingleChildScrollView(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 30.h),
+                    SizedBox(height: 10.h),
                     Center(child: Image.asset(ImageAssets.auth_logo)),
                     SizedBox(height: 20.h),
                     Column(
@@ -42,7 +41,7 @@ class SignInView extends GetView<AuthController> {
                           'Sign In',
                           style: TextStyle(
                             color: AppColor.buttonColor,
-                            fontSize: 24.sp,
+                            fontSize: 24,
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.w700,
                           ),
@@ -52,7 +51,7 @@ class SignInView extends GetView<AuthController> {
                           'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                           style: TextStyle(
                             color: AppColor.textGreyColor2,
-                            fontSize: 16.sp,
+                            fontSize: 16,
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.w400,
                           ),
@@ -67,8 +66,8 @@ class SignInView extends GetView<AuthController> {
                       leadingIcon: ImageAssets.email,
                       textColor: AppColor.textGreyColor2,
                       leading: true,
-                      height: 48.h,
-                      width: 390.w,
+                      height: 48,
+                      width: double.infinity,
                     ),
                     SizedBox(height: 15.h),
                     InputTextWidget(
@@ -79,47 +78,43 @@ class SignInView extends GetView<AuthController> {
                       leading: true,
                       obscureText: true,
                       textColor: AppColor.textGreyColor2,
-                      height: 48.h,
-                      width: 390.w,
+                      height: 48,
+                      width: double.infinity,
                     ),
-                    SizedBox(height: 65.h),
+                    SizedBox(height: 30.h),
                     CustomButton(
-                      onPress: () async {
-                        Get.to(
-                          Navigation(),
-
-                          transition: Transition.rightToLeft,
-                        );
+                      onPress: () async{
+                        Get.to(Navigation(), transition: Transition.rightToLeft);
                       },
                       title: 'Sign In',
-                      height: 48.h,
-                      width: 390.w,
+                      height: 48,
+                      width: double.infinity,
                       radius: 100,
                     ),
                     SizedBox(height: 10.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            Get.to(
-                              ForgetView(),
-                              transition: Transition.noTransition,
-                            );
-                          },
-                          child: Text(
-                            'Forgot Password?',
-                            style: TextStyle(
-                              color: AppColor.greyTone1,
-                              fontSize: 14.sp,
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w300,
+                    SizedBox(
+                      width: double.infinity,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              Get.to(ForgetView(), transition: Transition.noTransition);
+                            },
+                            child: Text(
+                              'Forgot Password?',
+                              style: TextStyle(
+                                color: AppColor.greyTone1,
+                                fontSize: 14,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w300,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                    SizedBox(height: 20.h),
+                    SizedBox(height: 15.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -127,23 +122,20 @@ class SignInView extends GetView<AuthController> {
                           'Don’t have an account?',
                           style: TextStyle(
                             color: AppColor.textGreyColor3,
-                            fontSize: 16.sp,
+                            fontSize: 16,
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.w400,
                           ),
                         ),
                         InkWell(
                           onTap: () {
-                            Get.to(
-                              AuthView(),
-                              transition: Transition.noTransition,
-                            );
+                            Get.to(AuthView(), transition: Transition.noTransition);
                           },
                           child: Text(
                             ' Sign Up',
                             style: TextStyle(
                               color: AppColor.buttonColor,
-                              fontSize: 16.sp,
+                              fontSize: 16,
                               fontFamily: 'Poppins',
                               fontWeight: FontWeight.w600,
                             ),
@@ -151,48 +143,37 @@ class SignInView extends GetView<AuthController> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 30.h),
+                    SizedBox(height: 20.h),
                     Text(
                       'or',
                       style: TextStyle(
                         color: AppColor.greyTone1,
-                        fontSize: 20.sp,
+                        fontSize: 20,
                         fontFamily: 'Nunito',
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(height: 30.h),
+                    SizedBox(height: 20.h),
                     Text(
                       'Continue with',
                       style: TextStyle(
                         color: AppColor.greyTone1,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                         fontFamily: 'Nunito',
                         fontWeight: FontWeight.w400,
                       ),
                     ),
                     SizedBox(height: 25.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      spacing: 20.w,
+                    Wrap(
+                      spacing: 20,
+                      alignment: WrapAlignment.center,
                       children: [
-                        SvgPicture.asset(
-                          ImageAssets.google,
-                          height: 42.h,
-                          width: 78.w,
-                        ),
-                        SvgPicture.asset(
-                          ImageAssets.facebook,
-                          height: 42.h,
-                          width: 78.w,
-                        ),
-                        SvgPicture.asset(
-                          ImageAssets.apple,
-                          height: 42.h,
-                          width: 78.w,
-                        ),
+                        SvgPicture.asset(ImageAssets.google, height: 42, width: 78),
+                        SvgPicture.asset(ImageAssets.facebook, height: 42, width: 78),
+                        SvgPicture.asset(ImageAssets.apple, height: 42, width: 78),
                       ],
                     ),
+                    SizedBox(height: 30.h),
                   ],
                 ),
               ),

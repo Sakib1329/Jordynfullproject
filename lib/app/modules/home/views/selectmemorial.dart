@@ -21,115 +21,119 @@ class Selectmemorial extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Text(
           'Select Memorial',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(
-          children: [
-            Text(
-              'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
-              style: TextStyle(color: AppColor.greyTone, fontSize: 20),
-            ),
-            SizedBox(height: 20),
-            SizedBox(
-              height: 1.5.sw,
-              child: ListView.builder(
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      controller.ismemorialselected.value = true;
-                      Get.back();
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10.0),
-                      child: Container(
-                        height: 110,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: AppColor.softBeige),
-                        ),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 10.0),
-                              child: Container(
-                                height: 80,
-                                width: 80,
-                                decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                clipBehavior:
-                                    Clip.antiAlias, // Enables clipping
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(12),
-                                  child: Image.asset(
-                                    ImageAssets.person,
-                                    fit: BoxFit.cover,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
+            children: [
+              Text(
+                'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
+                style: TextStyle(color: AppColor.greyTone, fontSize: 20),
+              ),
+              SizedBox(height: 20),
+              SizedBox(
+                height: 1.57.sw,
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        controller.ismemorialselected.value = true;
+                        Get.back();
+                      },
+                      child:Padding(
+                        padding: EdgeInsets.symmetric(vertical: 10.h),
+                        child: Container(
+                          height: 110,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12.r),
+                            border: Border.all(color: AppColor.softBeige),
+                          ),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(left: 10.w),
+                                child: Container(
+                                  height: 80,
+                                  width: 80,
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    borderRadius: BorderRadius.circular(12.r),
+                                  ),
+                                  clipBehavior: Clip.antiAlias,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(12.r),
+                                    child: Image.asset(
+                                      ImageAssets.person,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            SizedBox(width: 10),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Sophia Anderson',
-                                  style: TextStyle(
-                                    color: AppColor.greyTone,
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.bold,
+                              SizedBox(width: 10.w),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Sophia Anderson',
+                                    style: TextStyle(
+                                      color: AppColor.greyTone,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  'December 12th, 1992',
-                                  style: TextStyle(
-                                    color: AppColor.greyTone,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w300,
+                                  SizedBox(height: 3.h),
+                                  Text(
+                                    'December 12th, 1992',
+                                    style: TextStyle(
+                                      color: AppColor.greyTone,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w300,
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  'June 1st, 2024',
-                                  style: TextStyle(
-                                    color: AppColor.greyTone,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w300,
+                                  SizedBox(height: 2.h),
+                                  Text(
+                                    'June 1st, 2024',
+                                    style: TextStyle(
+                                      color: AppColor.greyTone,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w300,
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          ],
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                  itemCount: 20,
+                ),
               ),
-            ),
-            SizedBox(height: 15),
-            CustomButton(
-              title: 'Next',
-              fontWeight: FontWeight.bold,
-              fontSize: 20.sp,
-              onPress: () async {
-                controller.ismemorialselected.value = true;
-                Get.back();
-              },
-              buttonColor: AppColor.buttonColor,
-              height: 50.h,
-              radius: 30.r,
-            ),
-          ],
+              SizedBox(height: 15),
+              CustomButton(
+                title: 'Next',
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                onPress: () async {
+                  controller.ismemorialselected.value = true;
+                  Get.back();
+                },
+                buttonColor: AppColor.buttonColor,
+                height: 50,
+                radius: 30.r,
+              ),
+            ],
+          ),
         ),
       ),
     );

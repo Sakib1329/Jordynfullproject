@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:get/get.dart';
 import 'package:jordyn/app/modules/memory/views/memory_details_view.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
@@ -8,6 +7,7 @@ import 'package:jordyn/res/colors/app_color.dart';
 
 class MemorialView extends GetView {
   const MemorialView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,27 +28,27 @@ class MemorialView extends GetView {
                 );
               },
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10.0),
+                padding: EdgeInsets.symmetric(vertical: 10.h),
                 child: Container(
                   height: 110,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(12.r),
                     border: Border.all(color: AppColor.softBeige),
                   ),
                   child: Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
+                        padding: EdgeInsets.only(left: 10.w),
                         child: Container(
                           height: 80,
                           width: 80,
                           decoration: BoxDecoration(
                             color: Colors.black,
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(12.r),
                           ),
-                          clipBehavior: Clip.antiAlias, // Enables clipping
+                          clipBehavior: Clip.antiAlias,
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(12.r),
                             child: Image.asset(
                               ImageAssets.person,
                               fit: BoxFit.cover,
@@ -56,7 +56,7 @@ class MemorialView extends GetView {
                           ),
                         ),
                       ),
-                      SizedBox(width: 10),
+                      SizedBox(width: 10.w),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,23 +65,25 @@ class MemorialView extends GetView {
                             'Sophia Anderson',
                             style: TextStyle(
                               color: AppColor.greyTone,
-                              fontSize: 22,
+                              fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
+                          SizedBox(height: 3.h),
                           Text(
                             'December 12th, 1992',
                             style: TextStyle(
                               color: AppColor.greyTone,
-                              fontSize: 20,
+                              fontSize: 16,
                               fontWeight: FontWeight.w300,
                             ),
                           ),
+                          SizedBox(height: 2.h),
                           Text(
                             'June 1st, 2024',
                             style: TextStyle(
                               color: AppColor.greyTone,
-                              fontSize: 20,
+                              fontSize: 16,
                               fontWeight: FontWeight.w300,
                             ),
                           ),

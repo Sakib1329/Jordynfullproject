@@ -25,19 +25,19 @@ class AddEventView extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Stack(
           children: [
             if (origin == 'HomeView')
             Text(
               'Create Event ',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
             if (origin == 'EventView')
             Text(
               'Update Event ',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
           ],
         ),
@@ -56,7 +56,7 @@ class AddEventView extends StatelessWidget {
                       'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                       style: TextStyle(
                         color: AppColor.greyTone,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'Montserrat',
                       ),
@@ -72,7 +72,7 @@ class AddEventView extends StatelessWidget {
                             'Upload Event Pictures',
                             style: TextStyle(
                               color: AppColor.textBlackColor,
-                              fontSize: 16.sp,
+                              fontSize: 16,
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.w500,
                             ),
@@ -80,7 +80,7 @@ class AddEventView extends StatelessWidget {
                           SizedBox(height: 10.h),
                           Obx(
                             () => SizedBox(
-                              height: 127.h, // Fixed height for the grid
+                              height: 127, // Fixed height for the grid
                               child: GridView.builder(
                                 scrollDirection:
                                     Axis.horizontal, // Horizontal scrolling
@@ -106,7 +106,7 @@ class AddEventView extends StatelessWidget {
                                       },
                                       child: Image.asset(
                                         ImageAssets.upload,
-                                        fit: BoxFit.fill,
+                                        fit: BoxFit.cover,
                                       ),
                                     );
                                   } else {
@@ -116,8 +116,8 @@ class AddEventView extends StatelessWidget {
                                     final imagePath =
                                         controller.imagePaths[imageIndex];
                                     return Container(
-                                      height: 127.h,
-                                      width: 118.w,
+                                      height: 127,
+                                      width: 118,
                                       decoration: ShapeDecoration(
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(
@@ -155,8 +155,8 @@ class AddEventView extends StatelessWidget {
                                               },
                                               child: Image.asset(
                                                 ImageAssets.removeImage,
-                                                width: 24.w,
-                                                height: 24.h,
+                                                width: 24,
+                                                height: 24,
                                                 fit: BoxFit.contain,
                                               ),
                                             ),
@@ -179,7 +179,7 @@ class AddEventView extends StatelessWidget {
                       hintText: 'Event title',
                       hintTextColor: AppColor.greyTone,
                     ),
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 15.h),
                     InputTextWidget(
                       onChanged: (value) {},
                       backgroundColor: AppColor.textAreaColor,
@@ -189,7 +189,7 @@ class AddEventView extends StatelessWidget {
                       backimageadd: true,
                       backimage: ImageAssets.calender3,
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 15),
                     InputTextWidget(
                       onChanged: (value) {},
                       backgroundColor: AppColor.textAreaColor,
@@ -200,7 +200,7 @@ class AddEventView extends StatelessWidget {
                       backimage: ImageAssets.time,
                       height: 48,
                     ),
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 15.h),
                     InputTextWidget(
                       onChanged: (value) {},
                       backgroundColor: AppColor.textAreaColor,
@@ -211,7 +211,7 @@ class AddEventView extends StatelessWidget {
                       backimage: ImageAssets.location1,
                       height: 48,
                     ),
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 15.h),
                     InputTextWidget(
                       onChanged: (value) {},
                       backgroundColor: AppColor.textAreaColor,
@@ -219,7 +219,7 @@ class AddEventView extends StatelessWidget {
                       hintText: 'Event details',
                       hintTextColor: AppColor.greyTone,
                       passwordIcon: ImageAssets.time,
-                      height: 148.h,
+                      height: 148,
                       maxLines: 10,
                     ),
                   ],
@@ -231,9 +231,9 @@ class AddEventView extends StatelessWidget {
                 SizedBox(height: 10.h),
                 if (origin == 'HomeView')
                 CustomButton(
-                  title: 'Create Event',
+                  title: 'CREATE EVENT',
                   fontWeight: FontWeight.bold,
-                  fontSize: 16.sp,
+                  fontSize: 16,
                   onPress: () async {
                     showDialog(
                       context: context,
@@ -274,9 +274,9 @@ class AddEventView extends StatelessWidget {
                 ),
                 if (origin == 'EventView')
                 CustomButton(
-                  title: 'Update Event',
+                  title: 'UPDATE EVENT',
                   fontWeight: FontWeight.bold,
-                  fontSize: 16.sp,
+                  fontSize: 16,
                   onPress: () async {
                     showDialog(
                       context: context,

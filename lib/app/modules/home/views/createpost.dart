@@ -43,11 +43,11 @@ class Createpost extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Text(
           'Create Post',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
       ),
@@ -73,16 +73,19 @@ class Createpost extends StatelessWidget {
                   style: TextStyle(
                     color: AppColor.textBlackColor,
                     fontWeight: FontWeight.bold,
-                    fontSize: 20.sp,
+                    fontSize: 20,
                   ),
                 ),
               ),
               InputTextWidget(
                 onChanged: (String value) {},
+                onTap: (){
+                  FocusScope.of(context).unfocus();
+                },
                 backgroundColor: Colors.transparent,
                 borderColor: Colors.transparent,
                 hintText: 'What’s in your mind',
-                hintfontSize: 20.sp,
+                hintfontSize: 20,
                 textColor: AppColor.greyTone,
                 width: 1.sw,
                 maxLines: 4,
@@ -95,7 +98,7 @@ class Createpost extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(
                       vertical: 10.0, horizontal: 20),
                   child: Container(
-                    height: 110.h,
+                    height: 110,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12.r),
                       border: Border.all(
@@ -107,8 +110,8 @@ class Createpost extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(left: 10.0),
                           child: Container(
-                            height: 80.h,
-                            width: 80.w,
+                            height: 80,
+                            width: 80,
                             decoration: BoxDecoration(
                               color: Colors.black,
                               borderRadius: BorderRadius.circular(12.r),
@@ -132,7 +135,7 @@ class Createpost extends StatelessWidget {
                               'Sophia Anderson',
                               style: TextStyle(
                                 color: AppColor.greyTone,
-                                fontSize: 22.sp,
+                                fontSize: 22,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -140,7 +143,7 @@ class Createpost extends StatelessWidget {
                               'December 12th, 1992',
                               style: TextStyle(
                                 color: AppColor.greyTone,
-                                fontSize: 20.sp,
+                                fontSize: 20,
                                 fontWeight: FontWeight.w300,
                               ),
                             ),
@@ -148,7 +151,7 @@ class Createpost extends StatelessWidget {
                               'June 1st, 2024',
                               style: TextStyle(
                                 color: AppColor.greyTone,
-                                fontSize: 20.sp,
+                                fontSize: 20,
                                 fontWeight: FontWeight.w300,
                               ),
                             ),
@@ -160,7 +163,7 @@ class Createpost extends StatelessWidget {
                 )
                     : file != null
                     ? Container(
-                  height: 300.h,
+                  height: 300,
                   width: double.infinity,
                   child: Stack(
                     children: [
@@ -169,8 +172,8 @@ class Createpost extends StatelessWidget {
                         Image.file(file, fit: BoxFit.cover),
                       ),
                       Positioned(
-                        top: 10.h,
-                        right: 10.w,
+                        top: 10,
+                        right: 10,
                         child: GestureDetector(
                           onTap: () {
                             controller.pickedImage.value = null;
@@ -184,7 +187,7 @@ class Createpost extends StatelessWidget {
                             child: Icon(
                               Icons.close,
                               color: Colors.white,
-                              size: 20.sp,
+                              size: 20,
                             ),
                           ),
                         ),
@@ -199,7 +202,7 @@ class Createpost extends StatelessWidget {
           Positioned(
             left: 0,
             right: 0,
-            bottom: 10.h,
+            bottom: 10,
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
               color: AppColor.backgroundColor,
@@ -212,14 +215,14 @@ class Createpost extends StatelessWidget {
                       controller.pickedImage.value = null;
                     },
                     leading: Image.asset(ImageAssets.memorial,
-                        width: 40.w, height: 40.h),
+                        width: 40, height: 40),
                     title: Padding(
                       padding: EdgeInsets.only(top: 8.h),
                       child: Text(
                         'Add Memorial',
                         style: TextStyle(
                           color: AppColor.textGreyColor,
-                          fontSize: 18.sp,
+                          fontSize: 18,
                           letterSpacing: 1,
                         ),
                       ),
@@ -232,14 +235,14 @@ class Createpost extends StatelessWidget {
                       controller.ismemorialselected.value = false;
                     },
                     leading: Image.asset(ImageAssets.photo_videos,
-                        width: 35.w, height: 35.h),
+                        width: 35, height: 35),
                     title: Padding(
                       padding: EdgeInsets.only(top: 2.h),
                       child: Text(
                         'Photo/Video',
                         style: TextStyle(
                           color: AppColor.textGreyColor,
-                          fontSize: 18.sp,
+                          fontSize: 18,
                           letterSpacing: 1,
                         ),
                       ),
@@ -257,7 +260,7 @@ class Createpost extends StatelessWidget {
                       'Camera',
                       style: TextStyle(
                         color: AppColor.textGreyColor,
-                        fontSize: 18.sp,
+                        fontSize: 18,
                         letterSpacing: 1,
                       ),
                     ),
@@ -266,7 +269,7 @@ class Createpost extends StatelessWidget {
                   CustomButton(
                     title: 'Post',
                     fontWeight: FontWeight.bold,
-                    fontSize: 20.sp,
+                    fontSize: 20,
                     onPress: () async {
                       showDialog(
                         context: context,
@@ -287,7 +290,7 @@ class Createpost extends StatelessWidget {
                       );
                     },
                     buttonColor: AppColor.buttonColor,
-                    height: 50.h,
+                    height: 50,
                     radius: 30.r,
                   ),
                 ],

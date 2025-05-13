@@ -20,11 +20,11 @@ class Blocklistpage extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Text(
           'Block List',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         centerTitle: true,
       ),
@@ -37,7 +37,7 @@ class Blocklistpage extends StatelessWidget {
                 'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                 style: TextStyle(
                   color: AppColor.textGreyColor,
-                  fontSize: 20.sp,
+                  fontSize: 20,
                   fontFamily: 'Schuyler',
                 ),
                 textAlign: TextAlign.start,
@@ -50,7 +50,7 @@ class Blocklistpage extends StatelessWidget {
                     'Blocked Users',
                     style: TextStyle(
                       color: AppColor.textBlackColor,
-                      fontSize: 18.sp,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
 
@@ -60,7 +60,7 @@ class Blocklistpage extends StatelessWidget {
                     '(12)',
                     style: TextStyle(
                       color: AppColor.textGreyColor,
-                      fontSize: 18.sp,
+                      fontSize: 18,
                       fontWeight: FontWeight.w300,
                     ),
 
@@ -111,14 +111,14 @@ class Blocklistpage extends StatelessWidget {
           style: TextStyle(
             color: AppColor.darkGrey,
             fontWeight: FontWeight.w600,
-            fontSize: 17.sp,
+            fontSize: 17,
           ),
         ),
         subtitle: Text(
           '_${name}',
           style: TextStyle(
             color: AppColor.greyTone,
-            fontSize: 15.sp,
+            fontSize: 15,
 
           ),
         ),
@@ -126,7 +126,7 @@ class Blocklistpage extends StatelessWidget {
           'Unblock',
           style: TextStyle(
               color: AppColor.greyTone,
-              fontSize: 15.sp,
+              fontSize: 152,
               fontWeight: FontWeight.w400
           ),
         ),

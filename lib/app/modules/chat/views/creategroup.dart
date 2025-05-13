@@ -29,10 +29,10 @@ class Creategroup extends StatelessWidget {
         ),
         title: Text(
           'Create Group',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         centerTitle: true,
-        leadingWidth: 30.w,
+        leadingWidth: 30,
       ),
       body: Obx(() {
         final filteredNames = controller.names
@@ -41,73 +41,75 @@ class Creategroup extends StatelessWidget {
             .contains(controller.searchQuery.value.toLowerCase()))
             .toList();
 
-        return Column(
-          children: [
-            Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 20.w),
-              child: Obx(() => InputTextWidget(
-
-                onChanged: (value) {
-                  controller.searchQuery.value = value;
-                },
-                backIcon: controller.searchQuery.value.isEmpty ? false : true,
-                imageIcon: ImageAssets.cross3,
-                borderColor: AppColor.backgroundColor,
-                hintText: 'Search',
-                hintTextColor: AppColor.textGreyColor2,
-                leadingIcon: ImageAssets.search,
-                textColor: AppColor.textGreyColor2,
-                leading: true,
-                height: 48.h,
-              )),
-            ),
-            SizedBox(height: 10.h,),
-            if (filteredNames.isEmpty)
-              SizedBox(
-                height: 0.8.sh,
-                child: Center(
-                  child: Text(
-                    'No chat found',
-                    style: TextStyle(
-                      color: AppColor.greyTone,
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w500,
+        return SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 20.w),
+                child: Obx(() => InputTextWidget(
+          
+                  onChanged: (value) {
+                    controller.searchQuery.value = value;
+                  },
+                  backIcon: controller.searchQuery.value.isEmpty ? false : true,
+                  imageIcon: ImageAssets.cross3,
+                  borderColor: AppColor.backgroundColor,
+                  hintText: 'Search',
+                  hintTextColor: AppColor.textGreyColor2,
+                  leadingIcon: ImageAssets.search,
+                  textColor: AppColor.textGreyColor2,
+                  leading: true,
+                  height: 48,
+                )),
+              ),
+              SizedBox(height: 10.h,),
+              if (filteredNames.isEmpty)
+                SizedBox(
+                  height: 0.8.sh,
+                  child: Center(
+                    child: Text(
+                      'No chat found',
+                      style: TextStyle(
+                        color: AppColor.greyTone,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
+                )
+              else
+                SizedBox(
+                  height: 0.72.sh,
+                  child: ListView.builder(
+          
+                    itemCount: filteredNames.length,
+                    itemBuilder: (context, index) {
+                      return Column(
+                        children: [
+                          _buildUserTile(filteredNames[index]),
+                        ],
+                      );
+                    },
+                  ),
                 ),
-              )
-            else
-              SizedBox(
-                height: 0.72.sh,
-                child: ListView.builder(
-
-                  itemCount: filteredNames.length,
-                  itemBuilder: (context, index) {
-                    return Column(
-                      children: [
-                        _buildUserTile(filteredNames[index]),
-                      ],
-                    );
+              SizedBox(height: 0.03.sh,),
+              Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 20.w),
+                child: CustomButton(
+                  title: 'Next',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  onPress: () async {
+                    Get.to(Creategoup1(),transition: Transition.rightToLeft);
                   },
+                  buttonColor: AppColor.buttonColor,
+                  height: 50,
+          
+                  radius: 30.r,
                 ),
               ),
-            SizedBox(height: 0.03.sh,),
-            Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 20.w),
-              child: CustomButton(
-                title: 'Next',
-                fontWeight: FontWeight.bold,
-                fontSize: 20.sp,
-                onPress: () async {
-                  Get.to(Creategoup1(),transition: Transition.rightToLeft);
-                },
-                buttonColor: AppColor.buttonColor,
-                height: 50.h,
-
-                radius: 30.r,
-              ),
-            ),
-          ],
+            ],
+          ),
         );
       }),
     );
@@ -135,14 +137,14 @@ class Creategroup extends StatelessWidget {
           style: TextStyle(
             color: AppColor.darkGrey,
             fontWeight: FontWeight.w600,
-            fontSize: 17.sp,
+            fontSize: 17,
           ),
         ),
         subtitle: Text(
           '_${name}',
           style: TextStyle(
             color: AppColor.greyTone,
-            fontSize: 15.sp,
+            fontSize: 15,
           ),
         ),
         trailing: Obx(() => GestureDetector(
@@ -150,8 +152,8 @@ class Creategroup extends StatelessWidget {
             controller.toggleSelection(name); // Toggle selection for this user
           },
           child: Container(
-            width: 25.w,
-            height: 25.h,
+            width: 25,
+            height: 25,
             decoration: BoxDecoration(
               color: controller.isSelected(name) ? Colors.blue : Colors.transparent,
               border: Border.all(
@@ -164,7 +166,7 @@ class Creategroup extends StatelessWidget {
               child: Icon(
                 Icons.check,
                 color: Colors.white,
-                size: 20.sp,
+                size: 20,
               ),
             )
                 : null,

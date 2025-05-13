@@ -30,7 +30,7 @@ class AccountDragView extends StatelessWidget {
                 snap: true,
                 backgroundColor: AppColor.backgroundColor,
                 automaticallyImplyLeading: false,
-                expandedHeight: 70.h, // Adjust height for profile section
+                expandedHeight: 70, // Adjust height for profile section
                 flexibleSpace: FlexibleSpaceBar(
                   background: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 2.h),
@@ -60,7 +60,7 @@ class AccountDragView extends StatelessWidget {
                                 style: TextStyle(
                                   color: AppColor.darkGrey,
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 18.sp,
+                                  fontSize: 18,
                                   fontFamily: 'Montserrat'
                                 ),
                               ),
@@ -71,7 +71,7 @@ class AccountDragView extends StatelessWidget {
                                     '@abc_xyz',
                                     style: TextStyle(
                                       color: AppColor.subTitleGrey,
-                                      fontSize: 14.sp,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w400,
                                       fontFamily: 'Montaga'
                                     ),
@@ -131,11 +131,11 @@ class AccountDragView extends StatelessWidget {
                                     ),
                                     SizedBox(height: 5.h),
                                     SizedBox(
-                                      height: 2.h,
-                                      width: 130.w,
+                                      height: 2,
+                                      width: 130,
                                       child: Divider(
-                                        height: 5.h,
-                                        thickness: 2.h,
+                                        height: 5,
+                                        thickness: 2,
                                         color:
                                         controller.accountSelectedTab.value ==
                                             'Memorial'
@@ -173,11 +173,11 @@ class AccountDragView extends StatelessWidget {
                                     ),
                                     SizedBox(height: 5.h),
                                     SizedBox(
-                                      height: 2.h,
-                                      width: 130.w,
+                                      height: 2,
+                                      width: 130,
                                       child: Divider(
-                                        height: 5.h,
-                                        thickness: 2.h,
+                                        height: 5,
+                                        thickness: 2,
                                         color:
                                         controller.accountSelectedTab.value ==
                                             'Post'
@@ -215,11 +215,11 @@ class AccountDragView extends StatelessWidget {
                                     ),
                                     SizedBox(height: 5.h),
                                     SizedBox(
-                                      height: 2.h,
-                                      width: 130.w,
+                                      height: 2,
+                                      width: 130,
                                       child: Divider(
-                                        height: 5.h,
-                                        thickness: 2.h,
+                                        height: 5,
+                                        thickness: 2,
                                         color:
                                         controller.accountSelectedTab.value ==
                                             'Event'

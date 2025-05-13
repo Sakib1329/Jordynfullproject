@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:jordyn/app/modules/explore/views/event_view.dart';
+import 'package:jordyn/app/modules/home/views/navbar.dart';
 import 'package:jordyn/app/modules/home/views/scheduledetail.dart';
 import '../../../../res/assets/image_assets.dart';
 import '../../../../res/colors/app_color.dart';
@@ -19,13 +20,13 @@ class Schedule extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Get.back();
+            Get.to(Navigation(),transition: Transition.leftToRight);
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Text(
           'Schedule Post',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
       ),
@@ -38,7 +39,7 @@ class Schedule extends StatelessWidget {
               SizedBox(height: 20.h),
               Text(
                 'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
-                style: TextStyle(color: AppColor.greyTone, fontSize: 18.sp),
+                style: TextStyle(color: AppColor.greyTone, fontSize: 18),
               ),
               SizedBox(height: 20.h),
               GestureDetector(
@@ -61,7 +62,7 @@ class Schedule extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: EdgeInsets.only(bottom: 2.h),
+                    padding: EdgeInsets.only(bottom: 2),
                     child: InkWell(
                       onTap: () {
                         Get.to(

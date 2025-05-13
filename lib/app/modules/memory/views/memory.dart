@@ -15,7 +15,7 @@ class Memory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(430, 932),
+      designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
@@ -59,7 +59,7 @@ class Memory extends StatelessWidget {
                                               controller.selectedTab.value ==
                                                       'Memorial'
                                                   ? AppColor.buttonColor
-                                                  : AppColor.textGreyColor3,
+                                                  : AppColor.textGreyColor3,asdfd0
                                           fontSize: 16,
                                           fontFamily: 'Montserrat',
                                           fontWeight: FontWeight.w400,
@@ -69,11 +69,11 @@ class Memory extends StatelessWidget {
                                       ),
                                       SizedBox(height: 5.h),
                                       SizedBox(
-                                        height: 2.h,
-                                        width: 215.w,
+                                        height: 2,
+                                        width: 210,
                                         child: Divider(
-                                          height: 5.h,
-                                          thickness: 2.h,
+                                          height: 5,
+                                          thickness: 2,
                                           color:
                                               controller.selectedTab.value ==
                                                       'Memorial'
@@ -109,11 +109,11 @@ class Memory extends StatelessWidget {
                                       ),
                                       SizedBox(height: 5.h),
                                       SizedBox(
-                                        height: 2.h,
-                                        width: 215.w,
+                                        height: 2,
+                                        width: 215,
                                         child: Divider(
-                                          height: 5.h,
-                                          thickness: 2.h,
+                                          height: 5,
+                                          thickness: 2,
                                           color:
                                               controller.selectedTab.value ==
                                                       'Event'
@@ -182,7 +182,7 @@ class Memory extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15.r),
             ),
-            child: Icon(Icons.add, size: 40.sp, color: AppColor.whiteTextColor),
+            child: Icon(Icons.add, size: 40, color: AppColor.whiteTextColor),
           ),
         );
       },

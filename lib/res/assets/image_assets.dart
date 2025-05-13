@@ -41,6 +41,7 @@ class ImageAssets {
 
   static const String scanner = 'assets/images/home/scanner.png';
   static const String heart = 'assets/images/home/love.png';
+  static const String eye = 'assets/images/home/eye.png';
   static const String home = 'assets/images/home/home.png';
   static const String schedule = 'assets/images/home/schedule.png';
   static const String chat = 'assets/images/chat/chat.png';

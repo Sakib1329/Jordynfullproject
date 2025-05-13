@@ -40,7 +40,7 @@ class UserListView extends GetView {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CircleAvatar(
-                          radius: 20.r,
+                          radius: 25.r,
                           backgroundColor: Colors.grey[300],
                           child: ClipOval(
                             child: Image.asset(
@@ -61,7 +61,7 @@ class UserListView extends GetView {
                                 style: TextStyle(
                                   color: AppColor.darkGrey,
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 16.sp,
+                                  fontSize: 18,
                                 ),
                               ),
                               SizedBox(width: 10.w),
@@ -69,7 +69,7 @@ class UserListView extends GetView {
                                 '@alina772',
                                 style: TextStyle(
                                   color: AppColor.greyTone,
-                                  fontSize: 14.sp,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),

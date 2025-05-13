@@ -48,17 +48,17 @@ class Groupinfopage extends StatelessWidget {
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum ',
                 onDelete: () {
                   Get.to(Navigation(),transition: Transition.rightToLeft);
-                }, arguments: '',
+                }, arguments: 'Group',
               );
             }
             // Add more logic as needed
           },
         )),],
-        leadingWidth: 30.w,
+        leadingWidth: 30,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 15.0.w),
+          padding:  EdgeInsets.symmetric(horizontal: 15.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -75,13 +75,13 @@ class Groupinfopage extends StatelessWidget {
                       file != null
                           ? Image.file(
                         file,
-                        width: 100.w,
-                        height: 100.w,
+                        width: 100,
+                        height: 100,
                         fit: BoxFit.cover,
                       )
                           : Container(
-                        width: 100.w,
-                        height: 100.w,
+                        width: 100,
+                        height: 100,
                         color: AppColor.mutedBlueGrey,
                         child: Image.asset(ImageAssets.group),
                       ),
@@ -93,7 +93,7 @@ class Groupinfopage extends StatelessWidget {
                 'Dummy name',
                 style: TextStyle(
                   color: AppColor.textBlackColor,
-                  fontSize: 20.sp,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
 
@@ -104,7 +104,7 @@ class Groupinfopage extends StatelessWidget {
                 'Lorem ipsum dolor sit amet, consectetur adipisc ewying elit. Morbi vitae libero libero.',
                 style: TextStyle(
                   color: AppColor.textGreyColor,
-                  fontSize: 18.sp,
+                  fontSize: 18,
                   fontFamily: 'Schuyler',
                 ),
                 textAlign: TextAlign.start,
@@ -117,7 +117,7 @@ class Groupinfopage extends StatelessWidget {
                     'Media',
                     style: TextStyle(
                       color: AppColor.textBlackColor,
-                      fontSize: 18.sp,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
 
@@ -130,7 +130,7 @@ class Groupinfopage extends StatelessWidget {
                       'View All',
                       style: TextStyle(
                         color: AppColor.textGreyColor,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                         fontWeight: FontWeight.w300,
                       ),
 
@@ -147,11 +147,11 @@ class Groupinfopage extends StatelessWidget {
 
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding:  EdgeInsets.only(right: 10.0.w,top: 8.2,bottom: 8.w,),
+                      padding:  EdgeInsets.only(right: 10.0,top: 8.2,bottom: 8,),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.r),
                         child: Container(
-                          width: 150.w,
+                          width: 150,
 
                           color: Colors.black, // Background color if image fails to load
                           child: Image.asset(
@@ -180,7 +180,7 @@ class Groupinfopage extends StatelessWidget {
                               'Requests',
                               style: TextStyle(
                                 color: AppColor.textBlackColor,
-                                fontSize: 18.sp,
+                                fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
 
@@ -190,7 +190,7 @@ class Groupinfopage extends StatelessWidget {
                               '(6)',
                               style: TextStyle(
                                 color: AppColor.textGreyColor,
-                                fontSize: 18.sp,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w300,
                               ),
 
@@ -205,7 +205,7 @@ class Groupinfopage extends StatelessWidget {
                             'View All',
                             style: TextStyle(
                               color: AppColor.textGreyColor,
-                              fontSize: 16.sp,
+                              fontSize: 16,
                               fontWeight: FontWeight.w300,
                             ),
 
@@ -240,7 +240,7 @@ class Groupinfopage extends StatelessWidget {
                         'Members',
                         style: TextStyle(
                           color: AppColor.textBlackColor,
-                          fontSize: 18.sp,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
 
@@ -250,7 +250,7 @@ class Groupinfopage extends StatelessWidget {
                         '(12)',
                         style: TextStyle(
                           color: AppColor.textGreyColor,
-                          fontSize: 18.sp,
+                          fontSize: 18,
                           fontWeight: FontWeight.w300,
                         ),
 
@@ -265,7 +265,7 @@ class Groupinfopage extends StatelessWidget {
                       'Add  Members',
                       style: TextStyle(
                         color: AppColor.buttonColor,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                         fontWeight: FontWeight.w400,
                       ),
 
@@ -288,15 +288,26 @@ class Groupinfopage extends StatelessWidget {
                 },
               ),
               Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 20.w),
+                padding:  EdgeInsets.symmetric(horizontal: 20),
                 child: ListTile(
+                  onTap: (){
+    showDeleteConfirmationPopup(
+    context: context,
+    title: 'Are You Sure?',
+    subtitle:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum ',
+    onDelete: () {
+    Get.to(Navigation(),transition: Transition.rightToLeft);
+    }, arguments: 'Group',
+    );
+    },
                   contentPadding: EdgeInsets.all(0),
                   leading: Icon(CupertinoIcons.delete,size: 30,color: AppColor.deepred,),
                   title:   Text(
                     'Delete Group',
                     style: TextStyle(
                       color: AppColor.textBlackColor,
-                      fontSize: 18.sp,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
 
@@ -332,14 +343,14 @@ class Groupinfopage extends StatelessWidget {
           style: TextStyle(
             color: AppColor.darkGrey,
             fontWeight: FontWeight.w600,
-            fontSize: 17.sp,
+            fontSize: 17,
           ),
         ),
         subtitle: Text(
           '_${name}',
           style: TextStyle(
             color: AppColor.greyTone,
-            fontSize: 15.sp,
+            fontSize: 15,
 
           ),
         ),
@@ -347,7 +358,7 @@ class Groupinfopage extends StatelessWidget {
           'Remove',
           style: TextStyle(
               color: AppColor.greyTone,
-              fontSize: 15.sp,
+              fontSize: 15,
               fontWeight: FontWeight.w400
           ),
         ),
@@ -384,7 +395,7 @@ class Groupinfopage extends StatelessWidget {
                 style: TextStyle(
                   color: AppColor.darkGrey,
                   fontWeight: FontWeight.w600,
-                  fontSize: 17.sp,
+                  fontSize: 17,
                 ),
               ),
               SizedBox(height: 4.r),
@@ -392,7 +403,7 @@ class Groupinfopage extends StatelessWidget {
                 '_${name}',
                 style: TextStyle(
                   color: AppColor.greyTone,
-                  fontSize: 15.sp,
+                  fontSize: 15,
                 ),
               ),
             ],

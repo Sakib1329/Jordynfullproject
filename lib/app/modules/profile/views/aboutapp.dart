@@ -17,11 +17,11 @@ class Aboutapp extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Text(
           'About App',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         centerTitle: true,
       ),
@@ -34,7 +34,7 @@ class Aboutapp extends StatelessWidget {
                   Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum dictum augue et iaculis. Ut id ullamcorper sapien. In neque neque, lobortis rhoncus ligula id, vestibulum laoreet eros. Cras quis vestibulum dui. Etiam feugiat ligula quis vehicula tincidunt. Ut ut consectetur ex. Fusce ut aliquet leo. Nunc massa lectus, semper fermentum dui eu, dapibus suscipit metus. Sed tempus consequat ante, sit amet rhoncus turpis tincidunt varius.',
                   style: TextStyle(
                     fontWeight: FontWeight.w300,
-                    fontSize: 18.sp,
+                    fontSize: 18,
                     color: AppColor.greyTone,
                   ),
           
@@ -46,12 +46,13 @@ class Aboutapp extends StatelessWidget {
                     style: TextStyle(
                       color: AppColor.greyTone,
                       fontWeight: FontWeight.w300,
-                      fontSize: 18.sp,
+                      fontSize: 18,
                     ),
           
           
           
                   ),
+                  SizedBox(height: 20.h,),
                 ],
               ),
               ),

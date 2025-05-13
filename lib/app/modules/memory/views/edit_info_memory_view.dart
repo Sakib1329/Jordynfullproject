@@ -22,11 +22,11 @@ class EditInfoMemoryView extends StatelessWidget {
           onPressed: () {
             Get.to(Memory());
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Text(
           'Edit Info ',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
       ),
@@ -42,7 +42,7 @@ class EditInfoMemoryView extends StatelessWidget {
                     'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                     style: TextStyle(
                       color: AppColor.greyTone,
-                      fontSize: 16.sp,
+                      fontSize: 18,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Montserrat',
                     ),
@@ -54,8 +54,8 @@ class EditInfoMemoryView extends StatelessWidget {
                       Center(
                         child: Image.asset(
                           ImageAssets.image1,
-                          height: 120.h,
-                          width: 120.w,
+                          height: 120,
+                          width: 120,
                         ),
                       ),
                       Positioned(
@@ -65,8 +65,8 @@ class EditInfoMemoryView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20.h),
-                  SizedBox(height: 15.h),
+                  SizedBox(height: 25.h),
+
                   InputTextWidget(
                     onChanged: (value) {},
                     backgroundColor: AppColor.textAreaColor,
@@ -105,7 +105,7 @@ class EditInfoMemoryView extends StatelessWidget {
                     hintText: 'Date of passed on',
                     hintTextColor: AppColor.greyTone,
                     passwordIcon: ImageAssets.time,
-                    height: 148.h,
+                    height: 148,
                     maxLines: 10,
                   ),
                   SizedBox(height: 10.h),
@@ -116,7 +116,7 @@ class EditInfoMemoryView extends StatelessWidget {
                         'Who can see',
                         style: TextStyle(
                           color: AppColor.textGreyColor2,
-                          fontSize: 16.sp,
+                          fontSize: 16,
                           fontFamily: 'Montserrat',
                           fontWeight: FontWeight.w500,
                         ),
@@ -129,7 +129,7 @@ class EditInfoMemoryView extends StatelessWidget {
                                 'Only me',
                                 style: TextStyle(
                                   color: AppColor.textGreyColor,
-                                  fontSize: 16.sp,
+                                  fontSize: 16,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w300,
                                 ),
@@ -146,7 +146,7 @@ class EditInfoMemoryView extends StatelessWidget {
                                 'Only my friends',
                                 style: TextStyle(
                                   color: AppColor.textGreyColor,
-                                  fontSize: 16.sp,
+                                  fontSize: 16,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w300,
                                 ),
@@ -163,7 +163,7 @@ class EditInfoMemoryView extends StatelessWidget {
                                 'Me and my friends',
                                 style: TextStyle(
                                   color: AppColor.textGreyColor,
-                                  fontSize: 16.sp,
+                                  fontSize: 16,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w300,
                                 ),
@@ -184,7 +184,7 @@ class EditInfoMemoryView extends StatelessWidget {
                   CustomButton(
                     title: 'Save',
                     fontWeight: FontWeight.bold,
-                    fontSize: 20.sp,
+                    fontSize: 20,
                     onPress: () async {
                       Get.to(
                         MemoryDetailsView(),
@@ -192,7 +192,7 @@ class EditInfoMemoryView extends StatelessWidget {
                       );
                     },
                     buttonColor: AppColor.buttonColor,
-                    height: 48.h,
+                    height: 48,
                     width: double.infinity,
                     radius: 30.r,
                   ),

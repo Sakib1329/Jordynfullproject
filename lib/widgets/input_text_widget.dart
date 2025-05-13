@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 
@@ -22,7 +21,7 @@ class InputTextWidget extends StatefulWidget {
     this.imageIcon = '',
     this.backimage = '',
     this.backimagetap,
-    this.backimageadd=false,
+    this.backimageadd = false,
     this.contentPadding = true,
     this.clock = false,
     this.scan = false,
@@ -52,6 +51,7 @@ class InputTextWidget extends StatefulWidget {
     this.backimageheight = 24.0,
     this.backgroundColor = AppColor.textAreaColor,
     this.maxLines = 1,
+    this.controller, // <-- Added controller
   });
 
   final String hintText, hintfontFamily, fontFamily;
@@ -66,14 +66,28 @@ class InputTextWidget extends StatefulWidget {
       obscureHeigth,
       obscureWidth;
   final Color borderColor, textColor, hintTextColor, backgroundColor;
-  final double height, width, horizontal, vertical,backimagewidht,backimageheight;
-  final bool obscureText, readOnly, contentPadding, leading, clock, scan,backIcon,backIcon2,backimageadd;
-  final String passwordIcon, leadingIcon,imageIcon,backimage;
+  final double height,
+      width,
+      horizontal,
+      vertical,
+      backimagewidht,
+      backimageheight;
+  final bool obscureText,
+      readOnly,
+      contentPadding,
+      leading,
+      clock,
+      scan,
+      backIcon,
+      backIcon2,
+      backimageadd;
+  final String passwordIcon, leadingIcon, imageIcon, backimage;
   final ValueChanged<String> onChanged;
-  final VoidCallback? onTap,backicontap,backicontap2,backimagetap;
+  final VoidCallback? onTap, backicontap, backicontap2, backimagetap;
   final String? Function(String?)? validator;
   final FontWeight fontWeight, hintfontWeight;
   final int maxLines;
+  final TextEditingController? controller; // <-- Added controller
 
   @override
   _InputTextWidgetState createState() => _InputTextWidgetState();
@@ -124,6 +138,7 @@ class _InputTextWidgetState extends State<InputTextWidget> {
               ),
             Expanded(
               child: TextField(
+                controller: widget.controller, // <-- Use the controller
                 onChanged: widget.onChanged,
                 onTap: widget.onTap,
                 readOnly: widget.readOnly,
@@ -138,13 +153,12 @@ class _InputTextWidgetState extends State<InputTextWidget> {
                     fontFamily: widget.hintfontFamily,
                   ),
                   border: InputBorder.none,
-                  contentPadding:
-                      widget.contentPadding
-                          ? EdgeInsets.symmetric(
-                            horizontal: widget.horizontal,
-                            vertical: widget.vertical,
-                          )
-                          : null,
+                  contentPadding: widget.contentPadding
+                      ? EdgeInsets.symmetric(
+                    horizontal: widget.horizontal,
+                    vertical: widget.vertical,
+                  )
+                      : null,
                 ),
                 style: Theme.of(context).textTheme.titleMedium!.copyWith(
                   fontSize: widget.fontSize,
@@ -160,7 +174,8 @@ class _InputTextWidgetState extends State<InputTextWidget> {
                 child: GestureDetector(
                   onTap: _toggleObscure,
                   child: Image.asset(
-                    widget.passwordIcon,
+                    _isObscured ? ImageAssets.eye : widget.passwordIcon,
+                    color: AppColor.greyTone,
                     width: widget.obscureWidth,
                     height: widget.obscureHeigth,
                   ),
@@ -194,7 +209,7 @@ class _InputTextWidgetState extends State<InputTextWidget> {
                   child: Image.asset(
                     widget.backimage,
                     height: widget.backimageheight,
-                    width:  widget.backimagewidht,
+                    width: widget.backimagewidht,
                   ),
                 ),
               ),

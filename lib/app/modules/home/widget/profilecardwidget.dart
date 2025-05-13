@@ -63,7 +63,7 @@ class ProfileCardWidget extends StatelessWidget {
                   title,
                   style: TextStyle(
                     color: AppColor.greyTone,
-                    fontSize: 18.sp,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -72,7 +72,7 @@ class ProfileCardWidget extends StatelessWidget {
                     subtitle1!,
                     style: TextStyle(
                       color: AppColor.greyTone,
-                      fontSize: 16.sp,
+                      fontSize: 16,
                       fontWeight: FontWeight.w300,
                     ),
                   ),
@@ -88,7 +88,7 @@ class ProfileCardWidget extends StatelessWidget {
                       subtitle2,
                       style: TextStyle(
                         color: AppColor.greyTone,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                         fontWeight: FontWeight.w300,
                       ),
                     ),

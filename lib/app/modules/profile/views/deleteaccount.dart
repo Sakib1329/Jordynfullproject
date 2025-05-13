@@ -21,50 +21,58 @@ class Deleteaccount extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Text(
-          'Privacy',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+          'Delete Account',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 20.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 20.h,),
-            SizedBox(
-                width: 0.6.sw,
-                child: Image.asset(ImageAssets.deletedetails1)),
-            SizedBox(height: 20.h,),
-            SizedBox(child: Image.asset(ImageAssets.deletedetails2)),
-            SizedBox(height: 20.h,),
-            InputTextWidget(
-              onChanged: (e) {},
-              borderColor: AppColor.backgroundColor,
-              hintText: 'Enter your password',
-              leadingIcon: ImageAssets.pass,
-              leading: true,
-              obscureText: true,
-              textColor: AppColor.textGreyColor2,
-              height: 48.h,
-              width: 390.w,
-            ),
-            SizedBox(height: 0.3.sh,),
-            CustomButton(
-              onPress: () async {
-Get.to(Deleteconfirmation(),transition: Transition.rightToLeft);
+      body: SingleChildScrollView(
+        child: Padding(
+          padding:  EdgeInsets.symmetric(horizontal: 20.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SizedBox(height: 20.h,),
+              Padding(
+                padding: const EdgeInsets.only(right: 100.0),
+                child: SizedBox(
 
-              },
-              title: 'Delete Acoount',
-              height: 48.h,
-              width: 390.w,
-              radius: 100,
-              buttonColor: AppColor.deepred,
-            ),
-          ],
+                    child: Image.asset(ImageAssets.deletedetails1)),
+              ),
+              SizedBox(height: 20.h,),
+              SizedBox(
+                  width: 400,
+                  child: Image.asset(ImageAssets.deletedetails2)),
+              SizedBox(height: 20.h,),
+              InputTextWidget(
+                onChanged: (e) {},
+                borderColor: AppColor.backgroundColor,
+                hintText: 'Enter your password',
+                leadingIcon: ImageAssets.pass,
+                leading: true,
+                obscureText: true,
+                textColor: AppColor.textGreyColor2,
+                height: 50,
+                width: 390,
+              ),
+              SizedBox(height: 0.3.sh,),
+              CustomButton(
+                onPress: () async {
+        Get.to(Deleteconfirmation(),transition: Transition.rightToLeft);
+        
+                },
+                title: 'Delete Acoount',
+                height: 48,
+                width: 390,
+                radius: 100,
+                buttonColor: AppColor.deepred,
+              ),
+              SizedBox(height: 20.h,),
+            ],
+          ),
         ),
       ),
     );

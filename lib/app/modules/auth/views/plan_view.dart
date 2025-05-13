@@ -38,7 +38,7 @@ class PlanView extends GetView<AuthController> {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        SizedBox(height: 60.h),
+                        SizedBox(height: 40.h),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -46,7 +46,7 @@ class PlanView extends GetView<AuthController> {
                               'Select your Plan',
                               style: TextStyle(
                                 color: AppColor.buttonColor,
-                                fontSize: 24.sp,
+                                fontSize: 24,
                                 fontFamily: 'Montserrat',
                                 fontWeight: FontWeight.w700,
                               ),
@@ -56,7 +56,7 @@ class PlanView extends GetView<AuthController> {
                               'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                               style: TextStyle(
                                 color: AppColor.textGreyColor2,
-                                fontSize: 16.sp,
+                                fontSize: 16,
                                 fontFamily: 'Montserrat',
                                 fontWeight: FontWeight.w400,
                               ),
@@ -70,8 +70,8 @@ class PlanView extends GetView<AuthController> {
                               controller.selectPlan('Basic');
                             },
                             child: Container(
-                              height: 110.h,
-                              width: 390.w,
+                              height: 130,
+                              width: 390,
                               decoration: ShapeDecoration(
                                 color:
                                     controller.selectedPlan.value == 'Basic'
@@ -81,7 +81,7 @@ class PlanView extends GetView<AuthController> {
                                   borderRadius: BorderRadius.circular(10.r),
                                 ),
                               ),
-                              padding: EdgeInsets.all(15.w),
+                              padding: EdgeInsets.all(15),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -98,7 +98,7 @@ class PlanView extends GetView<AuthController> {
                                                       'Basic'
                                                   ? AppColor.whiteTextColor
                                                   : AppColor.textGreyColor2,
-                                          fontSize: 18.sp,
+                                          fontSize: 18,
                                           fontFamily: 'Montserrat',
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -111,7 +111,7 @@ class PlanView extends GetView<AuthController> {
                                                       'Basic'
                                                   ? AppColor.whiteTextColor
                                                   : AppColor.buttonColor,
-                                          fontSize: 18.sp,
+                                          fontSize: 18,
                                           fontFamily: 'Montserrat',
                                           fontWeight: FontWeight.w500,
                                         ),
@@ -127,7 +127,7 @@ class PlanView extends GetView<AuthController> {
                                                   'Basic'
                                               ? AppColor.whiteTextColor
                                               : AppColor.textGreyColor2,
-                                      fontSize: 15.sp,
+                                      fontSize: 15,
                                       fontFamily: 'Montserrat',
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -144,8 +144,8 @@ class PlanView extends GetView<AuthController> {
                               controller.selectPlan('Premium');
                             },
                             child: Container(
-                              height: 110.h,
-                              width: 390.w,
+                              height: 130,
+                              width: 390,
                               decoration: ShapeDecoration(
                                 color:
                                     controller.selectedPlan.value == 'Premium'
@@ -155,7 +155,7 @@ class PlanView extends GetView<AuthController> {
                                   borderRadius: BorderRadius.circular(10.r),
                                 ),
                               ),
-                              padding: EdgeInsets.all(15.w),
+                              padding: EdgeInsets.all(15),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -172,7 +172,7 @@ class PlanView extends GetView<AuthController> {
                                                       'Premium'
                                                   ? AppColor.whiteTextColor
                                                   : AppColor.textGreyColor2,
-                                          fontSize: 18.sp,
+                                          fontSize: 18,
                                           fontFamily: 'Montserrat',
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -185,7 +185,7 @@ class PlanView extends GetView<AuthController> {
                                                       'Premium'
                                                   ? AppColor.whiteTextColor
                                                   : AppColor.buttonColor,
-                                          fontSize: 18.sp,
+                                          fontSize: 18,
                                           fontFamily: 'Montserrat',
                                           fontWeight: FontWeight.w500,
                                         ),
@@ -201,7 +201,7 @@ class PlanView extends GetView<AuthController> {
                                                   'Premium'
                                               ? AppColor.whiteTextColor
                                               : AppColor.textGreyColor2,
-                                      fontSize: 15.sp,
+                                      fontSize: 15,
                                       fontFamily: 'Montserrat',
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -218,8 +218,8 @@ class PlanView extends GetView<AuthController> {
                               controller.selectPlan('Gold');
                             },
                             child: Container(
-                              height: 110.h,
-                              width: 390.w,
+                              height: 130,
+                              width: 390,
                               decoration: ShapeDecoration(
                                 color:
                                     controller.selectedPlan.value == 'Gold'
@@ -229,7 +229,7 @@ class PlanView extends GetView<AuthController> {
                                   borderRadius: BorderRadius.circular(10.r),
                                 ),
                               ),
-                              padding: EdgeInsets.all(15.w),
+                              padding: EdgeInsets.all(15),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -246,7 +246,7 @@ class PlanView extends GetView<AuthController> {
                                                       'Gold'
                                                   ? AppColor.whiteTextColor
                                                   : AppColor.textGreyColor2,
-                                          fontSize: 18.sp,
+                                          fontSize: 18,
                                           fontFamily: 'Montserrat',
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -259,7 +259,7 @@ class PlanView extends GetView<AuthController> {
                                                       'Gold'
                                                   ? AppColor.whiteTextColor
                                                   : AppColor.buttonColor,
-                                          fontSize: 18.sp,
+                                          fontSize: 18,
                                           fontFamily: 'Montserrat',
                                           fontWeight: FontWeight.w500,
                                         ),
@@ -275,7 +275,7 @@ class PlanView extends GetView<AuthController> {
                                                   'Gold'
                                               ? AppColor.whiteTextColor
                                               : AppColor.textGreyColor2,
-                                      fontSize: 15.sp,
+                                      fontSize: 15,
                                       fontFamily: 'Montserrat',
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -306,8 +306,8 @@ class PlanView extends GetView<AuthController> {
                     }
                   },
                   title: 'NEXT',
-                  height: 48.h,
-                  width: 390.w,
+                  height: 48,
+                  width: 390,
                   radius: 100.r,
                 ),
                 SizedBox(height: 15.h),

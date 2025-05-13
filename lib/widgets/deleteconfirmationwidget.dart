@@ -17,145 +17,147 @@ void showDeleteConfirmationPopup({
 }) {
   showDialog(
     context: context,
-    barrierDismissible: true,
+    barrierDismissible: false, // Prevent tap outside to close
     builder: (_) {
-      return Dialog(
-        backgroundColor: AppColor.background1Color,
-
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.r),
-        ),
-        child: Padding(
-          padding: EdgeInsets.all(20.w),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                title,
-                style: TextStyle(
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.bold,
-                  color: AppColor.textBlackColor,
-                ),
-              ),
-              SizedBox(height: 10.h),
-              Text(
-                subtitle,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 16.sp,
-                  color: AppColor.textGreyColor,
-                ),
-              ),
-              SizedBox(height: 25.h),
-              Row(
-                children: [
-                  Expanded(
-                    child: CustomButton(
-                      onPress: () async {
-                        Navigator.pop(context);
-                      },
-                      title: 'Cancel',
-                      borderColor: AppColor.greyTone,
-                      radius: 12,
-                      height: 40,
-                      buttonColor: AppColor.background1Color,
-                      borderShadowColor: AppColor.deepred,
-                      textColor: AppColor.greyTone,
-                    ),
+      return WillPopScope(
+        onWillPop: () async => false, // Prevent back button to close
+        child: Dialog(
+          backgroundColor: AppColor.background1Color,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.r),
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(20.w),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.bold,
+                    color: AppColor.textBlackColor,
                   ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child:CustomButton(
-                      onPress: () async {
-                        Navigator.pop(context);
-                        if (arguments == 'HomeView') {
-                          showDialog(
-                            context: context,
-                            builder: (context) => Dialog(
-                              backgroundColor: Colors.transparent,
-                              elevation: 0,
-                              child: CenteredDialogWidget(
-                                title: 'Schedule Post Deleted',
-                                horizontalpadding: 2.0.w,
-                                verticalpadding: 20.0.h,
-                                subtitle: 'Sed dignissim nisl a vehicula fringilla. Nulla faucibus dui tellus, ut dignissim',
-                                imageasset: ImageAssets.post_report,
-                                backgroundColor: AppColor.backgroundColor,
-                                iconBackgroundColor: Colors.transparent,
-                                iconColor: AppColor.buttonColor,
-                                borderRadius: 30.0.r,
+                ),
+                SizedBox(height: 10.h),
+                Text(
+                  subtitle,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16.sp,
+                    color: AppColor.textGreyColor,
+                  ),
+                ),
+                SizedBox(height: 25.h),
+                Row(
+                  children: [
+                    Expanded(
+                      child: CustomButton(
+                        onPress: () async {
+                          Navigator.pop(context);
+                        },
+                        title: 'Cancel',
+                        borderColor: AppColor.greyTone,
+                        radius: 12,
+                        height: 40,
+                        buttonColor: AppColor.background1Color,
+                        borderShadowColor: AppColor.deepred,
+                        textColor: AppColor.greyTone,
+                      ),
+                    ),
+                    SizedBox(width: 12.w),
+                    Expanded(
+                      child: CustomButton(
+                        onPress: () async {
+                          Navigator.pop(context);
+                          if (arguments == 'HomeView') {
+                            showDialog(
+                              context: context,
+                              builder: (context) => Dialog(
+                                backgroundColor: Colors.transparent,
+                                elevation: 0,
+                                child: CenteredDialogWidget(
+                                  title: 'Schedule Post Deleted',
+                                  horizontalpadding: 2.0.w,
+                                  verticalpadding: 20.0.h,
+                                  subtitle: 'Sed dignissim nisl a vehicula fringilla. Nulla faucibus dui tellus, ut dignissim',
+                                  imageasset: ImageAssets.post_report,
+                                  backgroundColor: AppColor.backgroundColor,
+                                  iconBackgroundColor: Colors.transparent,
+                                  iconColor: AppColor.buttonColor,
+                                  borderRadius: 30.0.r,
+                                ),
                               ),
-                            ),
-                          );
-                        } else if (arguments == 'MemoryView') {
-                          showDialog(
-                            context: context,
-                            builder: (context) => Dialog(
-                              backgroundColor: Colors.transparent,
-                              elevation: 0,
-                              child: CenteredDialogWidget(
-                                title: 'Memory Deleted',
-                                horizontalpadding: 2.0.w,
-                                verticalpadding: 20.0.h,
-                                subtitle: 'Sed dignissim nisl a vehicula fringilla. Nulla faucibus dui tellus, ut dignissim',
-                                imageasset: ImageAssets.post_report,
-                                backgroundColor: AppColor.backgroundColor,
-                                iconBackgroundColor: Colors.transparent,
-                                iconColor: AppColor.buttonColor,
-                                borderRadius: 30.0.r,
+                            );
+                          } else if (arguments == 'Group') {
+                            showDialog(
+                              context: context,
+                              builder: (context) => Dialog(
+                                backgroundColor: Colors.transparent,
+                                elevation: 0,
+                                child: CenteredDialogWidget(
+                                  title: 'Group Deleted',
+                                  horizontalpadding: 2.0.w,
+                                  verticalpadding: 20.0.h,
+                                  subtitle: 'Sed dignissim nisl a vehicula fringilla. Nulla faucibus dui tellus, ut dignissim',
+                                  imageasset: ImageAssets.post_report,
+                                  backgroundColor: AppColor.backgroundColor,
+                                  iconBackgroundColor: Colors.transparent,
+                                  iconColor: AppColor.buttonColor,
+                                  borderRadius: 30.0.r,
+                                ),
                               ),
-                            ),
-                          );
-                        } else if (arguments == 'EventView') {
-                          showDialog(
-                            context: context,
-                            builder: (context) => Dialog(
-                              backgroundColor: Colors.transparent,
-                              elevation: 0,
-                              child: CenteredDialogWidget(
-                                title: 'Event Deleted',
-                                horizontalpadding: 2.0.w,
-                                verticalpadding: 20.0.h,
-                                subtitle: 'Sed dignissim nisl a vehicula fringilla. Nulla faucibus dui tellus, ut dignissim',
-                                imageasset: ImageAssets.post_report,
-                                backgroundColor: AppColor.backgroundColor,
-                                iconBackgroundColor: Colors.transparent,
-                                iconColor: AppColor.buttonColor,
-                                borderRadius: 30.0.r,
+                            );
+                          } else if (arguments == 'EventView') {
+                            showDialog(
+                              context: context,
+                              builder: (context) => Dialog(
+                                backgroundColor: Colors.transparent,
+                                elevation: 0,
+                                child: CenteredDialogWidget(
+                                  title: 'Event Deleted',
+                                  horizontalpadding: 2.0.w,
+                                  verticalpadding: 20.0.h,
+                                  subtitle: 'Sed dignissim nisl a vehicula fringilla. Nulla faucibus dui tellus, ut dignissim',
+                                  imageasset: ImageAssets.post_report,
+                                  backgroundColor: AppColor.backgroundColor,
+                                  iconBackgroundColor: Colors.transparent,
+                                  iconColor: AppColor.buttonColor,
+                                  borderRadius: 30.0.r,
+                                ),
                               ),
-                            ),
-                          );
-                        }
-
-                        await Future.delayed(const Duration(seconds: 3), () {
-                          try {
-                            if (arguments == 'HomeView') {
-                              Get.off(() => Schedule(), transition: Transition.fadeIn);
-                            } else {
-                              Get.off(() => Navigation(), transition: Transition.fadeIn);
-                            }
-                          } catch (e) {
-                            Get.snackbar(
-                              'Navigation Error',
-                              'Failed to navigate to ${arguments == 'HomeView' ? 'Schedule' : 'Navigation'} screen: $e',
-                              snackPosition: SnackPosition.BOTTOM,
                             );
                           }
-                        });
-                      },
-                      title: 'Delete',
-                      borderColor: AppColor.deepred,
-                      radius: 12,
-                      height: 40,
-                      buttonColor: AppColor.background1Color,
-                      borderShadowColor: AppColor.deepred,
-                      textColor: AppColor.deepred,
+
+                          await Future.delayed(const Duration(seconds: 3), () {
+                            try {
+                              if (arguments == 'HomeView') {
+                                Get.off(() => Schedule(), transition: Transition.fadeIn);
+                              } else {
+                                Get.off(() => Navigation(), transition: Transition.fadeIn);
+                              }
+                            } catch (e) {
+                              Get.snackbar(
+                                'Navigation Error',
+                                'Failed to navigate to ${arguments == 'HomeView' ? 'Schedule' : 'Navigation'} screen: $e',
+                                snackPosition: SnackPosition.BOTTOM,
+                              );
+                            }
+                          });
+                        },
+                        title: 'Delete',
+                        borderColor: AppColor.deepred,
+                        radius: 12,
+                        height: 40,
+                        buttonColor: AppColor.background1Color,
+                        borderShadowColor: AppColor.deepred,
+                        textColor: AppColor.deepred,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       );

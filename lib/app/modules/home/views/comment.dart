@@ -19,10 +19,8 @@ class Comment extends StatelessWidget {
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {
-            Get.back();
-          },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          onPressed: () => Get.back(),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
       ),
       body: Stack(
@@ -33,13 +31,15 @@ class Comment extends StatelessWidget {
               keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
               child: Column(
                 children: [
-                  // Post section
                   Container(
-                    height: 0.52.sh,
+                    width: double.infinity,
                     color: AppColor.backgroundColor,
+                    padding: EdgeInsets.symmetric(vertical: 10),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ListTile(
+
                           leading: CircleAvatar(
                             radius: 25.r,
                             backgroundColor: Colors.grey[300],
@@ -57,148 +57,106 @@ class Comment extends StatelessWidget {
                             style: TextStyle(
                               color: AppColor.textBlackColor,
                               fontWeight: FontWeight.bold,
-                              fontSize: 18.sp,
+                              fontSize: 18,
                             ),
                           ),
                           subtitle: Row(
                             children: [
-                              Text(
-                                'abc_xyz',
-                                style: TextStyle(color: AppColor.greyTone),
-                              ),
+                              Text('abc_xyz', style: TextStyle(color: AppColor.greyTone)),
                               SizedBox(width: 10.w),
-                              Text(
-                                '3s',
-                                style: TextStyle(color: AppColor.greyTone),
-                              ),
+                              Text('3s', style: TextStyle(color: AppColor.greyTone)),
                             ],
                           ),
                           trailing: IconButton(
+                            icon: Icon(Icons.more_vert),
                             onPressed: () {
                               showModalBottomSheet(
                                 context: context,
                                 backgroundColor: Colors.transparent,
                                 isScrollControlled: true,
-                                builder: (_) {
-                                  return ReportBottomSheet(
-                                    firstOption: ReportOption(
-                                      icon: Icons.report_problem,
-                                      label: 'Report',
-                                      onTap: () {
-                                        Navigator.pop(context);
-                                        Get.to(
-                                          Report(),
-                                          transition: Transition.rightToLeft,
-                                        );
-                                      },
-                                    ),
-                                    showTwoOptions: false,
-                                  );
-                                },
+                                builder: (_) => ReportBottomSheet(
+                                  firstOption: ReportOption(
+                                    icon: Icons.report_problem,
+                                    label: 'Report',
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                      Get.to(() => Report(), transition: Transition.rightToLeft);
+                                    },
+                                  ),
+                                  showTwoOptions: false,
+                                ),
                               );
                             },
-                            icon: Icon(Icons.more_vert),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 20.w),
+                          padding: EdgeInsets.symmetric(horizontal: 20),
                           child: Text(
                             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet venenatis metus',
-                            style: TextStyle(
-                              color: AppColor.greyTone,
-                              fontSize: 16.sp,
-                            ),
+                            style: TextStyle(color: AppColor.greyTone, fontSize: 16),
                           ),
                         ),
                         SizedBox(height: 10.h),
-                        SizedBox(
-                            height: 0.35.sh,
-                            child: Image.asset(ImageAssets.person)),
+                        ClipRRect(
 
+                          child: Image.asset(
+                            ImageAssets.person,
+                            width: double.infinity,
+                            height: 300,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        SizedBox(height: 10.h),
                         Row(
                           children: [
                             SizedBox(width: 20.w),
-                            SvgPicture.asset(
-                              ImageAssets.love,
-                              width: 30.w,
-                              height: 30.h,
-                            ),
+                            SvgPicture.asset(ImageAssets.love, width: 30, height: 30),
                             SizedBox(width: 5.w),
-                            Text(
-                              '121',
-                              style: TextStyle(color: AppColor.greyTone),
-                            ),
+                            Text('121', style: TextStyle(color: AppColor.greyTone)),
                             SizedBox(width: 20.w),
-                            SvgPicture.asset(
-                              ImageAssets.achieve,
-                              width: 30.w,
-                              height: 30.h,
-                            ),
+                            SvgPicture.asset(ImageAssets.achieve, width: 30, height: 30),
                             SizedBox(width: 5.w),
-                            Text(
-                              '34',
-                              style: TextStyle(color: AppColor.greyTone),
-                            ),
+                            Text('34', style: TextStyle(color: AppColor.greyTone)),
                             SizedBox(width: 20.w),
-                            SvgPicture.asset(
-                              ImageAssets.share,
-                              width: 35.w,
-                              height: 35.h,
-                            ),
+                            SvgPicture.asset(ImageAssets.share, width: 35, height: 35),
                             SizedBox(width: 5.w),
-                            Text(
-                              'Share',
-                              style: TextStyle(color: AppColor.greyTone),
-                            ),
+                            Text('Share', style: TextStyle(color: AppColor.greyTone)),
                           ],
                         ),
                       ],
                     ),
                   ),
 
-                  // Comment list section
-                  GestureDetector(
-                    onLongPress: () {
-                      showModalBottomSheet(
-                        context: context,
-                        backgroundColor: Colors.transparent,
-                        isScrollControlled: true,
-                        builder: (_) {
-                          return ReportBottomSheet(
-                            showTwoOptions: true,
-                            firstOption: ReportOption(
-                              icon: Icons.edit,
-                              label: 'Edit',
-                              onTap: () {
-                                Navigator.pop(context);
-                                // Add your action here
-                                print('Report tapped');
-                              },
-                            ),
-                            secondOption: ReportOption(
-                              icon: Icons.delete,
-                              label: 'Delete',
-                              onTap: () {
-                                Navigator.pop(context);
-                                // Add your action here
-                                print('Block tapped');
-                              },
+                  // Comment list
+                  ListView.builder(
+                    itemCount: 50,
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    padding: EdgeInsets.zero,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onLongPress: () {
+                          showModalBottomSheet(
+                            context: context,
+                            backgroundColor: Colors.transparent,
+                            isScrollControlled: true,
+                            builder: (_) => ReportBottomSheet(
+                              showTwoOptions: true,
+                              firstOption: ReportOption(
+                                icon: Icons.edit,
+                                label: 'Edit',
+                                onTap: () => Navigator.pop(context),
+                              ),
+                              secondOption: ReportOption(
+                                icon: Icons.delete,
+                                label: 'Delete',
+                                onTap: () => Navigator.pop(context),
+                              ),
                             ),
                           );
                         },
-                      );
-                    },
-                    child: ListView.builder(
-                      itemCount: 50,
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                      padding: EdgeInsets.zero,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 20.w,
-                            vertical: 10.h,
-                          ),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -226,66 +184,48 @@ class Comment extends StatelessWidget {
                                           style: TextStyle(
                                             color: AppColor.darkGrey,
                                             fontWeight: FontWeight.w600,
-                                            fontSize: 16.sp,
+                                            fontSize: 16,
                                           ),
                                         ),
                                         SizedBox(width: 10.w),
-                                        Text(
-                                          '3s',
-                                          style: TextStyle(
-                                            color: AppColor.greyTone,
-                                            fontSize: 16.sp,
-                                          ),
-                                        ),
+                                        Text('3s', style: TextStyle(color: AppColor.greyTone, fontSize: 14)),
                                       ],
                                     ),
                                     Text(
                                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                                      style: TextStyle(
-                                        color: AppColor.greyTone,
-                                        fontSize: 14.sp,
-                                      ),
+                                      style: TextStyle(color: AppColor.greyTone, fontSize: 14),
                                     ),
                                   ],
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(top: 25.h),
+                                padding: EdgeInsets.only(top: 25),
                                 child: Column(
                                   children: [
-                                    Image.asset(
-                                      ImageAssets.heart,
-                                      width: 20.w,
-                                      height: 20.h,
-                                    ),
-                                    Text(
-                                      '2',
-                                      style: TextStyle(
-                                        color: AppColor.greyTone,
-                                      ),
-                                    ),
+                                    Image.asset(ImageAssets.heart, width: 20, height: 20),
+                                    Text('2', style: TextStyle(color: AppColor.greyTone)),
                                   ],
                                 ),
                               ),
                             ],
                           ),
-                        );
-                      },
-                    ),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
             ),
           ),
 
-          // Fixed TextField
+          // Fixed input
           Positioned(
             left: 0,
             right: 0,
             bottom: 0,
             child: Container(
               color: AppColor.softBeige,
-              padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: Obx(
                     () => TextField(
                   onChanged: controller.onTextChanged,
@@ -298,7 +238,7 @@ class Comment extends StatelessWidget {
                     filled: true,
                     fillColor: AppColor.lightBeige,
                     prefixIcon: Padding(
-                      padding: EdgeInsets.all(8.0.w),
+                      padding: EdgeInsets.all(8.0),
                       child: CircleAvatar(
                         radius: 20.r,
                         backgroundColor: Colors.grey[300],
@@ -312,14 +252,13 @@ class Comment extends StatelessWidget {
                         ),
                       ),
                     ),
-                    suffixIcon:
-                    controller.hasText.value
+                    suffixIcon: controller.hasText.value
                         ? Padding(
-                      padding: EdgeInsets.all(12.w),
+                      padding: EdgeInsets.all(12),
                       child: SvgPicture.asset(
                         ImageAssets.send,
-                        width: 20.w,
-                        height: 20.h,
+                        width: 20,
+                        height: 20,
                       ),
                     )
                         : null,

@@ -20,11 +20,11 @@ class CreateEventView extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Text(
           'Create Event',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         centerTitle: true,
       ),
@@ -39,16 +39,16 @@ class CreateEventView extends StatelessWidget {
                     'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                     style: TextStyle(
                       color: AppColor.textGreyColor,
-                      fontSize: 20.sp,
+                      fontSize: 20,
                       fontFamily: 'Schuyler',
                     ),
                     textAlign: TextAlign.center,
                   ),
                 ),
-                  SizedBox(height: 20.h,),
+                  SizedBox(height: 20,),
                   Container(
                     height: 48,
-                    width: 390.w,
+                    width: 390,
                       decoration: ShapeDecoration(
                         color: AppColor.textAreaColor,
                         shape: RoundedRectangleBorder(
@@ -63,7 +63,7 @@ class CreateEventView extends StatelessWidget {
                       'Lorem ipsum dolor sit',
                       style: TextStyle(
                         color: AppColor.textGreyColor,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w400
                       ),
@@ -71,10 +71,10 @@ class CreateEventView extends StatelessWidget {
                     ),
                   ),
                   ),
-                  SizedBox(height: 10.h,),
+                  SizedBox(height: 15,),
                   Container(
                     height: 48,
-                    width: 390.w,
+                    width: 390,
                       decoration: ShapeDecoration(
                         color: AppColor.textAreaColor,
                         shape: RoundedRectangleBorder(
@@ -89,7 +89,7 @@ class CreateEventView extends StatelessWidget {
                       'Vestibulum a pretium turpis',
                       style: TextStyle(
                         color: AppColor.textGreyColor,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w400
                       ),
@@ -97,10 +97,10 @@ class CreateEventView extends StatelessWidget {
                     ),
                   ),
                   ),
-                  SizedBox(height: 10.h,),
+                  SizedBox(height: 15,),
                   Container(
                     height: 48,
-                    width: 390.w,
+                    width: 390,
                       decoration: ShapeDecoration(
                         color: AppColor.textAreaColor,
                         shape: RoundedRectangleBorder(
@@ -115,7 +115,7 @@ class CreateEventView extends StatelessWidget {
                       'Duis sed bibendum elit',
                       style: TextStyle(
                         color: AppColor.textGreyColor,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w400
                       ),
@@ -123,10 +123,10 @@ class CreateEventView extends StatelessWidget {
                     ),
                   ),
                   ),
-                  SizedBox(height: 10.h,),
+                  SizedBox(height: 15,),
                   Container(
                     height: 48,
-                    width: 390.w,
+                    width: 390,
                       decoration: ShapeDecoration(
                         color: AppColor.textAreaColor,
                         shape: RoundedRectangleBorder(
@@ -141,7 +141,7 @@ class CreateEventView extends StatelessWidget {
                       'Curabitur volutpat hendrerit augue',
                       style: TextStyle(
                         color: AppColor.textGreyColor,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w400
                       ),
@@ -149,10 +149,10 @@ class CreateEventView extends StatelessWidget {
                     ),
                   ),
                   ),
-                  SizedBox(height: 10.h,),
+                  SizedBox(height: 15,),
                   Container(
                     height: 48,
-                    width: 390.w,
+                    width: 390,
                       decoration: ShapeDecoration(
                         color: AppColor.textAreaColor,
                         shape: RoundedRectangleBorder(
@@ -167,7 +167,7 @@ class CreateEventView extends StatelessWidget {
                       'Aliquam nec mauris bibendum',
                       style: TextStyle(
                         color: AppColor.textGreyColor,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w400
                       ),
@@ -175,10 +175,10 @@ class CreateEventView extends StatelessWidget {
                     ),
                   ),
                   ),
-                  SizedBox(height: 10.h,),
+                  SizedBox(height: 15,),
                   Container(
                     height: 48,
-                    width: 390.w,
+                    width: 390,
                       decoration: ShapeDecoration(
                         color: AppColor.textAreaColor,
                         shape: RoundedRectangleBorder(
@@ -193,7 +193,7 @@ class CreateEventView extends StatelessWidget {
                       'Fusce pulvinar leo sapien',
                       style: TextStyle(
                         color: AppColor.textGreyColor,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w400
                       ),
@@ -201,7 +201,7 @@ class CreateEventView extends StatelessWidget {
                     ),
                   ),
                   ),
-                  SizedBox(height: 10.h,),
+                  SizedBox(height: 15,),
                 ],
               ),
             ),
@@ -211,9 +211,9 @@ class CreateEventView extends StatelessWidget {
             child: Column(
               children: [
                 CustomButton(
-                  title: 'Save',
+                  title: 'Next',
                   fontWeight: FontWeight.bold,
-                  fontSize: 16.sp,
+                  fontSize: 16,
                   onPress: () async {
                     Get.to(AddEventView(),transition: Transition.noTransition,arguments: {'origin': 'HomeView'});
                   },
@@ -221,7 +221,7 @@ class CreateEventView extends StatelessWidget {
                   height: 50,
                   radius: 30.r,
                 ),
-                SizedBox(height: 30.h,)
+                SizedBox(height: 30,)
               ],
             ),
           ),

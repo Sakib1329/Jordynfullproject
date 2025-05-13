@@ -27,45 +27,48 @@ class NotificationSettings extends StatelessWidget {
         ),
         title: Text(
           'Notification Setting',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         centerTitle: true,
-        leadingWidth: 30.w,
+        leadingWidth: 30,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(
-
-          children: [
-            SizedBox(height: 20.h,),
-            Text(
-              'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
-              style: TextStyle(
-                color: AppColor.textGreyColor,
-                fontSize: 20.sp,
-                fontFamily: 'Schuyler',
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
+        
+            children: [
+              SizedBox(height: 20,),
+              Text(
+                'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
+                style: TextStyle(
+                  color: AppColor.textGreyColor,
+                  fontSize: 20,
+                  fontFamily: 'Schuyler',
+                ),
+                textAlign: TextAlign.start,
               ),
-              textAlign: TextAlign.start,
-            ),
-            SizedBox(height: 20.h,),
-            CustomSwitchTile(
-              title: 'Lorem ipsum dolor sit',
-              controller: controller,
-            ),
-            CustomSwitchTile(
-              title: 'Lorem ipsum dolor sit',
-              controller: controller,
-            ),
-            CustomSwitchTile(
-              title: 'Lorem ipsum dolor sit',
-              controller: controller,
-            ),
-            CustomSwitchTile(
-              title: 'Lorem ipsum dolor sit',
-              controller: controller,
-            ),
-
-          ],
+              SizedBox(height: 20,),
+              CustomSwitchTile(
+                title: 'Lorem ipsum dolor sit',
+                controller: controller,
+              ),
+              CustomSwitchTile(
+                title: 'Lorem ipsum dolor sit',
+                controller: controller,
+              ),
+              CustomSwitchTile(
+                title: 'Lorem ipsum dolor sit',
+                controller: controller,
+              ),
+              CustomSwitchTile(
+                title: 'Lorem ipsum dolor sit',
+                controller: controller,
+              ),
+              SizedBox(height: 20,)
+        
+            ],
+          ),
         ),
       ),
     );

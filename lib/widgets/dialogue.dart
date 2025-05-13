@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jordyn/res/colors/app_color.dart';
 
@@ -63,7 +64,7 @@ class CenteredDialogWidget extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 24),
+             SizedBox(height: 24.h),
 
             // Title text
             Text(
@@ -75,7 +76,7 @@ class CenteredDialogWidget extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 16),
+             SizedBox(height: 16.h),
 
             // Subtitle text
             Text(

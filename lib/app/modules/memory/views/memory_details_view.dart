@@ -43,7 +43,7 @@ class MemoryDetailsView extends GetView<MemoryController> {
                       'QR Code',
                       style: TextStyle(
                         color: AppColor.textGreyColor,
-                        fontSize: 14.sp,
+                        fontSize: 14,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w400,
                       ),
@@ -59,7 +59,7 @@ class MemoryDetailsView extends GetView<MemoryController> {
                       'Edit Info',
                       style: TextStyle(
                         color: AppColor.textGreyColor,
-                        fontSize: 14.sp,
+                        fontSize: 14,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w400,
                       ),
@@ -84,7 +84,7 @@ class MemoryDetailsView extends GetView<MemoryController> {
                       'Delete Person',
                       style: TextStyle(
                         color: AppColor.textGreyColor,
-                        fontSize: 14.sp,
+                        fontSize: 14,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w400,
                       ),
@@ -115,7 +115,7 @@ class MemoryDetailsView extends GetView<MemoryController> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(430, 932),
+      designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
@@ -130,108 +130,125 @@ class MemoryDetailsView extends GetView<MemoryController> {
                   fit: BoxFit.fill,
                 ),
               ),
-              Positioned(
-                top: 80.h,
-                left: 15.w,
-                child: InkWell(
-                  onTap: () {
-                    Get.to(Navigation(),transition: Transition.leftToRight);
-                  },
-                  child: Image.asset(
-                    ImageAssets.back_arrow,
-                    height: 28,
-                    width: 28,
-                  ),
-                ),
-              ),
-              Positioned(
-                top: 75.h,
-                right: 20.w,
-                child: GestureDetector(
-                  onTapDown: (details) {
-                    _showPopupMenu(context, details.globalPosition);
-                  },
-                  child: Image.asset(ImageAssets.menu),
-                ),
-              ),
-              Positioned(
-                top: 200.h,
-                left: 20.w,
+              SafeArea(
                 child: Column(
                   children: [
-                    Image.asset(ImageAssets.image1),
-                    SizedBox(height: 10.h),
-                    Text(
-                      'Sophia Johnson',
-                      style: TextStyle(
-                        color: AppColor.buttonColor,
-                        fontSize: 22.sp,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w700,
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              Get.to(Navigation(), transition: Transition.leftToRight);
+                            },
+                            child: Image.asset(
+                              ImageAssets.back_arrow,
+                              height: 28,
+                              width: 28,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTapDown: (details) {
+                              _showPopupMenu(context, details.globalPosition);
+                            },
+                            child: Image.asset(ImageAssets.menu),
+                          ),
+                        ],
                       ),
                     ),
-                    SizedBox(height: 10.h),
-                    Text(
-                      '1992 - 1024',
-                      style: TextStyle(
-                        color: AppColor.subTitleGrey,
-                        fontSize: 16.sp,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    SizedBox(height: 20.h),
-                    Text(
-                      'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit. Morbi vitae libero libero. Quisque\nviverra semper eros in ultrices. Cras vel augue\ntristique, gravida nulla a, blandit ex.',
-                      style: TextStyle(
-                        color: AppColor.greyTone,
-                        fontSize: 16.sp,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    SizedBox(height: 20.h),
-                    Text(
-                      'Lorem ipsum dolor sit amet',
-                      style: TextStyle(
-                        color: AppColor.textSendColor,
-                        fontSize: 16.sp,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Image.asset(
-                          ImageAssets.candle,
-                          width: 185.w,
-                          height: 200.h,
+                    Expanded(
+                      child: SingleChildScrollView(
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SizedBox(height: 10.h),
+                            Image.asset(ImageAssets.image1),
+                            SizedBox(height: 20.h),
+                            Text(
+                              'Sophia Johnson',
+                              style: TextStyle(
+                                color: AppColor.buttonColor,
+                                fontSize: 22,
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            SizedBox(height: 10.h),
+                            Text(
+                              '1992 - 1024',
+                              style: TextStyle(
+                                color: AppColor.subTitleGrey,
+                                fontSize: 16,
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            SizedBox(height: 20.h),
+                            Text(
+                              'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit. Morbi vitae libero libero. Quisque\nviverra semper eros in ultrices. Cras vel augue\ntristique, gravida nulla a, blandit ex.',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: AppColor.greyTone,
+                                fontSize: 16,
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            SizedBox(height: 20.h),
+                            Text(
+                              'Lorem ipsum dolor sit amet',
+                              style: TextStyle(
+                                color: AppColor.textSendColor,
+                                fontSize: 16,
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            SizedBox(height: 20.h),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Image.asset(
+                                    ImageAssets.candle,
+                                    height: 200,
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                                SizedBox(width: 10.w),
+                                Expanded(
+                                  child: Image.asset(
+                                    ImageAssets.flower1,
+                                    height: 200,
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 40.h),
+                            CustomButton(
+                              onPress: () async {
+                                Get.to(
+                                  MemoryHistoryView(),
+                                  transition: Transition.noTransition,
+                                );
+                              },
+                              title: 'View Obituary',
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'Poppins',
+                              textColor: AppColor.buttonColor,
+                              borderColor: AppColor.buttonColor,
+                              buttonColor: Colors.transparent,
+                              height: 48,
+                              width: double.infinity,
+                              radius: 10,
+                            ),
+                            SizedBox(height: 40.h),
+                          ],
                         ),
-                        Image.asset(
-                          ImageAssets.flower1,
-                          width: 185.w,
-                          height: 200.h,
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 50.h),
-                    CustomButton(
-                      onPress: () async {
-                        Get.to(
-                          MemoryHistoryView(),
-                          transition: Transition.noTransition,
-                        );
-                      },
-                      title: 'View Obituary',
-                      fontSize: 16.w,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Poppins',
-                      textColor: AppColor.buttonColor,
-                      borderColor: AppColor.buttonColor,
-                      buttonColor: Colors.transparent,
-                      height: 48.h,
-                      width: 390.w,
-                      radius: 10,
+                      ),
                     ),
                   ],
                 ),
@@ -242,4 +259,5 @@ class MemoryDetailsView extends GetView<MemoryController> {
       },
     );
   }
+
 }

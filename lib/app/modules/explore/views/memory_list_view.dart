@@ -85,7 +85,7 @@ class MemoryListView extends GetView {
                                     style: TextStyle(
                                       color: AppColor.darkGrey,
                                       fontWeight: FontWeight.w600,
-                                      fontSize: 16.sp,
+                                      fontSize: 16,
                                     ),
                                   ),
                                   SizedBox(width: 10.w),
@@ -93,7 +93,7 @@ class MemoryListView extends GetView {
                                     '3s',
                                     style: TextStyle(
                                       color: AppColor.greyTone,
-                                      fontSize: 16.sp,
+                                      fontSize: 16,
                                     ),
                                   ),
                                 ],
@@ -102,7 +102,7 @@ class MemoryListView extends GetView {
                                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                                 style: TextStyle(
                                   color: AppColor.greyTone,
-                                  fontSize: 14.sp,
+                                  fontSize: 14,
                                 ),
                               ),
                             ],
@@ -114,7 +114,7 @@ class MemoryListView extends GetView {
                             children: [
                               Image.asset(
                                 ImageAssets.heart,
-                                width: 20.w,
+                                width: 20,
                                 height: 20.h,
                               ),
                               Text(

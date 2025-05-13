@@ -13,7 +13,7 @@ class OnboardingView extends GetView<OnboardingController> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(430, 932),
+      designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
@@ -26,13 +26,13 @@ class OnboardingView extends GetView<OnboardingController> {
                 child: Image.asset(ImageAssets.onboarding, fit: BoxFit.fill),
               ),
               Positioned(
-                top: 40.h,
-                left: 130.w,
+                top: 40,
+                left: 130,
                 child: Image.asset(ImageAssets.onboard_logo),
               ),
               Positioned(
-                bottom: 50.h,
-                left: 20.w,
+                bottom: 50,
+                left: 20,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -40,7 +40,7 @@ class OnboardingView extends GetView<OnboardingController> {
                       'Celebrate Lives, Keep\nMemories Alive',
                       style: TextStyle(
                         color: AppColor.buttonColor,
-                        fontSize: 28.sp,
+                        fontSize: 28,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w600,
                       ),
@@ -50,7 +50,7 @@ class OnboardingView extends GetView<OnboardingController> {
                       'INSPIRIT helps you honor your loved ones\nthrough beautiful, lasting digital memorials.\nShare stories, photos, and memories that\nlive on—forever connected to family,\nfriends, and future generations.',
                       style: TextStyle(
                         color: AppColor.whiteTextColor,
-                        fontSize: 18.sp,
+                        fontSize: 18,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w400,
                       ),
@@ -61,8 +61,8 @@ class OnboardingView extends GetView<OnboardingController> {
                         Get.to(AuthView(), transition: Transition.noTransition);
                       },
                       title: 'NEXT',
-                      height: 48.h,
-                      width: 390.w,
+                      height: 48,
+                      width: 390,
                       radius: 100,
                     ),
                   ],

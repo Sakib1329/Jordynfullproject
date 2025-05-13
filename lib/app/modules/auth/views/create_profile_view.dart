@@ -14,7 +14,7 @@ class CreateProfileView extends GetView<AuthController> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(430, 932),
+      designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
@@ -34,7 +34,7 @@ class CreateProfileView extends GetView<AuthController> {
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
-                            SizedBox(height: 82.h),
+                            SizedBox(height: 62.h),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -42,7 +42,7 @@ class CreateProfileView extends GetView<AuthController> {
                                   'Create your Profile',
                                   style: TextStyle(
                                     color: AppColor.buttonColor,
-                                    fontSize: 24.sp,
+                                    fontSize: 24,
                                     fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.w700,
                                   ),
@@ -52,7 +52,7 @@ class CreateProfileView extends GetView<AuthController> {
                                   'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                                   style: TextStyle(
                                     color: AppColor.textGreyColor2,
-                                    fontSize: 16.sp,
+                                    fontSize: 16,
                                     fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -64,8 +64,8 @@ class CreateProfileView extends GetView<AuthController> {
                               children: [
                                 Center(child: Image.asset(ImageAssets.avater)),
                                 Positioned(
-                                  bottom: 5.h,
-                                  right: 140.w,
+                                  bottom: 5,
+                                  right: 140,
                                   child: Center(
                                     child: Image.asset(ImageAssets.camera1),
                                   ),
@@ -78,8 +78,8 @@ class CreateProfileView extends GetView<AuthController> {
                               borderColor: AppColor.backgroundColor,
                               hintText: 'Enter your name',
                               textColor: AppColor.textGreyColor2,
-                              height: 48.h,
-                              width: 390.w,
+                              height: 48,
+                              width: 390,
                             ),
                             SizedBox(height: 15.h),
                             InputTextWidget(
@@ -87,19 +87,20 @@ class CreateProfileView extends GetView<AuthController> {
                               borderColor: AppColor.backgroundColor,
                               hintText: 'Create your user name',
                               textColor: AppColor.textGreyColor2,
-                              height: 48.h,
-                              width: 390.w,
+                              height: 48,
+                              width: 390,
                             ),
                             SizedBox(height: 15.h),
                             Text(
                               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero libero. Quisque viverra semper eros.',
                               style: TextStyle(
                                 color: AppColor.textGreyColor3,
-                                fontSize: 16.sp,
+                                fontSize: 16,
                                 fontFamily: 'Montserrat',
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
+                            SizedBox(height: 20.h),
                           ],
                         ),
                       ),
@@ -111,9 +112,9 @@ class CreateProfileView extends GetView<AuthController> {
                           transition: Transition.noTransition,
                         );
                       },
-                      title: 'SING UP',
-                      height: 48.h,
-                      width: 390.w,
+                      title: 'Next',
+                      height: 48,
+                      width: 390,
                       radius: 100,
                     ),
                     SizedBox(height: 15.h),

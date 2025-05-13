@@ -21,11 +21,11 @@ class CreateCondolencesView extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Text(
           'Add Condolence message',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
       ),
@@ -33,14 +33,16 @@ class CreateCondolencesView extends StatelessWidget {
         children: [
           SingleChildScrollView(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                SizedBox(height: 20.h),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.h),
                   child: Text(
                     'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                     style: TextStyle(
                       color: AppColor.greyTone,
-                      fontSize: 16.sp,
+                      fontSize: 16,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Montserrat',
                     ),
@@ -50,8 +52,8 @@ class CreateCondolencesView extends StatelessWidget {
                 SizedBox(height: 8.h),
                 Container(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 15.w,
-                    vertical: 15.h,
+                    horizontal: 15,
+                    vertical: 15,
                   ),
                   child: Column(
                     children: [
@@ -63,20 +65,20 @@ class CreateCondolencesView extends StatelessWidget {
                         hintText: 'Add condolence message',
                         hintTextColor: AppColor.greyTone,
                         passwordIcon: ImageAssets.time,
-                        height: 148.h,
+                        height: 148,
                         maxLines: 10,
                       ),
                       SizedBox(height: 150.h),
                       CustomButton(
                         title: 'Save',
                         fontWeight: FontWeight.bold,
-                        fontSize: 20.sp,
+                        fontSize: 20,
                         onPress: () async {
                           Get.to(MemoryHistoryView(),transition: Transition.noTransition);
                         },
                         buttonColor: AppColor.buttonColor,
-                        height: 50.h,
-                        radius: 30.r,
+                        height: 50,
+                        radius: 30,
                       ),
                     ],
                   ),

@@ -18,11 +18,11 @@ class Privacy extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Text(
           'Privacy',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         centerTitle: true,
       ),
@@ -33,26 +33,27 @@ child: SingleChildScrollView(
   child: Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Text('1. Lorem ipsum dolor sit amet',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18.sp),),
+      Text('1. Lorem ipsum dolor sit amet',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
       Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-        style: TextStyle(fontWeight: FontWeight.w300,fontSize: 18.sp,color: AppColor.greyTone,),
+        style: TextStyle(fontWeight: FontWeight.w300,fontSize: 18,color: AppColor.greyTone,),
   
   
       ),
       SizedBox(height: 10.h,),
-      Text('2. Lorem ipsum dolor sit amet',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18.sp),),
+      Text('2. Lorem ipsum dolor sit amet',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
       Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-        style: TextStyle(fontWeight: FontWeight.w300,fontSize: 18.sp,color: AppColor.greyTone,),
+        style: TextStyle(fontWeight: FontWeight.w300,fontSize: 18,color: AppColor.greyTone,),
   
   
       ),
       SizedBox(height: 10.h,),
-      Text('3. Lorem ipsum dolor sit amet',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18.sp),),
+      Text('3. Lorem ipsum dolor sit amet',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
       Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-        style: TextStyle(fontWeight: FontWeight.w300,fontSize: 18.sp,color: AppColor.greyTone,),
+        style: TextStyle(fontWeight: FontWeight.w300,fontSize: 18,color: AppColor.greyTone,),
   
   
-      )
+      ),
+      SizedBox(height: 20.h,),
   
     ],
   ),

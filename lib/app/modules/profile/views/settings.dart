@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:jordyn/app/modules/auth/views/sign_in_view.dart';
 import 'package:jordyn/app/modules/profile/views/aboutapp.dart';
 import 'package:jordyn/app/modules/profile/views/deleteaccount.dart';
 import 'package:jordyn/app/modules/profile/views/passchange.dart';
@@ -43,11 +44,11 @@ class Settings extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Text(
           'Settings',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         centerTitle: true,
       ),
@@ -61,14 +62,14 @@ class Settings extends StatelessWidget {
 
             leading: Image.asset(
               item['icon'],
-              width: 24.w,
-              height: 24.w,
+              width: 24,
+              height: 24,
               color: isDelete ? AppColor.deepred: AppColor.greyTone,
             ),
             title: Text(
               item['title'],
               style: TextStyle(
-                fontSize: 18.sp,
+                fontSize: 18,
                 color: isDelete ? AppColor.deepred: AppColor.greyTone,
                 fontWeight: isDelete ? FontWeight.w600 : FontWeight.normal,
               ),
@@ -106,7 +107,7 @@ Get.to(PlanView());
                   Get.to(Termsofuse(), transition: Transition.rightToLeft);
                   break;
                 case 'Logout':
-                // Handle logout logic here, e.g., show confirmation dialog
+                Get.to(SignInView(),transition: Transition.rightToLeft);
                   break;
                 case 'Delete Account':
                   Get.to(Deleteaccount(), transition: Transition.rightToLeft);

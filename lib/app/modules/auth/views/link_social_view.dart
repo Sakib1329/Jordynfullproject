@@ -13,7 +13,7 @@ class LinkSocialView extends GetView<AuthController> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(430, 932),
+      designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
@@ -38,7 +38,7 @@ class LinkSocialView extends GetView<AuthController> {
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
-                            SizedBox(height: 60.h),
+                            SizedBox(height: 40.h),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -46,7 +46,7 @@ class LinkSocialView extends GetView<AuthController> {
                                   'Link your Social Media',
                                   style: TextStyle(
                                     color: AppColor.buttonColor,
-                                    fontSize: 24.sp,
+                                    fontSize: 24,
                                     fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.w700,
                                   ),
@@ -56,7 +56,7 @@ class LinkSocialView extends GetView<AuthController> {
                                   'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                                   style: TextStyle(
                                     color: AppColor.textGreyColor2,
-                                    fontSize: 16.sp,
+                                    fontSize: 16,
                                     fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -72,9 +72,9 @@ class LinkSocialView extends GetView<AuthController> {
                                 // );
                               },
                               title: 'Connect Facebook',
-                              height: 48.h,
-                              width: 390.w,
-                              radius: 10.r,
+                              height: 48,
+                              width: 390,
+                              radius: 10,
                               center: false,
                               icon: true,
                               buttonColor: AppColor.textAreaColor,
@@ -89,9 +89,9 @@ class LinkSocialView extends GetView<AuthController> {
                                 // );
                               },
                               title: 'Connect Instagram',
-                              height: 48.h,
-                              width: 390.w,
-                              radius: 10.r,
+                              height: 48,
+                              width: 390,
+                              radius: 10,
                               center: false,
                               icon: true,
                               image: ImageAssets.insta,
@@ -107,8 +107,8 @@ class LinkSocialView extends GetView<AuthController> {
                                 // );
                               },
                               title: 'Connect X(Twitter)',
-                              height: 48.h,
-                              width: 390.w,
+                              height: 48,
+                              width: 390,
                               radius: 10.r,
                               center: false,
                               icon: true,
@@ -125,8 +125,8 @@ class LinkSocialView extends GetView<AuthController> {
                                 // );
                               },
                               title: 'Connect Thread',
-                              height: 48.h,
-                              width: 390.w,
+                              height: 48,
+                              width: 390,
                               radius: 10.r,
                               center: false,
                               icon: true,
@@ -146,9 +146,9 @@ class LinkSocialView extends GetView<AuthController> {
                           transition: Transition.noTransition,
                         );
                       },
-                      title: 'SING UP',
-                      height: 48.h,
-                      width: 390.w,
+                      title: 'Next',
+                      height: 48,
+                      width: 390,
                       radius: 100.r,
                     ),
                     SizedBox(height: 15.h),

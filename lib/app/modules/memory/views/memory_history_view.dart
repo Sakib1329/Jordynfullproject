@@ -18,7 +18,7 @@ class MemoryHistoryView extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.lazyPut(() => MemoryController());
     return ScreenUtilInit(
-      designSize: const Size(430, 932),
+      designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
@@ -49,13 +49,13 @@ class MemoryHistoryView extends StatelessWidget {
                                 },
                                 child: Image.asset(
                                   ImageAssets.back_arrow,
-                                  height: 28.h,
-                                  width: 28.w,
+                                  height: 28,
+                                  width: 28,
                                 ),
                               ),
                             ],
                           ),
-                          SizedBox(width: 330.w),
+                          SizedBox(width: 330),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: Image.asset(ImageAssets.menu),
@@ -87,20 +87,20 @@ class MemoryHistoryView extends StatelessWidget {
                                                       'Memorial'
                                                   ? AppColor.buttonColor
                                                   : AppColor.textGreyColor3,
-                                          fontSize: 16.sp,
+                                          fontSize: 16,
                                           fontFamily: 'Montserrat',
                                           fontWeight: FontWeight.w400,
-                                          height: 2.h,
-                                          letterSpacing: 0.50.w,
+                                          height: 2,
+                                          letterSpacing: 0.50,
                                         ),
                                       ),
                                       SizedBox(height: 5.h),
                                       SizedBox(
-                                        height: 2.h,
-                                        width: 215.w,
+                                        height: 2,
+                                        width: 210,
                                         child: Divider(
-                                          height: 5.h,
-                                          thickness: 2.h,
+                                          height: 5,
+                                          thickness: 2,
                                           color:
                                               controller
                                                           .hisrtorySelectedTab
@@ -133,20 +133,20 @@ class MemoryHistoryView extends StatelessWidget {
                                                       'Condolences'
                                                   ? AppColor.buttonColor
                                                   : AppColor.textGreyColor3,
-                                          fontSize: 16.sp,
+                                          fontSize: 16,
                                           fontFamily: 'Montserrat',
                                           fontWeight: FontWeight.w400,
-                                          height: 2.h,
-                                          letterSpacing: 0.50.w,
+                                          height: 2,
+                                          letterSpacing: 0.50,
                                         ),
                                       ),
-                                      SizedBox(height: 5.h),
+                                      SizedBox(height: 5),
                                       SizedBox(
-                                        height: 2.h,
-                                        width: 215.w,
+                                        height: 2,
+                                        width: 215,
                                         child: Divider(
-                                          height: 5.h,
-                                          thickness: 2.h,
+                                          height: 5,
+                                          thickness: 2,
                                           color:
                                               controller
                                                           .hisrtorySelectedTab
@@ -201,12 +201,12 @@ class MemoryHistoryView extends StatelessWidget {
                           CustomButton(
                             onPress: () async {Get.to(CreateCondolencesView(),transition: Transition.noTransition);},
                             title: 'Condolences',
-                            height: 48.h,
-                            width: 185.w,
+                            height: 48,
+                            width: 185,
                             radius: 10.r,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w600,
-                            fontSize: 16.sp,
+                            fontSize: 16,
                             buttonColor: AppColor.backgroundColor,
                             textColor: AppColor.buttonColor,
                             borderColor: AppColor.buttonColor,
@@ -214,12 +214,12 @@ class MemoryHistoryView extends StatelessWidget {
                           CustomButton(
                             onPress: () async {Get.to(AddMemoryView(),transition: Transition.noTransition);},
                             title: 'Add Memory',
-                            height: 48.h,
-                            width: 185.w,
+                            height: 48,
+                            width: 185,
                             radius: 10.r,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w600,
-                            fontSize: 16.sp,
+                            fontSize: 16,
                           ),
                         ],
                       ),

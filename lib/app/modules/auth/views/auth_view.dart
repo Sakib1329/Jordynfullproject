@@ -16,7 +16,7 @@ class AuthView extends GetView<AuthController> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(430, 932),
+      designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
@@ -25,163 +25,165 @@ class AuthView extends GetView<AuthController> {
             FocusScope.of(context).unfocus();
           },
           child: Scaffold(
-            body: SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(height: 30.h),
-                    Center(child: Image.asset(ImageAssets.auth_logo)),
-                    SizedBox(height: 20.h),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Create New Account',
-                          style: TextStyle(
-                            color: AppColor.buttonColor,
-                            fontSize: 24.sp,
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        SizedBox(height: 20.h),
-                        Text(
-                          'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
-                          style: TextStyle(
-                            color: AppColor.textGreyColor2,
-                            fontSize: 16.sp,
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 20.h),
-                    InputTextWidget(
-                      onChanged: (e) {},
-                      borderColor: AppColor.backgroundColor,
-                      hintText: 'Enter your email',
-                      leadingIcon: ImageAssets.email,
-                      textColor: AppColor.textGreyColor2,
-                      leading: true,
-                      height: 48.h,
-                      width: 390.w,
-                    ),
-                    SizedBox(height: 15.h),
-                    InputTextWidget(
-                      onChanged: (e) {},
-                      borderColor: AppColor.backgroundColor,
-                      hintText: 'Create your password',
-                      leadingIcon: ImageAssets.pass,
-                      leading: true,
-                      obscureText: true,
-                      textColor: AppColor.textGreyColor2,
-                      height: 48.h,
-                      width: 390.w,
-                    ),
-                    SizedBox(height: 15.h),
-                    InputTextWidget(
-                      onChanged: (e) {},
-                      borderColor: AppColor.backgroundColor,
-                      hintText: 'Confirm your password',
-                      leadingIcon: ImageAssets.pass,
-                      leading: true,
-                      obscureText: true,
-                      textColor: AppColor.textGreyColor2,
-                      height: 48.h,
-                      width: 390.w,
-                    ),
-                    SizedBox(height: 25.h),
-                    CustomButton(
-                      onPress: () async {
-                        Get.to(
-                              () => VerifyEmailView(),
-                          arguments: {'origin': 'AuthView'},
-                          transition: Transition.noTransition,
-                        );
-                      },
-                      title: 'SIGN UP',
-                      height: 48.h,
-                      width: 390.w,
-                      radius: 100,
-                    ),
-                    SizedBox(height: 20.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Already have an account?',
-                          style: TextStyle(
-                            color: AppColor.textGreyColor3,
-                            fontSize: 16.sp,
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Get.to(
-                              SignInView(),
-                              transition: Transition.noTransition,
-                            );
-                          },
-                          child: Text(
-                            ' Sign In',
+            body: SingleChildScrollView(
+              child: SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(height: 10.h),
+                      Center(child: Image.asset(ImageAssets.auth_logo)),
+                      SizedBox(height: 10.h),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Create New Account',
                             style: TextStyle(
                               color: AppColor.buttonColor,
-                              fontSize: 16.sp,
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w600,
+                              fontSize: 24,
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.w700,
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 30.h),
-                    Text(
-                      'or',
-                      style: TextStyle(
-                        color: AppColor.greyTone1,
-                        fontSize: 20.sp,
-                        fontFamily: 'Nunito',
-                        fontWeight: FontWeight.w500,
+                          SizedBox(height: 10.h),
+                          Text(
+                            'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
+                            style: TextStyle(
+                              color: AppColor.textGreyColor2,
+                              fontSize: 16,
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    SizedBox(height: 30.h),
-                    Text(
-                      'Continue with',
-                      style: TextStyle(
-                        color: AppColor.greyTone1,
-                        fontSize: 16.sp,
-                        fontFamily: 'Nunito',
-                        fontWeight: FontWeight.w400,
+                      SizedBox(height: 20.h),
+                      InputTextWidget(
+                        onChanged: (e) {},
+                        borderColor: AppColor.backgroundColor,
+                        hintText: 'Enter your email',
+                        leadingIcon: ImageAssets.email,
+                        textColor: AppColor.textGreyColor2,
+                        leading: true,
+                        height: 48,
+                        width: 390,
                       ),
-                    ),
-                    SizedBox(height: 25.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      spacing: 20.w,
-                      children: [
-                        SvgPicture.asset(
-                          ImageAssets.google,
-                          height: 42.h,
-                          width: 78.w,
+                      SizedBox(height: 15.h),
+                      InputTextWidget(
+                        onChanged: (e) {},
+                        borderColor: AppColor.backgroundColor,
+                        hintText: 'Create your password',
+                        leadingIcon: ImageAssets.pass,
+                        leading: true,
+                        obscureText: true,
+                        textColor: AppColor.textGreyColor2,
+                        height: 48,
+                        width: 390,
+                      ),
+                      SizedBox(height: 15.h),
+                      InputTextWidget(
+                        onChanged: (e) {},
+                        borderColor: AppColor.backgroundColor,
+                        hintText: 'Confirm your password',
+                        leadingIcon: ImageAssets.pass,
+                        leading: true,
+                        obscureText: true,
+                        textColor: AppColor.textGreyColor2,
+                        height: 48,
+                        width: 390,
+                      ),
+                      SizedBox(height: 20.h),
+                      CustomButton(
+                        onPress: () async {
+                          Get.to(
+                                () => VerifyEmailView(),
+                            arguments: {'origin': 'AuthView'},
+                            transition: Transition.noTransition,
+                          );
+                        },
+                        title: 'SIGN UP',
+                        height: 48,
+                        width: 390,
+                        radius: 100,
+                      ),
+                      SizedBox(height: 20.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Already have an account?',
+                            style: TextStyle(
+                              color: AppColor.textGreyColor3,
+                              fontSize: 16,
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {
+                              Get.to(
+                                SignInView(),
+                                transition: Transition.noTransition,
+                              );
+                            },
+                            child: Text(
+                              ' Sign In',
+                              style: TextStyle(
+                                color: AppColor.buttonColor,
+                                fontSize: 16,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 20.h),
+                      Text(
+                        'or',
+                        style: TextStyle(
+                          color: AppColor.greyTone1,
+                          fontSize: 20,
+                          fontFamily: 'Nunito',
+                          fontWeight: FontWeight.w500,
                         ),
-                        SvgPicture.asset(
-                          ImageAssets.facebook,
-                          height: 42.h,
-                          width: 78.w,
+                      ),
+                      SizedBox(height: 20.h),
+                      Text(
+                        'Continue with',
+                        style: TextStyle(
+                          color: AppColor.greyTone1,
+                          fontSize: 16,
+                          fontFamily: 'Nunito',
+                          fontWeight: FontWeight.w400,
                         ),
-                        SvgPicture.asset(
-                          ImageAssets.apple,
-                          height: 42.h,
-                          width: 78.w,
-                        ),
-                      ],
-                    ),
-                  ],
+                      ),
+                      SizedBox(height: 25.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        spacing: 20,
+                        children: [
+                          SvgPicture.asset(
+                            ImageAssets.google,
+                            height: 42,
+                            width: 78,
+                          ),
+                          SvgPicture.asset(
+                            ImageAssets.facebook,
+                            height: 42,
+                            width: 78,
+                          ),
+                          SvgPicture.asset(
+                            ImageAssets.apple,
+                            height: 42,
+                            width: 78,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

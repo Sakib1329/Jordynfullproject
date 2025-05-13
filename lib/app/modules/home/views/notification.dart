@@ -53,16 +53,16 @@ class HomeNotification extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () => Get.back(),
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Text(
           'Notification',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         centerTitle: true,
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 15.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           children: [
             SizedBox(height: 10.h),
@@ -161,7 +161,7 @@ class HomeNotification extends StatelessWidget {
               style: TextStyle(
                 color: AppColor.textBlackColor,
                 fontWeight: FontWeight.bold,
-                fontSize: 18.sp,
+                fontSize: 18,
               ),
             ),
             subtitle: Text(time, style: TextStyle(color: AppColor.greyTone)),
@@ -171,7 +171,7 @@ class HomeNotification extends StatelessWidget {
             style: TextStyle(
               color: AppColor.greyTone,
               fontWeight: FontWeight.w400,
-              fontSize: 16.sp,
+              fontSize: 16,
             ),
           ),
         ],
@@ -205,7 +205,7 @@ class HomeNotification extends StatelessWidget {
                 style: TextStyle(
                   color: AppColor.darkGrey,
                   fontWeight: FontWeight.w600,
-                  fontSize: 17.sp,
+                  fontSize: 17,
                 ),
               ),
               SizedBox(height: 4.r),
@@ -213,7 +213,7 @@ class HomeNotification extends StatelessWidget {
                 'Taylor_gouse',
                 style: TextStyle(
                   color: AppColor.greyTone,
-                  fontSize: 15.sp,
+                  fontSize: 15,
                 ),
               ),
             ],

@@ -59,11 +59,11 @@ class Scheduledetail extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Text(
           'Schedule Post Detail',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
       ),
@@ -72,23 +72,25 @@ class Scheduledetail extends StatelessWidget {
           SingleChildScrollView(
             child: Column(
               children: [
+                SizedBox(height: 15.h),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.h),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero libero. Quisque viverra semper eros in ultrices. Cras vel augue tristique, gravida nulla a, blandit ex waaaaaaaaaaaaaaaaaaaaaaaaaa.',
-                    style: TextStyle(color: AppColor.greyTone, fontSize: 20),
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero libero. Quisque viverra semper eros in ultrices. Cras vel augue tristique, gravida nulla a, blandit ex.',
+                    style: TextStyle(color: AppColor.greyTone, fontSize: 18),
                     textAlign: TextAlign.start,
                   ),
                 ),
-                SizedBox(height: 8.h),
+                SizedBox(height: 10.h),
                 Obx(() {
                   final file = controller.pickedImageschedule.value;
                   return SizedBox(
-                    width: double.infinity,
+height: 340,
+width: double.infinity,
                     child:
                         file != null
                             ? Image.file(file, fit: BoxFit.cover)
-                            : Image.asset(ImageAssets.person),
+                            : Image.asset(ImageAssets.person,fit: BoxFit.cover,),
                   );
                 }),
                 Container(
@@ -101,8 +103,8 @@ class Scheduledetail extends StatelessWidget {
                         borderColor: Colors.transparent,
                         hintText: '23-04-2025',
                         hintTextColor: AppColor.greyTone,
-                        obscureText: true,
-                        passwordIcon: ImageAssets.calender3,
+                        backimageadd: true,
+                        backimage: ImageAssets.calender3,
                       ),
                       SizedBox(height: 10.h),
                       InputTextWidget(
@@ -112,11 +114,11 @@ class Scheduledetail extends StatelessWidget {
                         hintText: '12:30',
                         hintTextColor: AppColor.greyTone,
             
-                        obscureText: true,
-                        passwordIcon: ImageAssets.time,
+backimageadd: true,
+                        backimage: ImageAssets.time,
                       ),
             
-                      SizedBox(height: 8.h),
+                      SizedBox(height: 15.h),
                       ListTile(
                         onTap: () {
                           _pickVideoOrImageFromGallery();
@@ -124,8 +126,8 @@ class Scheduledetail extends StatelessWidget {
                         },
                         leading: Image.asset(
                           ImageAssets.photo_videos,
-                          width: 35.w,
-                          height: 35.h,
+                          width: 35,
+                          height: 35,
                         ),
                         title: Padding(
                           padding: EdgeInsets.only(top: 2.h),
@@ -133,7 +135,7 @@ class Scheduledetail extends StatelessWidget {
                             'Photo/Video',
                             style: TextStyle(
                               color: AppColor.textGreyColor,
-                              fontSize: 18.sp,
+                              fontSize: 18,
                               letterSpacing: 1,
                             ),
                           ),
@@ -147,14 +149,14 @@ class Scheduledetail extends StatelessWidget {
                         },
                         leading: Image.asset(
                           ImageAssets.camera,
-                          width: 35.w,
-                          height: 35.h,
+                          width: 35,
+                          height: 35,
                         ),
                         title: Text(
                           'Camera',
                           style: TextStyle(
                             color: AppColor.textGreyColor,
-                            fontSize: 18.sp,
+                            fontSize: 18,
                             letterSpacing: 1,
                           ),
                         ),
@@ -163,7 +165,7 @@ class Scheduledetail extends StatelessWidget {
                       CustomButton(
                         title: 'Save',
                         fontWeight: FontWeight.bold,
-                        fontSize: 20.sp,
+                        fontSize: 20,
                         onPress: () async {
                           showDialog(
                             context: context,
@@ -172,7 +174,7 @@ class Scheduledetail extends StatelessWidget {
                                   backgroundColor: Colors.transparent,
                                   elevation: 0,
                                   child: CenteredDialogWidget(
-                                    title: 'Schedule Post Deleted',
+                                    title: 'Schedule Post Saved',
                                     horizontalpadding: 2.0.w,
                                     verticalpadding: 20.0.h,
             
@@ -188,7 +190,7 @@ class Scheduledetail extends StatelessWidget {
                           );
                         },
                         buttonColor: AppColor.buttonColor,
-                        height: 50.h,
+                        height: 50,
                         radius: 30.r,
                       ),
                     ],

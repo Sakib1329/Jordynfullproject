@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:jordyn/app/modules/auth/controllers/auth_controller.dart';
@@ -13,29 +14,33 @@ void main() {
   Get.put(ProfileController());
   Get.put(ExploreController());
   Get.put(MemoryController());
+
   runApp(
     ScreenUtilInit(
       designSize: Size(360, 690),
-      child: GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: "Application",
-        initialRoute: AppPages.INITIAL,
-        getPages: AppPages.routes,
-
-
-      theme: ThemeData(
-        scaffoldBackgroundColor: AppColor.backgroundColor,
-        appBarTheme: AppBarTheme(
-         // color: AppColor.backgroundColor,
-      elevation: 0,
-      backgroundColor:AppColor.backgroundColor,
-        scrolledUnderElevation: 0
-        )
-      ),
-
-
-
-      ),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return GestureDetector(
+          onTap: () {
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          child: GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: "Application",
+            initialRoute: AppPages.INITIAL,
+            getPages: AppPages.routes,
+            theme: ThemeData(
+              scaffoldBackgroundColor: AppColor.backgroundColor,
+              appBarTheme: AppBarTheme(
+                elevation: 0,
+                backgroundColor: AppColor.backgroundColor,
+                scrolledUnderElevation: 0,
+              ),
+            ),
+          ),
+        );
+      },
     ),
   );
 }

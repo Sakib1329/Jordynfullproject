@@ -24,22 +24,22 @@ class FeedBack extends StatelessWidget {
         ),
         title: Text(
           'Feedback',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         centerTitle: true,
-        leadingWidth: 30.w,
+        leadingWidth: 30,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
-
+crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(height: 20.h,),
             Text(
               'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
               style: TextStyle(
                 color: AppColor.textGreyColor,
-                fontSize: 20.sp,
+                fontSize: 20,
                 fontFamily: 'Schuyler',
               ),
               textAlign: TextAlign.start,
@@ -56,13 +56,13 @@ class FeedBack extends StatelessWidget {
               hintTextColor: AppColor.textGreyColor2,
               textColor: AppColor.textGreyColor2,
               maxLines: 10,
-              height: 150.h,
+              height: 150,
             ),
             SizedBox(height: 0.1.sh,),
             CustomButton(
               title: 'Send Feedback',
               fontWeight: FontWeight.bold,
-              fontSize: 20.sp,
+              fontSize: 20,
               onPress: () async {
                 showDialog(
                   context: context,
@@ -83,7 +83,7 @@ class FeedBack extends StatelessWidget {
                 );
               },
               buttonColor: AppColor.buttonColor,
-              height: 50.h,
+              height: 50,
               radius: 30.r,
             ),
 

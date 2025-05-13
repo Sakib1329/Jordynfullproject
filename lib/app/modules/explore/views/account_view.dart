@@ -99,7 +99,7 @@ class AccountView extends StatelessWidget {
                                   style: TextStyle(
                                     color: AppColor.darkGrey,
                                     fontWeight: FontWeight.w600,
-                                    fontSize: 20.sp,
+                                    fontSize: 20,
                                   ),
                                 ),
                                 SizedBox(height: 10.h),
@@ -109,7 +109,7 @@ class AccountView extends StatelessWidget {
                                       '@abc_xyz',
                                       style: TextStyle(
                                         color: AppColor.subTitleGrey,
-                                        fontSize: 16.sp,
+                                        fontSize: 16,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
@@ -129,7 +129,7 @@ class AccountView extends StatelessWidget {
                                               '200 Friends',
                                               style: TextStyle(
                                                 color: AppColor.subTitleGrey,
-                                                fontSize: 16.sp,
+                                                fontSize: 16,
                                                 fontWeight: FontWeight.w400,
                                                 fontFamily: 'Montaga',
                                               ),
@@ -149,7 +149,7 @@ class AccountView extends StatelessWidget {
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet venenatis metus',
                         style: TextStyle(
                           color: AppColor.greyTone,
-                          fontSize: 16.sp,
+                          fontSize: 16,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -163,10 +163,10 @@ class AccountView extends StatelessWidget {
                                 CustomButton(
                                   onPress: () async {},
                                   title: 'Message',
-                                  width: 160.w,
-                                  height: 42.h,
-                                  radius: 120.r,
-                                  fontSize: 18.sp,
+                                  width: 160,
+                                  height: 42,
+                                  radius: 120,
+                                  fontSize: 18,
                                   borderColor: AppColor.greyTone,
                                   buttonColor: AppColor.backgroundColor,
                                   textColor: AppColor.greyTone,
@@ -174,9 +174,9 @@ class AccountView extends StatelessWidget {
                                 CustomButton(
                                   onPress: () async {},
                                   title: 'Add Friend',
-                                  fontSize: 18.sp,
-                                  width: 160.w,
-                                  height: 42.h,
+                                  fontSize: 18,
+                                  width: 160,
+                                  height: 42,
                                   radius: 120.r,
                                 ),
                               ],
@@ -198,10 +198,10 @@ class AccountView extends StatelessWidget {
                                     );
                                   },
                                   title: 'Edit Profile',
-                                  width: 160.w,
-                                  height: 42.h,
-                                  radius: 120.r,
-                                  fontSize: 18.sp,
+                                  width: 160,
+                                  height: 42,
+                                  radius: 120,
+                                  fontSize: 18,
                                   borderColor: AppColor.greyTone,
                                   buttonColor: AppColor.backgroundColor,
                                   textColor: AppColor.greyTone,
@@ -209,9 +209,9 @@ class AccountView extends StatelessWidget {
                                 CustomButton(
                                   onPress: () async {},
                                   title: 'Share Profile',
-                                  fontSize: 18.sp,
-                                  width: 160.w,
-                                  height: 42.h,
+                                  fontSize: 18,
+                                  width: 160,
+                                  height: 42,
                                   radius: 120.r,
                                 ),
                               ],
@@ -248,11 +248,11 @@ class AccountView extends StatelessWidget {
                                     ),
                                     SizedBox(height: 5.h),
                                     SizedBox(
-                                      height: 2.h,
-                                      width: 130.w,
+                                      height: 2,
+                                      width: 130,
                                       child: Divider(
-                                        height: 5.h,
-                                        thickness: 2.h,
+                                        height: 5,
+                                        thickness: 2,
                                         color:
                                             controller.accountSelectedTab.value ==
                                                     'Memorial'
@@ -290,11 +290,11 @@ class AccountView extends StatelessWidget {
                                     ),
                                     SizedBox(height: 5.h),
                                     SizedBox(
-                                      height: 2.h,
-                                      width: 130.w,
+                                      height: 2,
+                                      width: 130,
                                       child: Divider(
-                                        height: 5.h,
-                                        thickness: 2.h,
+                                        height: 5,
+                                        thickness: 2,
                                         color:
                                             controller.accountSelectedTab.value ==
                                                     'Post'
@@ -332,11 +332,11 @@ class AccountView extends StatelessWidget {
                                     ),
                                     SizedBox(height: 5.h),
                                     SizedBox(
-                                      height: 2.h,
-                                      width: 130.w,
+                                      height: 2,
+                                      width: 130,
                                       child: Divider(
-                                        height: 5.h,
-                                        thickness: 2.h,
+                                        height: 5,
+                                        thickness: 2,
                                         color:
                                             controller.accountSelectedTab.value ==
                                                     'Event'

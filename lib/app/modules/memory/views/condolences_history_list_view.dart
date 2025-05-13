@@ -39,14 +39,12 @@ class CondolencesHistoryListView extends GetView {
                           ),
                         ),
                       ),
-                      title: Text(
-                        'Dummy Name',
-                        style: TextStyle(
-                          color: AppColor.textBlackColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.sp,
-                        ),
-                      ),
+                      title: Text('Dummy Name',
+                          style: TextStyle(
+                            color: AppColor.textBlackColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          )),
                       subtitle: Row(
                         children: [
                           Text('abc_xyz', style: TextStyle(color: AppColor.greyTone)),
@@ -54,15 +52,16 @@ class CondolencesHistoryListView extends GetView {
                           Text('3s', style: TextStyle(color: AppColor.greyTone)),
                         ],
                       ),
+
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 20.w),
                       child: Text(
                         'Lorem ipsum dolor sit amet, consectetur adipisci elit. Mauris ante nisi, bibendum vel commodo eu, auctor in purus. Mauris sed scelerisque libero, sit amet congue sem.',
-                        style: TextStyle(color: AppColor.greyTone, fontSize: 16.sp),
+                        style: TextStyle(color: AppColor.greyTone, fontSize: 16),
                       ),
                     ),
-                    SizedBox(height: 5.h),
+                    SizedBox(height: 10.h),
                   ],
                 )
               ),

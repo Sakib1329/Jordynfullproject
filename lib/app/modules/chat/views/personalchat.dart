@@ -66,7 +66,7 @@ class Personalchat extends StatelessWidget {
               style: TextStyle(
                 color: AppColor.darkGrey,
                 fontWeight: FontWeight.w600,
-                fontSize: 18.sp,
+                fontSize: 18,
                 letterSpacing: 1.2,
               ),
             ),
@@ -83,7 +83,7 @@ class Personalchat extends StatelessWidget {
                 if (value == 'Report User') {
                   Get.to(Report(), transition: Transition.rightToLeft);
                 } else if (value == 'Block User') {
-                  controller.isuserblocked.value = true;
+
                   Get.to(Blockuser(), transition: Transition.rightToLeft);
                 } else if (value == 'Unblock User') {
                   controller.isuserblocked.value = false;
@@ -139,7 +139,7 @@ class Personalchat extends StatelessWidget {
                           Flexible(
                             child: Text(
                               'Good morning',
-                              style: TextStyle(fontSize: 16.sp),
+                              style: TextStyle(fontSize: 16),
                               overflow: TextOverflow.visible,
                               softWrap: true,
                             ),
@@ -150,7 +150,7 @@ class Personalchat extends StatelessWidget {
                             child: Text(
                               '11:23 AM',
                               style: TextStyle(
-                                fontSize: 12.sp,
+                                fontSize: 12,
                                 color: AppColor.textBlackColor,
                               ),
                             ),
@@ -176,7 +176,7 @@ class Personalchat extends StatelessWidget {
                           Flexible(
                             child: Text(
                               'Hey how are you?',
-                              style: TextStyle(fontSize: 16.sp),
+                              style: TextStyle(fontSize: 16),
                               overflow: TextOverflow.visible,
                               softWrap: true,
                             ),
@@ -187,7 +187,7 @@ class Personalchat extends StatelessWidget {
                             child: Text(
                               '11:23 AM',
                               style: TextStyle(
-                                fontSize: 12.sp,
+                                fontSize: 12,
                                 color: AppColor.textBlackColor,
                               ),
                             ),
@@ -208,6 +208,8 @@ class Personalchat extends StatelessWidget {
                           'Unblock User to continue Chat',
                           style: const TextStyle(
                             fontSize: 20,
+                            color: AppColor.greyTone,
+                            letterSpacing: 1.2,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

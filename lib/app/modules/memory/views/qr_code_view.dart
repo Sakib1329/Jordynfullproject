@@ -20,57 +20,47 @@ class QrCodeView extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
-              style: TextStyle(
-                color: AppColor.greyTone,
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w400,
-                fontFamily: 'Montserrat',
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
+                style: TextStyle(
+                  color: AppColor.greyTone,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'Montserrat',
+                ),
+                textAlign: TextAlign.start,
               ),
-              textAlign: TextAlign.start,
-            ),
-            Image.asset(ImageAssets.qrCode),
-            Column(
-              children: [
-                Row(
-                  spacing: 20.w,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(ImageAssets.qrshare),
-                    Image.asset(ImageAssets.qrdownload),
-                  ],
-                ),
-                SizedBox(height: 20.h),
-                CustomButton(
-                  title: 'Save',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.sp,
-                  onPress: () async {
-                    Get.to(
-                      MemoryDetailsView(),
-                      transition: Transition.noTransition,
-                    );
-                  },
-                  buttonColor: AppColor.buttonColor,
-                  height: 48.h,
-                  width: double.infinity,
-                  radius: 30.r,
-                ),
-                SizedBox(height: 40.h),
-              ],
-            ),
-          ],
+              SizedBox(height:80.h),
+              Image.asset(ImageAssets.qrCode),
+              SizedBox(height: 80.h),
+
+              Column(
+                children: [
+                  Row(
+                    spacing: 30.w,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(ImageAssets.qrshare),
+                      Image.asset(ImageAssets.qrdownload),
+                    ],
+                  ),
+                  SizedBox(height: 20.h),
+                  SizedBox(height: 40.h),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -50,7 +50,7 @@ class VerifyEmailView extends GetView<AuthController> {
                           'Confirm your Email',
                           style: TextStyle(
                             color: AppColor.buttonColor,
-                            fontSize: 24.sp,
+                            fontSize: 24,
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.w700,
                           ),
@@ -60,7 +60,7 @@ class VerifyEmailView extends GetView<AuthController> {
                           'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                           style: TextStyle(
                             color: AppColor.textGreyColor2,
-                            fontSize: 16.sp,
+                            fontSize: 16,
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.w400,
                           ),
@@ -69,8 +69,8 @@ class VerifyEmailView extends GetView<AuthController> {
                     ),
                     SizedBox(height: 20.h),
                     SizedBox(
-                      height: 48.h,
-                      width: 390.w,
+                      height: 48,
+                      width: 390,
                       child: PinCodeTextField(
                         appContext: context,
                         hintCharacter: "_",
@@ -79,13 +79,13 @@ class VerifyEmailView extends GetView<AuthController> {
                         animationType: AnimationType.fade,
                         textStyle: TextStyle(
                           color: AppColor.textBlackColor,
-                          fontSize: 16.sp,
+                          fontSize: 16,
                         ),
                         pinTheme: PinTheme(
                           shape: PinCodeFieldShape.box,
                           borderRadius: BorderRadius.circular(10.r),
-                          fieldHeight: 48.h,
-                          fieldWidth: 48.h,
+                          fieldHeight: 48,
+                          fieldWidth: 48,
                           activeFillColor: AppColor.textAreaColor,
                           inactiveFillColor: AppColor.textAreaColor,
                           selectedFillColor: AppColor.textAreaColor,
@@ -121,7 +121,7 @@ class VerifyEmailView extends GetView<AuthController> {
                         '${(controller.countdown.value ~/ 60).toString().padLeft(2, '0')}:${(controller.countdown.value % 60).toString().padLeft(2, '0')}',
                         style: TextStyle(
                           color: AppColor.buttonColor,
-                          fontSize: 24.sp,
+                          fontSize: 24,
                           fontFamily: 'Montserrat',
                           fontWeight: FontWeight.w500,
                         ),
@@ -135,7 +135,7 @@ class VerifyEmailView extends GetView<AuthController> {
                         'Send again',
                         style: TextStyle(
                           color: AppColor.textSendColor,
-                          fontSize: 16.sp,
+                          fontSize: 16,
                           fontFamily: 'Montserrat',
                           fontWeight: FontWeight.w400,
                         ),
@@ -169,8 +169,8 @@ class VerifyEmailView extends GetView<AuthController> {
                         }
                       },
                       title: 'SIGN UP',
-                      height: 48.h,
-                      width: 390.w,
+                      height: 48,
+                      width: 390,
                       radius: 100,
                     ),
                     SizedBox(height: 20.h), // Extra padding to prevent cutoff

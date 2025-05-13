@@ -67,7 +67,7 @@ class Groupchat extends StatelessWidget {
               style: TextStyle(
                 color: AppColor.darkGrey,
                 fontWeight: FontWeight.w600,
-                fontSize: 18.sp,
+                fontSize: 18,
                 letterSpacing: 1.2,
               ),
             ),
@@ -140,8 +140,8 @@ class Groupchat extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.all(12.w),
-                            margin: EdgeInsets.only(bottom: 12.h, right: 80.w),
+                            padding: EdgeInsets.all(12),
+                            margin: EdgeInsets.only(bottom: 12, right: 80),
                             decoration: BoxDecoration(
                               color: AppColor.softBeige,
                               borderRadius: BorderRadius.circular(12.r),
@@ -155,18 +155,18 @@ class Groupchat extends StatelessWidget {
                                 Flexible(
                                   child: Text(
                                     'Good morning',
-                                    style: TextStyle(fontSize: 16.sp),
+                                    style: TextStyle(fontSize: 16),
                                     overflow: TextOverflow.visible,
                                     softWrap: true,
                                   ),
                                 ),
                                 SizedBox(width: 8.w),
                                 Padding(
-                                  padding: EdgeInsets.only(bottom: 3.h),
+                                  padding: EdgeInsets.only(bottom: 3),
                                   child: Text(
                                     '11:23 AM',
                                     style: TextStyle(
-                                      fontSize: 12.sp,
+                                      fontSize: 12,
                                       color: AppColor.textBlackColor,
                                     ),
                                   ),
@@ -181,8 +181,8 @@ class Groupchat extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Container(
-                        padding: EdgeInsets.all(12.w),
-                        margin: EdgeInsets.only(bottom: 12.h, left: 80.w),
+                        padding: EdgeInsets.all(12),
+                        margin: EdgeInsets.only(bottom: 12, left: 80),
                         decoration: BoxDecoration(
                           color: AppColor.vividBlue.withOpacity(0.2),
                           borderRadius: BorderRadius.circular(12.r),
@@ -194,18 +194,18 @@ class Groupchat extends StatelessWidget {
                             Flexible(
                               child: Text(
                                 'Hey how are you?',
-                                style: TextStyle(fontSize: 16.sp),
+                                style: TextStyle(fontSize: 16),
                                 overflow: TextOverflow.visible,
                                 softWrap: true,
                               ),
                             ),
                             SizedBox(width: 8.w),
                             Padding(
-                              padding: EdgeInsets.only(bottom: 3.h),
+                              padding: EdgeInsets.only(bottom: 3),
                               child: Text(
                                 '11:23 AM',
                                 style: TextStyle(
-                                  fontSize: 12.sp,
+                                  fontSize: 12,
                                   color: AppColor.textBlackColor,
                                 ),
                               ),

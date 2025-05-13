@@ -12,6 +12,7 @@ import '../controllers/chat_controller.dart';
 
 class Search extends StatelessWidget {
   final ChatController controller = Get.find();
+  final TextEditingController t1=TextEditingController();
   Search({super.key});
 
   @override
@@ -22,21 +23,26 @@ class Search extends StatelessWidget {
           onPressed: () => Get.back(),
           icon: Icon(Icons.arrow_back_ios_new),
         ),
-        leadingWidth: 30.w,
+        leadingWidth: 30,
         title:    Obx(() => InputTextWidget(
-
+controller: t1,
           onChanged: (value) {
             controller.searchQuery.value = value;
           },
+
           backIcon: controller.searchQuery.value.isEmpty ? false : true,
           imageIcon: ImageAssets.cross3,
+          backicontap: (){
+t1.clear();
+controller.searchQuery.value = '';
+          },
           borderColor: AppColor.backgroundColor,
           hintText: 'Search',
           hintTextColor: AppColor.textGreyColor2,
           leadingIcon: ImageAssets.search,
           textColor: AppColor.textGreyColor2,
           leading: true,
-          height: 48.h,
+          height: 48,
         )),
       ),
       body: Obx(() {
@@ -60,7 +66,7 @@ class Search extends StatelessWidget {
                       'No chat found',
                       style: TextStyle(
                         color: AppColor.greyTone,
-                        fontSize: 18.sp,
+                        fontSize: 18,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -101,32 +107,32 @@ class Search extends StatelessWidget {
         style: TextStyle(
           color: AppColor.darkGrey,
           fontWeight: FontWeight.w600,
-          fontSize: 17.sp,
+          fontSize: 17,
         ),
       ),
       subtitle: Text(
         'Thanks everyone',
-        style: TextStyle(color: AppColor.greyTone, fontSize: 15.sp),
+        style: TextStyle(color: AppColor.greyTone, fontSize: 15),
       ),
       trailing: GestureDetector(
         onTap: () => controller.isrequestsent.toggle(),
         child: Obx(
               () => Container(
-            height: 40.h,
+            height: 40,
             padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
             decoration: BoxDecoration(
               color: AppColor.backgroundColor,
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
                 color: AppColor.textGreenColor,
-                width: 1.5.w,
+                width: 1.5,
               ),
             ),
             child: Text(
               controller.isrequestsent.value ? 'Sent Request' : 'Join',
               style: TextStyle(
                 color: AppColor.textGreenColor,
-                fontSize: 15.sp,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -157,14 +163,14 @@ class Search extends StatelessWidget {
           style: TextStyle(
             color: AppColor.darkGrey,
             fontWeight: FontWeight.w600,
-            fontSize: 17.sp,
+            fontSize: 17,
           ),
         ),
         subtitle: Text(
           'Thanks everyone',
           style: TextStyle(
             color: AppColor.greyTone,
-            fontSize: 15.sp,
+            fontSize: 15,
           ),
         ),
         trailing: Column(
@@ -176,13 +182,13 @@ class Search extends StatelessWidget {
               '8:25 PM',
               style: TextStyle(
                 color: AppColor.greyTone,
-                fontSize: 15.sp,
+                fontSize: 15,
                 fontWeight: FontWeight.w400,
               ),
             ),
             Container(
-              width: 25.w,
-              height: 25.h,
+              width: 25,
+              height: 25,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25.r),
                 color: AppColor.vividBlue,

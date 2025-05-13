@@ -19,7 +19,7 @@ class PostView extends GetView {
         padding: EdgeInsets.zero,
         itemBuilder: (context, index) {
           return Container(
-            height: 585,
+            width: double.infinity,
             color: AppColor.backgroundColor,
             child: Column(
               children: [
@@ -36,14 +36,12 @@ class PostView extends GetView {
                       ),
                     ),
                   ),
-                  title: Text(
-                    'Dummy Name',
-                    style: TextStyle(
-                      color: AppColor.textBlackColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
-                  ),
+                  title: Text('Dummy Name',
+                      style: TextStyle(
+                        color: AppColor.textBlackColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      )),
                   subtitle: Row(
                     children: [
                       Text('abc_xyz', style: TextStyle(color: AppColor.greyTone)),
@@ -54,32 +52,34 @@ class PostView extends GetView {
                   trailing: Icon(Icons.more_vert),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 20.w),
+                  padding: EdgeInsets.only(left: 20),
                   child: Text(
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet venenatis metus',
                     style: TextStyle(color: AppColor.greyTone, fontSize: 16),
                   ),
                 ),
-                SizedBox(height: 10.h),
-                GestureDetector(
-                    onTap: () {
-                      Get.to(Comment(), transition: Transition.rightToLeft);
-                    },
-                    child: Image.asset(ImageAssets.person,height: 300,width: double.infinity,)),
-                SizedBox(height: 10.h),
+                SizedBox(height: 5.h),
+                SizedBox(
+                  height: 300,
+                  width: double.infinity,
+                  child: Image.asset(
+                    ImageAssets.person,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                SizedBox(height: 2.h),
                 Row(
                   children: [
                     SizedBox(width: 20.w),
-                    SvgPicture.asset(ImageAssets.love, width: 30.w, height: 30.h),
+                    SvgPicture.asset(ImageAssets.love, width: 30, height: 30),
                     SizedBox(width: 5.w),
                     Text('121', style: TextStyle(color: AppColor.greyTone)),
                     SizedBox(width: 20.w),
                     GestureDetector(
                       onTap: () {
-                        // Get.to(Comment(), transition: Transition.rightToLeft);
+                        Get.to(Comment(), transition: Transition.rightToLeft);
                       },
-                      child:
-                      SvgPicture.asset(ImageAssets.achieve, width: 30.w, height: 30.h),
+                      child: SvgPicture.asset(ImageAssets.achieve, width: 30, height: 30),
                     ),
                     SizedBox(width: 5.w),
                     Text('34', style: TextStyle(color: AppColor.greyTone)),
@@ -89,9 +89,9 @@ class PostView extends GetView {
                     Text('Share', style: TextStyle(color: AppColor.greyTone)),
                   ],
                 ),
-                SizedBox(height: 15.h),
+                SizedBox(height: 10.h),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -114,35 +114,23 @@ class PostView extends GetView {
                           children: [
                             Row(
                               children: [
-                                Text(
-                                  'Maryam',
-                                  style: TextStyle(
-                                    color: AppColor.darkGrey,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16,
-                                  ),
-                                ),
+                                Text('Maryam', style: TextStyle(color: AppColor.darkGrey, fontWeight: FontWeight.w600, fontSize: 16)),
                                 SizedBox(width: 10.w),
-                                Text(
-                                  '3s',
-                                  style: TextStyle(
-                                      color: AppColor.greyTone, fontSize: 16),
-                                ),
+                                Text('3s', style: TextStyle(color: AppColor.greyTone, fontSize: 16)),
                               ],
                             ),
                             Text(
                               'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                              style:
-                              TextStyle(color: AppColor.greyTone, fontSize: 14),
+                              style: TextStyle(color: AppColor.greyTone, fontSize: 14),
                             ),
                           ],
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top: 25.h),
+                        padding: EdgeInsets.only(top: 25),
                         child: Column(
                           children: [
-                            Image.asset(ImageAssets.heart, width: 20.w, height: 20.h),
+                            Image.asset(ImageAssets.heart, width: 20, height: 20),
                             Text('2', style: TextStyle(color: AppColor.greyTone)),
                           ],
                         ),

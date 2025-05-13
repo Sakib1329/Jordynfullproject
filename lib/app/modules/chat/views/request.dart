@@ -20,11 +20,11 @@ class Request extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Text(
-          'Gallery',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
+          'Request',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         centerTitle: true,
       ),
@@ -76,7 +76,7 @@ class Request extends StatelessWidget {
                 style: TextStyle(
                   color: AppColor.darkGrey,
                   fontWeight: FontWeight.w600,
-                  fontSize: 17.sp,
+                  fontSize: 17,
                 ),
               ),
               SizedBox(height: 4.r),
@@ -84,7 +84,7 @@ class Request extends StatelessWidget {
                 '_${name}',
                 style: TextStyle(
                   color: AppColor.greyTone,
-                  fontSize: 15.sp,
+                  fontSize: 15,
                 ),
               ),
             ],
