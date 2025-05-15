@@ -11,10 +11,11 @@ import 'package:jordyn/widgets/custom_button.dart';
 import 'package:jordyn/widgets/dialogue.dart';
 import 'package:jordyn/widgets/input_text_widget.dart';
 
+import '../../auth/controllers/authcameracontroller.dart';
 import '../../chat/controllers/bottomsheetcontroller.dart';
 
 class EditProfileView extends GetView<ProfileController> {
-  final BottomSheetController bs=Get.put(BottomSheetController());
+  final AuthBottomSheetController as=Get.put(AuthBottomSheetController());
    EditProfileView({super.key});
 
   @override
@@ -72,10 +73,10 @@ class EditProfileView extends GetView<ProfileController> {
                             Stack(
                               children: [
                                 Obx(() {
-                                  final file = bs.pickedImage.value;
+                                  final file = as.pickedImage.value;
 
                                   return ClipRRect(
-                                    borderRadius: BorderRadius.circular(60.r),
+                                    borderRadius: BorderRadius.circular(200),
                                     child: file != null
                                         ? Image.file(
                                       file,
@@ -87,7 +88,7 @@ class EditProfileView extends GetView<ProfileController> {
                                       width: 100.w,
                                       height: 100.w,
                                       color: AppColor.mutedBlueGrey,
-                                      child: Image.asset(ImageAssets.person2,fit: BoxFit.cover,),
+                                      child: Image.asset(ImageAssets.avater,fit: BoxFit.cover,),
                                     ),
                                   );
                                 }),
@@ -108,7 +109,7 @@ class EditProfileView extends GetView<ProfileController> {
                                           size: 18.sp,
                                           color: AppColor.whiteTextColor,
                                         ),
-                                        onPressed: bs.getBottomSheet,
+                                        onPressed: as.getBottomSheet,
                                         padding: EdgeInsets.all(4.w),
                                         constraints: BoxConstraints(),
                                       ),

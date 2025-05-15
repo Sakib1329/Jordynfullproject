@@ -17,6 +17,7 @@ class CreateCondolencesView extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        toolbarHeight: 80,
         leading: IconButton(
           onPressed: () {
             Get.back();
@@ -25,65 +26,59 @@ class CreateCondolencesView extends StatelessWidget {
         ),
         title: Text(
           'Add Condolence message',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         centerTitle: true,
       ),
       body: Stack(
         children: [
           SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                SizedBox(height: 20.h),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.h),
-                  child: Text(
-                    'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
-                    style: TextStyle(
-                      color: AppColor.greyTone,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'Montserrat',
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  SizedBox(height: 20.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.h),
+                    child: Text(
+                      'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
+                      style: TextStyle(
+                        color: AppColor.greyTone,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'Montserrat',
+                      ),
+                      textAlign: TextAlign.start,
                     ),
-                    textAlign: TextAlign.start,
                   ),
-                ),
-                SizedBox(height: 8.h),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 15,
-                    vertical: 15,
+                  SizedBox(height: 8.h),
+                  SizedBox(height: 10.h),
+                  InputTextWidget(
+                    onChanged: (value) {},
+                    backgroundColor: AppColor.textAreaColor,
+                    borderColor: Colors.transparent,
+                    hintText: 'Add condolence message',
+                    hintTextColor: AppColor.greyTone,
+                    passwordIcon: ImageAssets.time,
+                    height: 148,
+                    maxLines: 10,
                   ),
-                  child: Column(
-                    children: [
-                      SizedBox(height: 10.h),
-                      InputTextWidget(
-                        onChanged: (value) {},
-                        backgroundColor: AppColor.textAreaColor,
-                        borderColor: Colors.transparent,
-                        hintText: 'Add condolence message',
-                        hintTextColor: AppColor.greyTone,
-                        passwordIcon: ImageAssets.time,
-                        height: 148,
-                        maxLines: 10,
-                      ),
-                      SizedBox(height: 150.h),
-                      CustomButton(
-                        title: 'Save',
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        onPress: () async {
-                          Get.to(MemoryHistoryView(),transition: Transition.noTransition);
-                        },
-                        buttonColor: AppColor.buttonColor,
-                        height: 50,
-                        radius: 30,
-                      ),
-                    ],
+                  SizedBox(height: 150.h),
+                  CustomButton(
+                    title: 'ADD',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    onPress: () async {
+                      Get.to(MemoryHistoryView(),transition: Transition.noTransition);
+                    },
+                    buttonColor: AppColor.buttonColor,
+                    height: 50,
+                    radius: 30,
                   ),
-                ),
-              ],
+                  SizedBox(height: 20.h),
+                ],
+              ),
             ),
           ),
         ],

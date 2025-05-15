@@ -15,7 +15,6 @@ class UserListView extends GetView {
     return Padding(
       padding: EdgeInsets.only(bottom: 0.09.sh),
       child: SingleChildScrollView(
-        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         child: Column(
           children: [
             GestureDetector(

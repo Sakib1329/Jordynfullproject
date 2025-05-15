@@ -16,6 +16,7 @@ class OnboardingView extends GetView<OnboardingController> {
       designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
+
       builder: (context, child) {
         return Scaffold(
           body: Stack(
@@ -23,47 +24,64 @@ class OnboardingView extends GetView<OnboardingController> {
               SizedBox(
                 height: double.infinity,
                 width: double.infinity,
-                child: Image.asset(ImageAssets.onboarding, fit: BoxFit.fill),
+                child: Image.asset(ImageAssets.onboarding, fit: BoxFit.cover),
               ),
-              Positioned(
-                top: 40,
-                left: 130,
-                child: Image.asset(ImageAssets.onboard_logo),
-              ),
-              Positioned(
-                bottom: 50,
-                left: 20,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                child: Column(crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(
-                      'Celebrate Lives, Keep\nMemories Alive',
-                      style: TextStyle(
-                        color: AppColor.buttonColor,
-                        fontSize: 28,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w600,
+                    SizedBox(height: 10.h,),
+                    Container(
+
+                        width: 190,
+                        height: 180,
+
+                        child: Image.asset(ImageAssets.onboard_logo,)),
+
+                    Spacer(),
+                    SafeArea(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Celebrate Lives, Keep\nMemories Alive',
+                              style: TextStyle(
+                                color: AppColor.buttonColor,
+                                fontSize: 28,
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            SizedBox(height: 20.h),
+                            Text(
+                              'INSPIRIT helps you honor your loved ones through beautiful, lasting digital memorials.Share stories, photos, and memories that live on—forever connected to family,friends, and future generations.',
+                              style: TextStyle(
+                                color: AppColor.whiteTextColor,
+                                fontSize: 18,
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w300,
+                              ),
+                            ),
+                            SizedBox(height: 30.h),
+                            CustomButton(
+                              onPress: () async {
+                                Get.to(
+                                  AuthView(),
+                                  transition: Transition.noTransition,
+                                );
+                              },
+                              title: 'NEXT',
+                              height: 48,
+                              width: 390,
+                              radius: 100,
+                            ),
+                            SizedBox(height: 20.h),
+                          ],
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 20.h),
-                    Text(
-                      'INSPIRIT helps you honor your loved ones\nthrough beautiful, lasting digital memorials.\nShare stories, photos, and memories that\nlive on—forever connected to family,\nfriends, and future generations.',
-                      style: TextStyle(
-                        color: AppColor.whiteTextColor,
-                        fontSize: 18,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    SizedBox(height: 50.h),
-                    CustomButton(
-                      onPress: () async {
-                        Get.to(AuthView(), transition: Transition.noTransition);
-                      },
-                      title: 'NEXT',
-                      height: 48,
-                      width: 390,
-                      radius: 100,
                     ),
                   ],
                 ),

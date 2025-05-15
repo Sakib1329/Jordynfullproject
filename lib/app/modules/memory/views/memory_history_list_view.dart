@@ -7,28 +7,28 @@ import 'package:jordyn/res/colors/app_color.dart';
 
 class MemoryHistoryListView extends GetView {
   const MemoryHistoryListView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(bottom: 0.09.sh),
       child: SingleChildScrollView(
-        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         child: ListView.builder(
-          itemCount: 50,
+          itemCount: 10,
           shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           padding: EdgeInsets.zero,
           itemBuilder: (context, index) {
             return InkWell(
               onTap: () {
-                Get.to(EventView(), transition: Transition.noTransition);
+                Get.to(const EventView(), transition: Transition.noTransition);
               },
               child: Padding(
-                padding: const EdgeInsets.only(left: 15.0,right: 15,top: 10),
+                padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
                 child: Stack(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 6.5,top: 20),
+                      padding: const EdgeInsets.only(left: 6.5, top: 20),
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border(
@@ -39,11 +39,11 @@ class MemoryHistoryListView extends GetView {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.only(left: 17, top: 10),
+                          padding: const EdgeInsets.only(left: 17, top: 10, bottom: 10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Title of Memory",
                                 style: TextStyle(
                                   fontFamily: 'Montserrat',
@@ -52,10 +52,10 @@ class MemoryHistoryListView extends GetView {
                                   color: AppColor.textSendColor,
                                 ),
                               ),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 5),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
+                                children: const [
                                   Text(
                                     "Added by Jahan_zaib",
                                     style: TextStyle(
@@ -76,29 +76,34 @@ class MemoryHistoryListView extends GetView {
                                   ),
                                 ],
                               ),
-                              Row(
-                                children: [ Image.asset(ImageAssets.image),
-                                  Container(
-                                    height: 130,
-                                    width: 130,
-                                    decoration: BoxDecoration(
-                                      borderRadius:BorderRadius.circular(10),
-                                    ),
-                                    child: Image.asset(ImageAssets.image,
-                                      height: 130,
-                                      width: 130,),
-                                  ),
-                                  Container(
-                                    height: 130,
-                                    width: 130,
-                                    decoration: BoxDecoration(
-                                      borderRadius:BorderRadius.circular(10),
-                                    ),
-                                    child: Image.asset(ImageAssets.image),
-                                  ),
-                                ],
+                              const SizedBox(height: 10),
+                              SizedBox(
+                                height: 120,
+                                child: ListView.separated(
+                                  itemCount: 3,
+                                  scrollDirection: Axis.horizontal,
+                                  separatorBuilder: (context, index) => const SizedBox(width: 20),
+                                  itemBuilder: (context, index) {
+                                    return Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.black,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(10),
+                                        child: Image.asset(
+                                          ImageAssets.image,
+                                          height: 120,
+                                          width: 120,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
                               ),
-                              Text(
+                              const SizedBox(height: 10),
+                              const Text(
                                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero libero. Quisque viverra semper eros in ultrices. Cras vel augue tristique, gravida nulla a, blandit ex.",
                                 style: TextStyle(
                                   fontFamily: 'Montserrat',
@@ -115,8 +120,8 @@ class MemoryHistoryListView extends GetView {
                     Row(
                       children: [
                         Image.asset(ImageAssets.border),
-                        SizedBox(width: 10),
-                        Text(
+                        const SizedBox(width: 10),
+                        const Text(
                           "2015",
                           style: TextStyle(
                             fontFamily: 'Montserrat',

@@ -31,9 +31,9 @@ class SignInView extends GetView<AuthController> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 10),
                     Center(child: Image.asset(ImageAssets.auth_logo)),
-                    SizedBox(height: 20.h),
+                    SizedBox(height: 20),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -46,7 +46,7 @@ class SignInView extends GetView<AuthController> {
                             fontWeight: FontWeight.w700,
                           ),
                         ),
-                        SizedBox(height: 20.h),
+                        SizedBox(height: 20),
                         Text(
                           'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                           style: TextStyle(
@@ -58,7 +58,7 @@ class SignInView extends GetView<AuthController> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20.h),
+                    SizedBox(height: 20),
                     InputTextWidget(
                       onChanged: (e) {},
                       borderColor: AppColor.backgroundColor,
@@ -69,7 +69,7 @@ class SignInView extends GetView<AuthController> {
                       height: 48,
                       width: double.infinity,
                     ),
-                    SizedBox(height: 15.h),
+                    SizedBox(height: 15),
                     InputTextWidget(
                       onChanged: (e) {},
                       borderColor: AppColor.backgroundColor,
@@ -81,17 +81,17 @@ class SignInView extends GetView<AuthController> {
                       height: 48,
                       width: double.infinity,
                     ),
-                    SizedBox(height: 30.h),
+                    SizedBox(height: 30),
                     CustomButton(
                       onPress: () async{
                         Get.to(Navigation(), transition: Transition.rightToLeft);
                       },
-                      title: 'Sign In',
+                      title: 'SIGN IN',
                       height: 48,
                       width: double.infinity,
                       radius: 100,
                     ),
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 10),
                     SizedBox(
                       width: double.infinity,
                       child: Row(
@@ -114,7 +114,7 @@ class SignInView extends GetView<AuthController> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 15.h),
+                    SizedBox(height: 15),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -143,7 +143,7 @@ class SignInView extends GetView<AuthController> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20.h),
+                    SizedBox(height: 20),
                     Text(
                       'or',
                       style: TextStyle(
@@ -153,7 +153,7 @@ class SignInView extends GetView<AuthController> {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(height: 20.h),
+                    SizedBox(height: 20),
                     Text(
                       'Continue with',
                       style: TextStyle(
@@ -163,7 +163,7 @@ class SignInView extends GetView<AuthController> {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    SizedBox(height: 25.h),
+                    SizedBox(height: 25),
                     Wrap(
                       spacing: 20,
                       alignment: WrapAlignment.center,
@@ -173,7 +173,7 @@ class SignInView extends GetView<AuthController> {
                         SvgPicture.asset(ImageAssets.apple, height: 42, width: 78),
                       ],
                     ),
-                    SizedBox(height: 30.h),
+
                   ],
                 ),
               ),

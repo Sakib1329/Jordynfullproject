@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../res/assets/image_assets.dart';
 import '../../../../res/colors/app_color.dart';
@@ -42,7 +41,7 @@ class Blocklistpage extends StatelessWidget {
                 ),
                 textAlign: TextAlign.start,
               ),
-              SizedBox(height: 20.h,),
+              SizedBox(height: 20,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -68,7 +67,7 @@ class Blocklistpage extends StatelessWidget {
 
                 ],
               ),
-              SizedBox(height: 10.h,),
+              SizedBox(height: 10,),
               ListView.builder(
                 padding: EdgeInsets.zero,
                 physics: NeverScrollableScrollPhysics(),
@@ -90,7 +89,7 @@ class Blocklistpage extends StatelessWidget {
   }
   Widget _buildUserTile(String name) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 5.h),
+      padding: EdgeInsets.symmetric(vertical: 5),
 
       child: ListTile(
         contentPadding: EdgeInsets.zero,
@@ -115,7 +114,7 @@ class Blocklistpage extends StatelessWidget {
           ),
         ),
         subtitle: Text(
-          '_${name}',
+          '_$name',
           style: TextStyle(
             color: AppColor.greyTone,
             fontSize: 15,
@@ -126,7 +125,7 @@ class Blocklistpage extends StatelessWidget {
           'Unblock',
           style: TextStyle(
               color: AppColor.greyTone,
-              fontSize: 152,
+              fontSize: 15,
               fontWeight: FontWeight.w400
           ),
         ),

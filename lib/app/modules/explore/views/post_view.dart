@@ -11,9 +11,9 @@ class PostView extends GetView {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+
       child: ListView.builder(
-        itemCount: 50,
+        itemCount: 10,
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
         padding: EdgeInsets.zero,

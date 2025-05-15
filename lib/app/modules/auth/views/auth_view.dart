@@ -32,9 +32,9 @@ class AuthView extends GetView<AuthController> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SizedBox(height: 10.h),
+                      SizedBox(height: 10),
                       Center(child: Image.asset(ImageAssets.auth_logo)),
-                      SizedBox(height: 10.h),
+                      SizedBox(height: 10),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -47,7 +47,7 @@ class AuthView extends GetView<AuthController> {
                               fontWeight: FontWeight.w700,
                             ),
                           ),
-                          SizedBox(height: 10.h),
+                          SizedBox(height: 10),
                           Text(
                             'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                             style: TextStyle(
@@ -59,7 +59,7 @@ class AuthView extends GetView<AuthController> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 20.h),
+                      SizedBox(height: 20),
                       InputTextWidget(
                         onChanged: (e) {},
                         borderColor: AppColor.backgroundColor,
@@ -70,7 +70,7 @@ class AuthView extends GetView<AuthController> {
                         height: 48,
                         width: 390,
                       ),
-                      SizedBox(height: 15.h),
+                      SizedBox(height: 15),
                       InputTextWidget(
                         onChanged: (e) {},
                         borderColor: AppColor.backgroundColor,
@@ -82,7 +82,7 @@ class AuthView extends GetView<AuthController> {
                         height: 48,
                         width: 390,
                       ),
-                      SizedBox(height: 15.h),
+                      SizedBox(height: 15),
                       InputTextWidget(
                         onChanged: (e) {},
                         borderColor: AppColor.backgroundColor,
@@ -94,7 +94,7 @@ class AuthView extends GetView<AuthController> {
                         height: 48,
                         width: 390,
                       ),
-                      SizedBox(height: 20.h),
+                      SizedBox(height: 20),
                       CustomButton(
                         onPress: () async {
                           Get.to(
@@ -108,7 +108,7 @@ class AuthView extends GetView<AuthController> {
                         width: 390,
                         radius: 100,
                       ),
-                      SizedBox(height: 20.h),
+                      SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -140,7 +140,7 @@ class AuthView extends GetView<AuthController> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 20.h),
+                      SizedBox(height: 20),
                       Text(
                         'or',
                         style: TextStyle(
@@ -150,7 +150,7 @@ class AuthView extends GetView<AuthController> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      SizedBox(height: 20.h),
+                      SizedBox(height: 20),
                       Text(
                         'Continue with',
                         style: TextStyle(
@@ -160,26 +160,14 @@ class AuthView extends GetView<AuthController> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      SizedBox(height: 25.h),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      SizedBox(height: 25),
+                      Wrap(
                         spacing: 20,
+                        alignment: WrapAlignment.center,
                         children: [
-                          SvgPicture.asset(
-                            ImageAssets.google,
-                            height: 42,
-                            width: 78,
-                          ),
-                          SvgPicture.asset(
-                            ImageAssets.facebook,
-                            height: 42,
-                            width: 78,
-                          ),
-                          SvgPicture.asset(
-                            ImageAssets.apple,
-                            height: 42,
-                            width: 78,
-                          ),
+                          SvgPicture.asset(ImageAssets.google, height: 42, width: 78),
+                          SvgPicture.asset(ImageAssets.facebook, height: 42, width: 78),
+                          SvgPicture.asset(ImageAssets.apple, height: 42, width: 78),
                         ],
                       ),
                     ],

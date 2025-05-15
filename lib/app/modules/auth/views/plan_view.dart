@@ -38,7 +38,7 @@ class PlanView extends GetView<AuthController> {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        SizedBox(height: 40.h),
+                        SizedBox(height: 40),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -51,7 +51,7 @@ class PlanView extends GetView<AuthController> {
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
-                            SizedBox(height: 20.h),
+                            SizedBox(height: 20),
                             Text(
                               'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                               style: TextStyle(
@@ -63,14 +63,13 @@ class PlanView extends GetView<AuthController> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 20.h),
+                        SizedBox(height: 20),
                         Obx(
                           () => GestureDetector(
                             onTap: () {
                               controller.selectPlan('Basic');
                             },
                             child: Container(
-                              height: 130,
                               width: 390,
                               decoration: ShapeDecoration(
                                 color:
@@ -118,7 +117,7 @@ class PlanView extends GetView<AuthController> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 10.h),
+                                  SizedBox(height: 10),
                                   Text(
                                     'Allows users to upload 10 photos, 5 videos, and access standard tribute features.',
                                     style: TextStyle(
@@ -137,14 +136,14 @@ class PlanView extends GetView<AuthController> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 15.h),
+                        SizedBox(height: 15),
                         Obx(
                           () => GestureDetector(
                             onTap: () {
                               controller.selectPlan('Premium');
                             },
                             child: Container(
-                              height: 130,
+
                               width: 390,
                               decoration: ShapeDecoration(
                                 color:
@@ -192,7 +191,7 @@ class PlanView extends GetView<AuthController> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 10.h),
+                                  SizedBox(height: 10),
                                   Text(
                                     'Allows users to upload 50 photos, 20 videos, and priority tributes.',
                                     style: TextStyle(
@@ -211,14 +210,14 @@ class PlanView extends GetView<AuthController> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 15.h),
+                        SizedBox(height: 15),
                         Obx(
                           () => GestureDetector(
                             onTap: () {
                               controller.selectPlan('Gold');
                             },
                             child: Container(
-                              height: 130,
+
                               width: 390,
                               decoration: ShapeDecoration(
                                 color:
@@ -266,7 +265,7 @@ class PlanView extends GetView<AuthController> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 10.h),
+                                  SizedBox(height: 10),
                                   Text(
                                     'Provides unlimited photo and video uploads along with exclusive features.',
                                     style: TextStyle(
@@ -285,7 +284,7 @@ class PlanView extends GetView<AuthController> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 15.h),
+                        SizedBox(height: 15),
                       ],
                     ),
                   ),
@@ -310,7 +309,7 @@ class PlanView extends GetView<AuthController> {
                   width: 390,
                   radius: 100.r,
                 ),
-                SizedBox(height: 15.h),
+                SizedBox(height: 15),
               ],
             ),
           ),

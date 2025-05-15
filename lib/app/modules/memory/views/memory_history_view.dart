@@ -67,97 +67,106 @@ class MemoryHistoryView extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 10),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
                             children: [
-                              Obx(
-                                () => GestureDetector(
-                                  onTap: () {
-                                    controller.setHistorySelectedTab(
-                                      'Memorial',
-                                    );
-                                  },
-                                  child: Column(
-                                    children: [
-                                      Text(
+                              Expanded(
+                                child: Obx(
+                                  () => GestureDetector(
+                                    onTap: () {
+                                      controller.setHistorySelectedTab(
                                         'Memorial',
-                                        style: TextStyle(
-                                          color:
-                                              controller
-                                                          .hisrtorySelectedTab
-                                                          .value ==
-                                                      'Memorial'
-                                                  ? AppColor.buttonColor
-                                                  : AppColor.textGreyColor3,
-                                          fontSize: 16,
-                                          fontFamily: 'Montserrat',
-                                          fontWeight: FontWeight.w400,
+                                      );
+                                    },
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                                      children: [
+                                        Center(
+                                          child: Text(
+                                            'Memorial',
+                                            style: TextStyle(
+                                              color:
+                                                  controller
+                                                              .hisrtorySelectedTab
+                                                              .value ==
+                                                          'Memorial'
+                                                      ? AppColor.buttonColor
+                                                      : AppColor.textGreyColor3,
+                                              fontSize: 16,
+                                              fontFamily: 'Montserrat',
+                                              fontWeight: FontWeight.w400,
+                                              height: 2,
+                                              letterSpacing: 0.50,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(height: 10),
+                                        Container(
                                           height: 2,
-                                          letterSpacing: 0.50,
+                                          width: 40,
+                                          decoration: BoxDecoration(
+                                            color:
+                                            controller
+                                                .hisrtorySelectedTab
+                                                .value ==
+                                                'Memorial'
+                                                ? AppColor.buttonColor
+                                                : AppColor.textAreaColor,
+                                            borderRadius: BorderRadius.circular(1),
+                                          ),
+
                                         ),
-                                      ),
-                                      SizedBox(height: 5.h),
-                                      SizedBox(
-                                        height: 2,
-                                        width: 210,
-                                        child: Divider(
-                                          height: 5,
-                                          thickness: 2,
-                                          color:
-                                              controller
-                                                          .hisrtorySelectedTab
-                                                          .value ==
-                                                      'Memorial'
-                                                  ? AppColor.buttonColor
-                                                  : AppColor.textAreaColor,
-                                        ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
-                              Obx(
-                                () => GestureDetector(
-                                  onTap: () {
-                                    controller.setHistorySelectedTab(
-                                      'Condolences',
-                                    );
-                                  },
-                                  child: Column(
-                                    children: [
-                                      Text(
+                              Expanded(
+                                child: Obx(
+                                  () => GestureDetector(
+                                    onTap: () {
+                                      controller.setHistorySelectedTab(
                                         'Condolences',
-                                        style: TextStyle(
-                                          color:
-                                              controller
-                                                          .hisrtorySelectedTab
-                                                          .value ==
-                                                      'Condolences'
-                                                  ? AppColor.buttonColor
-                                                  : AppColor.textGreyColor3,
-                                          fontSize: 16,
-                                          fontFamily: 'Montserrat',
-                                          fontWeight: FontWeight.w400,
+                                      );
+                                    },
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                                      children: [
+                                        Center(
+                                          child: Text(
+                                            'Condolences',
+                                            style: TextStyle(
+                                              color:
+                                                  controller
+                                                              .hisrtorySelectedTab
+                                                              .value ==
+                                                          'Condolences'
+                                                      ? AppColor.buttonColor
+                                                      : AppColor.textGreyColor3,
+                                              fontSize: 16,
+                                              fontFamily: 'Montserrat',
+                                              fontWeight: FontWeight.w400,
+                                              height: 2,
+                                              letterSpacing: 0.50,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(height: 10),
+                                        Container(
                                           height: 2,
-                                          letterSpacing: 0.50,
+                                          width: 40,
+                                          decoration: BoxDecoration(
+                                            color:
+                                            controller
+                                                .hisrtorySelectedTab
+                                                .value ==
+                                                'Condolences'
+                                                ? AppColor.buttonColor
+                                                : AppColor.textAreaColor,
+                                            borderRadius: BorderRadius.circular(1),
+                                          ),
                                         ),
-                                      ),
-                                      SizedBox(height: 5),
-                                      SizedBox(
-                                        height: 2,
-                                        width: 215,
-                                        child: Divider(
-                                          height: 5,
-                                          thickness: 2,
-                                          color:
-                                              controller
-                                                          .hisrtorySelectedTab
-                                                          .value ==
-                                                      'Condolences'
-                                                  ? AppColor.buttonColor
-                                                  : AppColor.textAreaColor,
-                                        ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -188,39 +197,44 @@ class MemoryHistoryView extends StatelessWidget {
                               ),
                             ),
                           );
-                        }, childCount: 20),
+                        }, childCount: 1),
                       ),
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20.0),
+                    padding: const EdgeInsets.symmetric(vertical: 20.0,horizontal: 20),
                     child: Align(
                       alignment: Alignment.bottomCenter,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          CustomButton(
-                            onPress: () async {Get.to(CreateCondolencesView(),transition: Transition.noTransition);},
-                            title: 'Condolences',
-                            height: 48,
-                            width: 185,
-                            radius: 10.r,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16,
-                            buttonColor: AppColor.backgroundColor,
-                            textColor: AppColor.buttonColor,
-                            borderColor: AppColor.buttonColor,
+                          Expanded(
+                            child: CustomButton(
+                              onPress: () async {Get.to(CreateCondolencesView(),transition: Transition.noTransition);},
+                              title: 'Condolences',
+                              height: 48,
+
+                              radius: 10.r,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16,
+                              buttonColor: AppColor.backgroundColor,
+                              textColor: AppColor.buttonColor,
+                              borderColor: AppColor.buttonColor,
+                            ),
                           ),
-                          CustomButton(
-                            onPress: () async {Get.to(AddMemoryView(),transition: Transition.noTransition);},
-                            title: 'Add Memory',
-                            height: 48,
-                            width: 185,
-                            radius: 10.r,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16,
+                          SizedBox(width: 20,),
+                          Expanded(
+                            child: CustomButton(
+                              onPress: () async {Get.to(AddMemoryView(),transition: Transition.noTransition);},
+                              title: 'Add Memory',
+                              height: 48,
+
+                              radius: 10.r,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16,
+                            ),
                           ),
                         ],
                       ),

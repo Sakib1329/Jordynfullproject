@@ -33,7 +33,7 @@ class AddMemoryView extends StatelessWidget {
         centerTitle: true,
       ),
       body:  Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.h),
+        padding: EdgeInsets.symmetric(horizontal: 20),
         child:Column(
         children: [
           Expanded(
@@ -51,7 +51,7 @@ class AddMemoryView extends StatelessWidget {
                       ),
                       textAlign: TextAlign.start,
                     ),
-                    SizedBox(height: 15.h),
+                    SizedBox(height: 15),
                     InputTextWidget(
                       onChanged: (value) {},
                       backgroundColor: AppColor.textAreaColor,
@@ -61,7 +61,7 @@ class AddMemoryView extends StatelessWidget {
                       backimageadd: true,
                       backimage: ImageAssets.calender3,
                     ),
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 10),
                     InputTextWidget(
                       onChanged: (value) {},
                       backgroundColor: AppColor.textAreaColor,
@@ -71,7 +71,7 @@ class AddMemoryView extends StatelessWidget {
                       backimageadd: true,
                       backimage: ImageAssets.time,
                     ),
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 10),
                     InputTextWidget(
                       onChanged: (value) {},
                       backgroundColor: AppColor.textAreaColor,
@@ -81,9 +81,9 @@ class AddMemoryView extends StatelessWidget {
                       height: 148,
                       maxLines: 10,
                     ),
-                    SizedBox(height: 15.h),
+                    SizedBox(height: 15),
                     Padding(
-                      padding: EdgeInsets.symmetric( vertical: 20.h),
+                      padding: EdgeInsets.symmetric( vertical: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -96,7 +96,7 @@ class AddMemoryView extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(height: 10.h),
+                          SizedBox(height: 10),
                           Obx(() => SizedBox(
                             height: 127, // Fixed height for the grid
                             child: GridView.builder(
@@ -140,7 +140,7 @@ class AddMemoryView extends StatelessWidget {
                                         },
                                       ),
                                       Positioned(
-                                        top: 5.h,
+                                        top: 5,
                                         right: 5.w,
                                         child: InkWell(
                                           onTap: () {
@@ -163,7 +163,7 @@ class AddMemoryView extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 20.h),
+                    SizedBox(height: 20),
                   ],
                 ),
 
@@ -172,7 +172,7 @@ class AddMemoryView extends StatelessWidget {
           Column(
             children: [
               CustomButton(
-                title: 'Save',
+                title: 'ADD MEMORY',
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
                 onPress: () async {
@@ -188,7 +188,7 @@ class AddMemoryView extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 30.h,),
+          SizedBox(height: 30,),
         ],
         ),),
     );

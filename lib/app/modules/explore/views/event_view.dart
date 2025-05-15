@@ -103,7 +103,7 @@ class EventView extends GetView<ExploreController> {
               children: [
                 Image.asset(ImageAssets.background),
                 Positioned(
-                  top: 75.h,
+                  top: 75,
                   left: 20.w,
                   child: InkWell(
                     onTap: () {
@@ -125,7 +125,7 @@ class EventView extends GetView<ExploreController> {
                 ),
                 if (origin == 'ExporleView')
                   Positioned(
-                    top: 75.h,
+                    top: 75,
                     right: 20.w,
                     child: Container(
                       height: 35,
@@ -143,7 +143,7 @@ class EventView extends GetView<ExploreController> {
                   ),
                 if (origin == 'EventView')
                   Positioned(
-                    top: 75.h,
+                    top: 75,
                     right: 60.w,
                     child: Container(
                       height: 35,
@@ -161,7 +161,7 @@ class EventView extends GetView<ExploreController> {
                   ),
                 if (origin == 'EventView')
                   Positioned(
-                    top: 75.h,
+                    top: 75,
                     right: 20.w,
                     child: InkWell(
                       onTapDown: (details) {
@@ -183,7 +183,7 @@ class EventView extends GetView<ExploreController> {
                     ),
                   ),
                 Positioned(
-                  top: 260.h,
+                  top: 260,
                   left: 20.w,
                   child: Text(
                     '1/10',
@@ -197,7 +197,7 @@ class EventView extends GetView<ExploreController> {
                 ),
               ],
             ),
-            SizedBox(height: 20.h),
+            SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
@@ -212,7 +212,7 @@ class EventView extends GetView<ExploreController> {
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  SizedBox(height: 15.h),
+                  SizedBox(height: 15),
                   Text(
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero libero. Quisque viverra semper eros in ultrices. Cras vel augue tristique, gravida nulla a, blandit ex.',
                     style: TextStyle(
@@ -222,7 +222,7 @@ class EventView extends GetView<ExploreController> {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  SizedBox(height: 20.h),
+                  SizedBox(height: 20),
                   Text(
                     'Date & Time',
                     style: TextStyle(
@@ -232,7 +232,7 @@ class EventView extends GetView<ExploreController> {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  SizedBox(height: 15.h),
+                  SizedBox(height: 15),
                   Container(
                     height: 52,
                     width: double.infinity,
@@ -288,7 +288,7 @@ class EventView extends GetView<ExploreController> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 20.h),
+                  SizedBox(height: 20),
                   Text(
                     'Location',
                     style: TextStyle(
@@ -298,7 +298,7 @@ class EventView extends GetView<ExploreController> {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  SizedBox(height: 15.h),
+                  SizedBox(height: 15),
                   Row(
                     children: [
                       Image.asset(
@@ -318,7 +318,7 @@ class EventView extends GetView<ExploreController> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10.h,),
+                  SizedBox(height: 10,),
                   Container(
                     width: 390, // Width: 390px
                     height: 188, // Height: 188px
@@ -342,6 +342,7 @@ class EventView extends GetView<ExploreController> {
                     //   ),
                     // ),
                   ),
+                  SizedBox(height: 20,),
                 ],
               ),
             ),

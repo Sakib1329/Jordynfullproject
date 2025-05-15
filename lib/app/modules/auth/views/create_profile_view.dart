@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:jordyn/app/modules/auth/controllers/auth_controller.dart';
+import 'package:jordyn/app/modules/auth/controllers/authcameracontroller.dart';
 import 'package:jordyn/app/modules/auth/views/link_social_view.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
@@ -9,7 +10,8 @@ import 'package:jordyn/widgets/custom_button.dart';
 import 'package:jordyn/widgets/input_text_widget.dart';
 
 class CreateProfileView extends GetView<AuthController> {
-  const CreateProfileView({super.key});
+  final AuthBottomSheetController as=Get.put(AuthBottomSheetController());
+   CreateProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class CreateProfileView extends GetView<AuthController> {
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
-                            SizedBox(height: 62.h),
+                            SizedBox(height: 62),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -47,7 +49,7 @@ class CreateProfileView extends GetView<AuthController> {
                                     fontWeight: FontWeight.w700,
                                   ),
                                 ),
-                                SizedBox(height: 20.h),
+                                SizedBox(height: 20),
                                 Text(
                                   'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                                   style: TextStyle(
@@ -59,20 +61,56 @@ class CreateProfileView extends GetView<AuthController> {
                                 ),
                               ],
                             ),
-                            SizedBox(height: 20.h),
+                            SizedBox(height: 20),
                             Stack(
                               children: [
-                                Center(child: Image.asset(ImageAssets.avater)),
+                                Obx(() {
+                                  final file = as.pickedImage.value;
+
+                                  return ClipRRect(
+                                    borderRadius: BorderRadius.circular(200.r),
+                                    child: file != null
+                                        ? Image.file(
+                                      file,
+                                      width: 100.w,
+                                      height: 100.w,
+                                      fit: BoxFit.cover,
+                                    )
+                                        : Container(
+                                      width: 100.w,
+                                      height: 100.w,
+                                      color: AppColor.mutedBlueGrey,
+                                      child: Image.asset(ImageAssets.avater,fit: BoxFit.cover,),
+                                    ),
+                                  );
+                                }),
                                 Positioned(
-                                  bottom: 5,
-                                  right: 140,
-                                  child: Center(
-                                    child: Image.asset(ImageAssets.camera1),
+                                  bottom: 0.h,
+                                  right: 0.w,
+                                  child: Container(
+                                    width: 30.w,
+                                    height: 30.w,
+                                    decoration: BoxDecoration(
+                                      color: AppColor.buttonColor,
+                                      borderRadius: BorderRadius.circular(100.r),
+                                    ),
+                                    child: Center(
+                                      child: IconButton(
+                                        icon: Icon(
+                                          Icons.camera_alt,
+                                          size: 18.sp,
+                                          color: AppColor.whiteTextColor,
+                                        ),
+                                        onPressed: as.getBottomSheet,
+                                        padding: EdgeInsets.all(4.w),
+                                        constraints: BoxConstraints(),
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
-                            SizedBox(height: 20.h),
+                            SizedBox(height: 20),
                             InputTextWidget(
                               onChanged: (e) {},
                               borderColor: AppColor.backgroundColor,
@@ -81,7 +119,7 @@ class CreateProfileView extends GetView<AuthController> {
                               height: 48,
                               width: 390,
                             ),
-                            SizedBox(height: 15.h),
+                            SizedBox(height: 15),
                             InputTextWidget(
                               onChanged: (e) {},
                               borderColor: AppColor.backgroundColor,
@@ -90,7 +128,7 @@ class CreateProfileView extends GetView<AuthController> {
                               height: 48,
                               width: 390,
                             ),
-                            SizedBox(height: 15.h),
+                            SizedBox(height: 15),
                             Text(
                               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero libero. Quisque viverra semper eros.',
                               style: TextStyle(
@@ -100,7 +138,7 @@ class CreateProfileView extends GetView<AuthController> {
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
-                            SizedBox(height: 20.h),
+                            SizedBox(height: 20),
                           ],
                         ),
                       ),
@@ -117,7 +155,7 @@ class CreateProfileView extends GetView<AuthController> {
                       width: 390,
                       radius: 100,
                     ),
-                    SizedBox(height: 15.h),
+                    SizedBox(height: 15),
                   ],
                 ),
               ),

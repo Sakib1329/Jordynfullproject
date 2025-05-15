@@ -13,9 +13,8 @@ class MemorialView extends GetView {
     return Padding(
       padding: EdgeInsets.only(bottom: 0.09.sh, left: .02.sh, right: .02.sh),
       child: SingleChildScrollView(
-        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         child: ListView.builder(
-          itemCount: 50,
+          itemCount: 10,
           shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
           padding: EdgeInsets.zero,

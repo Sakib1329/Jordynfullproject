@@ -21,11 +21,11 @@ class AddPersonView extends StatelessWidget {
           onPressed: () {
             Get.back();
           },
-          icon: Icon(Icons.arrow_back_ios, size: 20.sp),
+          icon: Icon(Icons.arrow_back_ios, size: 20),
         ),
         title: Text(
           'Edit Info ',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.sp),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
       ),
@@ -33,7 +33,7 @@ class AddPersonView extends StatelessWidget {
         children: [
           SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.h),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -41,31 +41,31 @@ class AddPersonView extends StatelessWidget {
                     'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                     style: TextStyle(
                       color: AppColor.greyTone,
-                      fontSize: 16.sp,
+                      fontSize: 16,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Montserrat',
                     ),
                     textAlign: TextAlign.start,
                   ),
-                  SizedBox(height: 20.h),
+                  SizedBox(height: 20),
                   Stack(
                     children: [
                       Center(
                         child: Image.asset(
                           ImageAssets.avater,
-                          height: 120.h,
-                          width: 120.w,
+                          height: 120,
+                          width: 120,
                         ),
                       ),
                       Positioned(
-                        bottom: 5.h,
-                        right: 140.w,
+                        bottom: 5,
+                        right: 140,
                         child: Center(child: Image.asset(ImageAssets.camera1)),
                       ),
                     ],
                   ),
-                  SizedBox(height: 20.h),
-                  SizedBox(height: 15.h),
+                  SizedBox(height: 20),
+                  SizedBox(height: 15),
                   InputTextWidget(
                     onChanged: (value) {},
                     backgroundColor: AppColor.textAreaColor,
@@ -74,7 +74,7 @@ class AddPersonView extends StatelessWidget {
                     hintTextColor: AppColor.greyTone,
                     textColor: AppColor.greyTone,
                   ),
-                  SizedBox(height: 10.h),
+                  SizedBox(height: 10),
                   InputTextWidget(
                     onChanged: (value) {},
                     backgroundColor: AppColor.textAreaColor,
@@ -85,7 +85,7 @@ class AddPersonView extends StatelessWidget {
                     backimage: ImageAssets.calender3,
                     textColor: AppColor.greyTone,
                   ),
-                  SizedBox(height: 10.h),
+                  SizedBox(height: 10),
                   InputTextWidget(
                     onChanged: (value) {},
                     backgroundColor: AppColor.textAreaColor,
@@ -96,7 +96,7 @@ class AddPersonView extends StatelessWidget {
                     backimage: ImageAssets.calender3,
                     textColor: AppColor.greyTone,
                   ),
-                  SizedBox(height: 10.h),
+                  SizedBox(height: 10),
                   InputTextWidget(
                     onChanged: (value) {},
                     backgroundColor: AppColor.textAreaColor,
@@ -104,10 +104,10 @@ class AddPersonView extends StatelessWidget {
                     hintText: 'Date of passed on',
                     hintTextColor: AppColor.greyTone,
                     passwordIcon: ImageAssets.time,
-                    height: 148.h,
+                    height: 148,
                     maxLines: 10,
                   ),
-                  SizedBox(height: 10.h),
+                  SizedBox(height: 10),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -115,7 +115,7 @@ class AddPersonView extends StatelessWidget {
                         'Who can see',
                         style: TextStyle(
                           color: AppColor.textGreyColor2,
-                          fontSize: 16.sp,
+                          fontSize: 16,
                           fontFamily: 'Montserrat',
                           fontWeight: FontWeight.w500,
                         ),
@@ -128,7 +128,7 @@ class AddPersonView extends StatelessWidget {
                                 'Only me',
                                 style: TextStyle(
                                   color: AppColor.textGreyColor,
-                                  fontSize: 16.sp,
+                                  fontSize: 16,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w300,
                                 ),
@@ -145,7 +145,7 @@ class AddPersonView extends StatelessWidget {
                                 'Only my friends',
                                 style: TextStyle(
                                   color: AppColor.textGreyColor,
-                                  fontSize: 16.sp,
+                                  fontSize: 16,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w300,
                                 ),
@@ -162,7 +162,7 @@ class AddPersonView extends StatelessWidget {
                                 'Me and my friends',
                                 style: TextStyle(
                                   color: AppColor.textGreyColor,
-                                  fontSize: 16.sp,
+                                  fontSize: 16,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w300,
                                 ),
@@ -179,11 +179,11 @@ class AddPersonView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10.h),
+                  SizedBox(height: 10),
                   CustomButton(
                     title: 'Save',
                     fontWeight: FontWeight.bold,
-                    fontSize: 20.sp,
+                    fontSize: 20,
                     onPress: () async {
                       Get.to(
                         MemoryDetailsView(),
@@ -191,11 +191,11 @@ class AddPersonView extends StatelessWidget {
                       );
                     },
                     buttonColor: AppColor.buttonColor,
-                    height: 48.h,
+                    height: 48,
                     width: double.infinity,
                     radius: 30.r,
                   ),
-                  SizedBox(height: 10.h),
+                  SizedBox(height: 10),
                 ],
               ),
             ),

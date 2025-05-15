@@ -53,7 +53,7 @@ class AccountView extends StatelessWidget {
                   ),
                   if (arguments[1] == 'othersprofile')
                   Padding(
-                    padding: const EdgeInsets.only(right: 368.0),
+                    padding:  EdgeInsets.only(right: 0.9.sw),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -158,26 +158,31 @@ class AccountView extends StatelessWidget {
                           children: [
                             SizedBox(height: 20.w),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                CustomButton(
-                                  onPress: () async {},
-                                  title: 'Message',
-                                  width: 160,
-                                  height: 42,
-                                  radius: 120,
-                                  fontSize: 18,
-                                  borderColor: AppColor.greyTone,
-                                  buttonColor: AppColor.backgroundColor,
-                                  textColor: AppColor.greyTone,
+                                Expanded(
+                                  child: CustomButton(
+                                    onPress: () async {},
+                                    title: 'Message',
+
+                                    height: 42,
+                                    radius: 120,
+                                    fontSize: 18,
+                                    borderColor: AppColor.greyTone,
+                                    buttonColor: AppColor.backgroundColor,
+                                    textColor: AppColor.greyTone,
+                                  ),
                                 ),
-                                CustomButton(
-                                  onPress: () async {},
-                                  title: 'Add Friend',
-                                  fontSize: 18,
-                                  width: 160,
-                                  height: 42,
-                                  radius: 120.r,
+                                SizedBox(width: 20),
+                                Expanded(
+                                  child: CustomButton(
+                                    onPress: () async {},
+                                    title: 'Add Friend',
+                                    fontSize: 18,
+
+                                    height: 42,
+                                    radius: 120.r,
+                                  ),
                                 ),
                               ],
                             ),
@@ -186,33 +191,38 @@ class AccountView extends StatelessWidget {
                       if (arguments[1] == 'myprofile')
                         Column(
                           children: [
-                            SizedBox(height: 20.w),
+                            SizedBox(height: 20),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                CustomButton(
-                                  onPress: () async {
-                                    Get.to(
-                                      EditProfileView(),
-                                      transition: Transition.noTransition,
-                                    );
-                                  },
-                                  title: 'Edit Profile',
-                                  width: 160,
-                                  height: 42,
-                                  radius: 120,
-                                  fontSize: 18,
-                                  borderColor: AppColor.greyTone,
-                                  buttonColor: AppColor.backgroundColor,
-                                  textColor: AppColor.greyTone,
+                                Expanded(
+                                  child: CustomButton(
+                                    onPress: () async {
+                                      Get.to(
+                                        EditProfileView(),
+                                        transition: Transition.noTransition,
+                                      );
+                                    },
+                                    title: 'Edit Profile',
+
+                                    height: 42,
+                                    radius: 120,
+                                    fontSize: 18,
+                                    borderColor: AppColor.greyTone,
+                                    buttonColor: AppColor.backgroundColor,
+                                    textColor: AppColor.greyTone,
+                                  ),
                                 ),
-                                CustomButton(
-                                  onPress: () async {},
-                                  title: 'Share Profile',
-                                  fontSize: 18,
-                                  width: 160,
-                                  height: 42,
-                                  radius: 120.r,
+                                SizedBox(width: 20),
+                                Expanded(
+                                  child: CustomButton(
+                                    onPress: () async {},
+                                    title: 'Share Profile',
+                                    fontSize: 18,
+
+                                    height: 42,
+                                    radius: 120.r,
+                                  ),
                                 ),
                               ],
                             ),
@@ -380,7 +390,7 @@ class AccountView extends StatelessWidget {
                       ),
                     ),
                   );
-                }, childCount: 20),
+                }, childCount: 1),
               ),
             ],
           ),

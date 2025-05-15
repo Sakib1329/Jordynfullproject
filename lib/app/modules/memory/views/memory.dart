@@ -41,92 +41,91 @@ class Memory extends StatelessWidget {
                       ),
                       SliverToBoxAdapter(
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          padding:  EdgeInsets.symmetric(vertical: 10),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
                             children: [
-                              Obx(
-                                () => GestureDetector(
-                                  onTap: () {
-                                    controller.setSelectedTab('Memorial');
-                                  },
-                                  child: Column(
-                                    children: [
-                                      Text(
-                                        'Memorial',
-                                        style: TextStyle(
-                                          color:
-                                              controller.selectedTab.value ==
-                                                      'Memorial'
+                              Expanded(
+                                child: Obx(
+                                      () => GestureDetector(
+                                    onTap: () => controller.setSelectedTab('Memorial'),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                                      children: [
+                                        Center(
+                                          child: Text(
+                                            'Memorial',
+                                            style: TextStyle(
+                                              color: controller.selectedTab.value == 'Memorial'
                                                   ? AppColor.buttonColor
                                                   : AppColor.textGreyColor3,
-                                          fontSize: 16,
-                                          fontFamily: 'Montserrat',
-                                          fontWeight: FontWeight.w400,
+                                              fontSize: 16,
+                                              fontFamily: 'Montserrat',
+                                              fontWeight: FontWeight.w400,
+                                              height: 1.5,
+                                              letterSpacing: 0.5,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(height: 10),
+                                        Container(
                                           height: 2,
-                                          letterSpacing: 0.50,
+                                          width: 40,
+                                          decoration: BoxDecoration(
+                                            color: controller.selectedTab.value == 'Memorial'
+                                                ? AppColor.buttonColor
+                                                : AppColor.textAreaColor,
+                                            borderRadius: BorderRadius.circular(1),
+                                          ),
                                         ),
-                                      ),
-                                      SizedBox(height: 5.h),
-                                      SizedBox(
-                                        height: 2,
-                                        width: 210,
-                                        child: Divider(
-                                          height: 5,
-                                          thickness: 2,
-                                          color:
-                                              controller.selectedTab.value ==
-                                                      'Memorial'
-                                                  ? AppColor.buttonColor
-                                                  : AppColor.textAreaColor,
-                                        ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
-                              Obx(
-                                () => GestureDetector(
-                                  onTap: () {
-                                    controller.setSelectedTab('Event');
-                                  },
-                                  child: Column(
-                                    children: [
-                                      Text(
-                                        'Event',
-                                        style: TextStyle(
-                                          color:
-                                              controller.selectedTab.value ==
-                                                      'Event'
+                              Expanded(
+                                child: Obx(
+                                      () => GestureDetector(
+                                    onTap: () => controller.setSelectedTab('Event'),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                                      children: [
+                                        Center(
+                                          child: Text(
+                                            'Event',
+                                            style: TextStyle(
+                                              color: controller.selectedTab.value == 'Event'
                                                   ? AppColor.buttonColor
                                                   : AppColor.textGreyColor3,
-                                          fontSize: 16,
-                                          fontFamily: 'Montserrat',
-                                          fontWeight: FontWeight.w400,
+                                              fontSize: 16,
+                                              fontFamily: 'Montserrat',
+                                              fontWeight: FontWeight.w400,
+                                              height: 1.5,
+                                              letterSpacing: 0.5,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(height: 10),
+                                        Container(
                                           height: 2,
-                                          letterSpacing: 0.50,
+                                          width: 40,
+                                          decoration: BoxDecoration(
+                                            color: controller.selectedTab.value == 'Event'
+                                                ? AppColor.buttonColor
+                                                : AppColor.textAreaColor,
+                                            borderRadius: BorderRadius.circular(1),
+                                          ),
                                         ),
-                                      ),
-                                      SizedBox(height: 5.h),
-                                      SizedBox(
-                                        height: 2,
-                                        width: 215,
-                                        child: Divider(
-                                          height: 5,
-                                          thickness: 2,
-                                          color:
-                                              controller.selectedTab.value ==
-                                                      'Event'
-                                                  ? AppColor.buttonColor
-                                                  : AppColor.textAreaColor,
-                                        ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
                             ],
                           ),
+
                         ),
                       ),
                       SliverList(
@@ -152,7 +151,7 @@ class Memory extends StatelessWidget {
                               ),
                             ),
                           );
-                        }, childCount: 20),
+                        },childCount: 1),
                       ),
                     ],
                   ),

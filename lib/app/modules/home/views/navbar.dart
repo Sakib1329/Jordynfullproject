@@ -36,82 +36,85 @@ class Navigation extends StatelessWidget {
       ][controller.currentIndex.value]),
       bottomNavigationBar: Obx(
             () => Container(
-          height: 100,
+
           decoration: BoxDecoration(
             color: AppColor.backgroundColor,
             boxShadow: [
               BoxShadow(
                 color: Colors.grey,
                 blurRadius: 15.r,
-                offset: Offset(0, 10.h),
+                offset: Offset(0, 10),
               ),
             ],
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: List.generate(5, (index) {
-              final isSelected = controller.currentIndex.value == index;
-              return GestureDetector(
-                onTap: () {
-                  controller.currentIndex.value = index;
-                  controller.isFabMenuOpen.value = false;
-                },
-                child: SizedBox(
-                  width: 65,
-                  height: 62,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      if (index == 4)
-                        Obx(() {
-                          final file = bs.pickedImage.value;
-                          return CircleAvatar(
-                            radius: 18.r,
-                            backgroundColor: Colors.transparent,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(60.r),
-                              child: file != null
-                                  ? Image.file(
-                                file,
-                                width: 33,
-                                height: 33,
-                                fit: BoxFit.cover,
-                              )
-                                  : Image.asset(
-                                ImageAssets.person2,
-                                width: 33,
-                                height: 33,
-                                fit: BoxFit.cover,
+          child: Padding(
+            padding:  EdgeInsets.symmetric(vertical: 15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: List.generate(5, (index) {
+                final isSelected = controller.currentIndex.value == index;
+                return GestureDetector(
+                  onTap: () {
+                    controller.currentIndex.value = index;
+                    controller.isFabMenuOpen.value = false;
+                  },
+                  child: SizedBox(
+                    width: 65,
+                    height: 62,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        if (index == 4)
+                          Obx(() {
+                            final file = bs.pickedImage.value;
+                            return CircleAvatar(
+                              radius: 18,
+                              backgroundColor: Colors.transparent,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(60),
+                                child: file != null
+                                    ? Image.file(
+                                  file,
+                                  width: 33,
+                                  height: 33,
+                                  fit: BoxFit.cover,
+                                )
+                                    : Image.asset(
+                                  ImageAssets.person2,
+                                  width: 33,
+                                  height: 33,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
-                            ),
-                          );
-                        })
-                      else
-                        Image.asset(
-                          icons[index],
-                          width: 33,
-                          height: 33,
-                          color: isSelected
-                              ? AppColor.darkGrey
-                              : AppColor.greyBC,
+                            );
+                          })
+                        else
+                          Image.asset(
+                            icons[index],
+                            width: 33,
+
+                            color: isSelected
+                                ? AppColor.darkGrey
+                                : AppColor.greyBC,
+                          ),
+                        SizedBox(height: 4),
+                        Text(
+                          labels[index],
+                          style: TextStyle(
+                            fontSize: 14,
+                            color:
+                            isSelected ? AppColor.darkGrey : AppColor.greyBC,
+                            fontWeight: isSelected
+                                ? FontWeight.bold
+                                : FontWeight.normal,
+                          ),
                         ),
-                      SizedBox(height: 4.h),
-                      Text(
-                        labels[index],
-                        style: TextStyle(
-                          fontSize: 14,
-                          color:
-                          isSelected ? AppColor.darkGrey : AppColor.greyBC,
-                          fontWeight: isSelected
-                              ? FontWeight.bold
-                              : FontWeight.normal,
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              );
-            }),
+                );
+              }),
+            ),
           ),
         ),
       ),

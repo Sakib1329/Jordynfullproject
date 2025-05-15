@@ -60,6 +60,7 @@ class ImageAssets {
   static const String text = 'assets/images/chat/text.png';
   static const String photo_videos = 'assets/images/home/photo_videos.png';
   static const String settings = 'assets/images/explore/settings.png';
+  static const String map1 = 'assets/images/explore/img.png';
 //=======
 
 //>>>>>>> bead9aafaa6c78e759e5e3a98ed9b768065247eb

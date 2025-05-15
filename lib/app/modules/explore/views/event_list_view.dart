@@ -16,10 +16,9 @@ class EventListView extends GetView {
     return Padding(
       padding: EdgeInsets.only(bottom: 0.09.sh),
       child: SingleChildScrollView(
-        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+
         child: ListView.builder(
-          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-          itemCount: 50,
+          itemCount: 10,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           padding: EdgeInsets.zero,

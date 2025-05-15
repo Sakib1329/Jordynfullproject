@@ -16,27 +16,26 @@ class MemoryDetailsView extends GetView<MemoryController> {
 
   void _showPopupMenu(BuildContext context, Offset position) {
     final RenderBox overlay =
-        Overlay.of(context).context.findRenderObject()! as RenderBox;
+    Overlay.of(context).context.findRenderObject()! as RenderBox;
     showMenu(
       context: context,
       position: RelativeRect.fromLTRB(
         position.dx,
-        position.dy + 20,
+        position.dy + 30,
         overlay.size.width - position.dx,
         overlay.size.height - position.dy,
       ),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.r)),
       color: AppColor.backgroundColor,
-      constraints: const BoxConstraints(maxWidth: 144, minWidth: 144),
+      constraints: BoxConstraints(maxWidth: 144, minWidth: 144),
       items: [
         PopupMenuItem(
           height: 60,
           padding: EdgeInsets.zero,
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 144, minWidth: 144),
-            child: ClipRect(
+          child: ClipRect(
+            child: Center( // <--- Add this to center the column content
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   InkWell(
                     child: Text(
@@ -53,7 +52,7 @@ class MemoryDetailsView extends GetView<MemoryController> {
                       Get.to(QrCodeView(), transition: Transition.noTransition);
                     },
                   ),
-                  const SizedBox(height: 15),
+                  SizedBox(height: 15),
                   InkWell(
                     child: Text(
                       'Edit Info',
@@ -66,19 +65,10 @@ class MemoryDetailsView extends GetView<MemoryController> {
                     ),
                     onTap: () {
                       Navigator.pop(context);
-                      Get.to(
-                        EditInfoMemoryView(),
-                        transition: Transition.noTransition,
-                      );
-                      // Get.dialog(
-                      //   RenameDialog(
-                      //     title: 'Rename the note?',
-                      //     onConfirm: () {},
-                      //   ),
-                      // );
+                      Get.to(EditInfoMemoryView(), transition: Transition.noTransition);
                     },
                   ),
-                  const SizedBox(height: 15),
+                  SizedBox(height: 15),
                   InkWell(
                     child: Text(
                       'Delete Person',
@@ -95,11 +85,11 @@ class MemoryDetailsView extends GetView<MemoryController> {
                         context: context,
                         title: 'Are You Sure?',
                         subtitle:
-                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum ',
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum ',
                         onDelete: () {
-                          // Your delete logic here
-                          // print("Deleted");
-                        }, arguments: 'MemoryView'
+                          // delete logic
+                        },
+                        arguments: 'MemoryView',
                       );
                     },
                   ),
@@ -108,6 +98,7 @@ class MemoryDetailsView extends GetView<MemoryController> {
             ),
           ),
         ),
+
       ],
     );
   }
@@ -134,7 +125,7 @@ class MemoryDetailsView extends GetView<MemoryController> {
                 child: Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
+                      padding: EdgeInsets.only(left: 20.w, top: 20,right: 15.w),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -142,11 +133,7 @@ class MemoryDetailsView extends GetView<MemoryController> {
                             onTap: () {
                               Get.to(Navigation(), transition: Transition.leftToRight);
                             },
-                            child: Image.asset(
-                              ImageAssets.back_arrow,
-                              height: 28,
-                              width: 28,
-                            ),
+                            child:Icon(Icons.arrow_back_ios_new,size: 22,)
                           ),
                           GestureDetector(
                             onTapDown: (details) {
@@ -163,9 +150,12 @@ class MemoryDetailsView extends GetView<MemoryController> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            SizedBox(height: 10.h),
-                            Image.asset(ImageAssets.image1),
-                            SizedBox(height: 20.h),
+                            SizedBox(height: 10),
+                            SizedBox(
+
+                                height: 170,
+                                child: Image.asset(ImageAssets.image1)),
+                            SizedBox(height: 10),
                             Text(
                               'Sophia Johnson',
                               style: TextStyle(
@@ -175,7 +165,7 @@ class MemoryDetailsView extends GetView<MemoryController> {
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
-                            SizedBox(height: 10.h),
+                            SizedBox(height: 10),
                             Text(
                               '1992 - 1024',
                               style: TextStyle(
@@ -185,18 +175,18 @@ class MemoryDetailsView extends GetView<MemoryController> {
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
-                            SizedBox(height: 20.h),
+                            SizedBox(height: 20),
                             Text(
-                              'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit. Morbi vitae libero libero. Quisque\nviverra semper eros in ultrices. Cras vel augue\ntristique, gravida nulla a, blandit ex.',
+                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero libero. Quisque viverra semper eros in ultrices. Cras vel augue tristique, gravida nulla a, blandit ex.',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: AppColor.greyTone,
-                                fontSize: 16,
+                                fontSize: 17,
                                 fontFamily: 'Montserrat',
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
-                            SizedBox(height: 20.h),
+                            SizedBox(height: 20),
                             Text(
                               'Lorem ipsum dolor sit amet',
                               style: TextStyle(
@@ -206,7 +196,7 @@ class MemoryDetailsView extends GetView<MemoryController> {
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            SizedBox(height: 20.h),
+
                             Row(
                               children: [
                                 Expanded(
@@ -216,7 +206,6 @@ class MemoryDetailsView extends GetView<MemoryController> {
                                     fit: BoxFit.contain,
                                   ),
                                 ),
-                                SizedBox(width: 10.w),
                                 Expanded(
                                   child: Image.asset(
                                     ImageAssets.flower1,
@@ -226,7 +215,7 @@ class MemoryDetailsView extends GetView<MemoryController> {
                                 ),
                               ],
                             ),
-                            SizedBox(height: 40.h),
+                            SizedBox(height: 10),
                             CustomButton(
                               onPress: () async {
                                 Get.to(
@@ -243,9 +232,9 @@ class MemoryDetailsView extends GetView<MemoryController> {
                               buttonColor: Colors.transparent,
                               height: 48,
                               width: double.infinity,
-                              radius: 10,
+                              radius: 10.r,
                             ),
-                            SizedBox(height: 40.h),
+                            SizedBox(height: 10),
                           ],
                         ),
                       ),
@@ -259,5 +248,4 @@ class MemoryDetailsView extends GetView<MemoryController> {
       },
     );
   }
-
 }
