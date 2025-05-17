@@ -151,7 +151,7 @@ class EditProfileView extends GetView<ProfileController> {
                       ),
                     ),
                     CustomButton(
-                      title: 'Update Event',
+                      title: 'UPDATE',
                       fontWeight: FontWeight.bold,
                       fontSize: 16.sp,
                       onPress: () async {

@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class MemoryController extends GetxController {
-
+  RxInt selectedIndex = (-1).obs;
+  RxString selectedeventtype = ''.obs;
   var selectedRole = ''.obs;
   // Reactive search query for AppBar TextField
   var searchQuery = ''.obs;
@@ -12,7 +13,10 @@ class MemoryController extends GetxController {
   void setSelectedRole(String role) {
     selectedRole.value = role;
   }
-
+  void selectOption(int index, String text) {
+    selectedIndex.value = index;
+    selectedeventtype.value = text;
+  }
   // Update search query
   void updateSearchQuery(String value) {
     searchQuery.value = value;

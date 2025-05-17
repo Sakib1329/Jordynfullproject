@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -9,6 +8,15 @@ import '../../../../widgets/custom_button.dart';
 
 class CreateEventView extends StatelessWidget {
   final MemoryController controller = Get.find();
+
+  final List<String> options = [
+    'Lorem ipsum dolor sit',
+    'Vestibulum a pretium turpis',
+    'Duis sed bibendum elit',
+    'Curabitur volutpat hendrerit augue',
+    'Aliquam nec mauris bibendum',
+    'Fusce pulvinar leo sapien',
+  ];
 
   CreateEventView({super.key});
 
@@ -28,206 +36,107 @@ class CreateEventView extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [ Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w),
-                  child: Text(
-                    'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
-                    style: TextStyle(
-                      color: AppColor.textGreyColor,
-                      fontSize: 20,
-                      fontFamily: 'Schuyler',
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
+                      child: Text(
+                        'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
+                        style: TextStyle(
+                          color: AppColor.textGreyColor,
+                          fontSize: 20,
+                          fontFamily: 'Schuyler',
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
-                    textAlign: TextAlign.center,
-                  ),
+                    SizedBox(height: 20),
+                    ...List.generate(
+                      options.length,
+                          (index) => Obx(() {
+                        final isSelected = controller.selectedIndex.value == index;
+                        return GestureDetector(
+                          onTap: () {
+                            controller.selectOption(index, options[index]);
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(bottom: 15),
+                            height: 48,
+                            width: double.infinity,
+                            decoration: ShapeDecoration(
+                              color: isSelected
+                                  ? AppColor.buttonColor
+                                  : AppColor.textAreaColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.r),
+                                side: BorderSide(
+                                  color: AppColor.textAreaColor,
+                                ),
+                              ),
+                            ),
+                            child: Center(
+                              child: Text(
+                                options[index],
+                                style: TextStyle(
+                                  color: isSelected
+                                      ? AppColor.whiteTextColor
+                                      : AppColor.textGreyColor,
+                                  fontSize: 16,
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.w400,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                  ],
                 ),
-                  SizedBox(height: 20,),
-                  Container(
-                    height: 48,
-                    width: 390,
-                      decoration: ShapeDecoration(
-                        color: AppColor.textAreaColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.r),
-                            side: BorderSide(
-                              color: AppColor.textAreaColor,
-                            )
-                        ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Lorem ipsum dolor sit',
-                      style: TextStyle(
-                        color: AppColor.textGreyColor,
-                        fontSize: 16,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w400
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  ),
-                  SizedBox(height: 15,),
-                  Container(
-                    height: 48,
-                    width: 390,
-                      decoration: ShapeDecoration(
-                        color: AppColor.textAreaColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.r),
-                            side: BorderSide(
-                              color: AppColor.textAreaColor,
-                            )
-                        ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Vestibulum a pretium turpis',
-                      style: TextStyle(
-                        color: AppColor.textGreyColor,
-                        fontSize: 16,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w400
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  ),
-                  SizedBox(height: 15,),
-                  Container(
-                    height: 48,
-                    width: 390,
-                      decoration: ShapeDecoration(
-                        color: AppColor.textAreaColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.r),
-                            side: BorderSide(
-                              color: AppColor.textAreaColor,
-                            )
-                        ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Duis sed bibendum elit',
-                      style: TextStyle(
-                        color: AppColor.textGreyColor,
-                        fontSize: 16,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w400
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  ),
-                  SizedBox(height: 15,),
-                  Container(
-                    height: 48,
-                    width: 390,
-                      decoration: ShapeDecoration(
-                        color: AppColor.textAreaColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.r),
-                            side: BorderSide(
-                              color: AppColor.textAreaColor,
-                            )
-                        ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Curabitur volutpat hendrerit augue',
-                      style: TextStyle(
-                        color: AppColor.textGreyColor,
-                        fontSize: 16,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w400
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  ),
-                  SizedBox(height: 15,),
-                  Container(
-                    height: 48,
-                    width: 390,
-                      decoration: ShapeDecoration(
-                        color: AppColor.textAreaColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.r),
-                            side: BorderSide(
-                              color: AppColor.textAreaColor,
-                            )
-                        ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Aliquam nec mauris bibendum',
-                      style: TextStyle(
-                        color: AppColor.textGreyColor,
-                        fontSize: 16,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w400
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  ),
-                  SizedBox(height: 15,),
-                  Container(
-                    height: 48,
-                    width: 390,
-                      decoration: ShapeDecoration(
-                        color: AppColor.textAreaColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.r),
-                            side: BorderSide(
-                              color: AppColor.textAreaColor,
-                            )
-                        ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Fusce pulvinar leo sapien',
-                      style: TextStyle(
-                        color: AppColor.textGreyColor,
-                        fontSize: 16,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w400
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  ),
-                  SizedBox(height: 15,),
-                ],
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Column(
-              children: [
-                CustomButton(
-                  title: 'Next',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                  onPress: () async {
-                    Get.to(AddEventView(),transition: Transition.noTransition,arguments: {'origin': 'HomeView'});
-                  },
-                  buttonColor: AppColor.buttonColor,
-                  height: 50,
-                  radius: 30.r,
-                ),
-                SizedBox(height: 30,)
-              ],
-            ),
-          ),
-        ],
+            Obx(() {
+              final isEnabled = controller.selectedIndex.value != -1;
+              return Column(
+                children: [
+                  CustomButton(
+                    title: 'Next',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                    onPress: isEnabled
+                        ? () async{
+                      Get.to(
+                        AddEventView(),
+                        transition: Transition.noTransition,
+                        arguments: {
+                          'origin': 'HomeView',
+                          'selectedOption':
+                          controller.selectedeventtype.value,
+                        },
+                      );
+                    }
+                        : null,
+                    buttonColor: isEnabled
+                        ? AppColor.buttonColor
+                        : AppColor.textGreyColor.withOpacity(0.5),
+                    height: 50,
+                    radius: 30.r,
+                  ),
+                  SizedBox(height: 30),
+                ],
+              );
+            }),
+          ],
+        ),
       ),
     );
   }
-
 }

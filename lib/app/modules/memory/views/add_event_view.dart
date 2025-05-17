@@ -129,7 +129,7 @@ class AddEventView extends StatelessWidget {
                                         children: [
                                           Image.file(
                                             File(imagePath),
-                                            fit: BoxFit.fill,
+                                            fit: BoxFit.cover,
                                             width: double.infinity,
                                             height: double.infinity,
                                             errorBuilder: (

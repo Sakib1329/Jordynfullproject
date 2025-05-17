@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
 import 'package:jordyn/app/modules/chat/views/chat.dart';
 import 'package:jordyn/app/modules/explore/views/explore.dart';
 import 'package:jordyn/app/modules/home/views/home_view.dart';
@@ -8,12 +9,14 @@ import 'package:jordyn/app/modules/memory/views/memory.dart';
 import 'package:jordyn/app/modules/profile/views/profile.dart';
 import 'package:jordyn/res/assets/image_assets.dart';
 import 'package:jordyn/res/colors/app_color.dart';
+import '../../auth/controllers/authcameracontroller.dart';
 import '../../chat/controllers/bottomsheetcontroller.dart';
 import '../controllers/home_controller.dart';
 
 class Navigation extends StatelessWidget {
   final HomeController controller = Get.put(HomeController());
   final BottomSheetController bs = Get.put(BottomSheetController());
+  final AuthBottomSheetController as = Get.put(AuthBottomSheetController());
   Navigation({super.key});
 
   final List<String> labels = ['Home', 'Explore', 'Memory', 'Chat', 'Profile'];
@@ -66,7 +69,7 @@ class Navigation extends StatelessWidget {
                       children: [
                         if (index == 4)
                           Obx(() {
-                            final file = bs.pickedImage.value;
+                            final file = as.pickedImage.value;
                             return CircleAvatar(
                               radius: 18,
                               backgroundColor: Colors.transparent,
@@ -80,7 +83,7 @@ class Navigation extends StatelessWidget {
                                   fit: BoxFit.cover,
                                 )
                                     : Image.asset(
-                                  ImageAssets.person2,
+                                  ImageAssets.avater,
                                   width: 33,
                                   height: 33,
                                   fit: BoxFit.cover,

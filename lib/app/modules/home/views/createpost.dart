@@ -135,7 +135,7 @@ class Createpost extends StatelessWidget {
                               'Sophia Anderson',
                               style: TextStyle(
                                 color: AppColor.greyTone,
-                                fontSize: 22,
+                                fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -143,7 +143,7 @@ class Createpost extends StatelessWidget {
                               'December 12th, 1992',
                               style: TextStyle(
                                 color: AppColor.greyTone,
-                                fontSize: 20,
+                                fontSize: 16,
                                 fontWeight: FontWeight.w300,
                               ),
                             ),
@@ -151,7 +151,7 @@ class Createpost extends StatelessWidget {
                               'June 1st, 2024',
                               style: TextStyle(
                                 color: AppColor.greyTone,
-                                fontSize: 20,
+                                fontSize: 16,
                                 fontWeight: FontWeight.w300,
                               ),
                             ),
