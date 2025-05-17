@@ -21,7 +21,7 @@ class CenteredDialogWidget extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.imageasset,
-    this.horizontalpadding=24.0,
+    this.horizontalpadding=1,
     this.verticalpadding=16.0,
     this.backgroundColor = const Color(0xFFF8F3E8), // Light beige background
     this.iconBackgroundColor = const Color(0xFFA9BE8B), // Sage green circle

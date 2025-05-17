@@ -36,14 +36,16 @@ class Creategoup1 extends StatelessWidget {
         builder: (context, constraints) {
           return SingleChildScrollView(
             child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: constraints.maxHeight),
+              constraints: BoxConstraints(
+                minHeight: constraints.maxHeight,
+              ),
               child: IntrinsicHeight(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Text(
                         'Vestibulum sodales pulvinar accumsan raseing rhoncus neque',
                         style: TextStyle(
@@ -52,7 +54,7 @@ class Creategoup1 extends StatelessWidget {
                           fontFamily: 'Schuyler',
                         ),
                       ),
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                       Center(
                         child: Stack(
                           children: [
@@ -86,7 +88,7 @@ class Creategoup1 extends StatelessWidget {
                                 height: 30,
                                 decoration: BoxDecoration(
                                   color: AppColor.buttonColor,
-                                  borderRadius: BorderRadius.circular(100.r),
+                                  borderRadius: BorderRadius.circular(100),
                                 ),
                                 child: IconButton(
                                   icon: const Icon(
@@ -95,7 +97,7 @@ class Creategoup1 extends StatelessWidget {
                                     color: AppColor.whiteTextColor,
                                   ),
                                   onPressed: bs.getBottomSheet,
-                                  padding: EdgeInsets.all(4),
+                                  padding: const EdgeInsets.all(4),
                                   constraints: const BoxConstraints(),
                                 ),
                               ),
@@ -103,7 +105,7 @@ class Creategoup1 extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                       InputTextWidget(
                         onChanged: (value) {},
                         borderColor: AppColor.backgroundColor,
@@ -112,7 +114,7 @@ class Creategoup1 extends StatelessWidget {
                         textColor: AppColor.textGreyColor2,
                         height: 48,
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       InputTextWidget(
                         onChanged: (value) {},
                         borderColor: AppColor.backgroundColor,
@@ -122,7 +124,7 @@ class Creategoup1 extends StatelessWidget {
                         maxLines: 10,
                         height: 150,
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Text(
                         'Group Type',
                         style: TextStyle(
@@ -130,19 +132,19 @@ class Creategoup1 extends StatelessWidget {
                           fontSize: 18,
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Obx(() => Column(
                         children: [
                           groupOption("Public"),
                           groupOption("Private"),
                         ],
                       )),
-                      const Spacer(),
+                      const Spacer(), // pushes button to bottom
                       CustomButton(
                         title: 'Create',
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
-                        onPress: () async{
+                        onPress: () async {
                           Get.to(
                             Groupchat(name: 'Friends'),
                             transition: Transition.rightToLeft,
@@ -150,9 +152,9 @@ class Creategoup1 extends StatelessWidget {
                         },
                         buttonColor: AppColor.buttonColor,
                         height: 50,
-                        radius: 30.r,
+                        radius: 30,
                       ),
-                      SizedBox(height: 30),
+                      const SizedBox(height: 30),
                     ],
                   ),
                 ),
@@ -169,9 +171,9 @@ class Creategoup1 extends StatelessWidget {
     return GestureDetector(
       onTap: () => controller.selectedGroupType.value = label,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8.r),
+          borderRadius: BorderRadius.circular(8),
         ),
         child: Row(
           children: [
@@ -200,7 +202,7 @@ class Creategoup1 extends StatelessWidget {
               )
                   : null,
             ),
-            SizedBox(width: 12),
+            const SizedBox(width: 12),
             Text(
               label,
               style: TextStyle(
@@ -215,3 +217,4 @@ class Creategoup1 extends StatelessWidget {
     );
   }
 }
+

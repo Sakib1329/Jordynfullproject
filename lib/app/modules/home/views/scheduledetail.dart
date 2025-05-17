@@ -175,9 +175,7 @@ backimageadd: true,
                                   elevation: 0,
                                   child: CenteredDialogWidget(
                                     title: 'Schedule Post Saved',
-                                    horizontalpadding: 2.0.w,
-                                    verticalpadding: 20.0.h,
-            
+                                  
                                     subtitle:
                                         'Sed dignissim nisl a vehicula fringilla. Nulla faucibus dui tellus, ut dignissim',
                                     imageasset: ImageAssets.post_report,

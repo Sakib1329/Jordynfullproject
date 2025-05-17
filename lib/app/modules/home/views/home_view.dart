@@ -32,26 +32,31 @@ class HomeView extends StatelessWidget {
                 floating: true,
                 snap: true,
                 backgroundColor: AppColor.backgroundColor,
-                title: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Hi, Audrey',
-                      style: TextStyle(
-                        color: AppColor.textTitleColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                leadingWidth: 280,
+                leading: Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Hi, Audrey',
+                        style: TextStyle(
+                          color: AppColor.textTitleColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
                       ),
-                    ),
-                    Text(
-                      'Welcome back to Inspirit!',
-                      style: TextStyle(
-                        color: AppColor.textGreyColor,
-                        fontSize: 15,
-                        letterSpacing: 1,
+                      Text(
+                        'Welcome back to Inspirit!',
+                        style: TextStyle(
+                          color: AppColor.textGreyColor,
+                          fontSize: 15,
+                          letterSpacing: 1,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 actions: [
                   Row(
